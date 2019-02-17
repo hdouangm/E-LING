@@ -1,0 +1,66 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1 févr. 2019, 23:25:46
+    Author     : ophedinho
+*/
+.page-centrer {
+    margin-top: 90px;
+    padding-bottom: 40px;
+    margin-left: 30%;
+    margin-right: 40%;
+    border: 0.5px black solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    align-content: center;
+    width: 550px;
+    height: 400px;
+    
+}
+
+.titre {
+    padding-top: 10px;
+    padding-bottom: 80px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.fond {
+    background-image: url('src/assets/profil.jpg');
+    height: 590px;
+    margin: 0 0 0 0;
+}
+
+.erreur-message {
+    color:#B30202;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+    font-style: italic;
+    color: grey;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+    font-style: italic;
+    color: grey;
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+    font-style: italic;
+    color: grey;
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+    font-style: italic;
+    color: grey;
+ }

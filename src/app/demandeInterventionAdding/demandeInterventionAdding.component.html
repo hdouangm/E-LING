@@ -1,0 +1,49 @@
+<!-- header -->
+<app-header></app-header>
+
+<!-- Menu -->
+ <app-menu></app-menu> 
+
+ <!--    background -->
+<div class="fond">
+   <div>.</div>
+   <!-- page-center -->
+   
+   <div class="page-centrer">
+       <br>
+       <h2> Demande Intervention </h2>
+       <br> 
+       <br>
+        <label>Numéro DMP : 
+            <!--input [(ngModel)]="examenData.id_dmp" placeholder="Numéro DMP"/-->
+            <select [(ngModel)]="interventionData.id_dmp"> 
+                <option value="">Sélectionnez un dmp</option>
+                <option *ngFor="let dmp of dmps" [value]="dmp.id" >{{dmp.username}}</option>
+            </select>
+        </label>
+            <br> 
+            <br>
+            <label>Type Examen : 
+                <select [(ngModel)]="interventionData.type"> 
+                <option value="">Sélectionnez un type</option>
+                <option *ngFor="let type of types" [value]="type.id" >{{type.username}}</option>
+            </select>
+            </label>
+            <br> 
+            <br>
+            <label>Publication : 
+                <select [(ngModel)]="interventionData.publication"> 
+                <option value="true">Oui</option>
+                <option value="false" >Non</option>
+            </select>
+            </label>
+            <br> 
+            <br>
+            <br>
+            <button class="favorite styled" (click)="createDemandeIntervention();"> 
+                Valider 
+            </button>
+       
+   </div>  <!-- /page-center -->
+ 
+</div> <!-- /background -->

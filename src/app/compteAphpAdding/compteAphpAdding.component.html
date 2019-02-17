@@ -1,0 +1,38 @@
+<!--DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!-- header -->
+<app-header></app-header>
+
+<!-- Menu -->
+ <app-menu></app-menu> 
+ 
+ <!--    background -->
+<div class="fond">
+   <div>.</div>
+   <!-- page-center -->
+   
+   
+   <div class="page-centrer">
+       <br>
+       <h2> Ajouter compte Aphp </h2>
+       <br> 
+       <br>
+
+	<label>Login : <input #name /> </label>
+            <br> 
+            <br>
+        <label>Password : <input type="password" #pwd /> </label>
+            <br> 
+            <br>
+        <button class="favorite styled" (click)="createCompteAphp(name.value,pwd.value);"> 
+            Add compte 
+        </button>	
+       
+   </div>  <!-- /page-center -->
+ 
+</div> <!-- /background -->
