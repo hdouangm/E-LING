@@ -1,9 +1,6 @@
 package application.eling.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 
 import java.util.List;
 
@@ -17,14 +14,14 @@ public class NoeudHopital {
     @GeneratedValue
     private Integer id;
     private Integer niveau;
-    private List<String> noeudsInferieurs;
+    private List<NoeudHopital> noeudsInferieurs;
     private Employe chef;
 
     public NoeudHopital(){
 
     }
 
-    public NoeudHopital(Integer niveau, List<String> noeudsInferieurs, Employe chef) {
+    public NoeudHopital(Integer niveau, List<NoeudHopital> noeudsInferieurs, Employe chef) {
         this.niveau = niveau;
         this.noeudsInferieurs = noeudsInferieurs;
         this.chef = chef;
@@ -46,11 +43,12 @@ public class NoeudHopital {
         this.niveau = niveau;
     }
 
-    public List<String> getNoeudsInferieurs() {
+    @ManyToOne(cascade = CascadeType.ALL)
+    public List<NoeudHopital> getNoeudsInferieurs() {
         return noeudsInferieurs;
     }
 
-    public void setNoeudsInferieurs(List<String> noeudsInferieurs) {
+    public void setNoeudsInferieurs(List<NoeudHopital> noeudsInferieurs) {
         this.noeudsInferieurs = noeudsInferieurs;
     }
 

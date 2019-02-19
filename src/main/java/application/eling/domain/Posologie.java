@@ -1,9 +1,6 @@
 package application.eling.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 
 import java.util.List;
 
@@ -21,7 +18,7 @@ public class Posologie {
     private List<String> suiviTraitement;
     private Employe responsable;
     private Boolean publication;
-    private List<String> codesActes;
+    private List<Acte> codesActes;
     private Integer prix;
     private Boolean payer;
 
@@ -29,7 +26,7 @@ public class Posologie {
 
     }
 
-    public Posologie(DMP dmp, String posologie, List<String> suiviTraitement, Employe responsable, Boolean publication, List<String> codesActes, Integer prix, Boolean payer) {
+    public Posologie(DMP dmp, String posologie, List<String> suiviTraitement, Employe responsable, Boolean publication, List<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
         this.posologie = posologie;
         this.suiviTraitement = suiviTraitement;
@@ -88,11 +85,12 @@ public class Posologie {
         this.publication = publication;
     }
 
-    public List<String> getCodesActes() {
+    @ManyToOne(cascade = CascadeType.ALL)
+    public List<Acte> getCodesActes() {
         return codesActes;
     }
 
-    public void setCodesActes(List<String> codesActes) {
+    public void setCodesActes(List<Acte> codesActes) {
         this.codesActes = codesActes;
     }
 

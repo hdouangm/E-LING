@@ -8,7 +8,7 @@ import javax.persistence.NamedQuery;
 import static application.eling.domain.CompteAphp.FIND_ALL;
 
 @Entity
-@NamedQuery(name = FIND_ALL, query = "SELECT b FROM CompteAphp b ORDER BY b.id DESC")
+@NamedQuery(name = FIND_ALL, query = "SELECT b FROM CompteAphp b ORDER BY b.login DESC")
 public class CompteAphp {
     public static final String FIND_ALL = "CompteAphp.findAllCompteAphp";
     @Id

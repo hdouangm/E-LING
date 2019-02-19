@@ -1,9 +1,6 @@
 package application.eling.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 
 import java.util.Date;
 import java.util.List;
@@ -22,7 +19,7 @@ public class Examen {
     private List<String> resultats;
     private Employe responsable;
     private Boolean publication;
-    private List<String> codesActes;
+    private List<Acte> codesActes;
     private Integer prix;
     private Boolean payer;
 
@@ -30,7 +27,7 @@ public class Examen {
 
     }
 
-    public Examen(DMP dmp, Date date, List<String> resultats, Employe responsable, Boolean publication, List<String> codesActes, Integer prix, Boolean payer) {
+    public Examen(DMP dmp, Date date, List<String> resultats, Employe responsable, Boolean publication, List<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
         this.date = date;
         this.resultats = resultats;
@@ -89,11 +86,12 @@ public class Examen {
         this.publication = publication;
     }
 
-    public List<String> getCodesActes() {
+    @ManyToOne(cascade = CascadeType.ALL)
+    public List<Acte> getCodesActes() {
         return codesActes;
     }
 
-    public void setCodesActes(List<String> codesActes) {
+    public void setCodesActes(List<Acte> codesActes) {
         this.codesActes = codesActes;
     }
 
