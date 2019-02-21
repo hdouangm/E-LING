@@ -17,15 +17,19 @@ public class DonneesSociales {
     private String nom;
     private String prenom;
     private String adressse;
+    private String genre;
+    private String age;
 
     public DonneesSociales(){
 
     }
 
-    public DonneesSociales(String nom, String prenom, String adressse) {
+    public DonneesSociales(String nom, String prenom, String adressse, String age, String genre) {
         this.nom = nom;
         this.prenom = prenom;
         this.adressse = adressse;
+        this.age = age;
+        this.genre = genre;
     }
 
     public Integer getId() {
@@ -58,6 +62,22 @@ public class DonneesSociales {
 
     public void setAdressse(String adressse) {
         this.adressse = adressse;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 
     @Override

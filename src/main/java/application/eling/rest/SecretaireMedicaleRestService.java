@@ -65,10 +65,10 @@ public class SecretaireMedicaleRestService {
     @GET
     @Path("creerpatient")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createPatient (@QueryParam("ss") String ss, @QueryParam("nom") String nom, @QueryParam("prenom") String prenom, @QueryParam("adresse") String adresse) throws Exception {
+    public Response createPatient (@QueryParam("ss") String ss, @QueryParam("nom") String nom, @QueryParam("prenom") String prenom, @QueryParam("adresse") String adresse, @QueryParam("age") String age,@QueryParam("genre") String genre) throws Exception {
         DMP dmp = new DMP(ss);
         NoeudHopital noeudHopital = new NoeudHopital();
-        DonneesSociales donneesSociales = new DonneesSociales(nom, prenom, adresse);
+        DonneesSociales donneesSociales = new DonneesSociales(nom, prenom, adresse, age, genre);
         Patient patient = new Patient(noeudHopital, dmp, donneesSociales);
 
         List<DMP> tmp = dmpRepository.findByParam(ss);
