@@ -1,0 +1,25 @@
+
+<div class="container" style="padding-right: 100px;padding-left: 100px;margin-right: auto;margin-left: auto;">
+<app-new-patient></app-new-patient>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Age</th>
+      <th scope="col">Genre</th>
+
+    </tr>
+  </thead>
+  <tbody id="patients">
+        <tr *ngFor="let item of restItems">
+          <td> {{ item.donneesSociales.nom }} </td>
+          <td> {{ item.donneesSociales.prenom }} </td>
+          <td> {{ item.donneesSociales.age }} </td>
+          <td> {{ item.donneesSociales.genre }} </td>
+        </tr>
+
+  </tbody>
+</table>
+
+</div>

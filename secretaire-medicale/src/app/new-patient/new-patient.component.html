@@ -1,0 +1,96 @@
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Nouveau patient</button>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+
+              <div class="container">
+                  <div class="row">
+                      <div class="col-md-6 offset-md-3">
+                          <h3>Créer un nouveau patient</h3>
+                          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                              <div class="form-group">
+                                  <label>Numéro de SS :</label>
+                                  <input type="text" formControlName="ss" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ss.errors }" />
+                                  <div *ngIf="submitted && f.ss.errors" class="invalid-feedback">
+                                      <div *ngIf="f.ss.errors.required">Le numéro de sécurité sociale est requis</div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label>Nom :</label>
+                                  <input type="text" formControlName="nom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nom.errors }" />
+                                  <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+                                      <div *ngIf="f.nom.errors.required">Le nom est requis</div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label>Prénom :</label>
+                                  <input type="text" formControlName="prenom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.prenom.errors }" />
+                                  <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
+                                      <div *ngIf="f.prenom.errors.required">Le prénom est requis</div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label>Adresse :</label>
+                                  <input type="text" formControlName="adresse" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" />
+                                  <div *ngIf="submitted && f.adresse.errors" class="invalid-feedback">
+                                      <div *ngIf="f.adresse.errors.required">L'adresse est requise</div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label>Date de naissance :</label>
+                                  <input type="date" formControlName="age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }" />
+                                  <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
+                                      <div *ngIf="f.age.errors.required">L'adresse est requise</div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label>Email</label>
+                                  <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                      <div *ngIf="f.email.errors.required">L'email est requise</div>
+                                      <div *ngIf="f.email.errors.email">L'email est invalide</div>
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                  <div class="form-check">
+                                  <input class="form-check-input" formControlName="genre" type="radio" value="M" [ngClass]="{ 'is-invalid': submitted && f.genre.errors }">
+                                  <label class="form-check-label" for="masculin">
+                                      &nbsp;&nbsp;Masculin
+                                  </label>
+                                  </div>
+                                  <div class="form-check">
+                                  <input class="form-check-input" formControlName="genre" type="radio" value="F" [ngClass]="{ 'is-invalid': submitted && f.genre.errors }">
+                                  <label class="form-check-label" for="feminin">
+                                      &nbsp;&nbsp;Féminin
+                                  </label>
+                                  </div>
+                                  <div *ngIf="submitted && f.genre.errors" class="invalid-feedback">
+                                      <div *ngIf="f.genre.errors.required">Le genre est requis</div>
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <button class="btn btn-primary">Créer</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
