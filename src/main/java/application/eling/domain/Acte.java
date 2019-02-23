@@ -1,18 +1,16 @@
 package application.eling.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 
 import static application.eling.domain.Acte.FIND_ALL;
+import static javax.persistence.CascadeType.ALL;
 
 @Entity
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Acte b ORDER BY b.id DESC")
 public class Acte {
     public static final String FIND_ALL = "Acte.findAllActes";
-    @Id
-    @GeneratedValue
+
+    @OneToMany(cascade=ALL)
     private Integer id;
     private String description;
     private Integer prix;
@@ -26,6 +24,8 @@ public class Acte {
         this.prix = prix;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }
@@ -34,6 +34,7 @@ public class Acte {
         this.id = id;
     }
 
+    @Column(nullable = false)
     public String getDescription() {
         return description;
     }
@@ -42,6 +43,7 @@ public class Acte {
         this.description = description;
     }
 
+    @Column(nullable = false)
     public Integer getPrix() {
         return prix;
     }

@@ -13,8 +13,7 @@ import static application.eling.domain.DemandeIntervention.FIND_ALL;
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM DemandeIntervention b ORDER BY b.id DESC")
 public class DemandeIntervention {
     public static final String FIND_ALL = "DemandeIntervention.findAllDemandeInterventions";
-    @Id
-    @GeneratedValue
+
     private Integer id;
     private DMP dmp;
     private Date date;
@@ -32,6 +31,8 @@ public class DemandeIntervention {
         this.type = type;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }

@@ -13,8 +13,7 @@ public class Diagnostique {
 
     public static final String FIND_ALL = "Diagnostique.findAllDiagnostiques";
 
-    @Id
-    @GeneratedValue
+
     private Integer id;
     private DMP dmp;
     private String diagnostic;
@@ -40,6 +39,8 @@ public class Diagnostique {
         this.payer = payer;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }

@@ -14,8 +14,7 @@ import static application.eling.domain.ConstanteVitale.FIND_ALL;
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM ConstanteVitale b ORDER BY b.id DESC")
 public class ConstanteVitale {
     public static final String FIND_ALL = "ConstanteVitale.findAllConstanteVitales";
-    @Id
-    @GeneratedValue
+
     private Integer id;
     private DMP dmp;
     private Date date;
@@ -33,6 +32,8 @@ public class ConstanteVitale {
         this.infirmierEnCharge = infirmierEnCharge;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }

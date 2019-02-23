@@ -11,14 +11,14 @@ import static application.eling.domain.Examen.FIND_ALL;
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Examen b ORDER BY b.id DESC")
 public class Examen {
     public static final String FIND_ALL = "Examen.findAllExamens";
-    @Id
-    @GeneratedValue
+
     private Integer id;
     private DMP dmp;
     private Date date;
     private List<String> resultats;
     private Employe responsable;
-    private Boolean publication;
+    private Boolean publicationMed;
+    private Boolean publicationLab;
     private List<Acte> codesActes;
     private Integer prix;
     private Boolean payer;
@@ -27,17 +27,20 @@ public class Examen {
 
     }
 
-    public Examen(DMP dmp, Date date, List<String> resultats, Employe responsable, Boolean publication, List<Acte> codesActes, Integer prix, Boolean payer) {
+    public Examen(DMP dmp, Date date, List<String> resultats, Employe responsable, Boolean publicationMed, Boolean publicationLab, List<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
         this.date = date;
         this.resultats = resultats;
         this.responsable = responsable;
-        this.publication = publication;
+        this.publicationMed = publicationMed;
+        this.publicationLab = publicationLab;
         this.codesActes = codesActes;
         this.prix = prix;
         this.payer = payer;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }
@@ -78,13 +81,13 @@ public class Examen {
         this.responsable = responsable;
     }
 
-    public Boolean getPublication() {
-        return publication;
-    }
+    public Boolean getPublicationMed() { return publicationMed; }
 
-    public void setPublication(Boolean publication) {
-        this.publication = publication;
-    }
+    public void setPublicationMed(Boolean publicationMed) { this.publicationMed = publicationMed; }
+
+    public Boolean getPublicationLab() { return publicationLab; }
+
+    public void setPublicationLab(Boolean publicationLab) { this.publicationLab = publicationLab; }
 
     @ManyToOne(cascade = CascadeType.ALL)
     public List<Acte> getCodesActes() {
@@ -119,7 +122,8 @@ public class Examen {
                 ", date=" + date +
                 ", resultats=" + resultats +
                 ", responsable=" + responsable +
-                ", publication=" + publication +
+                ", publicationMed=" + publicationMed +
+                ", publicationLab=" + publicationLab +
                 ", codesActes=" + codesActes +
                 ", prix=" + prix +
                 ", payer=" + payer +

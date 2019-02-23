@@ -11,8 +11,7 @@ import static application.eling.domain.DMP.FIND_ALL;
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM DMP b ORDER BY b.id DESC")
 public class DMP {
     public static final String FIND_ALL = "DMP.findAllDMPs";
-    @Id
-    @GeneratedValue
+
     private Integer id;
     private String ss;
 
@@ -24,6 +23,8 @@ public class DMP {
         this.ss = ss;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }

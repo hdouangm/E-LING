@@ -11,8 +11,7 @@ import static application.eling.domain.Intervention.FIND_ALL;
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Intervention b ORDER BY b.id DESC")
 public class Intervention {
     public static final String FIND_ALL = "Intervention.findAllInterventions";
-    @Id
-    @GeneratedValue
+
     private Integer id;
     private DMP dmp;
     private Integer type;
@@ -40,6 +39,8 @@ public class Intervention {
         this.payer = payer;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }

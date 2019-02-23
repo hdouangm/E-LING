@@ -11,8 +11,7 @@ import static application.eling.domain.Competence.FIND_ALL;
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Competence b ORDER BY b.id DESC")
 public class Competence {
     public static final String FIND_ALL = "Competence.findAllCompetences";
-    @Id
-    @GeneratedValue
+
     private Integer id;
     private String description;
 
@@ -24,6 +23,8 @@ public class Competence {
         this.description = description;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }

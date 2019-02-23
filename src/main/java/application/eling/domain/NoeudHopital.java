@@ -10,8 +10,7 @@ import static application.eling.domain.NoeudHopital.FIND_ALL;
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM NoeudHopital b ORDER BY b.id DESC")
 public class NoeudHopital {
     public static final String FIND_ALL = "NoeudHopital.findAllNoeudHopitals";
-    @Id
-    @GeneratedValue
+
     private Integer id;
     private Integer niveau;
     private List<NoeudHopital> noeudsInferieurs;
@@ -27,6 +26,8 @@ public class NoeudHopital {
         this.chef = chef;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }

@@ -13,8 +13,7 @@ import static application.eling.domain.Employe.FIND_ALL;
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Employe b ORDER BY b.id DESC")
 public class Employe {
     public static final String FIND_ALL = "Employe.findAllEmployes";
-    @Id
-    @GeneratedValue
+
     private Integer id;
     private NoeudHopital noeudHopital;
     private CompteAphp compteAphp;
@@ -34,6 +33,8 @@ public class Employe {
         this.competences = competences;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }

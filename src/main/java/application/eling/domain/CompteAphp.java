@@ -11,8 +11,7 @@ import static application.eling.domain.CompteAphp.FIND_ALL;
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM CompteAphp b ORDER BY b.login DESC")
 public class CompteAphp {
     public static final String FIND_ALL = "CompteAphp.findAllCompteAphp";
-    @Id
-    @GeneratedValue
+
     private String login;
     private String motDePasse;
     private String langue;
@@ -27,6 +26,8 @@ public class CompteAphp {
         this.langue = langue;
     }
 
+    @Id
+    @GeneratedValue
     public String getLogin() {
         return login;
     }

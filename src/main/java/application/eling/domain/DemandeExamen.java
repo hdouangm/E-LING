@@ -13,8 +13,7 @@ import static application.eling.domain.DemandeExamen.FIND_ALL;
 public class DemandeExamen {
     public static final String FIND_ALL = "DemandeExamen.findAllDemandeExamens";
 
-    @Id
-    @GeneratedValue
+
     private Integer id;
     private DMP dmp;
     private String type;
@@ -32,6 +31,8 @@ public class DemandeExamen {
         this.publication = publication;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }

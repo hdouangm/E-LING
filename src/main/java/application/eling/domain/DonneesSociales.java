@@ -11,8 +11,7 @@ import static application.eling.domain.DonneesSociales.FIND_ALL;
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM DonneesSociales b ORDER BY b.id DESC")
 public class DonneesSociales {
     public static final String FIND_ALL = "DonneesSociales.findAllDonneesSocialess";
-    @Id
-    @GeneratedValue
+
     private Integer id;
     private String nom;
     private String prenom;
@@ -28,6 +27,8 @@ public class DonneesSociales {
         this.adressse = adressse;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }

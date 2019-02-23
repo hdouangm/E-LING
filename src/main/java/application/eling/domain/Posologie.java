@@ -10,8 +10,7 @@ import static application.eling.domain.Posologie.FIND_ALL;
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Posologie b ORDER BY b.id DESC")
 public class Posologie {
     public static final String FIND_ALL = "Posologie.findAllPosologies";
-    @Id
-    @GeneratedValue
+
     private Integer id;
     private DMP dmp;
     private String posologie;
@@ -37,6 +36,8 @@ public class Posologie {
         this.payer = payer;
     }
 
+    @Id
+    @GeneratedValue
     public Integer getId() {
         return id;
     }
