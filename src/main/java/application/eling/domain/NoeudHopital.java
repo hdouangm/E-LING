@@ -2,13 +2,14 @@ package application.eling.domain;
 
 import javax.persistence.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 import static application.eling.domain.NoeudHopital.FIND_ALL;
 
 @Entity
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM NoeudHopital b ORDER BY b.id DESC")
-public class NoeudHopital {
+public class NoeudHopital implements Serializable {
     public static final String FIND_ALL = "NoeudHopital.findAllNoeudHopitals";
 
     private Integer id;

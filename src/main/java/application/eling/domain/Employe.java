@@ -5,13 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
+import java.io.Serializable;
 import java.util.List;
 
 import static application.eling.domain.Employe.FIND_ALL;
 
 @Entity
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Employe b ORDER BY b.id DESC")
-public class Employe {
+public class Employe implements Serializable {
     public static final String FIND_ALL = "Employe.findAllEmployes";
 
     private Integer id;

@@ -5,11 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
+import java.io.Serializable;
+
 import static application.eling.domain.Patient.FIND_ALL;
 
 @Entity
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Patient b ORDER BY b.id DESC")
-public class Patient {
+public class Patient implements Serializable {
     public static final String FIND_ALL = "Patient.findAllPatients";
 
     private Integer id;
