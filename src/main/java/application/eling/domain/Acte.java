@@ -78,6 +78,18 @@ public class Acte implements Serializable {
         this.examen = examen;
     }
 
+    public Intervention getIntervention() { return intervention; }
+
+    public void setIntervention(Intervention intervention) { this.intervention = intervention; }
+
+    public Diagnostique getDiagnostique() { return diagnostique; }
+
+    public void setDiagnostique(Diagnostique diagnostique) { this.diagnostique = diagnostique; }
+
+    public Posologie getPosologie() { return posologie; }
+
+    public void setPosologie(Posologie posologie) { this.posologie = posologie; }
+
     @Override
     public String toString() {
         return "Acte{" +
