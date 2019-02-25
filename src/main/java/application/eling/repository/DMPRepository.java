@@ -3,7 +3,6 @@ import application.eling.domain.DMP;
 import application.eling.domain.Patient;
 import com.sun.tools.internal.ws.wsdl.framework.NoSuchEntityException;
 
-import javax.ejb.NoSuchEntityException;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

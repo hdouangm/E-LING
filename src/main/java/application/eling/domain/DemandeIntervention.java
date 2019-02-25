@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
-import java.util.Date;
 
 import static application.eling.domain.DemandeIntervention.FIND_ALL;
 
@@ -16,7 +15,7 @@ public class DemandeIntervention {
 
     private Integer id;
     private DMP dmp;
-    private Date date;
+    private String date;
     private Boolean publication;
     private String type;
 
@@ -24,7 +23,7 @@ public class DemandeIntervention {
 
     }
 
-    public DemandeIntervention(DMP dmp, Date date, Boolean publication, String type) {
+    public DemandeIntervention(DMP dmp, String date, Boolean publication, String type) {
         this.dmp = dmp;
         this.date = date;
         this.publication = publication;
@@ -49,11 +48,11 @@ public class DemandeIntervention {
         this.dmp = dmp;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

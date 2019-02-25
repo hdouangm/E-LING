@@ -2,24 +2,27 @@ package application.eling.domain;
 
 import javax.persistence.*;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static application.eling.domain.Examen.FIND_ALL;
 
 @Entity
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Examen b ORDER BY b.id DESC")
-public class Examen {
+public class Examen implements Serializable {
     public static final String FIND_ALL = "Examen.findAllExamens";
 
     private Integer id;
     private DMP dmp;
-    private Date date;
+    private String date;
     private List<String> resultats;
     private Employe responsable;
-    private Boolean publicationMed;
-    private Boolean publicationLab;
-    private List<Acte> codesActes;
+    private Boolean publication;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Acte> codesActes = new HashSet<Acte>(0);
     private Integer prix;
     private Boolean payer;
 
@@ -27,13 +30,12 @@ public class Examen {
 
     }
 
-    public Examen(DMP dmp, Date date, List<String> resultats, Employe responsable, Boolean publicationMed, Boolean publicationLab, List<Acte> codesActes, Integer prix, Boolean payer) {
+    public Examen(DMP dmp, String date, List<String> resultats, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
         this.date = date;
         this.resultats = resultats;
         this.responsable = responsable;
-        this.publicationMed = publicationMed;
-        this.publicationLab = publicationLab;
+        this.publication = publication;
         this.codesActes = codesActes;
         this.prix = prix;
         this.payer = payer;
@@ -57,11 +59,11 @@ public class Examen {
         this.dmp = dmp;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -81,20 +83,15 @@ public class Examen {
         this.responsable = responsable;
     }
 
-    public Boolean getPublicationMed() { return publicationMed; }
+    public Boolean getPublication() { return publication; }
 
-    public void setPublicationMed(Boolean publicationMed) { this.publicationMed = publicationMed; }
+    public void setPublication(Boolean publicationMed) { this.publication = publication; }
 
-    public Boolean getPublicationLab() { return publicationLab; }
-
-    public void setPublicationLab(Boolean publicationLab) { this.publicationLab = publicationLab; }
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    public List<Acte> getCodesActes() {
+    public Set<Acte> getCodesActes() {
         return codesActes;
     }
 
-    public void setCodesActes(List<Acte> codesActes) {
+    public void setCodesActes(Set<Acte> codesActes) {
         this.codesActes = codesActes;
     }
 
@@ -122,8 +119,7 @@ public class Examen {
                 ", date=" + date +
                 ", resultats=" + resultats +
                 ", responsable=" + responsable +
-                ", publicationMed=" + publicationMed +
-                ", publicationLab=" + publicationLab +
+                ", publication=" + publication +
                 ", codesActes=" + codesActes +
                 ", prix=" + prix +
                 ", payer=" + payer +

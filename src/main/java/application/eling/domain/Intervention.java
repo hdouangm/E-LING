@@ -2,24 +2,27 @@ package application.eling.domain;
 
 import javax.persistence.*;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static application.eling.domain.Intervention.FIND_ALL;
 
 @Entity
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Intervention b ORDER BY b.id DESC")
-public class Intervention {
+public class Intervention implements Serializable {
     public static final String FIND_ALL = "Intervention.findAllInterventions";
 
     private Integer id;
     private DMP dmp;
     private Integer type;
     private String lieu;
-    private Date date;
+    private String date;
     private Employe responsable;
     private Boolean publication;
-    private List<Acte> codesActes;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Acte> codesActes = new HashSet<Acte>(0);
     private Integer prix;
     private Boolean payer;
 
@@ -27,7 +30,7 @@ public class Intervention {
 
     }
 
-    public Intervention(DMP dmp, Integer type, String lieu, Date date, Employe responsable, Boolean publication, List<Acte> codesActes, Integer prix, Boolean payer) {
+    public Intervention(DMP dmp, Integer type, String lieu, String date, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
         this.type = type;
         this.lieu = lieu;
@@ -73,11 +76,11 @@ public class Intervention {
         this.lieu = lieu;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -97,12 +100,11 @@ public class Intervention {
         this.publication = publication;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    public List<Acte> getCodesActes() {
+    public Set<Acte> getCodesActes() {
         return codesActes;
     }
 
-    public void setCodesActes(List<Acte> codesActes) {
+    public void setCodesActes(Set<Acte> codesActes) {
         this.codesActes = codesActes;
     }
 

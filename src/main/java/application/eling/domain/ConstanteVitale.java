@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
-import java.util.Date;
 import java.util.List;
 
 import static application.eling.domain.ConstanteVitale.FIND_ALL;
@@ -17,7 +16,7 @@ public class ConstanteVitale {
 
     private Integer id;
     private DMP dmp;
-    private Date date;
+    private String date;
     private String constante;
     private Employe infirmierEnCharge;
 
@@ -25,7 +24,7 @@ public class ConstanteVitale {
 
     }
 
-    public ConstanteVitale(DMP dmp, Date date, String constante, Employe infirmierEnCharge) {
+    public ConstanteVitale(DMP dmp, String date, String constante, Employe infirmierEnCharge) {
         this.dmp = dmp;
         this.date = date;
         this.constante = constante;
@@ -50,11 +49,11 @@ public class ConstanteVitale {
         this.dmp = dmp;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

@@ -2,13 +2,16 @@ package application.eling.domain;
 
 import javax.persistence.*;
 
+import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static application.eling.domain.Posologie.FIND_ALL;
 
 @Entity
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Posologie b ORDER BY b.id DESC")
-public class Posologie {
+public class Posologie implements Serializable {
     public static final String FIND_ALL = "Posologie.findAllPosologies";
 
     private Integer id;
@@ -17,7 +20,8 @@ public class Posologie {
     private List<String> suiviTraitement;
     private Employe responsable;
     private Boolean publication;
-    private List<Acte> codesActes;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Acte> codesActes = new HashSet<Acte>(0);
     private Integer prix;
     private Boolean payer;
 
@@ -25,7 +29,7 @@ public class Posologie {
 
     }
 
-    public Posologie(DMP dmp, String posologie, List<String> suiviTraitement, Employe responsable, Boolean publication, List<Acte> codesActes, Integer prix, Boolean payer) {
+    public Posologie(DMP dmp, String posologie, List<String> suiviTraitement, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
         this.posologie = posologie;
         this.suiviTraitement = suiviTraitement;
@@ -86,12 +90,11 @@ public class Posologie {
         this.publication = publication;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    public List<Acte> getCodesActes() {
+    public Set<Acte> getCodesActes() {
         return codesActes;
     }
 
-    public void setCodesActes(List<Acte> codesActes) {
+    public void setCodesActes(Set<Acte> codesActes) {
         this.codesActes = codesActes;
     }
 

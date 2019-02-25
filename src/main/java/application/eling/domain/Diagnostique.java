@@ -2,25 +2,27 @@ package application.eling.domain;
 
 import javax.persistence.*;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static application.eling.domain.Diagnostique.FIND_ALL;
 
 @Entity
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Diagnostique b ORDER BY b.id DESC")
-public class Diagnostique {
-
+public class Diagnostique implements Serializable {
     public static final String FIND_ALL = "Diagnostique.findAllDiagnostiques";
-
 
     private Integer id;
     private DMP dmp;
     private String diagnostic;
     private Employe responsable;
     private Boolean publication;
-    private Date date;
-    private List<Acte> codesActes;
+    private String date;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Acte> codesActes = new HashSet<Acte>(0);
     private Integer prix;
     private Boolean payer;
 
@@ -28,7 +30,7 @@ public class Diagnostique {
 
     }
 
-    public Diagnostique(DMP dmp, String diagnostic, Employe responsable, Boolean publication, Date date, List<Acte> codesActes, Integer prix, Boolean payer) {
+    public Diagnostique(DMP dmp, String diagnostic, Employe responsable, Boolean publication, String date, Set<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
         this.diagnostic = diagnostic;
         this.responsable = responsable;
@@ -81,20 +83,19 @@ public class Diagnostique {
         this.publication = publication;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    public List<Acte> getCodesActes() {
+    public Set<Acte> getCodesActes() {
         return codesActes;
     }
 
-    public void setCodesActes(List<Acte> codesActes) {
+    public void setCodesActes(Set<Acte> codesActes) {
         this.codesActes = codesActes;
     }
 

@@ -4,8 +4,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
-import java.util.Date;
-
 import static application.eling.domain.DemandeExamen.FIND_ALL;
 
 @Entity
@@ -17,14 +15,14 @@ public class DemandeExamen {
     private Integer id;
     private DMP dmp;
     private String type;
-    private Date date;
+    private String date;
     private Boolean publication;
 
     public DemandeExamen(){
 
     }
 
-    public DemandeExamen(DMP dmp, String type, Date date, Boolean publication) {
+    public DemandeExamen(DMP dmp, String type, String date, Boolean publication) {
         this.dmp = dmp;
         this.type = type;
         this.date = date;
@@ -57,11 +55,11 @@ public class DemandeExamen {
         this.type = type;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
