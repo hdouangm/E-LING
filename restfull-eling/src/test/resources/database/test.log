@@ -1,0 +1,18 @@
+/*C7*/SET SCHEMA PUBLIC
+\u000d\u000a    alter table Examen_Acte \u000d\u000a       drop constraint UK_875ku2wf2gsh9nhqs7jf7h68y
+\u000d\u000a    alter table Examen_Acte \u000d\u000a       add constraint UK_875ku2wf2gsh9nhqs7jf7h68y unique (codesActes_id)
+INSERT INTO EXAMEN VALUES(4,NULL,FALSE,0,FALSE,FALSE)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 5
+COMMIT
+/*C8*/SET SCHEMA PUBLIC
+\u000d\u000a    alter table Examen_Acte \u000d\u000a       drop constraint UK_875ku2wf2gsh9nhqs7jf7h68y
+\u000d\u000a    alter table Examen_Acte \u000d\u000a       add constraint UK_875ku2wf2gsh9nhqs7jf7h68y unique (codesActes_id)
+/*C9*/SET SCHEMA PUBLIC
+\u000d\u000a    alter table Examen_Acte \u000d\u000a       drop constraint UK_875ku2wf2gsh9nhqs7jf7h68y
+\u000d\u000a    alter table Examen_Acte \u000d\u000a       add constraint UK_875ku2wf2gsh9nhqs7jf7h68y unique (codesActes_id)
+/*C10*/SET SCHEMA PUBLIC
+\u000d\u000a    alter table Examen_Acte \u000d\u000a       drop constraint UK_875ku2wf2gsh9nhqs7jf7h68y
+\u000d\u000a    alter table Examen_Acte \u000d\u000a       add constraint UK_875ku2wf2gsh9nhqs7jf7h68y unique (codesActes_id)
+/*C11*/SET SCHEMA PUBLIC
+\u000d\u000a    alter table Examen_Acte \u000d\u000a       drop constraint UK_875ku2wf2gsh9nhqs7jf7h68y
+\u000d\u000a    alter table Examen_Acte \u000d\u000a       add constraint UK_875ku2wf2gsh9nhqs7jf7h68y unique (codesActes_id)

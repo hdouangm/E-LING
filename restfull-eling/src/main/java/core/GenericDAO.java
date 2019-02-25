@@ -3,11 +3,13 @@ package main.java.core;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -17,6 +19,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import org.apache.log4j.Logger;
+import org.glassfish.jersey.internal.guava.Lists;
 
 import antlr.StringUtils;
 
@@ -26,11 +29,15 @@ import antlr.StringUtils;
  * 
  * @param <T>
  */
+
+
 public abstract class GenericDAO<T> implements IGenericDAO<T> {
 
 	protected EntityManager em;
 
 	private final Class<T> type;
+	
+	private Map<Integer, T> map;
 
 	protected final Persistence persistUnit;
 
@@ -42,6 +49,7 @@ public abstract class GenericDAO<T> implements IGenericDAO<T> {
 		ParameterizedType pt = (ParameterizedType) t;
 		type = (Class<T>) pt.getActualTypeArguments()[0];
 		persistUnit = persist;
+		map = new HashMap<Integer, T>();
 	}
 
 	public void persist(T t) throws Exception {
@@ -71,7 +79,7 @@ public abstract class GenericDAO<T> implements IGenericDAO<T> {
 	}
 
 	public T create(T t) throws Exception {
-		EntityManager em = null;
+	/*	EntityManager em = null;
 		T tg = null;
 		try {
 			em = Session.getSession(persistUnit).getEmf().createEntityManager();
@@ -95,11 +103,13 @@ public abstract class GenericDAO<T> implements IGenericDAO<T> {
 				}
 			}
 		}
-		return tg;
+		return tg;*/
+		map.put(map.size(), t);
+		return t;
 	}
 
 	public boolean delete(final Object id) {
-		EntityManager em = null;
+	/*	EntityManager em = null;
 		boolean res = true;
 		try {
 			em = Session.getSession(persistUnit).getEmf().createEntityManager();
@@ -123,11 +133,14 @@ public abstract class GenericDAO<T> implements IGenericDAO<T> {
 				}
 			}
 		}
-		return res;
+		return res;*/
+		map.remove(id);
+		return true;
+
 	}
 
 	public T get(final Object id) {
-		EntityManager em = null;
+		/*EntityManager em = null;
 		T tg = null;
 		em = Session.getSession(persistUnit).getEmf().createEntityManager();
 		try {
@@ -142,7 +155,8 @@ public abstract class GenericDAO<T> implements IGenericDAO<T> {
 				}
 			}
 		}
-		return tg;
+		return tg;*/
+		return map.get(id);
 	}
 
 	public T getByStringId(String strId) {
@@ -151,7 +165,7 @@ public abstract class GenericDAO<T> implements IGenericDAO<T> {
 	}
 
 	public List<T> findAll() {
-		EntityManager em = null;
+		/*EntityManager em = null;
 		List<T> tg = null;
 		try {
 			logger.info("findAll " + type + " - Start");
@@ -175,7 +189,8 @@ public abstract class GenericDAO<T> implements IGenericDAO<T> {
 				}
 			}
 		}
-		return tg;
+		return tg;*/
+		return Lists.newArrayList(map.values());
 	}
 
 	public List<T> findByParamsExact(Map<String, String> params) {

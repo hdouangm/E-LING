@@ -2,7 +2,7 @@ package main.java.core;
 
 public enum Persistence {
 	
-	ELING("Eling");
+	ELING("JPAPU");
 	
 	private String persistence;
 	

@@ -1,30 +1,128 @@
 package main.java.core;
 
+import javax.persistence.*;
+
+import java.util.Date;
+import java.util.Set;
+
+
 public class Diagnostique {
 
-	public Integer id;
-	public String name;
+    public static final String FIND_ALL = "Diagnostique.findAllDiagnostiques";
 
-	public Integer getId() {
-		return id;
-	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    private Integer id;
+    private DMP dmp;
+    private String diagnostic;
+    private Employe responsable;
+    private Boolean publication;
+    private Date date;
+    private Set<Acte> codesActes;
+    private Integer prix;
+    private Boolean payer;
 
-	public Diagnostique(Integer id, String name) {
-		super();
-		this.id = id;
-		this.name=name;
-	}
+    public Diagnostique(){
 
-	public String getName() {
-		return name;
-	}
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
+    public Diagnostique(DMP dmp, String diagnostic, Employe responsable, Boolean publication, Date date, Set<Acte> codesActes, Integer prix, Boolean payer) {
+        this.dmp = dmp;
+        this.diagnostic = diagnostic;
+        this.responsable = responsable;
+        this.publication = publication;
+        this.date = date;
+        this.codesActes = codesActes;
+        this.prix = prix;
+        this.payer = payer;
+    }
+
+    @Id
+    @GeneratedValue
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public DMP getDmp() {
+        return dmp;
+    }
+
+    public void setDmp(DMP dmp) {
+        this.dmp = dmp;
+    }
+
+    public String getDiagnostic() {
+        return diagnostic;
+    }
+
+    public void setDiagnostic(String diagnostic) {
+        this.diagnostic = diagnostic;
+    }
+
+    public Employe getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(Employe responsable) {
+        this.responsable = responsable;
+    }
+
+    public Boolean getPublication() {
+        return publication;
+    }
+
+    public void setPublication(Boolean publication) {
+        this.publication = publication;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    public Set<Acte> getCodesActes() {
+        return codesActes;
+    }
+
+    public void setCodesActes(Set<Acte> codesActes) {
+        this.codesActes = codesActes;
+    }
+
+    public Integer getPrix() {
+        return prix;
+    }
+
+    public void setPrix(Integer prix) {
+        this.prix = prix;
+    }
+
+    public Boolean getPayer() {
+        return payer;
+    }
+
+    public void setPayer(Boolean payer) {
+        this.payer = payer;
+    }
+
+    @Override
+    public String toString() {
+        return "Diagnostique{" +
+                "id=" + id +
+                ", dmp=" + dmp +
+                ", diagnostic='" + diagnostic + '\'' +
+                ", responsable=" + responsable +
+                ", publication=" + publication +
+                ", date=" + date +
+                ", codesActes=" + codesActes +
+                ", prix=" + prix +
+                ", payer=" + payer +
+                '}';
+    }
 }

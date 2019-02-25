@@ -1,30 +1,89 @@
 package main.java.core;
 
-public class Examen {
+import javax.persistence.*;
 
-	public Integer id;
-	public String name;
+import java.io.Serializable;
+import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
-	public Integer getId() {
+@Entity
+public class Examen implements Serializable {
+  
+    @Id
+    @GeneratedValue
+    private int id;
+    private String date;
+   // private Set<String> resultats;
+  //  private Employe responsable;
+    private boolean publicationMed=false;
+    private boolean publicationLab=false;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Acte> codesActes = new HashSet<Acte>(0);
+    private int prix;
+    private boolean payer=false;
+
+    public Examen(){
+
+    }
+
+    public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public Examen(Integer id, String name) {
-		super();
-		this.id = id;
-		this.name=name;
+	public String getDate() {
+		return date;
 	}
 
-	public String getName() {
-		return name;
+	public void setDate(String date) {
+		this.date = date;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public boolean getPublicationMed() {
+		return publicationMed;
 	}
+
+	public void setPublicationMed(boolean publicationMed) {
+		this.publicationMed = publicationMed;
+	}
+
+	public boolean getPublicationLab() {
+		return publicationLab;
+	}
+
+	public void setPublicationLab(boolean publicationLab) {
+		this.publicationLab = publicationLab;
+	}
+
+	public int getPrix() {
+		return prix;
+	}
+
+	public void setPrix(int prix) {
+		this.prix = prix;
+	}
+
+	public boolean getPayer() {
+		return payer;
+	}
+
+	public void setPayer(boolean payer) {
+		this.payer = payer;
+	}
+
+	public Set<Acte> getCodesActes() {
+		return codesActes;
+	}
+
+	public void setCodesActes(Set<Acte> codesActes) {
+		this.codesActes = codesActes;
+	}
+
 	
+	
+
 }
