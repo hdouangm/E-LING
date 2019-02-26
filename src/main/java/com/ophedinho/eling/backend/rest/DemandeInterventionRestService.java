@@ -63,7 +63,6 @@ public class DemandeInterventionRestService {
         return Response.ok(d_intervention).build();
     }
     
-    
     @GET
     @Path("/Search/{id}")
     @Produces(MediaType.APPLICATION_JSON)
