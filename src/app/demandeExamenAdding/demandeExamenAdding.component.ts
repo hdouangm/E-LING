@@ -12,7 +12,7 @@ export class DemandeExamenAddingComponent implements OnInit {
 
   constructor( private  apiService:  ApiService, private route: ActivatedRoute, private router: Router ) { }
 
-  @Input() examenData = { id_dmp:'', type: '', publication: true };
+  @Input() examenData = { id_dmp:'', type_examen: '', publication: true };
 
   public  dmps :  Array<object> = [];
   public  types :  Array<object> = [];

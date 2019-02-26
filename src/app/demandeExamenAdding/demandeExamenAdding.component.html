@@ -12,8 +12,7 @@
    
    <div class="page-centrer">
        <br>
-       <h2> Demande Examen </h2>
-       <br> 
+       <div class="titre">Demande Examen</div>
        <br>
         <label>Numéro DMP : 
             <select name="dmpId" [(ngModel)]="examenData.id_dmp" > <!--onchange="inserer('nomdmp',this.dmpId.label)"--> 
@@ -21,19 +20,14 @@
                 <option *ngFor="let dmp of dmps" [value]="dmp.id" >{{dmp.username}}</option>
             </select>
         </label>
-       <br> 
-       <!--label>Nom DMP : 
-            <input type="text" id="nomdmp" [(ngModel)]="examenData.nom_dmp"/>
-        </label-->
             <br> 
             <br>
             <label>Type Examen : 
-                <select [(ngModel)]="examenData.type"> 
+                <select [(ngModel)]="examenData.type_examen"> 
                 <option value="">Sélectionnez un type</option>
                 <option *ngFor="let type of types" [value]="type.id" >{{type.username}}</option>
             </select>
             </label>
-            <br> 
             <br> 
             <br>
             <label>Publication : 
@@ -42,11 +36,10 @@
                 <option value="false" >Non</option>
             </select>
             </label>
-            <br> 
             <br>
             <br>
-            <button class="favorite styled" (click)="createDemandeExamen();"> 
-                Valider demande 
+            <button class="btn btn-primary btn-group-lg col-6" (click)="createDemandeExamen();"> 
+                Enregistrer 
             </button>
        
    </div>  <!-- /page-center -->

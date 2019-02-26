@@ -20,14 +20,8 @@ export class DemandeExamenListComponent implements OnInit {
   public getDemandeExamen() {
       this.apiService.getDemandeExamen().subscribe((data:  Array<object>) => {
           this.demandeExamens  =  data;
+            console.log(this.demandeExamens);
       });
   }
-
-    public delete(id){
-        this.apiService.deleteDemandeExamen(id).subscribe((response) => {
-            console.log(response);
-            this.router.navigate(['/demandeExamen']);
-        });
-    }
 
 }

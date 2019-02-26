@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
     API_URL  = 'http://localhost:8080/OphelieComposants-1/rs';
+
+    httpOptions = {
+        headers : new HttpHeaders({'content-Type' : 'application/json'})
+    };
 
     constructor(private  httpClient:  HttpClient) {}
     
@@ -26,19 +30,19 @@ export class ApiService {
     }
 
     getDemandeExamen() {
-        return  this.httpClient.get(`${this.API_URL}/DemandeExamen`);
+        return  this.httpClient.get(`${this.API_URL}/DemandeExamen/Med`);
     }
 
     getDemandeExamenId(val1) {
         return  this.httpClient.get(`${this.API_URL}/DemandeExamen/Search/`+val1);
     }
 
-    updateDemandeExamen(id, dExamen) {
-        return  this.httpClient.put(`${this.API_URL}/DemandeExamen/Update/`+id, dExamen);
+    updateDemandeExamen(dExamen) {
+        return  this.httpClient.put(`${this.API_URL}/DemandeExamen/Update/`, dExamen, this.httpOptions);
     }
 
     deleteDemandeExamen(id) {
-        //return  this.httpClient.put(`${this.API_URL}/DemandeExamen/Delete/`+id);
+        return  this.httpClient.delete(`${this.API_URL}/DemandeExamen/Delete/`+id, this.httpOptions);
     }
 
     createDemandeIntervention(dIntervention) {

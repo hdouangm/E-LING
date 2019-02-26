@@ -11,19 +11,21 @@ export class DemandeExamenEditComponent implements OnInit {
 
   constructor(private  apiService:  ApiService, private route: ActivatedRoute, private router: Router) { }
 
-  @Input() examenData = { id_dmp:'', type: '', publication: true };
-  @Input() examenDataUpdate = { id_dmp:'', type: '', publication:true  };
+  @Input() examenData = { id_dmp:'', type_examen: '', publicationMed: true, publicationLab:false };
+  @Input() examenDataUpdate = { id_dmp:'', type_examen: '', publicationMed:true, publicationLab:false  };
   data:  Array<object>;
 
   public  dmps :  Array<object> = [];
   public  types :  Array<object> = [];
 
+    
+
   ngOnInit() {
 
     this.apiService.getDemandeExamenId(this.route.snapshot.params['id']).subscribe(
-      (data: {id_dmp: string; type: string; publication: boolean;}) => {
+      (data: {id_dmp: string; type_examen: string; publicationMed: boolean; publicationLab: boolean;}) => {
         this.examenData = data;
-        if(this.examenData.publication==true){
+        if(this.examenData.publicationLab==true){
             this.router.navigate(['/demandeExamen']);
         }
     });
@@ -39,10 +41,24 @@ export class DemandeExamenEditComponent implements OnInit {
 
   }
 
+   
+
+
   updateDemandeExamen() {
+
+    var dataUpdate = {
+      'id' : this.route.snapshot.params['id'],
+      'id_dmp' : this.examenDataUpdate['id_dmp'],
+      'type' : this.examenDataUpdate['type'],
+      'publicationLab' : this.examenDataUpdate['publicationLab']
+    };
+
     console.log(this.examenDataUpdate);    
-    this.apiService.updateDemandeExamen(this.route.snapshot.params['id'], this.examenDataUpdate).subscribe(
-        (result) => { this.router.navigate(['/demandeExamen']);}, (err) => { console.log(err); });
+    console.log(this.dataUpdate); 
+    this.apiService.updateDemandeExamen(this.dataUpdate).subscribe((reponse:  object) => {
+        console.log(reponse);
+        return; 
+        this.router.navigate(['/demandeExamen']);}, (err) => { console.log(err); });
   }
 
 }

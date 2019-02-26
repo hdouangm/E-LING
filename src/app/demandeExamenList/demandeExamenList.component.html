@@ -1,3 +1,4 @@
+
 <!-- header -->
 <app-header></app-header>
 
@@ -7,36 +8,38 @@
  <!--    background -->
 <div class="fond">
    <div>.</div>
-   <!-- page-center -->
-   
-   <div class="page-centrer">
-       <br>
-       <h2> Liste demandes Examen </h2>
-       <br> 
-       <br>
-       <table  style="width:100%">
-           <tbody>
-                <tr>
-                    <th>Code</th>
-                    <th>DMP</th>
-                    <th>Type</th>
-                    <th>Date</th>
-                    <th>Publication</th>
-                    <th></th>
-                </tr>
-                <tr *ngFor="let demandeExamen of demandeExamens">
-                    <td> {{demandeExamen.id}} </td>
-                    <td> {{demandeExamen.id_dmp}} </td>
-                    <td> {{demandeExamen.type}} </td>
-                    <td> {{demandeExamen.date}} </td>
-                    <td> {{demandeExamen.publication}} </td>
-                    <td> <a routerLink="/demandeExamenEdit/{{demandeExamen.id}}"> Edit</a>
-                        <button class="delete" (click)="delete(demandeExamen.id)">x</button> 
-                    </td>
-                </tr>
-           </tbody>
-       </table>
-       
-   </div>  <!-- /page-center -->
+
+ <div class="page-centrer" style="padding-right: 100px;padding-left: 100px;margin-right: 30px;margin-left: 30px;">
+<!--app-demandeExamenAdding></app-demandeExamenAdding-->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">DMP</th>
+      <th scope="col">Type</th>
+      <th scope="col">Date</th>
+      <th scope="col">Publication Médecin</th>
+      <th scope="col">Publication Laboratoire</th>
+
+    </tr>
+  </thead>
+  <tbody id="dExams">
+        <tr *ngFor="let demandeExamen of demandeExamens">
+          <td> {{demandeExamen.id}} </td>
+          <td> {{demandeExamen.id_dmp}} </td>
+          <td> {{demandeExamen.type_examen}} </td>
+          <td> {{demandeExamen.date}} </td>
+          <td> {{demandeExamen.publicationMed}} </td>
+          <td> {{demandeExamen.publicationLab}} </td>
+          <!--td> <a routerLink="/demandeExamenEdit/{{demandeExamen.id}}"> Edit</a> </td-->
+          <td><button class="btn btn-primary btn-group-lg col-12">Examen</button></td>
+        </tr>
+
+  </tbody>
+</table>
+
+</div>
  
 </div> <!-- /background -->
+
+

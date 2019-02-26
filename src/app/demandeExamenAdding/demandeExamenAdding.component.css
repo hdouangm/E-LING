@@ -21,18 +21,30 @@ and open the template in the editor.
     
 }
 
+
 .titre {
     padding-top: 10px;
-    padding-bottom: 80px;
+    padding-bottom: 30px;
     font-size: 20px;
-    font-weight: 100;
+    font-weight: bold;
 }
+
+.sousTitre {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    font-size: 15px;
+    font-weight: bold;
+}
+
 
 .fond {
     background-image: url('src/assets/profil.jpg');
     height: 590px;
     margin: 0 0 0 0;
 }
+
 
 .erreur-message {
     color:#B30202;
