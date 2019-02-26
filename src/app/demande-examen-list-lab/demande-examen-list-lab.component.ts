@@ -3,11 +3,11 @@ import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-demandeExamenList',
-  templateUrl: './demandeExamenList.component.html',
-  styleUrls: ['./demandeExamenList.component.css']
+  selector: 'app-demande-examen-list-lab',
+  templateUrl: './demande-examen-list-lab.component.html',
+  styleUrls: ['./demande-examen-list-lab.component.css']
 })
-export class DemandeExamenListComponent implements OnInit {
+export class DemandeExamenListLabComponent implements OnInit {
 
   public  demandeExamens:  Array<object> = [];
 
@@ -18,10 +18,9 @@ export class DemandeExamenListComponent implements OnInit {
   }
 
   public getDemandeExamen() {
-      this.apiService.getDemandeExamen().subscribe((data:  Array<object>) => {
+      this.apiService.getDemandeExamenLab().subscribe((data:  Array<object>) => {
           this.demandeExamens  =  data;
             console.log(this.demandeExamens);
       });
   }
-
 }

@@ -12,7 +12,7 @@ export class DemandeExamenAddingComponent implements OnInit {
 
   constructor( private  apiService:  ApiService, private route: ActivatedRoute, private router: Router ) { }
 
-  @Input() examenData = { id_dmp:'', type_examen: '', publication: true };
+  @Input() examenData = { id_dmp:'', type_examen: '', publicationMed: false, publicationLab:false };
 
   public  dmps :  Array<object> = [];
   public  types :  Array<object> = [];
@@ -30,9 +30,10 @@ export class DemandeExamenAddingComponent implements OnInit {
   }
 
 public createDemandeExamen() {
+        //console.log(this.examenData);
         this.apiService.createDemandeExamen(this.examenData).subscribe((response) => {
             console.log(response);
-            this.router.navigate(['/demandeExamen']);
+            this.router.navigate(['/demandeExamenMed']);
         });
     }
 

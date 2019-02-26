@@ -11,12 +11,10 @@
    
    <div class="page-centrer">
        <br>
-       <h2> Demande Intervention </h2>
-       <br> 
+       <div class="titre">Demande Intervention</div>
        <br>
         <label>Numéro DMP : 
-            <!--input [(ngModel)]="examenData.id_dmp" placeholder="Numéro DMP"/-->
-            <select [(ngModel)]="interventionData.id_dmp"> 
+            <select name="dmpId" [(ngModel)]="interventionData.id_dmp" > <!--onchange="inserer('nomdmp',this.dmpId.label)"--> 
                 <option value="">Sélectionnez un dmp</option>
                 <option *ngFor="let dmp of dmps" [value]="dmp.id" >{{dmp.username}}</option>
             </select>
@@ -24,7 +22,7 @@
             <br> 
             <br>
             <label>Type Examen : 
-                <select [(ngModel)]="interventionData.type"> 
+                <select [(ngModel)]="interventionData.type_intervention"> 
                 <option value="">Sélectionnez un type</option>
                 <option *ngFor="let type of types" [value]="type.id" >{{type.username}}</option>
             </select>
@@ -32,16 +30,15 @@
             <br> 
             <br>
             <label>Publication : 
-                <select [(ngModel)]="interventionData.publication"> 
+                <select [(ngModel)]="interventionData.publicationMed"> 
                 <option value="true">Oui</option>
                 <option value="false" >Non</option>
             </select>
             </label>
             <br> 
             <br>
-            <br>
-            <button class="favorite styled" (click)="createDemandeIntervention();"> 
-                Valider 
+            <button class="btn btn-primary btn-group-lg col-6" (click)="createDemandeIntervention();"> 
+                Enregistrer 
             </button>
        
    </div>  <!-- /page-center -->

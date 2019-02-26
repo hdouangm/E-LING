@@ -30,7 +30,15 @@ export class ApiService {
     }
 
     getDemandeExamen() {
+        return  this.httpClient.get(`${this.API_URL}/DemandeExamen`);
+    }
+
+    getDemandeExamenMed() {
         return  this.httpClient.get(`${this.API_URL}/DemandeExamen/Med`);
+    }
+
+    getDemandeExamenLab() {
+        return  this.httpClient.get(`${this.API_URL}/DemandeExamen/Lab`);
     }
 
     getDemandeExamenId(val1) {
@@ -53,15 +61,23 @@ export class ApiService {
         return  this.httpClient.get(`${this.API_URL}/DemandeIntervention`);
     }
 
+    getDemandeInterventionMed() {
+        return  this.httpClient.get(`${this.API_URL}/DemandeIntervention/Med`);
+    }
+
+    getDemandeInterventionLab() {
+        return  this.httpClient.get(`${this.API_URL}/DemandeIntervention/Lab`);
+    }
+
     getDemandeInterventionId(val1) {
         return  this.httpClient.get(`${this.API_URL}/DemandeIntervention/Search/`+val1);
     }
 
-    updateDemandeIntervention(id, dIntervention) {
-        return  this.httpClient.put(`${this.API_URL}/DemandeIntervention/Update/`+id, dIntervention);
+    updateDemandeIntervention(dIntervention) {
+        return  this.httpClient.put(`${this.API_URL}/DemandeIntervention/Update/`, dIntervention, this.httpOptions);
     }
 
     deleteDemandeIntervention(id) {
-        //return  this.httpClient.put(`${this.API_URL}/DemandeIntervention/Delete/`+id);
+        //return  this.httpClient.put(`${this.API_URL}/DemandeIntervention/Delete/`+id, this.httpOptions);
     }
 }

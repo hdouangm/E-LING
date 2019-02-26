@@ -12,7 +12,7 @@ export class DemandeInterventionAddingComponent implements OnInit {
 
   constructor( private  apiService:  ApiService, private route: ActivatedRoute, private router: Router ) { }
 
-  @Input() interventionData = { id_dmp:'', type: '', publication: true };
+  @Input() interventionData = { id_dmp:'', type_intervention: '', publicationMed: false, publicationLab:false };
 
   public  dmps :  Array<object> = [];
   public  types :  Array<object> = [];
@@ -28,9 +28,10 @@ export class DemandeInterventionAddingComponent implements OnInit {
   }
 
 public createDemandeIntervention() {
+        //console.log(this.interventionData);
         this.apiService.createDemandeIntervention(this.interventionData).subscribe((response) => {
             console.log(response);
-this.router.navigate(['/demandeIntervention']);
+            this.router.navigate(['/demandeInterventionMed']);
         });
     }
 
