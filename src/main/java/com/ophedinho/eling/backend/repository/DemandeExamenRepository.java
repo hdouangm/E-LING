@@ -26,6 +26,14 @@ public class DemandeExamenRepository {
     public List<DemandeExamen> list() {
         return em.createNamedQuery(FIND_ALL, DemandeExamen.class).getResultList();
     }
+    
+    public List<DemandeExamen> listMed() {
+        return em.createNamedQuery(DemandeExamen.FIND_ALL_MED, DemandeExamen.class).getResultList();
+    }
+    
+    public List<DemandeExamen> listLab() {
+        return em.createNamedQuery(DemandeExamen.FIND_ALL_LAB, DemandeExamen.class).getResultList();
+    }
 
     public DemandeExamen find(Long id) {
         return em.find(DemandeExamen.class, id);
@@ -36,11 +44,9 @@ public class DemandeExamenRepository {
         return d_examen.getId();
     }
     
-    public Long update(Long id, DemandeExamen dExamen){
-        DemandeExamen d_examen_new = new DemandeExamen(id,dExamen.getId_dmp(), dExamen.getType(), 
-                dExamen.isPublication());
-        this.delete(id);
-        return this.save(d_examen_new);
+    public Long update(DemandeExamen dExamen){
+        em.merge(dExamen);
+        return dExamen.getId();
     }
     
     public void delete(Long d_examen){

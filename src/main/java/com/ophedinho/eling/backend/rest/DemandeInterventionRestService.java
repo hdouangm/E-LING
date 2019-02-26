@@ -10,6 +10,7 @@ import com.ophedinho.eling.backend.repository.DemandeInterventionRepository;
 import java.net.URI;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.ejb.NoSuchEntityException;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -47,6 +48,22 @@ public class DemandeInterventionRestService {
     }
     
     @GET
+    @Path("/Med")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllDemandeInterventionMed() {
+        List<DemandeIntervention> d_intervention = repository.listMed();
+        return Response.ok(d_intervention).build();
+    }
+    
+    @GET
+    @Path("/Lab")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllDemandeInterventionLab() {
+        List<DemandeIntervention> d_intervention = repository.listLab();
+        return Response.ok(d_intervention).build();
+    }
+    
+    @GET
     @Path("/Search/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getDemandeIntervention(@PathParam("id") Long id) {
@@ -65,17 +82,22 @@ public class DemandeInterventionRestService {
     }
     
     @PUT
-    @Path("/Update/{id}")
+    @Path("/Update")
     @Produces({ MediaType.APPLICATION_JSON})
-    public Long updateDemandeIntervention(@PathParam("id") Long id, DemandeIntervention d_intervention) {
-        return repository.update(id, d_intervention);
+    public Long updateDemandeIntervention(DemandeIntervention d_intervention) {
+        return repository.update(d_intervention);
     }
  
     @DELETE
     @Path("/Delete/{id}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public void deleteDemandeIntervention(@PathParam("id") Long id) {
-        repository.delete(id);
+    public Response deleteDemandeIntervention(@PathParam("id") Long id) {
+        try {
+            repository.delete(id);
+        } catch (NoSuchEntityException e) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.noContent().build();
     }
     
 }

@@ -26,6 +26,14 @@ public class DemandeInterventionRepository {
     public List<DemandeIntervention> list() {
         return em.createNamedQuery(FIND_ALL, DemandeIntervention.class).getResultList();
     }
+    
+    public List<DemandeIntervention> listMed() {
+        return em.createNamedQuery(DemandeIntervention.FIND_ALL_MED, DemandeIntervention.class).getResultList();
+    }
+    
+    public List<DemandeIntervention> listLab() {
+        return em.createNamedQuery(DemandeIntervention.FIND_ALL_LAB, DemandeIntervention.class).getResultList();
+    }
 
     public DemandeIntervention find(Long id) {
         return em.find(DemandeIntervention.class, id);
@@ -36,11 +44,9 @@ public class DemandeInterventionRepository {
         return d_intervention.getId();
     }
     
-    public Long update(Long id, DemandeIntervention d_intervention){
-        DemandeIntervention d_intervention_new = new DemandeIntervention(id, d_intervention.getId_dmp(), 
-                d_intervention.getType(), d_intervention.isPublication());
-        this.delete(id);
-        return this.save(d_intervention_new);
+    public Long update(DemandeIntervention d_intervention){
+        em.merge(d_intervention);
+        return d_intervention.getId();
     }
     
     public void delete(Long d_examen){

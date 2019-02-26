@@ -10,6 +10,7 @@ import com.ophedinho.eling.backend.repository.DemandeExamenRepository;
 import java.net.URI;
 import java.util.List;
 import javax.ejb.EJB;
+import javax.ejb.NoSuchEntityException;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.DELETE;
@@ -47,6 +48,22 @@ public class DemandeExamenRestService {
     }
     
     @GET
+    @Path("/Med")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllDemandeExamenMed() {
+        List<DemandeExamen> d_examen = repository.listMed();
+        return Response.ok(d_examen).build();
+    }
+    
+    @GET
+    @Path("/Lab")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAllDemandeExamenLab() {
+        List<DemandeExamen> d_examen = repository.listLab();
+        return Response.ok(d_examen).build();
+    }
+    
+    @GET
     @Path("/Search/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getDemandeExamen(@PathParam("id") Long id) {
@@ -66,16 +83,21 @@ public class DemandeExamenRestService {
     
     
     @PUT
-    @Path("/Update/{id}")
+    @Path("/Update")
     @Produces({ MediaType.APPLICATION_JSON})
-    public Long updateDemandeExamen(@PathParam("id") Long id, DemandeExamen dExamen) {
-        return repository.update(id, dExamen);
+    public Long updateDemandeExamen(DemandeExamen dExamen) {
+        return repository.update(dExamen);
     }
  
     @DELETE
     @Path("/Delete/{id}")
-    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public void deleteDemandeExamen(@PathParam("id") Long id) {
-        repository.delete(id);
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteDemandeExamen(@PathParam("id") Long id) {
+        try {
+            repository.delete(id);
+        } catch (NoSuchEntityException e) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.noContent().build();
     }
 }
