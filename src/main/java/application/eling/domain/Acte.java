@@ -12,7 +12,8 @@ import java.io.Serializable;
 public class Acte implements Serializable {
     public static final String FIND_ALL = "Acte.findAllActes";
 
-    @OneToMany(cascade=ALL)
+    @Id
+    @GeneratedValue
     private Integer id;
     private String description;
     private Integer prix;
@@ -42,8 +43,6 @@ public class Acte implements Serializable {
         this.prix = prix;
     }
 
-    @Id
-    @GeneratedValue
     public Integer getId() {
         return id;
     }

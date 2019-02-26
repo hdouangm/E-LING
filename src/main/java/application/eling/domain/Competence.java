@@ -14,6 +14,8 @@ import static application.eling.domain.Competence.FIND_ALL;
 public class Competence implements Serializable {
     public static final String FIND_ALL = "Competence.findAllCompetences";
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private String description;
 
@@ -25,8 +27,6 @@ public class Competence implements Serializable {
         this.description = description;
     }
 
-    @Id
-    @GeneratedValue
     public Integer getId() {
         return id;
     }

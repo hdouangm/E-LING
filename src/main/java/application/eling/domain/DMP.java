@@ -14,6 +14,8 @@ import static application.eling.domain.DMP.FIND_ALL;
 public class DMP implements Serializable {
     public static final String FIND_ALL = "DMP.findAllDMPs";
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private String ss;
 
@@ -25,8 +27,6 @@ public class DMP implements Serializable {
         this.ss = ss;
     }
 
-    @Id
-    @GeneratedValue
     public Integer getId() {
         return id;
     }

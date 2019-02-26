@@ -15,6 +15,8 @@ import static application.eling.domain.Employe.FIND_ALL;
 public class Employe implements Serializable {
     public static final String FIND_ALL = "Employe.findAllEmployes";
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private NoeudHopital noeudHopital;
     private CompteAphp compteAphp;
@@ -34,8 +36,6 @@ public class Employe implements Serializable {
         this.competences = competences;
     }
 
-    @Id
-    @GeneratedValue
     public Integer getId() {
         return id;
     }

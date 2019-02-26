@@ -13,7 +13,8 @@ import static application.eling.domain.DemandeExamen.FIND_ALL;
 public class DemandeExamen implements Serializable {
     public static final String FIND_ALL = "DemandeExamen.findAllDemandeExamens";
 
-
+    @Id
+    @GeneratedValue
     private Integer id;
     private DMP dmp;
     private String type;
@@ -33,8 +34,6 @@ public class DemandeExamen implements Serializable {
         this.demandeRemplie = demandeRemplie;
     }
 
-    @Id
-    @GeneratedValue
     public Integer getId() {
         return id;
     }

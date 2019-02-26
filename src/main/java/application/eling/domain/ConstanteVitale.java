@@ -15,6 +15,8 @@ import static application.eling.domain.ConstanteVitale.FIND_ALL;
 public class ConstanteVitale implements Serializable {
     public static final String FIND_ALL = "ConstanteVitale.findAllConstanteVitales";
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private DMP dmp;
     private String date;
@@ -32,8 +34,6 @@ public class ConstanteVitale implements Serializable {
         this.infirmierEnCharge = infirmierEnCharge;
     }
 
-    @Id
-    @GeneratedValue
     public Integer getId() {
         return id;
     }

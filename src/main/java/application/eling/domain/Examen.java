@@ -14,6 +14,8 @@ import static application.eling.domain.Examen.FIND_ALL;
 public class Examen implements Serializable {
     public static final String FIND_ALL = "Examen.findAllExamens";
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private DMP dmp;
     private String date;
@@ -41,8 +43,6 @@ public class Examen implements Serializable {
         this.payer = payer;
     }
 
-    @Id
-    @GeneratedValue
     public Integer getId() {
         return id;
     }

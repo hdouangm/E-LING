@@ -14,6 +14,8 @@ import static application.eling.domain.Posologie.FIND_ALL;
 public class Posologie implements Serializable {
     public static final String FIND_ALL = "Posologie.findAllPosologies";
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private DMP dmp;
     private String posologie;
@@ -40,8 +42,6 @@ public class Posologie implements Serializable {
         this.payer = payer;
     }
 
-    @Id
-    @GeneratedValue
     public Integer getId() {
         return id;
     }

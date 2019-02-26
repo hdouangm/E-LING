@@ -14,6 +14,8 @@ import static application.eling.domain.Patient.FIND_ALL;
 public class Patient implements Serializable {
     public static final String FIND_ALL = "Patient.findAllPatients";
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private NoeudHopital noeudHopital;
     private DMP dmp;
@@ -29,8 +31,6 @@ public class Patient implements Serializable {
         this.donneesSociales = donneesSociales;
     }
 
-    @Id
-    @GeneratedValue
     public Integer getId() {
         return id;
     }

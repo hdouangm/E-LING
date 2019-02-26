@@ -14,6 +14,8 @@ import static application.eling.domain.CompteAphp.FIND_ALL;
 public class CompteAphp implements Serializable {
     public static final String FIND_ALL = "CompteAphp.findAllCompteAphp";
 
+    @Id
+    @GeneratedValue
     private String login;
     private String motDePasse;
     private String langue;
@@ -28,8 +30,6 @@ public class CompteAphp implements Serializable {
         this.langue = langue;
     }
 
-    @Id
-    @GeneratedValue
     public String getLogin() {
         return login;
     }

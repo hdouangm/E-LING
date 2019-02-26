@@ -12,6 +12,8 @@ import static application.eling.domain.NoeudHopital.FIND_ALL;
 public class NoeudHopital implements Serializable {
     public static final String FIND_ALL = "NoeudHopital.findAllNoeudHopitals";
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private Integer niveau;
     private List<NoeudHopital> noeudsInferieurs;
@@ -27,8 +29,6 @@ public class NoeudHopital implements Serializable {
         this.chef = chef;
     }
 
-    @Id
-    @GeneratedValue
     public Integer getId() {
         return id;
     }

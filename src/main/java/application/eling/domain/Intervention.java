@@ -14,6 +14,8 @@ import static application.eling.domain.Intervention.FIND_ALL;
 public class Intervention implements Serializable {
     public static final String FIND_ALL = "Intervention.findAllInterventions";
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private DMP dmp;
     private Integer type;
@@ -42,8 +44,6 @@ public class Intervention implements Serializable {
         this.payer = payer;
     }
 
-    @Id
-    @GeneratedValue
     public Integer getId() {
         return id;
     }

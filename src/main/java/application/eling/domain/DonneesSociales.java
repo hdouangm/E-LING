@@ -14,23 +14,33 @@ import static application.eling.domain.DonneesSociales.FIND_ALL;
 public class DonneesSociales implements Serializable {
     public static final String FIND_ALL = "DonneesSociales.findAllDonneesSocialess";
 
+    @Id
+    @GeneratedValue
     private Integer id;
     private String nom;
     private String prenom;
     private String adressse;
+    private String ville;
+    private String codePostal;
+    private String pays;
+    private String genre;
+    private String age;
 
     public DonneesSociales(){
 
     }
 
-    public DonneesSociales(String nom, String prenom, String adressse) {
+    public DonneesSociales(String nom, String prenom, String adressse, String ville, String codePostal, String pays, String age, String genre) {
         this.nom = nom;
         this.prenom = prenom;
         this.adressse = adressse;
+        this.ville = ville;
+        this.codePostal = codePostal;
+        this.pays = pays;
+        this.age = age;
+        this.genre = genre;
     }
 
-    @Id
-    @GeneratedValue
     public Integer getId() {
         return id;
     }
@@ -61,6 +71,46 @@ public class DonneesSociales implements Serializable {
 
     public void setAdressse(String adressse) {
         this.adressse = adressse;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public String getCodePostal() {
+        return codePostal;
+    }
+
+    public void setCodePostal(String codePostal) {
+        this.codePostal = codePostal;
+    }
+
+    public String getPays() {
+        return pays;
+    }
+
+    public void setPays(String pays) {
+        this.pays = pays;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 
     @Override
