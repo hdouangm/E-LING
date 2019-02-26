@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { MustMatch} from './must-match.validator';
 
 
 @Component({
@@ -22,9 +23,14 @@ export class NewPatientComponent implements OnInit {
             nom: ['', Validators.required],
             prenom: ['', Validators.required],
             adresse: ['', Validators.required],
+            ville: ['', Validators.required],
+            codePostal: ['', Validators.required],
+            pays: ['', Validators.required],
             age: ['', Validators.required],
             email: ['', [Validators.required, Validators.email]],
             genre: ['', Validators.required],
+        },{
+            validator: MustMatch('ss', 'genre', 'age')
         });
     }
 
@@ -46,6 +52,9 @@ export class NewPatientComponent implements OnInit {
         .set('nom', this.registerForm.value["nom"])
         .set('prenom', this.registerForm.value["prenom"])
         .set('adresse', this.registerForm.value["adresse"])
+        .set('ville', this.registerForm.value["ville"])
+        .set('codePostal', this.registerForm.value["codePostal"])
+        .set('pays', this.registerForm.value["pays"])
         .set('age', this.registerForm.value["age"])
         .set('genre', this.registerForm.value["genre"]);
 
@@ -59,6 +68,7 @@ export class NewPatientComponent implements OnInit {
 
             },
             err => {
+              alert("Le patient a déjà été créé");
               console.log("Error occured");
             }
           );

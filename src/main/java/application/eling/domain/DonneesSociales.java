@@ -17,6 +17,9 @@ public class DonneesSociales {
     private String nom;
     private String prenom;
     private String adressse;
+    private String ville;
+    private String codePostal;
+    private String pays;
     private String genre;
     private String age;
 
@@ -24,10 +27,13 @@ public class DonneesSociales {
 
     }
 
-    public DonneesSociales(String nom, String prenom, String adressse, String age, String genre) {
+    public DonneesSociales(String nom, String prenom, String adressse, String ville, String codePostal, String pays, String age, String genre) {
         this.nom = nom;
         this.prenom = prenom;
         this.adressse = adressse;
+        this.ville = ville;
+        this.codePostal = codePostal;
+        this.pays = pays;
         this.age = age;
         this.genre = genre;
     }
@@ -62,6 +68,30 @@ public class DonneesSociales {
 
     public void setAdressse(String adressse) {
         this.adressse = adressse;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public String getCodePostal() {
+        return codePostal;
+    }
+
+    public void setCodePostal(String codePostal) {
+        this.codePostal = codePostal;
+    }
+
+    public String getPays() {
+        return pays;
+    }
+
+    public void setPays(String pays) {
+        this.pays = pays;
     }
 
     public String getGenre() {

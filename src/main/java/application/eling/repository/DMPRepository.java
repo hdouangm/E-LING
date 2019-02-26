@@ -44,4 +44,5 @@ public class DMPRepository {
                 "SELECT d FROM DMP d WHERE d.ss LIKE :ss", DMP.class);
         return query.setParameter("ss", ss).getResultList();
     }
+
 }
