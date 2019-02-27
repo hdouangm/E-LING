@@ -120,6 +120,11 @@ public class DonneesSociales implements Serializable {
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", adressse='" + adressse + '\'' +
+                ", ville='" + ville + '\'' +
+                ", codePostal='" + codePostal + '\'' +
+                ", pays='" + pays + '\'' +
+                ", genre='" + genre + '\'' +
+                ", age='" + age + '\'' +
                 '}';
     }
 }

@@ -3,6 +3,7 @@
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/domain/Competence.java
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/ApplicationConfig.java
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/domain/Employe.java
+/home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/repository/InterventionRepository.java
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/domain/DemandeIntervention.java
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/domain/Intervention.java
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/domain/Acte.java
@@ -12,7 +13,9 @@
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/domain/Posologie.java
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/domain/CompteAphp.java
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/domain/DonneesSociales.java
+/home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/repository/ActeSetup.java
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/repository/DMPRepository.java
+/home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/repository/ActeRepository.java
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/domain/NoeudHopital.java
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/domain/Patient.java
 /home/raphael/M2/GDP/idea/E-LING/src/main/java/application/eling/domain/ConstanteVitale.java

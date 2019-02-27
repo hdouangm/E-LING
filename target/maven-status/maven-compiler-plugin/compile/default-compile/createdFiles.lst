@@ -1,3 +1,4 @@
+application/eling/repository/ActeSetup.class
 application/eling/domain/Posologie.class
 application/eling/domain/Examen.class
 application/eling/repository/DMPRepository.class
@@ -8,8 +9,10 @@ application/eling/domain/Employe.class
 application/filters/CORSFilter.class
 application/eling/domain/Intervention.class
 application/eling/domain/CompteAphp.class
+application/eling/repository/InterventionRepository.class
 application/eling/domain/DemandeIntervention.class
 application/eling/domain/NoeudHopital.class
+application/eling/repository/ActeRepository.class
 application/eling/domain/DemandeExamen.class
 application/eling/domain/ConstanteVitale.class
 application/eling/domain/DMP.class
