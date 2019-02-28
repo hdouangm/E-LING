@@ -34,7 +34,9 @@ public class ActeSetup {
     acterepository.save(b);
     a.setPrix(10);
     acterepository.update(a);
-
+    acterepository.delete(b.getId());
     interventionrepository.save(new Intervention(null, 1,"lol",null,null,false,l,17,true));
+    interventionrepository.toString();
+
   }
 }

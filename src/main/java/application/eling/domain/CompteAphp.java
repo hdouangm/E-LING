@@ -1,9 +1,6 @@
 package application.eling.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 
 import java.io.Serializable;
 
@@ -19,6 +16,9 @@ public class CompteAphp implements Serializable {
     private String login;
     private String motDePasse;
     private String langue;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Employe employe;
 
     public CompteAphp() {
 
@@ -52,6 +52,14 @@ public class CompteAphp implements Serializable {
 
     public void setLangue(String langue) {
         this.langue = langue;
+    }
+
+    public Employe getEmploye() {
+        return employe;
+    }
+
+    public void setEmploye(Employe employe) {
+        this.employe = employe;
     }
 
     @Override

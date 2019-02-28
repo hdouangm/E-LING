@@ -19,7 +19,7 @@ public class Acte implements Serializable {
     private Integer prix;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="exmenActeID")
+    @JoinColumn(name="examenActeID")
     private Examen examen;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -99,17 +99,6 @@ public class Acte implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((description == null) ? 0 : description.hashCode());
-        result = prime * result + ((examen == null) ? 0 : examen.hashCode());
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((prix == null) ? 0 : prix.hashCode());
-        return result;
-    }
-
-    @Override
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
@@ -122,11 +111,6 @@ public class Acte implements Serializable {
             if (other.description != null)
                 return false;
         } else if (!description.equals(other.description))
-            return false;
-        if (examen == null) {
-            if (other.examen != null)
-                return false;
-        } else if (!examen.equals(other.examen))
             return false;
         if (id == null) {
             if (other.id != null)
