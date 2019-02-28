@@ -21,7 +21,7 @@ public class NoeudHopital implements Serializable {
     private Set<NoeudHopital> noeudsInferieurs;
     private Employe chef;
     @ManyToOne(cascade = CascadeType.ALL)
-    private NoeudHopital noeudHopital;
+    private NoeudHopital noeudSuperieur;
 
 
     public NoeudHopital(){
@@ -62,9 +62,9 @@ public class NoeudHopital implements Serializable {
         this.chef = chef;
     }
 
-    public NoeudHopital getNoeudHopital() { return noeudHopital; }
+    public NoeudHopital getNoeudSuperieur() { return noeudSuperieur; }
 
-    public void setNoeudHopital(NoeudHopital noeudHopital) { this.noeudHopital = noeudHopital; }
+    public void setNoeudSuperieur(NoeudHopital noeudSuperieur) { this.noeudSuperieur = noeudSuperieur; }
 
     @Override
     public String toString() {

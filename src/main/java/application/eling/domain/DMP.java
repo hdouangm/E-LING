@@ -1,9 +1,6 @@
 package application.eling.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 
 import java.io.Serializable;
 
@@ -18,6 +15,12 @@ public class DMP implements Serializable {
     @GeneratedValue
     private Integer id;
     private String ss;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Intervention intervention;
+    @OneToOne(cascade = CascadeType.ALL)
+    private DemandeIntervention demandeIntervention;
+
 
     public DMP(){
 
@@ -41,6 +44,22 @@ public class DMP implements Serializable {
 
     public void setSs(String ss) {
         this.ss = ss;
+    }
+
+    public Intervention getIntervention() {
+        return intervention;
+    }
+
+    public void setIntervention(Intervention intervention) {
+        this.intervention = intervention;
+    }
+
+    public DemandeIntervention getDemandeIntervention() {
+        return demandeIntervention;
+    }
+
+    public void setDemandeIntervention(DemandeIntervention demandeIntervention) {
+        this.demandeIntervention = demandeIntervention;
     }
 
     @Override

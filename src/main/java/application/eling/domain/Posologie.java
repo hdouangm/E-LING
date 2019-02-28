@@ -18,6 +18,8 @@ public class Posologie implements Serializable {
     @GeneratedValue
     private Integer id;
     private DMP dmp;
+    private String dateDebut;
+    private String dateFin;
     private String posologie;
     @OneToMany(cascade = CascadeType.ALL)
     private Set<SuiviTraitement> suiviTraitement = new HashSet<SuiviTraitement>(0);
@@ -32,8 +34,10 @@ public class Posologie implements Serializable {
 
     }
 
-    public Posologie(DMP dmp, String posologie, Set<SuiviTraitement> suiviTraitement, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
+    public Posologie(DMP dmp, String dateDebut, String dateFin, String posologie, Set<SuiviTraitement> suiviTraitement, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
         this.posologie = posologie;
         this.suiviTraitement = suiviTraitement;
         this.responsable = responsable;
@@ -58,6 +62,14 @@ public class Posologie implements Serializable {
     public void setDmp(DMP dmp) {
         this.dmp = dmp;
     }
+
+    public String getDateDebut() { return dateDebut; }
+
+    public void setDateDebut(String dateDebut) { this.dateDebut = dateDebut; }
+
+    public String getDateFin() { return dateFin; }
+
+    public void setDateFin(String dateFin) { this.dateFin = dateFin; }
 
     public String getPosologie() {
         return posologie;
@@ -120,6 +132,8 @@ public class Posologie implements Serializable {
         return "Posologie{" +
                 "id=" + id +
                 ", dmp=" + dmp +
+                ", dateDebut='" + dateDebut + '\'' +
+                ", dateFin='" + dateFin + '\'' +
                 ", posologie='" + posologie + '\'' +
                 ", suiviTraitement=" + suiviTraitement +
                 ", responsable=" + responsable +
