@@ -19,7 +19,8 @@ public class Posologie implements Serializable {
     private Integer id;
     private DMP dmp;
     private String posologie;
-    private List<String> suiviTraitement;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<SuiviTraitement> suiviTraitement = new HashSet<SuiviTraitement>(0);
     private Employe responsable;
     private Boolean publication;
     @OneToMany(cascade = CascadeType.ALL)
@@ -31,7 +32,7 @@ public class Posologie implements Serializable {
 
     }
 
-    public Posologie(DMP dmp, String posologie, List<String> suiviTraitement, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
+    public Posologie(DMP dmp, String posologie, Set<SuiviTraitement> suiviTraitement, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
         this.posologie = posologie;
         this.suiviTraitement = suiviTraitement;
@@ -66,11 +67,11 @@ public class Posologie implements Serializable {
         this.posologie = posologie;
     }
 
-    public List<String> getSuiviTraitement() {
+    public Set<SuiviTraitement> getSuiviTraitement() {
         return suiviTraitement;
     }
 
-    public void setSuiviTraitement(List<String> suiviTraitement) {
+    public void setSuiviTraitement(Set<SuiviTraitement> suiviTraitement) {
         this.suiviTraitement = suiviTraitement;
     }
 

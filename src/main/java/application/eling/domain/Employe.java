@@ -3,7 +3,9 @@ package application.eling.domain;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static application.eling.domain.Employe.FIND_ALL;
 
@@ -18,15 +20,17 @@ public class Employe implements Serializable {
     private NoeudHopital noeudHopital;
     @OneToOne(cascade = CascadeType.ALL)
     private CompteAphp compteAphp;
+    @OneToOne(cascade = CascadeType.ALL)
     private DonneesSociales donneesSociales;
     private Integer niveau;
-    private List<String> competences;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Competence> competences  = new HashSet<Competence>(0);;
 
     public Employe() {
 
     }
 
-    public Employe(NoeudHopital noeudHopital, CompteAphp compteAphp, DonneesSociales donneesSociales, Integer niveau, List<String> competences) {
+    public Employe(NoeudHopital noeudHopital, CompteAphp compteAphp, DonneesSociales donneesSociales, Integer niveau, Set<Competence> competences) {
         this.noeudHopital = noeudHopital;
         this.compteAphp = compteAphp;
         this.donneesSociales = donneesSociales;
@@ -74,11 +78,11 @@ public class Employe implements Serializable {
         this.niveau = niveau;
     }
 
-    public List<String> getCompetences() {
+    public Set<Competence> getCompetences() {
         return competences;
     }
 
-    public void setCompetences(List<String> competences) {
+    public void setCompetences(Set<Competence> competences) {
         this.competences = competences;
     }
 

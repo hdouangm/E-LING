@@ -1,9 +1,6 @@
 package application.eling.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 
 import java.io.Serializable;
 
@@ -19,6 +16,7 @@ public class Patient implements Serializable {
     private Integer id;
     private NoeudHopital noeudHopital;
     private DMP dmp;
+    @OneToOne(cascade = CascadeType.ALL)
     private DonneesSociales donneesSociales;
 
     public Patient(){

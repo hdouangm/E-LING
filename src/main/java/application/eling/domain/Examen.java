@@ -19,7 +19,7 @@ public class Examen implements Serializable {
     private Integer id;
     private DMP dmp;
     private String date;
-    private List<String> resultats;
+    private String URLresultats;
     private Employe responsable;
     private Boolean publication;
 
@@ -32,10 +32,10 @@ public class Examen implements Serializable {
 
     }
 
-    public Examen(DMP dmp, String date, List<String> resultats, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
+    public Examen(DMP dmp, String date, String URLresultats, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
         this.date = date;
-        this.resultats = resultats;
+        this.URLresultats = URLresultats;
         this.responsable = responsable;
         this.publication = publication;
         this.codesActes = codesActes;
@@ -67,13 +67,9 @@ public class Examen implements Serializable {
         this.date = date;
     }
 
-    public List<String> getResultats() {
-        return resultats;
-    }
+    public String getURLresultats() { return URLresultats; }
 
-    public void setResultats(List<String> resultats) {
-        this.resultats = resultats;
-    }
+    public void setURLresultats(String URLresultats) { this.URLresultats = URLresultats; }
 
     public Employe getResponsable() {
         return responsable;
@@ -117,7 +113,7 @@ public class Examen implements Serializable {
                 "id=" + id +
                 ", dmp=" + dmp +
                 ", date=" + date +
-                ", resultats=" + resultats +
+                ", URLresultats=" + URLresultats +
                 ", responsable=" + responsable +
                 ", publication=" + publication +
                 ", codesActes=" + codesActes +

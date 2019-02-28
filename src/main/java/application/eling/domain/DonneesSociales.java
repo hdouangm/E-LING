@@ -1,9 +1,6 @@
 package application.eling.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 
 import java.io.Serializable;
 
@@ -19,21 +16,25 @@ public class DonneesSociales implements Serializable {
     private Integer id;
     private String nom;
     private String prenom;
-    private String adressse;
+    private String adresse;
     private String ville;
     private String codePostal;
     private String pays;
     private String genre;
     private String age;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Employe employe;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Patient patient;
 
     public DonneesSociales(){
 
     }
 
-    public DonneesSociales(String nom, String prenom, String adressse, String ville, String codePostal, String pays, String age, String genre) {
+    public DonneesSociales(String nom, String prenom, String adresse, String ville, String codePostal, String pays, String age, String genre) {
         this.nom = nom;
         this.prenom = prenom;
-        this.adressse = adressse;
+        this.adresse = adresse;
         this.ville = ville;
         this.codePostal = codePostal;
         this.pays = pays;
@@ -65,12 +66,12 @@ public class DonneesSociales implements Serializable {
         this.prenom = prenom;
     }
 
-    public String getAdressse() {
-        return adressse;
+    public String getAdresse() {
+        return adresse;
     }
 
-    public void setAdressse(String adressse) {
-        this.adressse = adressse;
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
     }
 
     public String getVille() {
@@ -97,9 +98,7 @@ public class DonneesSociales implements Serializable {
         this.pays = pays;
     }
 
-    public String getGenre() {
-        return genre;
-    }
+    public String getGenre() { return genre; }
 
     public void setGenre(String genre) {
         this.genre = genre;
@@ -113,13 +112,29 @@ public class DonneesSociales implements Serializable {
         this.age = age;
     }
 
+    public Employe getEmploye() {
+        return employe;
+    }
+
+    public void setEmploye(Employe employe) {
+        this.employe = employe;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
     @Override
     public String toString() {
         return "DonneesSociales{" +
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
-                ", adressse='" + adressse + '\'' +
+                ", adresse='" + adresse + '\'' +
                 ", ville='" + ville + '\'' +
                 ", codePostal='" + codePostal + '\'' +
                 ", pays='" + pays + '\'' +
