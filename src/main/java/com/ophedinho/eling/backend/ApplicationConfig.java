@@ -14,6 +14,8 @@ import com.ophedinho.eling.backend.rest.CompteAphpRestService;
 import com.ophedinho.eling.backend.filters.CORSFilter;
 import com.ophedinho.eling.backend.rest.DemandeExamenRestService;
 import com.ophedinho.eling.backend.rest.DemandeInterventionRestService;
+import com.ophedinho.eling.backend.rest.TypeExamenRestService;
+import com.ophedinho.eling.backend.rest.TypeInterventionRestService;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.util.Collections;
@@ -30,7 +32,9 @@ public class ApplicationConfig extends Application {
         c.add(JacksonFeature.class);
         c.add(CompteAphpRestService.class);
         c.add(DemandeExamenRestService.class);
+        c.add(TypeExamenRestService.class);
         c.add(DemandeInterventionRestService.class);
+        c.add(TypeInterventionRestService.class);
         c.add(CORSFilter.class);
         classes = Collections.unmodifiableSet(c);
     }

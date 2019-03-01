@@ -30,7 +30,7 @@ import javax.validation.constraints.NotNull;
 
 public class CompteAphp {
     
-     public static final String FIND_ALL = "CompteAphp.findAll";
+    public static final String FIND_ALL = "CompteAphp.findAll";
 
   ////////////////////////////////////////////////
   ////////         Attributs           //////////

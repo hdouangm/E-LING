@@ -45,7 +45,6 @@ public class CompteAphpRestService {
     @Path("/Search/{username}/{password}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCompteAphp(@PathParam("username") String usr, @PathParam("password") String psw) {
-        //List<CompteAphp> comptes = (List<CompteAphp>) repository.find(new CompteAphp(usr, psw));
         List<CompteAphp> comptes = (List<CompteAphp>) repository.find(usr, psw);
         if (comptes.isEmpty())
             return Response.status(Response.Status.NOT_FOUND).build();
