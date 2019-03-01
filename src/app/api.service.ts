@@ -33,6 +33,10 @@ export class ApiService {
         return  this.httpClient.get(`${this.API_URL}/DemandeExamen`);
     }
 
+    getTypeExamen() {
+        return  this.httpClient.get(`${this.API_URL}/TypeExamen`);
+    }
+
     getDemandeExamenMed() {
         return  this.httpClient.get(`${this.API_URL}/DemandeExamen/Med`);
     }
@@ -59,6 +63,10 @@ export class ApiService {
 
     getDemandeIntervention() {
         return  this.httpClient.get(`${this.API_URL}/DemandeIntervention`);
+    }
+
+    getTypeIntervention() {
+        return  this.httpClient.get(`${this.API_URL}/TypeIntervention`);
     }
 
     getDemandeInterventionMed() {

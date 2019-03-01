@@ -24,7 +24,7 @@
             <label>Type Examen : 
                 <select [(ngModel)]="interventionData.type_intervention"> 
                 <option value="">Sélectionnez un type</option>
-                <option *ngFor="let type of types" [value]="type.id" >{{type.username}}</option>
+                <option *ngFor="let type of types" [value]="type.id" >{{type.designation}}</option>
             </select>
             </label>
             <br> 

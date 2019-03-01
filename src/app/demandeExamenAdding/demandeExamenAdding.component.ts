@@ -23,7 +23,7 @@ export class DemandeExamenAddingComponent implements OnInit {
           this.dmps  =  data;
       });
 
-    this.apiService.getCompteAphp().subscribe((data:  Array<object>) => {
+    this.apiService.getTypeExamen().subscribe((data:  Array<object>) => {
           this.types  =  data;
       });
     

@@ -25,7 +25,7 @@
             <label>Type Examen : 
                 <select [(ngModel)]="examenData.type_examen"> 
                 <option value="">Sélectionnez un type</option>
-                <option *ngFor="let type of types" [value]="type.id" >{{type.username}}</option>
+                <option *ngFor="let type of types" [value]="type.id" >{{type.designation}}</option>
             </select>
             </label>
             <br> 
