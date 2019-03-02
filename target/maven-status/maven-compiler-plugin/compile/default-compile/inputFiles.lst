@@ -22,5 +22,6 @@
 /Users/Hugo/Desktop/eling/E-LING/src/main/java/application/eling/repository/DMPSetup.java
 /Users/Hugo/Desktop/eling/E-LING/src/main/java/application/eling/repository/InterventionRepository.java
 /Users/Hugo/Desktop/eling/E-LING/src/main/java/application/eling/repository/ConstantesVitalesRepository.java
+/Users/Hugo/Desktop/eling/E-LING/src/main/java/application/eling/rest/UploadRestService.java
 /Users/Hugo/Desktop/eling/E-LING/src/main/java/application/ApplicationConfig.java
 /Users/Hugo/Desktop/eling/E-LING/src/main/java/application/eling/domain/Posologie.java

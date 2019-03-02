@@ -10,8 +10,6 @@ export function MustMatch(numSS: string, genre: string, dateNaissance: string) {
         const ssMois = ss.value.substring(3, 5);
         const mois = dateNaissance_.value.substring(5, 7);
         const annee = dateNaissance_.value.substring(2, 4);
-        console.log('mois' + mois);
-        console.log('ssMois' + ssMois);
 
         // set error on matchingControl if validation fails
         if ((ssGenre == 1 && genre_.value != 'M')) {

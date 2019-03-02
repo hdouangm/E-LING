@@ -1,8 +1,10 @@
 package application;
 
 import application.eling.rest.SecretaireMedicaleRestService;
+import application.eling.rest.UploadRestService;
 import application.filters.CORSFilter;
 import org.glassfish.jersey.jackson.JacksonFeature;
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -17,7 +19,9 @@ public class ApplicationConfig extends Application {
     public ApplicationConfig() {
         HashSet<Class<?>> c = new HashSet<>();
         c.add(JacksonFeature.class);
+        c.add(MultiPartFeature.class);
         c.add(SecretaireMedicaleRestService.class);
+        c.add(UploadRestService.class);
         c.add(CORSFilter.class);
         classes = Collections.unmodifiableSet(c);
     }
