@@ -1,0 +1,31 @@
+<h4>Welcome to {{ title }}!</h4>
+
+      <form [formGroup]="uploadForm" (ngSubmit)="uploadSubmit()">
+
+          <div class="custom-file mb-3">
+              <input type="file" class="custom-file-input" ng2FileSelect accept="*" [uploader]="uploader" multiple/>
+              <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+
+          <div class="drop-zone">
+              <div ng2FileDrop [uploader]="uploader" class="drop-zone">
+                 Drag and drop files to upload
+              </div>
+          </div>
+
+          <table>
+            <tbody>
+            <tr *ngFor="let item of uploader.queue">
+              <th width="90%">
+                {{ item.file.name}}({{item.file.size/1000000}} MB)
+              </th>
+              <th class="text-center" width="10%">
+                <mat-icon (click)="item.remove()">delete</mat-icon>
+              </th>
+            </tr>
+            </tbody>
+          </table>
+          <br>
+          <button mat-raised-button color="accent" type="submit">Upload Data</button>
+
+      </form>

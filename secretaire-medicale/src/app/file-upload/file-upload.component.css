@@ -1,0 +1,5 @@
+.drop-zone{
+  min-height: 40px;
+  max-width: 200px;
+  border: 1px solid grey;
+}
