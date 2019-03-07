@@ -2,7 +2,6 @@ package application.eling.domain;
 
 import javax.persistence.*;
 
-
 import java.io.Serializable;
 
 import static application.eling.domain.DemandeIntervention.FIND_ALL;

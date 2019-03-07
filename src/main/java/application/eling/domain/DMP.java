@@ -21,6 +21,11 @@ public class DMP implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     private DemandeIntervention demandeIntervention;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Examen examen;
+    @OneToOne(cascade = CascadeType.ALL)
+    private DemandeExamen demandeExamen;
+
 
     public DMP(){
 
@@ -60,6 +65,22 @@ public class DMP implements Serializable {
 
     public void setDemandeIntervention(DemandeIntervention demandeIntervention) {
         this.demandeIntervention = demandeIntervention;
+    }
+
+    public Examen getExamen() {
+        return examen;
+    }
+
+    public void setExamen(Examen examen) {
+        this.examen = examen;
+    }
+
+    public DemandeExamen getDemandeExamen() {
+        return demandeExamen;
+    }
+
+    public void setDemandeExamen(DemandeExamen demandeExamen) {
+        this.demandeExamen = demandeExamen;
     }
 
     @Override

@@ -17,16 +17,18 @@ public class Examen implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
+    @OneToOne(cascade = CascadeType.ALL)
     private DMP dmp;
     private String date;
     private String URLresultats;
     private Employe responsable;
     private Boolean publication;
-
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Acte> codesActes = new HashSet<Acte>(0);
     private Integer prix;
     private Boolean payer;
+    @OneToOne(cascade = CascadeType.ALL)
+    private DemandeExamen demandeExamen;
 
     public Examen(){
 
@@ -106,6 +108,10 @@ public class Examen implements Serializable {
     public void setPayer(Boolean payer) {
         this.payer = payer;
     }
+
+    public DemandeExamen getDemandeExamen() { return demandeExamen; }
+
+    public void setDemandeExamen(DemandeExamen demandeExamen) { this.demandeExamen = demandeExamen; }
 
     @Override
     public String toString() {
