@@ -14,7 +14,7 @@ public class Examen implements Serializable {
     @GeneratedValue
     private int id;
     private String date;
-   // private Set<String> resultats;
+    private String resultats;
   //  private Employe responsable;
     private boolean publicationMed=false;
     private boolean publicationLab=false;
@@ -82,6 +82,23 @@ public class Examen implements Serializable {
 	public void setCodesActes(Set<Acte> codesActes) {
 		this.codesActes = codesActes;
 	}
+
+	public String getResultats() {
+		return resultats;
+	}
+
+	public void setResultats(String resultats) {
+		this.resultats = resultats;
+	}
+
+
+	/*public Employe getResponsable() {
+		return responsable;
+	}
+
+	public void setResponsable(Employe responsable) {
+		this.responsable = responsable;
+	}*/
 
 	
 	

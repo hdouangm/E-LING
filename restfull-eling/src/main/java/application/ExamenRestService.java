@@ -47,12 +47,6 @@ public class ExamenRestService {
 	    public Response getExamByExamenId(@PathParam("ExamenID") Integer id) {
 	        Examen examen = examenDAO.get(id);
 	        if (examen == null) {
-	        	try {
-					examenDAO.create(new Examen());
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
 	            return Response.status(Response.Status.NOT_FOUND).build();
 	        }
 	        return Response.ok(examen).build();
@@ -88,12 +82,12 @@ public class ExamenRestService {
 	    @Produces(MediaType.APPLICATION_JSON)
 	    public Response createExamen(Examen exam) {
 	    	try {
-				examenDAO.create(exam);
+				exam = examenDAO.create(exam);
 			} catch (Exception e) {
 				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
 			}
 	        URI bookUri = uriInfo.getBaseUriBuilder().path(ExamenRestService.class).path(String.valueOf(exam.getId())).build();
-	        return Response.created(bookUri).build();
+	        return Response.ok(exam).build();
 	    }
 	
 }

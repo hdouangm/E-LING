@@ -1,16 +1,21 @@
 package main.java.core;
 
-import javax.ejb.Stateless;
-
 
 public class ExamenDAO extends GenericDAO<Examen>{
 
 	public ExamenDAO() {
 		super(Persistence.ELING);
 		try {
-			this.create(new Examen());
-			this.create(new Examen());
-			this.create(new Examen());
+			Examen ex2 = new Examen();
+			ex2.getCodesActes().add(new Acte());
+			ex2.setResultats("arborescence.png");
+			Examen ex = new Examen();
+			ex.getCodesActes().add(new Acte());
+			Examen ex3 = new Examen();
+			ex3.getCodesActes().add(new Acte());
+			this.create(ex2);
+			this.create(ex3);
+			this.create(ex);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

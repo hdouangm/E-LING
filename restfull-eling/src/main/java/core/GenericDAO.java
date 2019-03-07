@@ -3,13 +3,12 @@ package main.java.core;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import javax.ejb.Stateless;
+
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -21,7 +20,6 @@ import javax.persistence.criteria.Root;
 import org.apache.log4j.Logger;
 import org.glassfish.jersey.internal.guava.Lists;
 
-import antlr.StringUtils;
 
 
 /**
@@ -29,7 +27,6 @@ import antlr.StringUtils;
  * 
  * @param <T>
  */
-
 
 public abstract class GenericDAO<T> implements IGenericDAO<T> {
 
