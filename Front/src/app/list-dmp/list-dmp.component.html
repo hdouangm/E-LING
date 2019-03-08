@@ -1,0 +1,47 @@
+<!-- header -->
+<app-header></app-header>
+
+<!-- Menu -->
+ <app-menu></app-menu> 
+
+ <!--    background -->
+<div class="fond">
+   <div>.</div>
+
+   <!-- Barre de recherche -->
+   <div class="page-centrer">
+         <div class="sousTitre">Filtre</div>
+         <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+                
+               <!-- login -->
+               <div class="form-group col-lg-11 " style="padding-left: 30px;padding-bottom: 15px;">
+                   <input type="text" formControlName="key" class="form-control" placeholder="Id" [ngClass]="{ 'is-invalid': submitted && f.key.errors }"/>
+                   <div *ngIf="submitted && f.key.errors" class="invalid-feedback">
+                       <div *ngIf="f.key.errors.required">Veuillez renseigné l'id</div>
+                   </div>
+               </div>
+
+               <div class="form-group text-center" style="margin-top: 20px;">
+                   <button class="btn btn-primary btn-group-lg col-6">Search</button>
+               </div>
+           </form>
+   </div> <!-- /Barre de recherche -->
+
+   <!-- ListeDMP -->
+   <div class="page-centrer">
+         <div class="sousTitre">DMP</div>
+         <table  style="width:100%;align-content: center;">
+         <tr class="table-header">
+            <th>NuméroSS</th>
+            <th>Action</th>
+         </tr>
+         <tr *ngFor="let dmp of dmps" class="table-content">
+            <td> {{ dmp.numeroSS }} </td>
+            <td>
+                <a [routerLink]="['/modifierDMP']" >Modifier</a> | 
+            </td>
+         </tr>
+         </table>
+    </div>  <!-- /ListeDMP -->
+ 
+</div> <!-- /background -->
