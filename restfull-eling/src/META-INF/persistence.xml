@@ -1,33 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
-             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
-             version="2.1">
-    
-   
-    <persistence-unit name="JPAPU">
-    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
-       
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="JPAPU" transaction-type="JTA">
+        <jta-data-source>jdbc/TP5DS</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
-		 	<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
-		    <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>
-		    <property name="hibernate.connection.url" value="jdbc:hsqldb:file:./src/test/resources/database/test;" />
-		    <property name="hibernate.connection.username" value="user"/>
-		    <property name="hibernate.connection.password" value="user" />
-		    
-		    <property name="hibernate.enable_lazy_load_no_trans" value="true"/> 
-		
-		     <!-- JDBC connection pool (use the built-in) -->
-		     <property name="hibernate.connection.pool_size" value="1" />
-		     <property name="hibernate.show_sql" value="false"/>
-		     <property name="hibernate.format_sql" value="true"/>
-		     <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider" />
-		     <property name="hibernate.event.merge.entity_copy_observer" value="allow"/>
-		     <!--create the database schema on startup if required -->
-		     <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="eclipselink.logging.level" value="INFO"/>
         </properties>
     </persistence-unit>
-
 </persistence>

@@ -8,8 +8,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -27,133 +29,71 @@ import org.glassfish.jersey.internal.guava.Lists;
  * 
  * @param <T>
  */
+public abstract class GenericDAO<T>  {
 
-public abstract class GenericDAO<T> implements IGenericDAO<T> {
-
+	@PersistenceContext(unitName ="JPAPU")
 	protected EntityManager em;
 
-	private final Class<T> type;
-	
-	private Map<Integer, T> map;
-
-	protected final Persistence persistUnit;
-
-	protected static final Logger logger = Logger.getLogger(GenericDAO.class.getName());
-
-	@SuppressWarnings("unchecked")
-	public GenericDAO(Persistence persist) {
-		Type t = getClass().getGenericSuperclass();
-		ParameterizedType pt = (ParameterizedType) t;
-		type = (Class<T>) pt.getActualTypeArguments()[0];
-		persistUnit = persist;
-		map = new HashMap<Integer, T>();
-	}
 
 	public void persist(T t) throws Exception {
-		EntityManager em = null;
 		try {
-			em = Session.getSession(persistUnit).getEmf().createEntityManager();
-			em.getTransaction().begin();
 			em.persist(t);
-			em.getTransaction().commit();
 		} catch (Exception e) {
-			logger.error("Exception lors de la persistance de " + type);
+			Logger.getLogger(GenericDAO.class).error("Exception lors de la persistance de " + t.getClass());
 			e.printStackTrace();
 			if (em != null && em.getTransaction().isActive()) {
 				em.getTransaction().rollback();
 			}
-			throw new Exception("Exception lors de la persistance de " + type);
-		} finally {
-			if (em != null) {
-				try {
-					em.close();
-					em = null;
-				} catch (Exception e) {
-					logger.error("Erreur lors de la fermeture " + e);
-				}
-			}
+			throw new Exception("Exception lors de la persistance de " + t.getClass());
 		}
 	}
 
 	public T create(T t) throws Exception {
-	/*	EntityManager em = null;
 		T tg = null;
 		try {
-			em = Session.getSession(persistUnit).getEmf().createEntityManager();
-			em.getTransaction().begin();
 			tg = em.merge(t);
-			em.getTransaction().commit();
 		} catch (Exception e) {
-			logger.error("Exception lors de la persistance de " + type);
+			Logger.getLogger(GenericDAO.class).error("Exception lors de la persistance de " + t.getClass());
 			e.printStackTrace();
 			if (em != null && em.getTransaction().isActive()) {
 				em.getTransaction().rollback();
 			}
-			throw new Exception("Exception lors de la persistance de " + type);
-		} finally {
-			if (em != null) {
-				try {
-					em.close();
-					em = null;
-				} catch (Exception e) {
-					logger.error("Erreur lors de la fermeture " + e);
-				}
-			}
+			throw new Exception("Exception lors de la persistance de " + t.getClass());
 		}
-		return tg;*/
-		map.put(map.size(), t);
-		return t;
+		return tg;
 	}
 
 	public boolean delete(final Object id) {
-	/*	EntityManager em = null;
 		boolean res = true;
 		try {
-			em = Session.getSession(persistUnit).getEmf().createEntityManager();
-			em.getTransaction().begin();
-			em.remove(em.getReference(type, id));
-			em.getTransaction().commit();
+
+			em.remove(id);
+
 		} catch (Exception e) {
-			logger.error("Erreur lors de la suppression de " + type + " / " + e.getMessage());
+			Logger.getLogger(GenericDAO.class).error("Erreur lors de la suppression : " + e.getMessage());
 			e.printStackTrace();
 			if (em != null && em.getTransaction().isActive()) {
 				em.getTransaction().rollback();
 			}
 			res = false;
-		} finally {
-			if (em != null) {
-				try {
-					em.close();
-					em = null;
-				} catch (Exception e) {
-					logger.error("Erreur lors de la fermeture " + e);
-				}
-			}
 		}
-		return res;*/
-		map.remove(id);
-		return true;
-
+		return res;
 	}
 
+	@SuppressWarnings("unchecked")
 	public T get(final Object id) {
-		/*EntityManager em = null;
 		T tg = null;
-		em = Session.getSession(persistUnit).getEmf().createEntityManager();
+		Type t = getClass().getGenericSuperclass();
+		ParameterizedType pt = (ParameterizedType) t;
+		Class<T> type = (Class<T>) pt.getActualTypeArguments()[0];
 		try {
 			tg = em.find(type, id);
-		} finally {
-			if (em != null) {
-				try {
-					em.close();
-					em = null;
-				} catch (Exception e) {
-					logger.error("Erreur lors de la fermeture " + e);
-				}
-			}
+		} catch (Exception e) {
+			Logger.getLogger(GenericDAO.class).error("Erreur lors de la fermeture " + e);
 		}
-		return tg;*/
-		return map.get(id);
+			
+	
+		return tg;
 	}
 
 	public T getByStringId(String strId) {
@@ -162,32 +102,26 @@ public abstract class GenericDAO<T> implements IGenericDAO<T> {
 	}
 
 	public List<T> findAll() {
-		/*EntityManager em = null;
 		List<T> tg = null;
+		Type t = getClass().getGenericSuperclass();
+		ParameterizedType pt = (ParameterizedType) t;
+		@SuppressWarnings("unchecked")
+		Class<T> type = (Class<T>) pt.getActualTypeArguments()[0];
 		try {
-			logger.info("findAll " + type + " - Start");
-			em = Session.getSession(persistUnit).getEmf().createEntityManager();
+			Logger.getLogger(GenericDAO.class).info("findAll " + t.getClass() + " - Start");
 			CriteriaBuilder cb = em.getCriteriaBuilder();
 			CriteriaQuery<T> q = cb.createQuery(type);
 			Root<T> b = q.from(type);
 			q.select(b);
 			TypedQuery<T> query = em.createQuery(q);
 			// TypedQuery<T> query = em.createQuery("SELECT t FROM " +
-			// type.getSimpleName() + " t ", type);
+			// t.getClass().getSimpleName() + " t ", t.getClass());
 			tg = query.getResultList();
-			logger.info("Loading all " + type + " from db (" + tg.size() + " occurences)");
-		} finally {
-			if (em != null) {
-				try {
-					em.close();
-					em = null;
-				} catch (Exception e) {
-					logger.error("Erreur lors de la fermeture " + e);
-				}
-			}
+			Logger.getLogger(GenericDAO.class).info("Loading all " + t.getClass() + " from db (" + tg.size() + " occurences)");
+		}catch (Exception e) {
+			Logger.getLogger(GenericDAO.class).error("Erreur lors de la fermeture " + e);
 		}
-		return tg;*/
-		return Lists.newArrayList(map.values());
+		return tg;
 	}
 
 	public List<T> findByParamsExact(Map<String, String> params) {
@@ -209,7 +143,7 @@ public abstract class GenericDAO<T> implements IGenericDAO<T> {
 	/**
 	 * Map must contains key = entity attribute name <br/>
 	 * Handle "sub-attribute" (like 'contrat.proprietaire.prenom') <br/>
-	 * TODO : Try to handle more attribute type (Date ...)
+	 * TODO : Try to handle more attribute t.getClass() (Date ...)
 	 * 
 	 * @param params
 	 * @param like
@@ -220,7 +154,10 @@ public abstract class GenericDAO<T> implements IGenericDAO<T> {
 		if (params == null || params.size() < 1) {
 			return new ArrayList<T>();
 		}
-		EntityManager em = Session.getSession(persistUnit).getEmf().createEntityManager();
+		Type t = getClass().getGenericSuperclass();
+		ParameterizedType pt = (ParameterizedType) t;
+		@SuppressWarnings("unchecked")
+		Class<T> type = (Class<T>) pt.getActualTypeArguments()[0];
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<T> criteriaQuery = cb.createQuery(type);
 		Root<T> from = criteriaQuery.from(type);
@@ -260,58 +197,29 @@ public abstract class GenericDAO<T> implements IGenericDAO<T> {
 			}
 		}
 		criteriaQuery.where(cb.and(ap));
-		try {
-			em.close();
-			em = null;
-		} catch (Exception e) {
-			logger.error("Erreur lors de la fermeture " + e);
-		}
 		return findByCriterias(criteriaQuery);
 	}
 
 	public List<T> findByCriterias(CriteriaQuery<T> cq) {
-		EntityManager em = null;
 		List<T> tg = null;
 		try {
-			em = Session.getSession(persistUnit).getEmf().createEntityManager();
+
 			TypedQuery<T> query = em.createQuery(cq);
 			tg = query.getResultList();
-		} finally {
-			if (em != null) {
-				try {
-					em.close();
-					em = null;
-				} catch (Exception e) {
-					logger.error("Erreur lors de la fermeture " + e);
-				}
-			}
+		}catch (Exception e) {
+			Logger.getLogger(GenericDAO.class).error("Erreur lors de la fermeture " + e);
 		}
 		return tg;
 	}
 
 	public T update(final T t) throws Exception {
-		EntityManager em = null;
 		T tu = null;
 		try {
-			em = Session.getSession(persistUnit).getEmf().createEntityManager();
-			em.getTransaction().begin();
 			tu = em.merge(t);
-			em.getTransaction().commit();
 		} catch (Exception e) {
-			logger.error("Exception lors de la mise a jour de " + type);
+			Logger.getLogger(GenericDAO.class).error("Exception lors de la mise a jour de " + t.getClass());
 			e.printStackTrace();
-			if (em != null && em.getTransaction().isActive())
-				em.getTransaction().rollback();
-			throw new Exception("Exception lors de la mise a jour de " + type);
-		} finally {
-			if (em != null) {
-				try {
-					em.close();
-					em = null;
-				} catch (Exception e) {
-					logger.error("Erreur lors de la fermeture " + e);
-				}
-			}
+			throw new Exception("Exception lors de la mise a jour de " + t.getClass());
 		}
 		return tu;
 	}
