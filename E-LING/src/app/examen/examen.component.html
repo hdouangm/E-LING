@@ -1,0 +1,43 @@
+<div class="page-centrer">
+
+<!--<ul>
+    <li *ngFor="let recipient of examens">
+        {{recipient.id}} -- {{recipient.prix}} --{{recipient.codesActes}}
+    </li>
+</ul>-->
+
+
+    <!-- Modal content-->
+
+
+              <div class="container">
+                  <div class="row">
+                      <div id="form">
+                          <h3>Creer un resultat d'examen</h3>
+                          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                              <div class="form-group">
+                                  <p>Resultat : </p>
+                                  <input type="file" name="file" (change)="onFileSelected($event)">
+                              </div>
+                              <div class="form-group">
+                                  <button class="btn btn-primary">Publier l'examen</button>
+                              </div>
+                         </form>
+                    
+     </div>
+
+</div>
+
+
+<!-- <button type="button" (click)="addFile()">Ajouter</button>
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+  <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+    <td mat-cell *matCellDef="let element"> {{element}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+</table> -->
+              </div>
+</div>

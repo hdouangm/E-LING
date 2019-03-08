@@ -1,0 +1,43 @@
+
+
+ <!--    background -->
+<div class="fond">
+   <div>.</div>
+ <div>
+     <!--a routerLink="/addDemandeExamen"> Nouvelle demande </a-->
+     <button class="btn btn-primary btn-group-lg col-25" (click)="newDemande();">Nouvelle demande</button>
+ </div>
+ <div class="page-centrer" style="padding-right: 100px;padding-left: 100px;margin-right: 30px;margin-left: 30px;">
+<!--app-demandeExamenAdding></app-demandeExamenAdding-->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">DMP</th>
+      <th scope="col">Type</th>
+      <th scope="col">Date</th>
+      <th scope="col">Publication</th>
+      <!--th scope="col">Publication Laboratoire</th-->
+
+    </tr>
+  </thead>
+  <tbody id="dExams">
+        <tr *ngFor="let demandeExamen of demandeExamens">
+          <td> {{demandeExamen.id}} </td>
+          <td> {{demandeExamen.id_dmp}} </td>
+          <td> {{demandeExamen.type_examen}} </td>
+          <td> {{demandeExamen.date}} </td>
+          <td> {{demandeExamen.publicationMed}} </td>
+          <!--td> {{demandeExamen.publicationLab}} </td-->
+          <!--td> <a routerLink="/demandeExamenEdit/{{demandeExamen.id}}"> Edit</a> </td-->
+          <td><button class="btn btn-primary btn-group-lg col-12" (click)="publierDemande(demandeExamen.id,demandeExamen.id_dmp,demandeExamen.type_examen);">Publier</button></td>
+        </tr>
+
+  </tbody>
+</table>
+
+</div>
+ 
+</div> <!-- /background -->
+
+

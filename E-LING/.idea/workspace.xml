@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="177653b4-5abe-4ce4-8cb6-72fb823de469" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/acceder-dmp/acceder-dmp.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/acceder-dmp/acceder-dmp.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/acceder-dmp/acceder-dmp.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/acceder-dmp/acceder-dmp.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/api.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/auth.guard.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/compteAphpAdding/compteAphpAdding.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/compteAphpAdding/compteAphpAdding.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/compteAphpAdding/compteAphpAdding.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/compteAphpAdding/compteAphpAdding.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/compteAphpSearching/compteAphpSearching.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/compteAphpSearching/compteAphpSearching.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/compteAphpSearching/compteAphpSearching.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/compteAphpSearching/compteAphpSearching.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/connexion/connexion.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/connexion/connexion.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/connexion/connexion.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/connexion/connexion.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/datamodel/Demande_examen.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/datamodel/Employe.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/datamodel/acte.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/datamodel/dmp.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/datamodel/examen.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/datamodel/intervention.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/datamodel/posologie.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/deconnexion/deconnexion.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/deconnexion/deconnexion.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/deconnexion/deconnexion.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/deconnexion/deconnexion.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-examen-list-lab/demande-examen-list-lab.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-examen-list-lab/demande-examen-list-lab.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-examen-list-lab/demande-examen-list-lab.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-examen-list-lab/demande-examen-list-lab.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-examen-list-med/demande-examen-list-med.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-examen-list-med/demande-examen-list-med.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-examen-list-med/demande-examen-list-med.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-examen-list-med/demande-examen-list-med.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-intervention-list-lab/demande-intervention-list-lab.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-intervention-list-lab/demande-intervention-list-lab.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-intervention-list-lab/demande-intervention-list-lab.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-intervention-list-lab/demande-intervention-list-lab.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-intervention-list-med/demande-intervention-list-med.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-intervention-list-med/demande-intervention-list-med.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-intervention-list-med/demande-intervention-list-med.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demande-intervention-list-med/demande-intervention-list-med.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demandeExamenAdding/demandeExamenAdding.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demandeExamenAdding/demandeExamenAdding.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demandeExamenAdding/demandeExamenAdding.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demandeExamenAdding/demandeExamenAdding.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demandeInterventionAdding/demandeInterventionAdding.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demandeInterventionAdding/demandeInterventionAdding.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demandeInterventionAdding/demandeInterventionAdding.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/demandeInterventionAdding/demandeInterventionAdding.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/detail-patient/detail-patient.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/detail-patient/detail-patient.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/detail-patient/detail-patient.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/detail-patient/detail-patient.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/examen/examen-detail/examen-detail.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/examen/examen-detail/examen-detail.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/examen/examen-detail/examen-detail.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/examen/examen-detail/examen-detail.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/examen/examen.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/examen/examen.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/examen/examen.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/examen/examen.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/examen/examen.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/examen/examen.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/file.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/file.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/finder/finder.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/finder/finder.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/finder/finder.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/finder/finder.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/header/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/intervention/intervention.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/intervention/intervention.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/intervention/intervention.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/intervention/intervention.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/intervention/intervention.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/intervention/intervention.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/list-dmp/list-dmp.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/list-dmp/list-dmp.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/list-dmp/list-dmp.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/list-dmp/list-dmp.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/list-patient/filter-name.pipe.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/list-patient/list-patient.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/list-patient/list-patient.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/list-patient/list-patient.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/list-patient/list-patient.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/modifier-profil/modifier-profil.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/modifier-profil/modifier-profil.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/modifier-profil/modifier-profil.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/modifier-profil/modifier-profil.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-patient/must-match.validator.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-patient/new-patient.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-patient/new-patient.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-patient/new-patient.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-patient/new-patient.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-patient2/must-match.validator.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-patient2/new-patient.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-patient2/new-patient.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-patient2/new-patient.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/new-patient2/new-patient.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/scroll-spy.directive.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/doc.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/header/header.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/tslint.json" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/dist/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/new-patient2/new-patient.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="41" column="11" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="41" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#71#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/list-patient/list-patient.component.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-64">
+              <folding>
+                <element signature="e#0#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/new-patient2/new-patient.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="19" column="52" lean-forward="true" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/list-patient/list-patient.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/new-patient2/must-match.validator.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/new-patient/new-patient.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/new-patient/new-patient.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="97" selection-start-line="24" selection-start-column="97" selection-end-line="24" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/list-patient/list-patient.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/list-patient/filter-name.pipe.ts">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>compteAphpSearching.component</find>
+      <find>url</find>
+      <find>li</find>
+      <find>getEmp</find>
+      <find>getNi</find>
+      <find>onSu</find>
+      <find>nom</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/app/deconnexion/deconnexion.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/connexion/connexion.component.css" />
+        <option value="$PROJECT_DIR$/src/app/new-patient/new-patient.component.css" />
+        <option value="$PROJECT_DIR$/src/app/acceder-dmp/acceder-dmp.component.css" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/app/header/header.component.css" />
+        <option value="$PROJECT_DIR$/src/app/compteAphpSearching/compteAphpSearching.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/compteAphpSearching/compteAphpSearching.component.spec.ts" />
+        <option value="$PROJECT_DIR$/src/app/demande-intervention-list-med/demande-intervention-list-med.component.html" />
+        <option value="$PROJECT_DIR$/src/app/demandeExamenAdding/demandeExamenAdding.component.spec.ts" />
+        <option value="$PROJECT_DIR$/src/app/demandeExamenAdding/demandeExamenAdding.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/demandeInterventionAdding/demandeInterventionAdding.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/compteAphpAdding/compteAphpAdding.component.css" />
+        <option value="$PROJECT_DIR$/src/app/compteAphpSearching/compteAphpSearching.component.css" />
+        <option value="$PROJECT_DIR$/src/app/demande-examen-list-lab/demande-examen-list-lab.component.css" />
+        <option value="$PROJECT_DIR$/src/app/demande-examen-list-med/demande-examen-list-med.component.css" />
+        <option value="$PROJECT_DIR$/src/app/demande-intervention-list-lab/demande-intervention-list-lab.component.css" />
+        <option value="$PROJECT_DIR$/src/app/demande-intervention-list-med/demande-intervention-list-med.component.css" />
+        <option value="$PROJECT_DIR$/src/app/demandeInterventionAdding/demandeInterventionAdding.component.html" />
+        <option value="$PROJECT_DIR$/src/app/demande-intervention-list-lab/demande-intervention-list-lab.component.html" />
+        <option value="$PROJECT_DIR$/src/app/demande-examen-list-med/demande-examen-list-med.component.html" />
+        <option value="$PROJECT_DIR$/src/app/demande-examen-list-lab/demande-examen-list-lab.component.html" />
+        <option value="$PROJECT_DIR$/src/app/compteAphpSearching/compteAphpSearching.component.html" />
+        <option value="$PROJECT_DIR$/src/app/compteAphpAdding/compteAphpAdding.component.html" />
+        <option value="$PROJECT_DIR$/src/app/demandeExamenAdding/demandeExamenAdding.component.css" />
+        <option value="$PROJECT_DIR$/src/app/demandeExamenAdding/demandeExamenAdding.component.html" />
+        <option value="$PROJECT_DIR$/src/app/header/header.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/connexion/connexion.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/new-patient2/new-patient.component.spec.ts" />
+        <option value="$PROJECT_DIR$/src/app/new-patient2/new-patient.component.html" />
+        <option value="$PROJECT_DIR$/src/app/list-dmp/list-dmp.component.css" />
+        <option value="$PROJECT_DIR$/src/app/examen/examen.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/examen/examen.component.html" />
+        <option value="$PROJECT_DIR$/src/app/examen/examen.component.css" />
+        <option value="$PROJECT_DIR$/src/environments/environment.prod.ts" />
+        <option value="$PROJECT_DIR$/src/environments/environment.ts" />
+        <option value="$PROJECT_DIR$/src/app/header/header.component.html" />
+        <option value="$PROJECT_DIR$/src/app/demandeInterventionAdding/demandeInterventionAdding.component.css" />
+        <option value="$PROJECT_DIR$/src/app/list-patient/list-patient.component.css" />
+        <option value="$PROJECT_DIR$/src/app/auth.guard.ts" />
+        <option value="$PROJECT_DIR$/src/app/api.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/acceder-dmp/acceder-dmp.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/acceder-dmp/acceder-dmp.component.html" />
+        <option value="$PROJECT_DIR$/src/app/new-patient/new-patient.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/new-patient/new-patient.component.html" />
+        <option value="$PROJECT_DIR$/src/app/new-patient/must-match.validator.ts" />
+        <option value="$PROJECT_DIR$/src/app/new-patient2/must-match.validator.ts" />
+        <option value="$PROJECT_DIR$/src/app/new-patient2/new-patient.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/list-patient/list-patient.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/list-patient/list-patient.component.html" />
+        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="35" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="724" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="acceder-dmp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="compteAphpAdding" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="compteAphpSearching" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="connexion" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="datamodel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="deconnexion" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="demande-examen-list-lab" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="demande-examen-list-med" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="demande-intervention-list-lab" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="demande-intervention-list-med" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="demandeExamenAdding" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="demandeInterventionAdding" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="detail-patient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="examen" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="intervention" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="list-dmp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="list-patient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modifier-profil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="new-patient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="new-patient2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="E-LING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="$PROJECT_DIR$/node_modules/tslint" />
+    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/node_modules/protractor" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/new-patient2" />
+      <recent name="$PROJECT_DIR$/src/app" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$/src/app/header" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Karma.HeaderComponent.should render title in a h1 tag">
+    <configuration name="HeaderComponent.should render title in a h1 tag" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
+      <config-file value="$PROJECT_DIR$/src/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-names>
+        <test-name value="HeaderComponent" />
+        <test-name value="should render title in a h1 tag" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/src/karma.conf.js" />
+      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-package value="$PROJECT_DIR$/node_modules/protractor" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Karma.HeaderComponent.should render title in a h1 tag" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="177653b4-5abe-4ce4-8cb6-72fb823de469" name="Default Changelist" comment="" />
+      <created>1549892008668</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549892008668</updated>
+      <workItem from="1549892013962" duration="18181000" />
+      <workItem from="1550581815297" duration="22298000" />
+      <workItem from="1550756195889" duration="6381000" />
+      <workItem from="1551272429259" duration="22697000" />
+      <workItem from="1552035563840" duration="11307000" />
+      <workItem from="1552062118133" duration="2534000" />
+    </task>
+    <task id="LOCAL-00001" summary="all">
+      <created>1550083139754</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1550083139754</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="HeaderComponent_should_render_title_in_a_h1_tag - 2019.02.11 at 15h 22m 16s.xml">
+      <configuration name="HeaderComponent.should render title in a h1 tag" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="HeaderComponent_should_render_title_in_a_h1_tag - 2019.02.13 at 14h 35m 59s.xml">
+      <configuration name="HeaderComponent.should render title in a h1 tag" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="83398000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="35" y="23" width="1280" height="724" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info id="npm" order="1" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.32724383" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32753164" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="TypeScript" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.32876712" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="all" />
+    <option name="LAST_COMMIT_MESSAGE" value="all" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/app/demandeExamenAdding/demandeExamenAdding.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="75" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/connexion/connexion.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-106">
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/connexion/connexion.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/new-patient2/new-patient.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/new-patient2/new-patient.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/datamodel/dmp.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/intervention/intervention.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/list-dmp/list-dmp.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/demande-examen-list-med/demande-examen-list-med.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/connexion/connexion.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="22" selection-start-line="5" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/compteAphpSearching/compteAphpSearching.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="9" selection-start-line="8" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/connexion/connexion.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/header/header.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/environments/environment.prod.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="48" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/examen/examen.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/header/header.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="39" column="71" selection-start-line="39" selection-start-column="71" selection-end-line="40" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#body#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#footer#0;n#div#1;n#body#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#footer#0;n#div#1;n#body#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/examen/examen.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-284">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/examen/examen.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" lean-forward="true" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/detail-patient/detail-patient.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/demandeInterventionAdding/demandeInterventionAdding.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/header/header.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/examen/examen.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="57" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="57" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/new-patient/new-patient.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/list-patient/list-patient.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/list-dmp/list-dmp.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/file.service.spec.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/auth.guard.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/auth.guard.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tslint.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/api.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/acceder-dmp/acceder-dmp.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/acceder-dmp/acceder-dmp.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="36" column="11" lean-forward="true" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/acceder-dmp/acceder-dmp.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/detail-patient/detail-patient.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/acceder-dmp/acceder-dmp.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/new-patient/must-match.validator.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/api.service.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/new-patient/new-patient.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="34" column="28" lean-forward="true" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/new-patient/new-patient.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="97" selection-start-line="24" selection-start-column="97" selection-end-line="24" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/new-patient2/must-match.validator.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/new-patient2/new-patient.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="19" column="52" lean-forward="true" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/new-patient2/new-patient.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="41" column="11" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="41" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/list-patient/list-patient.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-64">
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/list-patient/list-patient.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/list-patient/list-patient.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/list-patient/filter-name.pipe.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
