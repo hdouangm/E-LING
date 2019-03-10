@@ -52,6 +52,7 @@ public abstract class GenericDAO<T>  {
 		T tg = null;
 		try {
 			tg = em.merge(t);
+			em.flush();
 		} catch (Exception e) {
 			Logger.getLogger(GenericDAO.class).error("Exception lors de la persistance de " + t.getClass());
 			e.printStackTrace();
@@ -66,9 +67,7 @@ public abstract class GenericDAO<T>  {
 	public boolean delete(final Object id) {
 		boolean res = true;
 		try {
-
 			em.remove(id);
-
 		} catch (Exception e) {
 			Logger.getLogger(GenericDAO.class).error("Erreur lors de la suppression : " + e.getMessage());
 			e.printStackTrace();

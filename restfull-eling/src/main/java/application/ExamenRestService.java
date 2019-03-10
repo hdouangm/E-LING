@@ -86,7 +86,7 @@ public class ExamenRestService {
 			} catch (Exception e) {
 				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
 			}
-	        URI bookUri = uriInfo.getBaseUriBuilder().path(ExamenRestService.class).path(String.valueOf(exam.getId())).build();
+	    	URI bookUri = uriInfo.getBaseUriBuilder().path(ExamenRestService.class).path(String.valueOf(exam.getId())).build();
 	        return Response.ok(exam).build();
 	    }
 	

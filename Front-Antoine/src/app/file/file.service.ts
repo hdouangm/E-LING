@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
+import { Examen } from '../datamodel/examen';
+import { Intervention } from 'src/app/datamodel/intervention';
 
 const API_URL = environment.apiUrl + '/file';
 @Injectable({
@@ -20,8 +22,12 @@ export class FileService {
         this.http.post(API_URL + '/upload', formdata).subscribe(res => console.log(res));
     }
 
-    getExamResultURL(id: number): string {
-        return API_URL + '/download/Examen' + id;
+    getExamResultURL(examen: Examen): string {
+        return API_URL + '/download/Examen' + examen.id;
+    }
+
+    getInterventionResultURL(intervention: Intervention): string {
+        return API_URL + '/download/Examen' + intervention.id;
     }
 
 }

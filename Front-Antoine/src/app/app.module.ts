@@ -8,6 +8,9 @@ import { ExamenComponent } from './examen/examen.component';
 import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ExamenDetailComponent } from './examen/examen-detail/examen-detail.component';
+import { PosologieComponent } from './posologie/posologie.component';
+import { DiagnostiqueComponent } from './diagnostique/diagnostique.component';
+import { InterventionDetailComponent } from './intervention/intervention-detail/intervention-detail.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,9 @@ import { ExamenDetailComponent } from './examen/examen-detail/examen-detail.comp
     InterventionComponent,
     ExamenComponent,
     ExamenDetailComponent,
+    PosologieComponent,
+    DiagnostiqueComponent,
+    InterventionDetailComponent,
   ],
   imports: [
     ReactiveFormsModule,

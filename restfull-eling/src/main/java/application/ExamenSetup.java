@@ -20,8 +20,10 @@ public class ExamenSetup {
   private void createData() {
 	  
     try {
-		examenDAO.create(new Examen());
-		System.out.println("o");
+    	Examen exam = new Examen();
+    	exam.setResultats("arborescence.png");
+		examenDAO.create(exam);
+		System.out.println(exam.getId());
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

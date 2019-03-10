@@ -14,6 +14,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
+import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -38,10 +39,18 @@ import com.sun.corba.ee.spi.ior.Writeable;
 
 import main.java.core.Examen;
 import main.java.core.ExamenDAO;
+import main.java.core.InterventionDAO;
 
 @Path("/file")
 public class FileRestService {
 
+	
+	@EJB
+	private ExamenDAO examenDAO;
+	
+	@EJB
+	private InterventionDAO interventionDAO;
+	
 	@Context
     private UriInfo uriInfo;
 	
@@ -53,7 +62,6 @@ public class FileRestService {
 			new File("upload").mkdir();
 		if(!Files.exists(Paths.get("upload/"+dir)))
 			new File("upload/"+dir).mkdir();
-		if(Files.exists(Paths.get("upload"))){}
 		  try {  
               FileOutputStream out = new FileOutputStream(new File("./upload/"+dir+"/"+fileDetail.getFileName()));  
               int read = 0;  
@@ -100,7 +108,7 @@ public class FileRestService {
     @Path("download/Examen{examID}")
     @Produces("image/png")
     public Response getResultByExamenId(@PathParam("examID") Integer id) {
-    	File file = new File("./upload/"+"examen"+id+"/"+new ExamenDAO().get(id).getResultats());
+    	File file = new File("./upload/"+"examen"+id+"/"+examenDAO.get(id).getResultats());
     	ResponseBuilder response = Response.ok((Object) file);
         response.header("Content-Disposition",
                 "attachment; filename="+"arborescence.png");
@@ -118,7 +126,7 @@ public class FileRestService {
     @Path("download/Intervention{interventionID}")
     @Produces("image/png")
     public Response getResultByInterventionId(@PathParam("interventionID") Integer id) {
-    	File file = new File("./upload/"+"intervention"+id+"/"+new ExamenDAO().get(id).getResultats());
+    	File file = new File("./upload/"+"intervention"+id+"/"+interventionDAO.get(id));
     	ResponseBuilder response = Response.ok((Object) file);
         response.header("Content-Disposition",
                 "attachment; filename="+"arborescence.png");
