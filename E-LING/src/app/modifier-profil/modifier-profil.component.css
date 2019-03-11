@@ -1,24 +1,37 @@
 .page-centrer {
-    margin-top: 90px;
     padding-bottom: 40px;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 25%;
+    margin-right: 25%;
     border: 0.5px black solid;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: white;
     align-content: center;
-    
+    position: relative;
+}
+
+/*.page-centrer {
+    margin-top: 90px;
+  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+  
+    position: relative;
+  
+  }*/
+
+.labelText {
+    /*font-size: 5px;*/
 }
 
 .titre {
     padding-top: 10px;
-    padding-bottom: 80px;
+    padding-bottom: 50px;
     font-size: 20px;
     font-weight: 100;
 }
 
 .fond {
-    height: 590px;
+    
     margin: 0 0 0 0;
 }
 

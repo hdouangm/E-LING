@@ -22,17 +22,25 @@ ngOnInit() {
   this.form = this.fb.group({
        nom: ['', [Validators.required]],
        prenom: ['' , [Validators.required]],
-       adresse: ['', [Validators.required]]
+       adresse: ['', [Validators.required]],
+       age: ['', [Validators.required]],
+       codePostal: ['', [Validators.required]],
+       //genre: ['', [Validators.required]],
+       pays: ['', [Validators.required]],
+       ville: ['', [Validators.required]]
      });
  }
 
  getProfil(): void {
-  this.id = this.activateRoute.snapshot.paramMap.get('id');
-  this.apiService.getProfil(`${this.id}`)
-    .subscribe((reponse: object) => {
-      console.log(reponse);
-      this.profil = reponse;
-  });
+
+  const user = localStorage.getItem('user');
+  this.apiService.getDonneesSociales(user).subscribe((response: any) => {
+    if (response == null) {
+      return;
+    }
+    console.log(JSON.stringify(response));
+    this.profil = response;
+    });
 }
 
 // convenience getter for easy access to form fields
@@ -46,18 +54,26 @@ onSubmit() {
       }
 
     const data = {
-    id : this.id,
+      id : this.profil.id,
       nom : this.getValue('nom'),
       prenom : this.getValue('prenom'),
-      adresse : this.getValue('adresse')
+      adressse : this.getValue('adresse'),
+      age: this.getValue('age'),
+      codePostal: this.getValue('codePostal'),
+      genre: this.profil.genre,
+      pays: this.getValue('pays'),
+      ville: this.getValue('ville')
     };
-
+    console.log('data : ', JSON.stringify(data));
     this.apiService.modifierProfil(data)
        .subscribe((reponse: object) => {
          console.log(reponse);
-         return;
-         this.router.navigate([`modifierProfil/${this.id}`]);
-     });
+         this.router.navigate(['listePatient']);
+     },
+     error => {
+      alert(`Oups une erreur s'est produite.`);
+     // this.router.navigate(['connexion']);
+    });
  }
 
 getValue(id: string) {

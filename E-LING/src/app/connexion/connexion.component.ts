@@ -43,7 +43,8 @@ export class ConnexionComponent implements OnInit {
      };
 
      this.apiService.connexion(data)
-      .subscribe((reponse: any) => {
+      .subscribe(
+        (reponse: any) => {
         console.log('reponse: ' + JSON.stringify(reponse));
         if (reponse == null) {
           this.messageErreur = `Erreur d'authentification`;
@@ -51,25 +52,33 @@ export class ConnexionComponent implements OnInit {
         }
         localStorage.setItem('ACCESS_TOKEN', reponse);
         localStorage.setItem('user', data.login);
-        this.apiService.getDonneesSociales(data.login).subscribe((response: any) => {
-          if (response == null) {
-            this.messageErreur = `Erreur d'authentification`;
-            return;
-          }
-          localStorage.setItem('nom', response.nom);
-          localStorage.setItem('prenom', response.prenom);
-          this.router.navigate(['']);
+        this.setUser();
+       this.router.navigate(['listePatient']);
+
+      },
+      error => {
+        alert(`Oups une erreur s'est produite.`);
+        this.router.navigate(['connexion']);
+      });
 
 
-        });
-        this.apiService.getNiveau(data.login).subscribe((responses: any) => {
-          localStorage.setItem('niveau', responses.niveau);
-        });
-    });
 }
 
 getValue(id: string) {
   return this.loginForm.get(`${id}`).value;
+}
+
+setUser() {
+  const user = localStorage.getItem('user');
+  this.apiService.getDonneesSociales(user).subscribe((response: any) => {
+    if (response == null) {
+      this.messageErreur = `Erreur d'authentification`;
+      return;
+    }
+    localStorage.setItem('nom', response.nom);
+    localStorage.setItem('prenom', response.prenom);
+    this.router.navigate(['listePatient']);
+    });
 }
 
 
