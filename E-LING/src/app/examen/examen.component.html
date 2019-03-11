@@ -1,31 +1,32 @@
-<div class="page-centrer">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createExamenModal">
+    Nouvel examen
+</button>
 
-<!--<ul>
-    <li *ngFor="let recipient of examens">
-        {{recipient.id}} -- {{recipient.prix}} --{{recipient.codesActes}}
-    </li>
-</ul>-->
-
-
-    <!-- Modal content-->
-
-
-              <div class="container">
-                  <div class="row">
-                      <div id="form">
-                          <h3>Creer un resultat d'examen</h3>
-                          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                              <div class="form-group">
-                                  <p>Resultat : </p>
-                                  <input type="file" name="file" (change)="onFileSelected($event)">
-                              </div>
-                              <div class="form-group">
-                                  <button class="btn btn-primary">Publier l'examen</button>
-                              </div>
-                         </form>
-                    
-     </div>
-
+<div class="modal" id="createExamenModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Creer un nouvel examen</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal content-->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <input type="file" name="file" (change)="onFileSelected($event)">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary">Publier l'examen</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -39,5 +40,3 @@
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
   <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
 </table> -->
-              </div>
-</div>

@@ -27,4 +27,17 @@ export class ExamenService {
   createExamen(examen: Examen): Observable<Examen> {
       return this.http.post<Examen>(API_URL + '/create', examen);
   }
+
+  getExamenByIDDMP(ID: number): Observable<Examen> {
+    return this.http.get<Examen>(API_URL + '/all/dmp/' + ID);
+  }
+
+  getExamenByIDResp(ID: number): Observable<Examen> {
+    return this.http.get<Examen>(API_URL + '/all/responsable/' + ID);
+  }
+
+  deleteExamenByID(ID: number): Observable<Examen> {
+    return this.http.delete<Examen>(API_URL + '/delete/' + ID);
+  }
+
 }

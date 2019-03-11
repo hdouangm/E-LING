@@ -11,9 +11,10 @@ export class Examen {
         public publication: boolean = false,
         public payer: boolean = false,
         public codesActes: Array<Acte> = new Array<Acte>(),
-        public URLresultats: string = '',
+        public resultats: string = '',
         public responsable: Employe = null,
-        public demandeexamen: DemandeExamen = null
+        public demandeExamen: DemandeExamen = null,
+        public dmp: DMP = null
 
     ) {}
 }

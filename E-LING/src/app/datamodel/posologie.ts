@@ -1,6 +1,6 @@
 import { Employe } from 'src/app/datamodel/Employe';
 
-class Posologie {
+export class Posologie {
     constructor(
     public dmp: DMP,
     public id: number,

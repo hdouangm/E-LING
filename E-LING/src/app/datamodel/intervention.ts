@@ -1,5 +1,6 @@
 import { Acte } from 'src/app/datamodel/acte';
 import { Employe } from 'src/app/datamodel/Employe';
+import { DemandeIntervention } from './Demande_intervention';
 
 export class Intervention {
     constructor(
@@ -9,10 +10,12 @@ export class Intervention {
         public payer: boolean = false,
         public prix: number = 0,
         public publication: boolean = false,
-        public dmp: DMP,
+        public dmp: DMP = null,
         public type: string = '',
         public responsable: Employe = null,
-        public codesActes: Array<Acte> = new Array<Acte>()
+        public codesActes: Array<Acte> = new Array<Acte>(),
+        public demandeIntervention: DemandeIntervention = null,
+        public URLresultats: string = ''
 
     ) {}
 
