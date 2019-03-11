@@ -11,7 +11,7 @@ export class Examen {
         public publication: boolean = false,
         public payer: boolean = false,
         public codesActes: Array<Acte> = new Array<Acte>(),
-        public resultats: string = '',
+        public URLresultats: string = '',
         public responsable: Employe = null,
         public demandeExamen: DemandeExamen = null,
         public dmp: DMP = null
