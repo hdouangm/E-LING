@@ -52,15 +52,6 @@ public class DMPRestService {
         return Response.ok(dmp).build();
     }
     
-   /* @GET
-    @Path("accederDMP/{patient}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response accederDMP(@PathParam("patient") Patient patient) {
-        DMP dmp = repository.findByPatient(patient);
-        if (dmp == null)
-            return Response.status(Response.Status.NOT_FOUND).build();
-        return Response.ok(dmp).build();
-    }*/
-    
+ 
  
 }
