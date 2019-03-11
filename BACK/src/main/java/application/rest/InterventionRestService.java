@@ -1,4 +1,4 @@
-package application.rest;
+package main.java.application;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
-import application.eling.domain.Intervention;
-import application.eling.domain.InterventionDAO;
+import main.java.core.Intervention;
+import main.java.core.InterventionDAO;
 
 @Path("/interventions")
 public class InterventionRestService {

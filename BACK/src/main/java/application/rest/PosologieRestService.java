@@ -1,4 +1,4 @@
-package application.rest;
+package main.java.application;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
-import application.eling.domain.Posologie;
-import application.eling.domain.PosologieDAO;
+import main.java.core.Posologie;
+import main.java.core.PosologieDAO;
 
 @Path("/posologies")
 public class PosologieRestService {

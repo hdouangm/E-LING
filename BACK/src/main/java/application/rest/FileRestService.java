@@ -1,4 +1,4 @@
-package application.rest;
+package main.java.application;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -14,6 +14,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
+import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -31,16 +32,25 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.StreamingOutput;
 
-import application.eling.domain.ExamenDAO;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
 import com.sun.corba.ee.spi.ior.Writeable;
 
+import main.java.core.Examen;
+import main.java.core.ExamenDAO;
+import main.java.core.InterventionDAO;
 
 @Path("/file")
 public class FileRestService {
 
+	
+	@EJB
+	private ExamenDAO examenDAO;
+	
+	@EJB
+	private InterventionDAO interventionDAO;
+	
 	@Context
     private UriInfo uriInfo;
 	
@@ -52,9 +62,8 @@ public class FileRestService {
 			new File("upload").mkdir();
 		if(!Files.exists(Paths.get("upload/"+dir)))
 			new File("upload/"+dir).mkdir();
-		if(Files.exists(Paths.get("upload"))){}
 		  try {  
-              FileOutputStream out = new FileOutputStream(new File("./upload/"+dir+"/"+fileDetail.getFileName()));
+              FileOutputStream out = new FileOutputStream(new File("./upload/"+dir+"/"+fileDetail.getFileName()));  
               int read = 0;  
               byte[] bytes = new byte[1024];    
               while ((read = file.read(bytes)) != -1) {  
@@ -99,10 +108,10 @@ public class FileRestService {
     @Path("download/Examen{examID}")
     @Produces("image/png")
     public Response getResultByExamenId(@PathParam("examID") Integer id) {
-    	File file = new File("./upload/"+"examen"+id+"/"+new ExamenDAO().get(id).getResultats());
+    	File file = new File("./upload/"+"examen"+id+"/"+examenDAO.get(id).getResultats());
     	ResponseBuilder response = Response.ok((Object) file);
         response.header("Content-Disposition",
-                "attachment; filename="+new ExamenDAO().get(id).getResultats());
+                "attachment; filename="+"arborescence.png");
         
     	try {
 			return Response.ok(new FileInputStream(file)).build();
@@ -117,10 +126,10 @@ public class FileRestService {
     @Path("download/Intervention{interventionID}")
     @Produces("image/png")
     public Response getResultByInterventionId(@PathParam("interventionID") Integer id) {
-    	File file = new File("./upload/"+"intervention"+id+"/"+new ExamenDAO().get(id).getResultats());
+    	File file = new File("./upload/"+"intervention"+id+"/"+interventionDAO.get(id));
     	ResponseBuilder response = Response.ok((Object) file);
         response.header("Content-Disposition",
-                "attachment; filename="+new ExamenDAO().get(id).getResultats());
+                "attachment; filename="+"arborescence.png");
         
     	try {
 			return Response.ok(new FileInputStream(file)).build();

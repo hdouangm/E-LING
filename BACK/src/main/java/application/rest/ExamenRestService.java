@@ -1,9 +1,4 @@
-package application.rest;
-
-import application.eling.domain.Examen;
-import application.eling.domain.ExamenDAO;
-import application.eling.domain.GenericDAO;
-import application.eling.domain.IGenericDAO;
+package main.java.application;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -14,12 +9,14 @@ import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
+import main.java.core.Examen;
+import main.java.core.ExamenDAO;
 
 @Path("/examens")
 public class ExamenRestService {
 
 		@EJB
-	    private ExamenDAO examenDAO;
+	    private ExamenDAO examenDAO = new ExamenDAO();
 
 	    @Context
 	    private UriInfo uriInfo;
@@ -89,7 +86,7 @@ public class ExamenRestService {
 			} catch (Exception e) {
 				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
 			}
-	        URI bookUri = uriInfo.getBaseUriBuilder().path(ExamenRestService.class).path(String.valueOf(exam.getId())).build();
+	    	URI bookUri = uriInfo.getBaseUriBuilder().path(ExamenRestService.class).path(String.valueOf(exam.getId())).build();
 	        return Response.ok(exam).build();
 	    }
 	
