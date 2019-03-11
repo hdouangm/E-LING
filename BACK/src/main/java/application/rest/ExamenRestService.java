@@ -1,4 +1,4 @@
-package main.java.application;
+package application.rest;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -9,8 +9,9 @@ import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
-import main.java.core.Examen;
-import main.java.core.ExamenDAO;
+import application.eling.domain.Examen;
+import application.repository.ExamenDAO;
+
 
 @Path("/examens")
 public class ExamenRestService {

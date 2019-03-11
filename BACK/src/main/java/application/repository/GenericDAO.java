@@ -1,4 +1,4 @@
-package main.java.core;
+package application.repository;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

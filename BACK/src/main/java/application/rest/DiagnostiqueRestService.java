@@ -1,4 +1,4 @@
-package main.java.application;
+package application.rest;
 
 import java.net.URI;
 import java.util.ArrayList;
@@ -9,8 +9,12 @@ import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
-import main.java.core.Diagnostique;
-import main.java.core.DiagnostiqueDAO;
+import application.eling.domain.Diagnostique;
+import application.repository.DiagnostiqueDAO;
+
+
+
+
 
 @Path("/diagnostiques")
 public class DiagnostiqueRestService {

@@ -3,6 +3,8 @@ package application;
 import application.filters.CORSFilter;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import application.resources.ImageService;
+import application.security.RoleNeededFilter;
+
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
 import javax.ws.rs.ApplicationPath;
