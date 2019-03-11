@@ -10,7 +10,7 @@ import static application.eling.domain.DonneesSociales.FIND_ALL;
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM DonneesSociales b ORDER BY b.id DESC")
 public class DonneesSociales implements Serializable {
     public static final String FIND_ALL = "DonneesSociales.findAllDonneesSocialess";
-
+/*
     public Employe getEmploye() {
         return employe;
     }
@@ -18,7 +18,7 @@ public class DonneesSociales implements Serializable {
     public void setEmploye(Employe employe) {
         this.employe = employe;
     }
-
+*/
     @Id
     @GeneratedValue
     private Integer id;
@@ -30,20 +30,20 @@ public class DonneesSociales implements Serializable {
     private String pays;
     private String genre;
 
-    public Patient getPatient() {
+   /* public Patient getPatient() {
         return patient;
     }
 
     public void setPatient(Patient patient) {
         this.patient = patient;
-    }
+    }*/
 
     private String age;
 
-    @OneToOne(cascade=CascadeType.ALL)
+  /*  @OneToOne(cascade=CascadeType.ALL)
     Employe employe;
     @OneToOne(cascade=CascadeType.ALL)
-    Patient patient;
+    Patient patient;*/
     public DonneesSociales(){
 
     }
