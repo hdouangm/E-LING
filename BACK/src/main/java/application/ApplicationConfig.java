@@ -29,6 +29,7 @@ public class ApplicationConfig extends Application {
         c.add(MultiPartFeature.class);
         c.add(ImageService.class);
         c.add(CORSFilter.class);
+        c.add(RoleNeededFilter.class);
         classes = Collections.unmodifiableSet(c);
     }
 
