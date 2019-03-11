@@ -5,7 +5,8 @@
  */
 package application.security;
 
-import application.domain.Employe;
+
+import application.eling.domain.Employe;
 import application.repository.EmployeRepository;
 import application.security.utils.Role;
 import application.security.utils.SimpleKeyGenerator;

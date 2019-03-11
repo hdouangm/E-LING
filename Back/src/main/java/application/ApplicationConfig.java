@@ -1,16 +1,11 @@
 package application;
 
-import application.rest.EchoEndpoint;
-import application.rest.ProfilRestService;
 import application.filters.CORSFilter;
-import application.rest.ConnexionRestService;
-import application.rest.DMPRestService;
-import application.rest.DeconnexionRestService;
-import application.rest.EmployeRestService;
+import org.glassfish.jersey.jackson.JacksonFeature;
+import application.resources.ImageService;
 import application.security.JWTTokenNeededFilter;
 import application.security.RoleNeededFilter;
-import org.glassfish.jersey.jackson.JacksonFeature;
-
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -25,15 +20,19 @@ public class ApplicationConfig extends Application {
     public ApplicationConfig() {
         HashSet<Class<?>> c = new HashSet<>();
         c.add(JacksonFeature.class);
-        c.add(ProfilRestService.class);
-        c.add(DMPRestService.class);
-        c.add(ConnexionRestService.class);
-        c.add(DeconnexionRestService.class);
-        c.add(EmployeRestService.class);
-        c.add(EchoEndpoint.class);
+        c.add(application.rest.PatientRestService.class);
+        c.add(application.rest.SecretaireMedicaleRestService.class);
+        c.add(application.rest.ConnexionRestService.class);
+        c.add(application.rest.DMPRestService.class);
+        c.add(application.rest.ProfilRestService.class);
+        c.add(application.rest.TypeExamenRestService.class);
+        c.add(application.rest.ExamenRestService.class);
+        c.add(application.rest.FileRestService.class);
+        c.add(MultiPartFeature.class);
+        c.add(ImageService.class);
+        c.add(CORSFilter.class);
         c.add(JWTTokenNeededFilter.class);
         c.add(RoleNeededFilter.class);
-        c.add(CORSFilter.class);
         classes = Collections.unmodifiableSet(c);
     }
 

@@ -1,15 +1,6 @@
 package application.security;
 
-import application.domain.CompteAphp;
-import application.domain.DonneesSociales;
-import application.domain.Employe;
-import application.repository.EmployeRepository;
 import application.security.utils.KeyGenerator;
-import application.security.utils.LoggerProducer;
-import application.security.utils.SimpleKeyGenerator;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
 
 
@@ -26,7 +17,6 @@ import java.io.IOException;
 import java.security.Key;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.ejb.EJB;
 
 /**
  * @author Antonio Goncalves
@@ -42,25 +32,28 @@ public class JWTTokenNeededFilter implements ContainerRequestFilter {
     // =          Injection Points          =
     // ======================================
 
-  // @Inject
-    private Logger logger = Logger.getAnonymousLogger();
-    
-    @EJB
-    private EmployeRepository eRepository;
+   // @Inject
+    private Logger logger;
+
+   // @Inject
+    private KeyGenerator keyGenerator;
 
     // ======================================
     // =          Business methods          =
     // ======================================
 
-  @Override
+    @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
+
         // Get the HTTP Authorization header from the request
         String authorizationHeader = requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
-        logger.info("#### authorizationHeader : " + authorizationHeader);
+       // logger.info("#### authorizationHeader : " + authorizationHeader);
+        logger.log(Level.INFO, "#### authorizationHeader : {0}", authorizationHeader);
 
         // Check if the HTTP Authorization header is present and formatted correctly
         if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
-            logger.severe("#### invalid authorizationHeader : " + authorizationHeader);
+            //logger.severe("#### invalid authorizationHeader : " + authorizationHeader);
+            logger.log(Level.SEVERE, "#### invalid authorizationHeader : {0}", authorizationHeader);
             throw new NotAuthorizedException("Authorization header must be provided");
         }
 
@@ -70,17 +63,14 @@ public class JWTTokenNeededFilter implements ContainerRequestFilter {
         try {
 
             // Validate the token
-            Key key = new SimpleKeyGenerator().generateKey();
-            //JwtParser parser = Jwts.parser().setSigningKey(key).parseClaimsJws(token);
-            JwtParser parser = Jwts.parser().setSigningKey(key);
-            Jws<Claims> claims = parser.parseClaimsJws(token);
-            String login = claims.getBody().getSubject();
-            Employe currentUser = (Employe) eRepository.findByLogin(login);
-            logger.info("#### valid token : " + token);
-            logger.info("#### valid employe : ");
-            
+            Key key = keyGenerator.generateKey();
+            Jwts.parser().setSigningKey(key).parseClaimsJws(token);
+            //logger.info("#### valid token : " + token);
+            logger.log(Level.INFO, "#### valid token : {0}", token);
+
         } catch (Exception e) {
-            logger.severe("#### invalid token : " + token);
+            //logger.severe("#### invalid token : " + token);
+            logger.log(Level.SEVERE, "#### invalid token : {0}", token);
             requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).build());
         }
     }

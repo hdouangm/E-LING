@@ -1,7 +1,11 @@
 package application.repository;
 
 
-import application.domain.CompteAphp;
+import application.eling.domain.CompteAphp;
+import application.eling.domain.DonneesSociales;
+import application.eling.domain.Employe;
+import application.eling.domain.NoeudHopital;
+
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Singleton;
@@ -16,8 +20,8 @@ public class CompteAphpSetup {
 
     @PostConstruct
     private void createData() {
-      /*  repository.save(new CompteAphp("ophelie", "amolo"));
-        repository.save(new CompteAphp("rokia", "diallo", 2L));
-        repository.save(new CompteAphp("jihanne", "ikmel"));*/
+       repository.save(new CompteAphp("fafa", "la","FR",new Employe(null, null, new DonneesSociales("lepatron","du77",null,null,null,null,null,null), 0,null)));
+       repository.save(new CompteAphp("nana", "la","FR",new Employe(null, null, new DonneesSociales("lebooss","du77",null,null,null,null,null,null), 1,null)));
+
     }
 }

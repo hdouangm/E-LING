@@ -5,8 +5,8 @@
  */
 package application.repository;
 
-import application.domain.CompteAphp;
-import application.domain.Employe;
+import application.eling.domain.CompteAphp;
+import application.eling.domain.Employe;
 import java.util.List;
 import javax.ejb.NoSuchEntityException;
 import javax.ejb.Stateless;
@@ -34,8 +34,6 @@ public class EmployeRepository {
        Query query = em.createQuery("SELECT e FROM CompteAphp c ,Employe e WHERE c.username = :login"
                + " and e.compteAphp.id = c.id ");
        query.setParameter("login",login);
-        //Query query = em.createQuery("select e from Employe e");
-      
         return (Employe)query.getResultList().get(0);
     }
      

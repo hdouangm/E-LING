@@ -17,7 +17,6 @@ import javax.ws.rs.core.Response;
  * @author asus
  */
 @Path("/Deconnexion")
-@JWTTokenNeeded
 public class DeconnexionRestService {
     
     @GET

@@ -1,7 +1,7 @@
 package application.rest;
 
-import application.domain.CompteAphp;
-import application.domain.Employe;
+
+import application.eling.domain.CompteAphp;
 import application.repository.CompteAphpRepository;
 import application.repository.EmployeRepository;
 import application.security.utils.KeyGenerator;
@@ -25,6 +25,7 @@ import javax.ws.rs.core.Response;
 import static javax.ws.rs.core.Response.Status.UNAUTHORIZED;
 import javax.ws.rs.core.UriInfo;
 import javax.json.*;
+import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
 
 
 @Path("/Connexion")
@@ -56,10 +57,10 @@ public class ConnexionRestService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public Response connexion(CompteAphp compte) {
-        List<CompteAphp> comptes = repository.find(compte.getUsername(),compte.getPassword());
-	if(comptes.isEmpty()) return null;;
+        List<CompteAphp> comptes = repository.find(compte.getLogin(),compte.getMotDePasse());
+	if(comptes.isEmpty()) return null;
          // Issue a token for the user
-         String token = issueToken(compte.getUsername());
+         String token = issueToken(compte.getLogin());
          return Response.ok(token).header(AUTHORIZATION, "Bearer " + token).build();
        
     }

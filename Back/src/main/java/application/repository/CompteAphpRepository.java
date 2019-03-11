@@ -13,7 +13,10 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import application.domain.CompteAphp;
+import application.eling.domain.CompteAphp;
+import application.eling.domain.DonneesSociales;
+import application.eling.domain.Employe;
+
 /**
  *
  * @author ophedinho
@@ -38,15 +41,23 @@ public class CompteAphpRepository {
     }*/
     
     public List<CompteAphp> find(String usr, String pwd) {
-        String qr = "SELECT c FROM CompteAphp c WHERE c.username = '"+ usr 
-                +"' AND c.password = '"+ pwd +"'";
+        String qr = "SELECT c FROM CompteAphp c WHERE c.login = '"+ usr
+                +"' AND c.motDePasse = '"+ pwd +"'";
         Query query = em.createQuery(qr);
         return query.getResultList();
     }
+    public DonneesSociales findByLogin(String login){
+        return em.find(CompteAphp.class,login).getEmploye().getDonneesSociales();
+
+    }
+    public Employe getEmploye(String login){
+        return em.find(CompteAphp.class,login).getEmploye();
+
+    }
     
-    public Long save(CompteAphp cp) {
+    public String save(CompteAphp cp) {
         em.persist(cp);
-        return cp.getId();
+        return cp.getLogin();
     }
     
 }
