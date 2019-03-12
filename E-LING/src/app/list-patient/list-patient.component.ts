@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./list-patient.component.css']
 })
 export class ListPatientComponent implements OnInit {
-  searchText : string;
+  searchText: string;
   restItems: any;
   restItemsUrl = 'http://localhost:8080/Patient-1.0-SNAPSHOT/rs/secretairemedicale/patients';
 

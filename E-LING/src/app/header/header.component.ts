@@ -19,8 +19,8 @@ export class HeaderComponent implements OnInit {
 
   }
   getNiveau() {
-    return localStorage.getItem('niveau');
-
+      console.log(localStorage.getItem('niveau'));
+      return localStorage.getItem('niveau');
   }
 
 }

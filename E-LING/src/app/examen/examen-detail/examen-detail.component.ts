@@ -18,7 +18,9 @@ export class ExamenDetailComponent implements OnInit {
   constructor(public fileService: FileService, examenService: ExamenService) {
       // this.imgURL = environment.apiUrl + '/upload/examen' + this.examen.id + '/' + this.examen.URLresultats ;
       this.examen = new Examen();
-      examenService.getAllExamens().subscribe(res => this.imgURL = this.fileService.getExamResultURL(res[res.length - 1]));
+      examenService.getAllExamens().subscribe(res => {
+          this.imgURL = this.fileService.getExamResultURL(res[res.length - 1]); this.examen = res[res.length - 1] ;
+        });
   }
 
   ngOnInit() {

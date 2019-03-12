@@ -27,7 +27,7 @@ export class NewPatientDeuxComponent implements OnInit {
       this.openModal.nativeElement.click();
 
       this.registerForm = this.formBuilder.group({
-            ss: ['', Validators.required],
+            ss: ['ss', Validators.required],
             nom: ['', Validators.required],
             prenom: ['', Validators.required],
             adresse: ['', Validators.required],

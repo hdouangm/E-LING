@@ -28,7 +28,7 @@ export class ConnexionComponent implements OnInit {
 }
 
  // convenience getter for easy access to form fields
- get f() { return this.loginForm.controls; }
+ public get f() { return this.loginForm.controls; }
 
  onSubmit() {
      this.submitted = true;
@@ -52,8 +52,9 @@ export class ConnexionComponent implements OnInit {
         }
         localStorage.setItem('ACCESS_TOKEN', reponse);
         localStorage.setItem('user', data.login);
+        localStorage.setItem('niveau', '1');
         this.setUser();
-       this.router.navigate(['listePatient']);
+        this.router.navigate(['listePatient']);
 
       },
       error => {

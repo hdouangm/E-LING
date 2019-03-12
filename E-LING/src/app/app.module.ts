@@ -13,7 +13,6 @@ import { CompteAphpAddingComponent } from './compteAphpAdding/compteAphpAdding.c
 import { CompteAphpSearchingComponent } from './compteAphpSearching/compteAphpSearching.component';
 import { DemandeInterventionAddingComponent } from './demandeInterventionAdding/demandeInterventionAdding.component';
 import { DemandeExamenAddingComponent } from './demandeExamenAdding/demandeExamenAdding.component';
-import { NewPatientComponent } from './new-patient/new-patient.component';
 import { DetailPatientComponent } from './detail-patient/detail-patient.component';
 import { ListPatientComponent } from './list-patient/list-patient.component';
 import { ModifierProfilComponent} from './modifier-profil/modifier-profil.component';
@@ -47,7 +46,6 @@ const routelist: Route[] = [
   {path : 'listePatient', component : ListPatientComponent, canActivate: [AuthGuard] },
   {path : 'modifierProfil', component: ModifierProfilComponent, canActivate: [AuthGuard]},
   {path : 'accederDMP/:id', component: AccederDmpComponent, canActivate: [AuthGuard]},
-  {path : 'creerPatient', component: NewPatientComponent},
   {path : 'InterventionListMed', component: DemandeInterventionListMedComponent},
   {path: 'newPatient2', component: NewPatientDeuxComponent},
   {path: 'examen', component: ExamenComponent},
@@ -65,7 +63,6 @@ const routelist: Route[] = [
     DemandeExamenAddingComponent,
     ScrollSpyDirective,
     ListPatientComponent,
-    NewPatientComponent,
     DetailPatientComponent,
     AccederDmpComponent,
     ModifierProfilComponent,

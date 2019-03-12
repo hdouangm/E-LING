@@ -1,8 +1,7 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+/*import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { MustMatch} from './must-match.validator';
 
 
 @Component({
@@ -32,7 +31,7 @@ export class NewPatientComponent implements OnInit {
             email: ['', [Validators.required, Validators.email]],
             genre: ['', Validators.required],
         }, {
-            validator: MustMatch('ss', 'genre', 'age')
+           // validator: MustMatch('ss', 'genre', 'age')
         });
     }
 
@@ -76,4 +75,4 @@ export class NewPatientComponent implements OnInit {
           );
     }
 
-}
+}*/
