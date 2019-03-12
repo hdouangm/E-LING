@@ -1,0 +1,153 @@
+@import "../../../lib/bootstrap/css/bootstrap.min.css";
+@import "../../../lib/font-awesome/css/font-awesome.min.css";
+@import "../../../lib/fancybox/fancybox.css";
+
+body{
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  -webkit-font-smoothing: antialiased !important;
+
+
+
+
+
+}
+
+.navbar {
+  background-color: rgba( 255, 255, 2555, .0);
+  border-bottom: 0 none;
+  font-size: 12px;
+  transition: .25s all linear;
+  margin-left: 20%;
+  margin-bottom: 0;
+}
+
+.navbar .nav a:hover, .navbar .nav a:focus {
+  background: none;
+}
+
+.navbar .nav a {
+  color: rgba(0, 0, 0, 1);
+  font-weight: 400;
+  font-size: 16px;
+
+}
+.nav li {
+  display: block;
+  padding-right: 50px;
+}
+
+
+.navbar .active a {
+  border-top: 2px solid #000000;
+}
+
+.navbar-scrolled {
+  background-color: rgba( 0, 0, 0, .5);
+}
+.navbar-toggle i {
+  color: #fff;
+  font-size: 22px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #process .content-row h2 {
+    min-height: 6em;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    background-color: rgba( 0, 0, 0, .8);
+  }
+}
+:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+.slide {
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-bottom: 65px;
+  padding-top: 50px;
+  text-align: center;
+}
+h2{
+  margin-right: 0;
+  padding: 0;
+  font-family: 'LuloCleanW01-OneBold', sans-serif;
+  margin-left: 40%;
+  font-size: 42px;
+  letter-spacing: 8px;
+
+}
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.informationBox {
+  width: 100%;
+  height: 100vh;
+  background: url('../../assets/background.jpg') no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  border:0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+
+#fas fa-sign-out-alt{
+
+  margin-left: 10%;
+
+
+}
+@-webkit-keyframes animate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.navigation-slide {
+  cursor: pointer;
+  text-align: center;
+}
+
+.navigation-slide-a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+#logo{
+  width: 35%;
+  padding-left: 19%;
+}
