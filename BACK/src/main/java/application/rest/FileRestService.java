@@ -94,7 +94,7 @@ public class FileRestService {
     @Path("download/Examen{examID}")
     @Produces("image/png")
     public Response getResultByExamenId(@PathParam("examID") Integer id) {
-    	File file = new File("./upload/"+"examen"+id+"/"+examenDAO.get(id).getURLresultats());
+    	File file = new File("./upload/"+"examen"+id+"/"+examenDAO.get(id).getUrlResultats());
     	ResponseBuilder response = Response.ok(file);
         response.header("Content-Disposition",
                 "attachment; filename="+"arborescence.png");

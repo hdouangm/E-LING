@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 import static application.eling.domain.NoeudHopital.FIND_ALL;
 
@@ -16,11 +17,14 @@ public class NoeudHopital implements Serializable {
     @GeneratedValue
     private Integer id;
     private Integer niveau;
-    private List<NoeudHopital> noeudsInferieurs;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<NoeudHopital> noeudsInferieurs;
     @OneToOne(cascade = CascadeType.ALL)
     private Employe chef;
     @OneToOne(cascade=CascadeType.ALL)
     Patient patient;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private NoeudHopital noeudSuperieur;
 
     public Patient getPatient() {
         return patient;
@@ -34,7 +38,7 @@ public class NoeudHopital implements Serializable {
 
     }
 
-    public NoeudHopital(Integer niveau, List<NoeudHopital> noeudsInferieurs, Employe chef) {
+    public NoeudHopital(Integer niveau, Set<NoeudHopital> noeudsInferieurs, Employe chef) {
         this.niveau = niveau;
         this.noeudsInferieurs = noeudsInferieurs;
         this.chef = chef;
@@ -56,16 +60,16 @@ public class NoeudHopital implements Serializable {
         this.niveau = niveau;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    public List<NoeudHopital> getNoeudsInferieurs() {
-        return noeudsInferieurs;
-    }
 
-    public void setNoeudsInferieurs(List<NoeudHopital> noeudsInferieurs) {
-        this.noeudsInferieurs = noeudsInferieurs;
-    }
+    public Set<NoeudHopital> getNoeudsInferieurs() {
+		return noeudsInferieurs;
+	}
 
-    public Employe getChef() {
+	public void setNoeudsInferieurs(Set<NoeudHopital> noeudsInferieurs) {
+		this.noeudsInferieurs = noeudsInferieurs;
+	}
+
+	public Employe getChef() {
         return chef;
     }
 

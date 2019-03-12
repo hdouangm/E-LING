@@ -20,7 +20,7 @@ public class Examen implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     private DMP dmp;
     private String date;
-    private String URLresultats;
+    private String urlResultats;
     private Employe responsable;
     private Boolean publication;
     @OneToMany(cascade = CascadeType.ALL)
@@ -37,7 +37,7 @@ public class Examen implements Serializable {
     public Examen(DMP dmp, String date, String URLresultats, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
         this.date = date;
-        this.URLresultats = URLresultats;
+        this.urlResultats = URLresultats;
         this.responsable = responsable;
         this.publication = publication;
         this.codesActes = codesActes;
@@ -69,11 +69,17 @@ public class Examen implements Serializable {
         this.date = date;
     }
 
-    public String getURLresultats() { return URLresultats; }
 
-    public void setURLresultats(String URLresultats) { this.URLresultats = URLresultats; }
 
-    public Employe getResponsable() {
+    public String getUrlResultats() {
+		return urlResultats;
+	}
+
+	public void setUrlResultats(String urlResultats) {
+		this.urlResultats = urlResultats;
+	}
+
+	public Employe getResponsable() {
         return responsable;
     }
 
@@ -119,7 +125,7 @@ public class Examen implements Serializable {
                 "id=" + id +
                 ", dmp=" + dmp +
                 ", date=" + date +
-                ", URLresultats=" + URLresultats +
+                ", URLresultats=" + urlResultats +
                 ", responsable=" + responsable +
                 ", publication=" + publication +
                 ", codesActes=" + codesActes +
