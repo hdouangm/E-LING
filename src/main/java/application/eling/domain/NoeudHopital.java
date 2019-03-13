@@ -3,6 +3,7 @@ package application.eling.domain;
 import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -18,7 +19,7 @@ public class NoeudHopital implements Serializable {
     private Integer id;
     private Integer niveau;
     @OneToMany(cascade = CascadeType.ALL)
-    private Set<NoeudHopital> noeudsInferieurs;
+    private Set<NoeudHopital> noeudsInferieurs = new HashSet<NoeudHopital>(0);;
     private Employe chef;
     @ManyToOne(cascade = CascadeType.ALL)
     private NoeudHopital noeudSuperieur;

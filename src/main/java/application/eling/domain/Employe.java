@@ -24,7 +24,7 @@ public class Employe implements Serializable {
     private DonneesSociales donneesSociales;
     private Integer niveau;
     @OneToMany(cascade = CascadeType.ALL)
-    private Set<Competence> competences  = new HashSet<Competence>(0);;
+    private Set<Competence> competences  = new HashSet<Competence>(0);
 
     public Employe() {
 
