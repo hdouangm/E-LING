@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Examen } from 'src/app/datamodel/examen';
+import { Examen } from 'src/app/datamodel/dataModel';
 import { FormGroup} from '@angular/forms';
 import { FileService } from '../../file/file.service';
 import { ExamenService } from '../examen.service';

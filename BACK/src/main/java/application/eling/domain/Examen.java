@@ -20,8 +20,7 @@ public class Examen implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     private DMP dmp;
     private String date;
-    private String urlresultats;
-    @OneToOne(cascade = CascadeType.ALL)
+    private String urlResultats;
     private Employe responsable;
     private Boolean publication;
     @OneToMany(cascade = CascadeType.ALL)
@@ -35,10 +34,10 @@ public class Examen implements Serializable {
 
     }
 
-    public Examen(DMP dmp, String date, String urlresultats, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
+    public Examen(DMP dmp, String date, String urlResultats, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
         this.date = date;
-        this.urlresultats = urlresultats;
+        this.urlResultats = urlResultats;
         this.responsable = responsable;
         this.publication = publication;
         this.codesActes = codesActes;
@@ -70,7 +69,9 @@ public class Examen implements Serializable {
         this.date = date;
     }
 
+    public String getUrlResultats() { return urlResultats; }
 
+    public void setUrlResultats(String urlResultats) { this.urlResultats = urlResultats; }
 
     public Employe getResponsable() {
         return responsable;
@@ -112,21 +113,13 @@ public class Examen implements Serializable {
 
     public void setDemandeExamen(DemandeExamen demandeExamen) { this.demandeExamen = demandeExamen; }
 
-    public String getUrlresultats() {
-        return urlresultats;
-    }
-
-    public void setUrlresultats(String urlresultats) {
-        this.urlresultats = urlresultats;
-    }
-
     @Override
     public String toString() {
         return "Examen{" +
                 "id=" + id +
                 ", dmp=" + dmp +
                 ", date=" + date +
-                ", URLresultats=" + urlresultats +
+                ", urlResultats=" + urlResultats +
                 ", responsable=" + responsable +
                 ", publication=" + publication +
                 ", codesActes=" + codesActes +

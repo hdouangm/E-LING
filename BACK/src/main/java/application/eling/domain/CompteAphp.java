@@ -24,14 +24,18 @@ public class CompteAphp implements Serializable {
 
     }
 
-    public CompteAphp(String login, String motDePasse, String langue,Employe employe) {
-        this.login = login;
-        this.motDePasse = motDePasse;
-        this.langue = langue;
-        this.employe = employe;
-    }
 
-    public String getLogin() {
+    public CompteAphp(String login, String motDePasse, String langue, Employe employe) {
+		super();
+		this.login = login;
+		this.motDePasse = motDePasse;
+		this.langue = langue;
+		this.employe = employe;
+	}
+
+
+
+	public String getLogin() {
         return login;
     }
 

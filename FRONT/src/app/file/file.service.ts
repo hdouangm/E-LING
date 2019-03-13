@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpRequest, HttpHeaders } from '@angular/common/http';
-import { Examen } from '../datamodel/examen';
-import { Intervention } from 'src/app/datamodel/intervention';
+import { Examen, Intervention } from '../datamodel/dataModel';
 
 const API_URL = environment.apiUrl + '/file';
 @Injectable({

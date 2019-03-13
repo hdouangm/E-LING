@@ -17,6 +17,7 @@ public class Intervention implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
+    @OneToOne(cascade = CascadeType.ALL)
     private DMP dmp;
     private Integer type;
     private String lieu;
@@ -27,6 +28,8 @@ public class Intervention implements Serializable {
     private Set<Acte> codesActes = new HashSet<Acte>(0);
     private Integer prix;
     private Boolean payer;
+    @OneToOne(cascade = CascadeType.ALL)
+    private DemandeIntervention demandeIntervention;
 
     public Intervention(){
 
@@ -122,6 +125,14 @@ public class Intervention implements Serializable {
 
     public void setPayer(Boolean payer) {
         this.payer = payer;
+    }
+
+    public DemandeIntervention getDemandeIntervention() {
+        return demandeIntervention;
+    }
+
+    public void setDemandeIntervention(DemandeIntervention demandeIntervention) {
+        this.demandeIntervention = demandeIntervention;
     }
 
     @Override

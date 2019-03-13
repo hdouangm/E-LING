@@ -15,8 +15,17 @@ public class DMP implements Serializable {
     @GeneratedValue
     private Integer id;
     private String ss;
-    @OneToOne(cascade=CascadeType.ALL)
-    private Patient patient;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Intervention intervention;
+    @OneToOne(cascade = CascadeType.ALL)
+    private DemandeIntervention demandeIntervention;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Examen examen;
+    @OneToOne(cascade = CascadeType.ALL)
+    private DemandeExamen demandeExamen;
+
 
     public DMP(){
 
@@ -40,6 +49,38 @@ public class DMP implements Serializable {
 
     public void setSs(String ss) {
         this.ss = ss;
+    }
+
+    public Intervention getIntervention() {
+        return intervention;
+    }
+
+    public void setIntervention(Intervention intervention) {
+        this.intervention = intervention;
+    }
+
+    public DemandeIntervention getDemandeIntervention() {
+        return demandeIntervention;
+    }
+
+    public void setDemandeIntervention(DemandeIntervention demandeIntervention) {
+        this.demandeIntervention = demandeIntervention;
+    }
+
+    public Examen getExamen() {
+        return examen;
+    }
+
+    public void setExamen(Examen examen) {
+        this.examen = examen;
+    }
+
+    public DemandeExamen getDemandeExamen() {
+        return demandeExamen;
+    }
+
+    public void setDemandeExamen(DemandeExamen demandeExamen) {
+        this.demandeExamen = demandeExamen;
     }
 
     @Override

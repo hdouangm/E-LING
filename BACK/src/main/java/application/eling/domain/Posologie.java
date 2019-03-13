@@ -18,8 +18,11 @@ public class Posologie implements Serializable {
     @GeneratedValue
     private Integer id;
     private DMP dmp;
+    private String dateDebut;
+    private String dateFin;
     private String posologie;
-    private List<String> suiviTraitement;
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<SuiviTraitement> suiviTraitement = new HashSet<SuiviTraitement>(0);
     private Employe responsable;
     private Boolean publication;
     @OneToMany(cascade = CascadeType.ALL)
@@ -31,8 +34,10 @@ public class Posologie implements Serializable {
 
     }
 
-    public Posologie(DMP dmp, String posologie, List<String> suiviTraitement, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
+    public Posologie(DMP dmp, String dateDebut, String dateFin, String posologie, Set<SuiviTraitement> suiviTraitement, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
         this.dmp = dmp;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
         this.posologie = posologie;
         this.suiviTraitement = suiviTraitement;
         this.responsable = responsable;
@@ -58,6 +63,14 @@ public class Posologie implements Serializable {
         this.dmp = dmp;
     }
 
+    public String getDateDebut() { return dateDebut; }
+
+    public void setDateDebut(String dateDebut) { this.dateDebut = dateDebut; }
+
+    public String getDateFin() { return dateFin; }
+
+    public void setDateFin(String dateFin) { this.dateFin = dateFin; }
+
     public String getPosologie() {
         return posologie;
     }
@@ -66,11 +79,11 @@ public class Posologie implements Serializable {
         this.posologie = posologie;
     }
 
-    public List<String> getSuiviTraitement() {
+    public Set<SuiviTraitement> getSuiviTraitement() {
         return suiviTraitement;
     }
 
-    public void setSuiviTraitement(List<String> suiviTraitement) {
+    public void setSuiviTraitement(Set<SuiviTraitement> suiviTraitement) {
         this.suiviTraitement = suiviTraitement;
     }
 
@@ -119,6 +132,8 @@ public class Posologie implements Serializable {
         return "Posologie{" +
                 "id=" + id +
                 ", dmp=" + dmp +
+                ", dateDebut='" + dateDebut + '\'' +
+                ", dateFin='" + dateFin + '\'' +
                 ", posologie='" + posologie + '\'' +
                 ", suiviTraitement=" + suiviTraitement +
                 ", responsable=" + responsable +

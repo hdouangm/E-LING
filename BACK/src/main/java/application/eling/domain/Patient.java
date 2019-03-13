@@ -14,11 +14,9 @@ public class Patient implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
-    @OneToOne(cascade=CascadeType.ALL)
     private NoeudHopital noeudHopital;
-    @OneToOne(cascade=CascadeType.ALL)
     private DMP dmp;
-    @OneToOne(cascade=CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private DonneesSociales donneesSociales;
 
     public Patient(){

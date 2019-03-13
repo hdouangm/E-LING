@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { Examen } from '../datamodel/examen';
+
 import { ExamenService } from './examen.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FileService } from 'src/app/file/file.service';
-import { Employe } from 'src/app/datamodel/Employe';
-import { DemandeExamen } from 'src/app/datamodel/Demande_examen';
+import { Employe, DemandeExamen, Examen } from '../datamodel/dataModel';
+
 
 @Component({
   selector: 'app-examen',
@@ -34,7 +34,7 @@ export class ExamenComponent implements OnInit {
   onSubmit() {
     this.examen = new Examen();
     this.submitted = true;
-    this.examen.urlresultats = this.selectedFile.name;
+    this.examen.urlResultats = this.selectedFile.name;
     this.examen.publication = true ;
     const today: Date = new Date();
     const date: string = today.getDate() + '/' + (1 + today.getMonth()) + '/' + today.getFullYear();
