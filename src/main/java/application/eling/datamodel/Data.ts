@@ -147,14 +147,16 @@ export class Examen {
 
     constructor(
         public id: number = 0,
+        public dmp: DMP,
         public date: string = '',
-        public prix: number = 0,
-        public publication: boolean = false,
-        public payer: boolean = false,
-        public codesActes: Array<Acte> = new Array<Acte>(),
         public urlResultats: string = '',
-        public responsable: Employe
-
+        public responsable: Employe,
+        public publication: boolean = false,
+        public codesActes: Array<Acte> = new Array<Acte>(),
+        public prix: number = 0,
+        public payer: boolean = false,
+        public demandeExamen: DemandeExamen
+        
     ) {}
 }
 

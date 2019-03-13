@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="947c854d-4935-4b0c-b0e8-cc81a53b080d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/application/eling/domain/Data.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/eling/domain/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/eling/domain/Employe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/eling/domain/Examen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/eling/domain/Examen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/application/eling/domain/NoeudHopital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/eling/domain/NoeudHopital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/E-LING-1.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/E-LING-1.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/E-LING-1/WEB-INF/classes/application/eling/domain/DemandeExamen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/E-LING-1/WEB-INF/classes/application/eling/domain/DemandeExamen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/E-LING-1/WEB-INF/classes/application/eling/domain/DemandeIntervention.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/E-LING-1/WEB-INF/classes/application/eling/domain/DemandeIntervention.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/E-LING-1/WEB-INF/classes/application/eling/domain/Examen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/E-LING-1/WEB-INF/classes/application/eling/domain/Examen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/eling/domain/DemandeExamen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/eling/domain/DemandeExamen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/eling/domain/DemandeIntervention.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/eling/domain/DemandeIntervention.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application/eling/domain/Examen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application/eling/domain/Examen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/application/eling/data/Data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/eling/datamodel/Data.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Examen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="56" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="56" />
+            <state relative-caret-position="270">
+              <caret line="18" selection-start-line="18" selection-end-line="30" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,10 +52,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Data.ts">
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/datamodel/Data.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+            <state relative-caret-position="98">
+              <caret line="148" selection-start-line="148" selection-end-line="148" />
             </state>
           </provider>
         </entry>
@@ -167,6 +157,7 @@
       <find>type</find>
       <find>private</find>
       <find>;</find>
+      <find>url</find>
     </findStrings>
     <replaceStrings>
       <replace>: string = '',</replace>
@@ -225,6 +216,7 @@
         <option value="$PROJECT_DIR$/src/main/java/application/eling/domain/Employe.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/eling/domain/NoeudHopital.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/eling/domain/Data.ts" />
+        <option value="$PROJECT_DIR$/src/main/java/application/eling/datamodel/Data.ts" />
       </list>
     </option>
   </component>
@@ -298,6 +290,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="eling" type="462c0819:PsiDirectoryNode" />
+              <item name="datamodel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ELING" type="b2602c69:ProjectViewProjectNode" />
+              <item name="E-LING" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="eling" type="462c0819:PsiDirectoryNode" />
               <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -358,7 +360,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552439116482" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552439711066" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -366,6 +368,9 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/application/eling/data" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/application/eling/domain" />
       <recent name="$PROJECT_DIR$/src/test/java" />
@@ -691,26 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Employe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="26" column="70" lean-forward="true" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Examen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="56" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/NoeudHopital.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -754,10 +739,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Data.ts">
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Examen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="30" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Employe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="26" column="70" lean-forward="true" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/datamodel/Data.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
         </state>
       </provider>
     </entry>
