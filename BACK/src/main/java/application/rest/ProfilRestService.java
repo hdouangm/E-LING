@@ -46,6 +46,18 @@ public class ProfilRestService {
         return Response.ok(profils).build();
     }
 
+    @GET
+    @Path("byLogin/{login}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getDonneesSociales1(@PathParam("login") String login) {
+        DonneesSociales ds = caphp.findByLogin(login);
+        if(ds == null)
+            return Response.status(Response.Status.NO_CONTENT).build();
+
+
+        return Response.ok(ds).build();
+    }
 
 
     @POST
