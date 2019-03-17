@@ -3,7 +3,7 @@ import { environment } from 'src/environments/environment.prod';
 
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Examen } from '../datamodel/examen';
+import { Examen } from '../datamodel/dataModel';
 
 
 const API_URL = environment.apiUrl + '/examens';

@@ -30,6 +30,9 @@ import { InterventionComponent } from './intervention/intervention.component';
 import { ExamenDetailComponent } from './examen/examen-detail/examen-detail.component';
 import { ExamenComponent } from './examen/examen.component';
 import {FilterNamePipe} from './list-patient/filter-name.pipe';
+import { PosologieComponent } from './posologie/posologie.component';
+import { InterventionDetailComponent } from './intervention/intervention-detail/intervention-detail.component';
+import { DiagnostiqueComponent } from './diagnostique/diagnostique.component';
 const routelist: Route[] = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
 
@@ -75,7 +78,10 @@ const routelist: Route[] = [
     InterventionComponent,
     ExamenComponent,
     ExamenDetailComponent,
-    FilterNamePipe
+    FilterNamePipe,
+    PosologieComponent,
+    InterventionDetailComponent,
+    DiagnostiqueComponent
 
   ],
   imports: [
