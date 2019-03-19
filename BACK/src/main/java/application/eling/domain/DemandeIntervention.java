@@ -1,10 +1,11 @@
 package application.eling.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
-
+import javax.persistence.OneToOne;
 
 import java.io.Serializable;
 
