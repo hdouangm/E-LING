@@ -9,7 +9,15 @@ import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
+import org.glassfish.jersey.media.multipart.FormDataParam;
+
+import application.eling.domain.DMP;
+import application.eling.domain.DemandeIntervention;
+import application.eling.domain.Employe;
 import application.eling.domain.Intervention;
+import application.repository.DMPRepository;
+import application.repository.DemandeInterventionRepository;
+import application.repository.EmployeRepository;
 import application.repository.InterventionDAO;
 
 
@@ -18,6 +26,15 @@ public class InterventionRestService {
 
 		@EJB
 	    private InterventionDAO interventionDAO = new InterventionDAO();
+		
+		@EJB
+		private DMPRepository dmpDAO;
+		
+		@EJB
+		private DemandeInterventionRepository demandeDAO;
+		
+		@EJB
+		private EmployeRepository employeDAO;
 
 	    @Context
 	    private UriInfo uriInfo;
@@ -95,6 +112,55 @@ public class InterventionRestService {
 			}
 	        URI bookUri = uriInfo.getBaseUriBuilder().path(InterventionRestService.class).path(String.valueOf(exam.getId())).build();
 	        return Response.created(bookUri).build();
+	    }
+	    
+	    @POST
+	    @Path("linkDMP")
+	    @Consumes(MediaType.MULTIPART_FORM_DATA)
+	    @Produces(MediaType.APPLICATION_JSON)
+	    public Response linkDMPToExamen(@FormDataParam("intervention") Integer id_intervention, @FormDataParam("dmp") Integer id_dmp) {
+	    	DMP dmp = dmpDAO.find(id_dmp);
+	    	Intervention intervention = interventionDAO.get(id_intervention);
+	    	try {
+				intervention.setDmp(dmp);
+				intervention = interventionDAO.update(intervention);
+			} catch (Exception e) {
+				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
+			}
+	        return Response.ok(intervention).build();
+	    }
+	    
+	    @POST
+	    @Path("linkRes")
+	    @Consumes(MediaType.MULTIPART_FORM_DATA)
+	    @Produces(MediaType.APPLICATION_JSON)
+	    public Response linkResToExamen(@FormDataParam("intervention") Integer id_intervention, @FormDataParam("res") Integer id_dmp) {
+	    	Employe res = employeDAO.find(id_dmp);
+	    	Intervention intervention = interventionDAO.get(id_intervention);
+	    	try {
+				intervention.setResponsable(res);
+				intervention = interventionDAO.update(intervention);
+			} catch (Exception e) {
+				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
+			}
+	        return Response.ok(intervention).build();
+	    }
+
+	    
+	    @POST
+	    @Path("linkDemande")
+	    @Consumes(MediaType.MULTIPART_FORM_DATA)
+	    @Produces(MediaType.APPLICATION_JSON)
+	    public Response linkDemandeToExamen(@FormDataParam("intervention") Integer id_exam, @FormDataParam("demande") Integer id_demande) {
+	    	DemandeIntervention demande = demandeDAO.find(id_demande);
+	    	Intervention exam = interventionDAO.get(id_exam);
+	    	try {
+				exam.setDemandeIntervention(demande);
+				exam = interventionDAO.update(exam);
+			} catch (Exception e) {
+				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
+			}
+	        return Response.ok(exam).build();
 	    }
 	
 }

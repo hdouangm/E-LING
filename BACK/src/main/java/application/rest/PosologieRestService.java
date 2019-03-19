@@ -9,7 +9,15 @@ import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
+import org.glassfish.jersey.media.multipart.FormDataParam;
+
+import application.eling.domain.DMP;
+import application.eling.domain.Employe;
+import application.eling.domain.Examen;
+import application.eling.domain.Intervention;
 import application.eling.domain.Posologie;
+import application.repository.DMPRepository;
+import application.repository.EmployeRepository;
 import application.repository.PosologieDAO;
 
 
@@ -18,6 +26,12 @@ public class PosologieRestService {
 
 		@EJB
 	    private PosologieDAO posologieDAO = new PosologieDAO();
+		
+		@EJB
+		private DMPRepository dmpDAO;
+		
+		@EJB
+		private EmployeRepository employeDAO;
 
 	    @Context
 	    private UriInfo uriInfo;
@@ -95,6 +109,38 @@ public class PosologieRestService {
 			}
 	        URI bookUri = uriInfo.getBaseUriBuilder().path(PosologieRestService.class).path(String.valueOf(exam.getId())).build();
 	        return Response.created(bookUri).build();
+	    }
+	    
+	    @POST
+	    @Path("linkDMP")
+	    @Consumes(MediaType.MULTIPART_FORM_DATA)
+	    @Produces(MediaType.APPLICATION_JSON)
+	    public Response linkDMPToExamen(@FormDataParam("posologie") Integer id_exam, @FormDataParam("dmp") Integer id_dmp) {
+	    	DMP dmp = dmpDAO.find(id_dmp);
+	    	Posologie exam = posologieDAO.get(id_exam);
+	    	try {
+				exam.setDmp(dmp);
+				exam = posologieDAO.update(exam);
+			} catch (Exception e) {
+				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
+			}
+	        return Response.ok(exam).build();
+	    }
+	    
+	    @POST
+	    @Path("linkRes")
+	    @Consumes(MediaType.MULTIPART_FORM_DATA)
+	    @Produces(MediaType.APPLICATION_JSON)
+	    public Response linkResToExamen(@FormDataParam("posologie") Integer id_intervention, @FormDataParam("res") Integer id_dmp) {
+	    	Employe res = employeDAO.find(id_dmp);
+	    	Posologie intervention = posologieDAO.get(id_intervention);
+	    	try {
+				intervention.setResponsable(res);
+				intervention = posologieDAO.update(intervention);
+			} catch (Exception e) {
+				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
+			}
+	        return Response.ok(intervention).build();
 	    }
 	
 }

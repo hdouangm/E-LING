@@ -9,8 +9,16 @@ import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
+import org.glassfish.jersey.media.multipart.FormDataParam;
+
+import application.eling.domain.DMP;
 import application.eling.domain.Diagnostique;
+import application.eling.domain.Employe;
+import application.eling.domain.Intervention;
+import application.eling.domain.Posologie;
+import application.repository.DMPRepository;
 import application.repository.DiagnostiqueDAO;
+import application.repository.EmployeRepository;
 
 
 
@@ -21,6 +29,12 @@ public class DiagnostiqueRestService {
 
 		@EJB
 	    private DiagnostiqueDAO diagnostiqueDAO = new DiagnostiqueDAO();
+		
+		@EJB
+		private DMPRepository dmpDAO;
+		
+		@EJB
+		private EmployeRepository employeDAO;
 
 	    @Context
 	    private UriInfo uriInfo;
@@ -98,6 +112,38 @@ public class DiagnostiqueRestService {
 			}
 	        URI bookUri = uriInfo.getBaseUriBuilder().path(DiagnostiqueRestService.class).path(String.valueOf(exam.getId())).build();
 	        return Response.created(bookUri).build();
+	    }
+	    
+	    @POST
+	    @Path("linkDMP")
+	    @Consumes(MediaType.MULTIPART_FORM_DATA)
+	    @Produces(MediaType.APPLICATION_JSON)
+	    public Response linkDMPToExamen(@FormDataParam("diagnostique") Integer id_exam, @FormDataParam("dmp") Integer id_dmp) {
+	    	DMP dmp = dmpDAO.find(id_dmp);
+	    	Diagnostique exam = diagnostiqueDAO.get(id_exam);
+	    	try {
+				exam.setDmp(dmp);
+				exam = diagnostiqueDAO.update(exam);
+			} catch (Exception e) {
+				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
+			}
+	        return Response.ok(exam).build();
+	    }
+	    
+	    @POST
+	    @Path("linkRes")
+	    @Consumes(MediaType.MULTIPART_FORM_DATA)
+	    @Produces(MediaType.APPLICATION_JSON)
+	    public Response linkResToExamen(@FormDataParam("diagnostique") Integer id_intervention, @FormDataParam("res") Integer id_dmp) {
+	    	Employe res = employeDAO.find(id_dmp);
+	    	Diagnostique intervention = diagnostiqueDAO.get(id_intervention);
+	    	try {
+				intervention.setResponsable(res);
+				intervention = diagnostiqueDAO.update(intervention);
+			} catch (Exception e) {
+				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
+			}
+	        return Response.ok(intervention).build();
 	    }
 	
 }
