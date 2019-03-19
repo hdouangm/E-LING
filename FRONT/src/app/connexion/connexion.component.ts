@@ -25,6 +25,7 @@ export class ConnexionComponent implements OnInit {
       password: ['', [Validators.required]]
     });
    this.messageErreur = '';
+     this.apiService.deconnexion();
 }
 
  // convenience getter for easy access to form fields
