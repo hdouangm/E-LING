@@ -50,6 +50,7 @@ application/repository/ExamenRepository.class
 application/repository/ActeSetup.class
 application/repository/TypeExamenSetup.class
 application/repository/ExamenDAO.class
+application/eling/domain/SuiviTraitement.class
 application/eling/domain/Employe_.class
 application/eling/domain/DemandeIntervention.class
 application/eling/domain/DMP_.class
@@ -72,6 +73,7 @@ application/repository/EmployeRepository.class
 application/security/utils/PasswordUtils.class
 application/eling/domain/SocialData.class
 application/filters/CORSFilter.class
+application/eling/domain/SuiviTraitement_.class
 application/eling/domain/Intervention.class
 application/repository/DiagnostiqueDAO.class
 application/eling/domain/Competence_.class
