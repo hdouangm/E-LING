@@ -30,7 +30,7 @@ export class ConnexionComponent implements OnInit {
  // convenience getter for easy access to form fields
  get f() { return this.loginForm.controls; }
 
- onSubmit() {
+  onSubmit() {
      this.submitted = true;
      // stop here if form is invalid
      if (this.loginForm.invalid) {
@@ -43,29 +43,26 @@ export class ConnexionComponent implements OnInit {
      };
 
      this.apiService.connexion(data)
-      .subscribe((reponse: any) => {
-        console.log('reponse: ' + JSON.stringify(reponse));
+      .subscribe(
+        (reponse: any) => {
+        console.log('reponse: ' + reponse);
         if (reponse == null) {
           this.messageErreur = `Erreur d'authentification`;
           return;
         }
-        localStorage.setItem('ACCESS_TOKEN', reponse);
+        localStorage.setItem('ACCESS_TOKEN', reponse.token);
         localStorage.setItem('user', data.login);
-        this.apiService.getDonneesSociales(data.login).subscribe((response: any) => {
-          if (response == null) {
-            this.messageErreur = `Erreur d'authentification`;
-            return;
-          }
-          localStorage.setItem('nom', response.nom);
-          localStorage.setItem('prenom', response.prenom);
-          this.router.navigate(['']);
+        localStorage.setItem('nom', reponse.nom);
+       localStorage.setItem('prenom', reponse.prenom);
+       this.router.navigate(['listePatient']);
+
+      },
+      error => {
+        alert(`Oups une erreur s'est produite.`);
+        this.router.navigate(['connexion']);
+      });
 
 
-        });
-        this.apiService.getNiveau(data.login).subscribe((responses: any) => {
-          localStorage.setItem('niveau', responses.niveau);
-        });
-    });
 }
 
 getValue(id: string) {
