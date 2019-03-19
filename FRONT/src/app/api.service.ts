@@ -101,10 +101,10 @@ export class ApiService {
     return  this.httpClient.get(`${this.API_URL}/DemandeExamen/Lab`);
   }
 
-  public connexion(user: any)  {
+ public connexion(user: any)  {
     return this.httpClient.post(`${this.API_URL}/Connexion/`,
       user,
-      {  responseType: 'text' as 'json' }
+     this.httpOptions
     );
   }
 
@@ -121,9 +121,7 @@ export class ApiService {
 
 
   public deconnexion() {
-    localStorage.removeItem('ACCESS_TOKEN');
-    localStorage.removeItem('nom');
-    localStorage.removeItem('prenom');
+    localStorage.clear();
   }
 
   // Tester si l'utilisateur est connecté pour le gard
