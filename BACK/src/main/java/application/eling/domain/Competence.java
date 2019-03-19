@@ -19,6 +19,9 @@ public class Competence implements Serializable {
     private Integer id;
     private String description;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Employe employe;
+
     public Competence() {
 
     }
@@ -43,6 +46,14 @@ public class Competence implements Serializable {
         this.description = description;
     }
 
+    public Employe getEmploye() {
+        return employe;
+    }
+
+    public void setEmploye(Employe employe) {
+        this.employe = employe;
+    }
+
     @Override
     public String toString() {
         return "Competence{" +
@@ -50,4 +61,27 @@ public class Competence implements Serializable {
                 ", description='" + description + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Competence other = (Competence) obj;
+        if (description == null) {
+            if (other.description != null)
+                return false;
+        } else if (!description.equals(other.description))
+            return false;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        return true;
+    }
+
 }

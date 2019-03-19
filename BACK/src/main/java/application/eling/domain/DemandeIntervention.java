@@ -18,11 +18,14 @@ public class DemandeIntervention implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
+    @OneToOne(cascade = CascadeType.ALL)
     private DMP dmp;
     private String date;
     private Boolean publierDemande;
     private Boolean demandeRemplie;
     private String type;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Intervention intervention;
 
     public DemandeIntervention(){
 
@@ -75,6 +78,14 @@ public class DemandeIntervention implements Serializable {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Intervention getIntervention() {
+        return intervention;
+    }
+
+    public void setIntervention(Intervention intervention) {
+        this.intervention = intervention;
     }
 
     @Override

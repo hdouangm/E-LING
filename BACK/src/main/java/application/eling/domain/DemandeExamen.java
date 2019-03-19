@@ -16,11 +16,14 @@ public class DemandeExamen implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
+    @OneToOne(cascade = CascadeType.ALL)
     private DMP dmp;
     private String type;
     private String date;
     private Boolean publierDemande;
     private Boolean demandeRemplie;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Examen examen;
 
     public DemandeExamen(){
 
@@ -73,6 +76,10 @@ public class DemandeExamen implements Serializable {
     public Boolean getDemandeRemplie() { return demandeRemplie; }
 
     public void setDemandeRemplie(Boolean demandeRemplie) { this.demandeRemplie = demandeRemplie; }
+
+    public Examen getExamen() { return examen; }
+
+    public void setExamen(Examen examen) { this.examen = examen; }
 
     @Override
     public String toString() {

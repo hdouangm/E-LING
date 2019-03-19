@@ -17,6 +17,7 @@ public class Diagnostique implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
+    @OneToOne(cascade = CascadeType.ALL)
     private DMP dmp;
     private String diagnostic;
     private Employe responsable;

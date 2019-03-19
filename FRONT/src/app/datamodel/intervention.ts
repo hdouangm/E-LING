@@ -15,7 +15,7 @@ export class Intervention {
         public responsable: Employe = null,
         public codesActes: Array<Acte> = new Array<Acte>(),
         public demandeIntervention: DemandeIntervention = null,
-        public URLresultats: string = ''
+        public urlResultats: string = ''
 
     ) {}
 

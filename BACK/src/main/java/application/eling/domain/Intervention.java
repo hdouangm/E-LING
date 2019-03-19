@@ -17,8 +17,9 @@ public class Intervention implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
+    @OneToOne(cascade = CascadeType.ALL)
     private DMP dmp;
-    private Integer type;
+    private String type;
     private String lieu;
     private String date;
     private Employe responsable;
@@ -27,12 +28,15 @@ public class Intervention implements Serializable {
     private Set<Acte> codesActes = new HashSet<Acte>(0);
     private Integer prix;
     private Boolean payer;
+    @OneToOne(cascade = CascadeType.ALL)
+    private DemandeIntervention demandeIntervention;
+    private String urlResultats;
 
     public Intervention(){
 
     }
 
-    public Intervention(DMP dmp, Integer type, String lieu, String date, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
+    public Intervention(DMP dmp, String type, String lieu, String date, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer, String urlResultats) {
         this.dmp = dmp;
         this.type = type;
         this.lieu = lieu;
@@ -42,6 +46,7 @@ public class Intervention implements Serializable {
         this.codesActes = codesActes;
         this.prix = prix;
         this.payer = payer;
+        this.urlResultats = urlResultats;
     }
 
     public Integer getId() {
@@ -60,11 +65,11 @@ public class Intervention implements Serializable {
         this.dmp = dmp;
     }
 
-    public Integer getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -122,6 +127,22 @@ public class Intervention implements Serializable {
 
     public void setPayer(Boolean payer) {
         this.payer = payer;
+    }
+
+    public DemandeIntervention getDemandeIntervention() {
+        return demandeIntervention;
+    }
+
+    public void setDemandeIntervention(DemandeIntervention demandeIntervention) {
+        this.demandeIntervention = demandeIntervention;
+    }
+
+    public String getUrlResultats() {
+        return urlResultats;
+    }
+
+    public void setUrlResultats(String urlResultats) {
+        this.urlResultats = urlResultats;
     }
 
     @Override
