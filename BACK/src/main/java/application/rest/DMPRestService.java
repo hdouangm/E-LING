@@ -43,28 +43,37 @@ public class DMPRestService {
         return Response.ok(DMP).build();
     }
 
-    @POST
-    @Path("id")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @GET
+    @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getDMP(@PathParam("id") Integer id) {
-        DMP dmp = repository.find(id).get(0);
+        DMP dmp = repository.find(id);
         if (dmp == null)
             return Response.status(Response.Status.NOT_FOUND).build();
         return Response.ok(dmp).build();
     }
 
     @POST
+    @Path("getDMP")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getDMPP(@PathParam("id") Integer id) {
+        DMP dmp = repository.findByIDPatient(id).get(0);
+        if (dmp == null)
+            return Response.status(Response.Status.NOT_FOUND).build();
+        return Response.ok(dmp).build();
+    }
+    @POST
     @Path("profession")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response setProfession(@PathParam("ss") String ss,@PathParam("prof") String prof ) {
-        try {
-            repository.setProfession(ss,prof);
-        } catch (Exception e) {
-            return Response.status(Response.Status.NOT_ACCEPTABLE).build();
-        }
-        return Response.ok().build();
+    public Response setProfession( DMP dmp ) {
+        if (dmp == null)
+            return Response.status(Response.Status.NOT_FOUND).build();
+        repository.setProfession(dmp);
+
+
+        return Response.status(Response.Status.NOT_FOUND).build();
 
 
     }

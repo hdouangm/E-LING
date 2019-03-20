@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.ws.rs.PathParam;
 import java.util.List;
 
 @Stateless
@@ -18,10 +19,14 @@ public class DMPRepository {
         return em.createNamedQuery(DMP.FIND_ALL, DMP.class).getResultList();
     }
 
-    public List<DMP> find(int id) {
-        return em.createQuery("SELECT d from DMP d JOIN Patient p WHERE  p.id = :id ").getResultList();
+    public DMP find(Integer id) {
+        return em.find(DMP.class, id);
     }
 
+    public List<DMP> findByIDPatient(Integer id){
+        return em.createQuery("SELECT d from DMP d WHERE  d.patient.id = " + id).getResultList();
+
+    }
     public Integer save(DMP p) {
         em.persist(p);
         return p.getId();
@@ -31,7 +36,13 @@ public class DMPRepository {
         em.merge(p);
     }
 
-
+    public void delete(Integer id) {
+        DMP p = find(id);
+        if (p == null) {
+            throw new NoSuchEntityException("No entity with the id: " + id);
+        }
+        em.remove(p);
+    }
 
     public List<DMP> findByParam(String ss) {
         TypedQuery<DMP> query = em.createQuery(
@@ -39,9 +50,9 @@ public class DMPRepository {
         return query.setParameter("ss", ss).getResultList();
     }
 
-    public void setProfession(String ss,String prof){
+    public void setProfession(DMP dmp ){
 
-        em.createQuery("UPDATE DMP d SET Profession = :prof WHERE d.ss = :ss",DMP.class);
+        em.merge(dmp);
 
     }
 }

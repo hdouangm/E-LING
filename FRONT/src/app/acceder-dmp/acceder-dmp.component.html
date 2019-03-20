@@ -23,7 +23,7 @@
        <p style="padding-left: 25%">Née le: {{getBD()}} </p>
        <p style="padding-left: 1%">à : Melun </p><br><br>
        <p >Code postal du domicile: {{getCP()}} </p><br>
-       <label>Profession: </label><input type="text" id="Profession" ngstyle="display: inline" class="form-control col-3" [disabled]="prof() ? true : false"><br>
+       <label>Profession: </label><input type="text" [(ngModel)]="Profession" id="Profession" ngstyle="display: inline" class="form-control col-3" [disabled]="prof() ? true : false"><br>
          <p style="padding-left: 40%;font-weight:bold">Groupe Sanguin:</p>
        <p style="padding-left: 15%;font-weight:bold">Groupe Rhésus:</p><br><br>
        <p>Date d'entrée: 29/03/2019</p>

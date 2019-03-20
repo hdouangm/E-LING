@@ -35,87 +35,16 @@ public class DMP implements Serializable {
     @OneToOne(cascade=CascadeType.ALL)
     private Diagnostique diagnostique;
 
-    private String Profession;
-    private String Motif;
+    private String profession;
+    private String motif;
     private String affectionCongenitales;
-    private String MaladieInfectieuse;
-    private String AutreAffections;
-    private String InterventionsChir;
-    private String Accidents;
-    private String Maladies;
-    private String Allergies;
+    private String maladieInfectieuse;
+    private String autreAffections;
+    private String interventionsChir;
+    private String accidents;
+    private String maladies;
+    private String allergies;
 
-    public String getAccidents() {
-        return Accidents;
-    }
-
-    public void setAccidents(String accidents) {
-        Accidents = accidents;
-    }
-
-    public String getMaladies() {
-        return Maladies;
-    }
-
-    public void setMaladies(String maladies) {
-        Maladies = maladies;
-    }
-
-    public String getAllergies() {
-        return Allergies;
-    }
-
-    public void setAllergies(String allergies) {
-        Allergies = allergies;
-    }
-
-    public String getProfession() {
-        return Profession;
-    }
-
-    public void setProfession(String profession) {
-        Profession = profession;
-    }
-
-    public String getMotif() {
-        return Motif;
-    }
-
-    public void setMotif(String motif) {
-        Motif = motif;
-    }
-
-    public String getAffectionCongenitales() {
-        return affectionCongenitales;
-    }
-
-    public void setAffectionCongenitales(String affectionCongenitales) {
-        this.affectionCongenitales = affectionCongenitales;
-    }
-
-    public String getMaladieInfectieuse() {
-        return MaladieInfectieuse;
-    }
-
-    public void setMaladieInfectieuse(String maladieInfectieuse) {
-        MaladieInfectieuse = maladieInfectieuse;
-    }
-
-    public String getAutreAffections() {
-        return AutreAffections;
-    }
-
-    public void setAutreAffections(String autreAffections) {
-        AutreAffections = autreAffections;
-    }
-
-    public String getInterventionsChir() {
-        return InterventionsChir;
-    }
-
-    public void setInterventionsChir(String interventionsChir) {
-        InterventionsChir = interventionsChir;
-    }
 
     public DMP(){
 
@@ -195,6 +124,78 @@ public class DMP implements Serializable {
 
     public void setDiagnostique(Diagnostique diagnostique) {
         this.diagnostique = diagnostique;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
+    }
+
+    public String getMotif() {
+        return motif;
+    }
+
+    public void setMotif(String motif) {
+        this.motif = motif;
+    }
+
+    public String getAffectionCongenitales() {
+        return affectionCongenitales;
+    }
+
+    public void setAffectionCongenitales(String affectionCongenitales) {
+        this.affectionCongenitales = affectionCongenitales;
+    }
+
+    public String getMaladieInfectieuse() {
+        return maladieInfectieuse;
+    }
+
+    public void setMaladieInfectieuse(String maladieInfectieuse) {
+        this.maladieInfectieuse = maladieInfectieuse;
+    }
+
+    public String getAutreAffections() {
+        return autreAffections;
+    }
+
+    public void setAutreAffections(String autreAffections) {
+        this.autreAffections = autreAffections;
+    }
+
+    public String getInterventionsChir() {
+        return interventionsChir;
+    }
+
+    public void setInterventionsChir(String interventionsChir) {
+        this.interventionsChir = interventionsChir;
+    }
+
+    public String getAccidents() {
+        return accidents;
+    }
+
+    public void setAccidents(String accidents) {
+        this.accidents = accidents;
+    }
+
+    public String getMaladies() {
+        return maladies;
+    }
+
+    public void setMaladies(String maladies) {
+        this.maladies = maladies;
+    }
+
+    public String getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
     }
 
     @Override

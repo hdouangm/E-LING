@@ -11,27 +11,27 @@ import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.7.4.v20190115-rNA", date="2019-03-20T12:51:34")
+@Generated(value="EclipseLink-2.7.4.v20190115-rNA", date="2019-03-20T17:15:28")
 @StaticMetamodel(DMP.class)
 public class DMP_ { 
 
     public static volatile SingularAttribute<DMP, String> ss;
-    public static volatile SingularAttribute<DMP, String> InterventionsChir;
+    public static volatile SingularAttribute<DMP, String> profession;
+    public static volatile SingularAttribute<DMP, String> allergies;
+    public static volatile SingularAttribute<DMP, String> autreAffections;
     public static volatile SingularAttribute<DMP, String> affectionCongenitales;
     public static volatile SingularAttribute<DMP, Examen> examen;
     public static volatile SingularAttribute<DMP, Posologie> posologie;
-    public static volatile SingularAttribute<DMP, String> MaladieInfectieuse;
-    public static volatile SingularAttribute<DMP, String> Allergies;
+    public static volatile SingularAttribute<DMP, String> accidents;
+    public static volatile SingularAttribute<DMP, String> maladieInfectieuse;
+    public static volatile SingularAttribute<DMP, String> interventionsChir;
     public static volatile SingularAttribute<DMP, DemandeExamen> demandeExamen;
-    public static volatile SingularAttribute<DMP, String> AutreAffections;
     public static volatile SingularAttribute<DMP, Diagnostique> diagnostique;
-    public static volatile SingularAttribute<DMP, String> Profession;
-    public static volatile SingularAttribute<DMP, String> Maladies;
+    public static volatile SingularAttribute<DMP, String> maladies;
     public static volatile SingularAttribute<DMP, Patient> patient;
     public static volatile SingularAttribute<DMP, DemandeIntervention> demandeIntervention;
     public static volatile SingularAttribute<DMP, Integer> id;
+    public static volatile SingularAttribute<DMP, String> motif;
     public static volatile SingularAttribute<DMP, Intervention> intervention;
-    public static volatile SingularAttribute<DMP, String> Motif;
-    public static volatile SingularAttribute<DMP, String> Accidents;
 
 }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-acceder-dmp',
@@ -14,15 +13,9 @@ export class AccederDmpComponent implements OnInit {
   patient: any;
   dmp: any;
   private location: Location;
-  API_URL = 'http://localhost:8080/Patient-1.0-SNAPSHOT/rs';
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  };
+
   Profession: string;
-  constructor
-  (private  httpClient: HttpClient,private  apiService: ApiService, private router: Router, private activateRoute: ActivatedRoute ) {
+  constructor(private  apiService: ApiService, private router: Router, private activateRoute: ActivatedRoute ) {
   }
 
   ngOnInit() {
@@ -35,8 +28,8 @@ export class AccederDmpComponent implements OnInit {
     this.apiService.getPatient(`${id}`).subscribe((response: object) => {
       this.patient = response;
     });
-    this.apiService.getDMP(`${id}`).subscribe((response: object) => {
-      this.dmp = response;
+    this.apiService.getDMPP(`${id}`).subscribe((responses: object) => {
+      this.dmp = responses;
     });
 
   }
@@ -58,7 +51,8 @@ export class AccederDmpComponent implements OnInit {
   }
 
   prof() {
-    console.log(this.dmp.ss)
+
+    console.log(this.dmp.ss);
     if (this.dmp.Profession === null) {
       return true;
     }
@@ -67,9 +61,10 @@ export class AccederDmpComponent implements OnInit {
   }
   modif(profession) {
 
-    console.log('lalala')
-    this.httpClient.post(`${this.API_URL}/DMP/profession`,this.activateRoute.snapshot.paramMap.get('id'), profession);
-
+    console.log(profession);
+    this.dmp.profession = profession;
+    this.apiService.setProf(this.dmp);
+    this.getDmp();
   }
 
 }

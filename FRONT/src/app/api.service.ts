@@ -17,6 +17,10 @@ export class ApiService {
   constructor(private  httpClient: HttpClient) {
   }
 
+  setProf(dmp){
+    return this.httpClient.post(`${this.API_URL}/DMP/profession/`, dmp, this.httpOptions);
+
+  }
   createCompteAphp(compte) {
     return this.httpClient.post(`${this.API_URL}/CompteAphp/`, compte);
   }
@@ -65,7 +69,10 @@ export class ApiService {
 
 // ok
   getDMP(id: string) {
-    return this.httpClient.post(`${this.API_URL}/DMP/id/`,id,this.httpOptions);
+    return this.httpClient.get(`${this.API_URL}/DMP/${id}`);
+  }
+  getDMPP(id: string) {
+    return this.httpClient.post(`${this.API_URL}/DMP/getDMP/`, id, this.httpOptions);
   }
   getDMPS() {
     return this.httpClient.get(`${this.API_URL}/DMP`);
