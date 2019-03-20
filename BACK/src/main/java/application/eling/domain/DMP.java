@@ -35,6 +35,88 @@ public class DMP implements Serializable {
     @OneToOne(cascade=CascadeType.ALL)
     private Diagnostique diagnostique;
 
+    private String Profession;
+    private String Motif;
+    private String affectionCongenitales;
+    private String MaladieInfectieuse;
+    private String AutreAffections;
+    private String InterventionsChir;
+    private String Accidents;
+    private String Maladies;
+    private String Allergies;
+
+    public String getAccidents() {
+        return Accidents;
+    }
+
+    public void setAccidents(String accidents) {
+        Accidents = accidents;
+    }
+
+    public String getMaladies() {
+        return Maladies;
+    }
+
+    public void setMaladies(String maladies) {
+        Maladies = maladies;
+    }
+
+    public String getAllergies() {
+        return Allergies;
+    }
+
+    public void setAllergies(String allergies) {
+        Allergies = allergies;
+    }
+
+    public String getProfession() {
+        return Profession;
+    }
+
+    public void setProfession(String profession) {
+        Profession = profession;
+    }
+
+    public String getMotif() {
+        return Motif;
+    }
+
+    public void setMotif(String motif) {
+        Motif = motif;
+    }
+
+    public String getAffectionCongenitales() {
+        return affectionCongenitales;
+    }
+
+    public void setAffectionCongenitales(String affectionCongenitales) {
+        this.affectionCongenitales = affectionCongenitales;
+    }
+
+    public String getMaladieInfectieuse() {
+        return MaladieInfectieuse;
+    }
+
+    public void setMaladieInfectieuse(String maladieInfectieuse) {
+        MaladieInfectieuse = maladieInfectieuse;
+    }
+
+    public String getAutreAffections() {
+        return AutreAffections;
+    }
+
+    public void setAutreAffections(String autreAffections) {
+        AutreAffections = autreAffections;
+    }
+
+    public String getInterventionsChir() {
+        return InterventionsChir;
+    }
+
+    public void setInterventionsChir(String interventionsChir) {
+        InterventionsChir = interventionsChir;
+    }
+
     public DMP(){
 
     }

@@ -110,7 +110,7 @@ public class SecretaireMedicaleRestService {
     @Path("updatedemandeintervention")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateDMPDemandeIntervention(@QueryParam("idDMP") Integer idDMP, @QueryParam("idDemandeIntervention") Integer idDemandeIntervention){
-        DMP dmp = dmpRepository.find(idDMP);
+        DMP dmp = dmpRepository.find(idDMP).get(0);
         if (dmp == null){
             return Response.status(Response.Status.CONFLICT).build();
         }
@@ -127,7 +127,7 @@ public class SecretaireMedicaleRestService {
     @Path("updatedemandeexamen")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateDMPDemandeExamen(@QueryParam("idDMP") Integer idDMP, @QueryParam("idDemandeExamen") Integer idDemandeExamen) {
-        DMP dmp = dmpRepository.find(idDMP);
+        DMP dmp = dmpRepository.find(idDMP).get(0);
         if (dmp == null){
             return Response.status(Response.Status.CONFLICT).build();
         }
@@ -144,7 +144,7 @@ public class SecretaireMedicaleRestService {
     @Path("updatedeconstantesVitales")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateDMPConstantesVitales(@QueryParam("idDMP") Integer idDMP, @QueryParam("idConstantesVitales") Integer idConstantesVitales) {
-        DMP dmp = dmpRepository.find(idDMP);
+        DMP dmp = dmpRepository.find(idDMP).get(0);
         if (dmp == null){
             return Response.status(Response.Status.CONFLICT).build();
         }
@@ -161,7 +161,7 @@ public class SecretaireMedicaleRestService {
     @Path("updatedeposologie")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateDMPPosologie(@QueryParam("idDMP") Integer idDMP, @QueryParam("idPosologie") Integer idPosologie){
-        DMP dmp = dmpRepository.find(idDMP);
+        DMP dmp = dmpRepository.find(idDMP).get(0);
         if (dmp == null){
             return Response.status(Response.Status.CONFLICT).build();
         }
@@ -178,7 +178,7 @@ public class SecretaireMedicaleRestService {
     @Path("updatedeexamen")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateDMPExamen(@QueryParam("idDMP") Integer idDMP, @QueryParam("idExamen") Integer idExamen){
-        DMP dmp = dmpRepository.find(idDMP);
+        DMP dmp = dmpRepository.find(idDMP).get(0);
         if (dmp == null){
             return Response.status(Response.Status.CONFLICT).build();
         }
@@ -195,7 +195,7 @@ public class SecretaireMedicaleRestService {
     @Path("updatedediagnostique")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateDMPDiagnostique(@QueryParam("idDMP") Integer idDMP, @QueryParam("idDiagnostique") Integer idDiagnostique){
-        DMP dmp = dmpRepository.find(idDMP);
+        DMP dmp = dmpRepository.find(idDMP).get(0);
         if (dmp == null){
             return Response.status(Response.Status.CONFLICT).build();
         }
@@ -212,7 +212,7 @@ public class SecretaireMedicaleRestService {
     @Path("updatedeintervention")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateDMPIntervention(@QueryParam("idDMP") Integer idDMP, @QueryParam("idIntervention") Integer idIntervention){
-        DMP dmp = dmpRepository.find(idDMP);
+        DMP dmp = dmpRepository.find(idDMP).get(0);
         if (dmp == null){
             return Response.status(Response.Status.CONFLICT).build();
         }

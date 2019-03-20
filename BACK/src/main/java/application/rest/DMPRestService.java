@@ -7,6 +7,7 @@ package application.rest;
 
 
 import application.eling.domain.DMP;
+import application.eling.domain.Examen;
 import application.eling.domain.Patient;
 import java.util.List;
 import javax.ejb.EJB;
@@ -42,14 +43,30 @@ public class DMPRestService {
         return Response.ok(DMP).build();
     }
 
-    @GET
-    @Path("{id}")
+    @POST
+    @Path("id")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response getDMP(@PathParam("id") Integer id) {
-        DMP dmp = repository.find(id);
+        DMP dmp = repository.find(id).get(0);
         if (dmp == null)
             return Response.status(Response.Status.NOT_FOUND).build();
         return Response.ok(dmp).build();
+    }
+
+    @POST
+    @Path("profession")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response setProfession(@PathParam("ss") String ss,@PathParam("prof") String prof ) {
+        try {
+            repository.setProfession(ss,prof);
+        } catch (Exception e) {
+            return Response.status(Response.Status.NOT_ACCEPTABLE).build();
+        }
+        return Response.ok().build();
+
+
     }
     
    /* @GET

@@ -65,7 +65,7 @@ export class ApiService {
 
 // ok
   getDMP(id: string) {
-    return this.httpClient.get(`${this.API_URL}/DMP/${id}`);
+    return this.httpClient.post(`${this.API_URL}/DMP/id/`,id,this.httpOptions);
   }
   getDMPS() {
     return this.httpClient.get(`${this.API_URL}/DMP`);

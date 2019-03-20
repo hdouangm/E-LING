@@ -18,8 +18,8 @@ public class DMPRepository {
         return em.createNamedQuery(DMP.FIND_ALL, DMP.class).getResultList();
     }
 
-    public DMP find(Integer id) {
-        return em.find(DMP.class, id);
+    public List<DMP> find(int id) {
+        return em.createQuery("SELECT d from DMP d JOIN Patient p WHERE  p.id = :id ").getResultList();
     }
 
     public Integer save(DMP p) {
@@ -31,17 +31,17 @@ public class DMPRepository {
         em.merge(p);
     }
 
-    public void delete(Integer id) {
-        DMP p = find(id);
-        if (p == null) {
-            throw new NoSuchEntityException("No entity with the id: " + id);
-        }
-        em.remove(p);
-    }
+
 
     public List<DMP> findByParam(String ss) {
         TypedQuery<DMP> query = em.createQuery(
                 "SELECT d FROM DMP d WHERE d.ss LIKE :ss", DMP.class);
         return query.setParameter("ss", ss).getResultList();
+    }
+
+    public void setProfession(String ss,String prof){
+
+        em.createQuery("UPDATE DMP d SET Profession = :prof WHERE d.ss = :ss",DMP.class);
+
     }
 }
