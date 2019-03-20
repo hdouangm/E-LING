@@ -17,8 +17,10 @@ export class ExamenComponent implements OnInit {
     registerForm: FormGroup;
     submitted = false;
 
-    @Input() user: Employe;
-    @Input() demande: DemandeExamen;
+    @Input() dmp: number;
+    @Input() demande: number;
+
+    @Input() responsable: number;
   constructor( private formBuilder: FormBuilder, public examenService: ExamenService, public fileService: FileService) {
    }
 
@@ -39,24 +41,17 @@ export class ExamenComponent implements OnInit {
     const today: Date = new Date();
     const date: string = today.getDate() + '/' + (1 + today.getMonth()) + '/' + today.getFullYear();
     this.examen.date = date;
-    this.examen.demandeExamen = this.demande;
-    this.examen.responsable = this.user;
+    // this.examen.demandeExamen = this.demande;
+    // this.examen.responsable = this.user;
     // tslint:disable-next-line:max-line-length
-    this.examenService.createExamen(this.examen).subscribe((res) => { this.fileService.uploadFile(this.selectedFile, 'examen' + res.id); } );
-    console.log(this.examen.id);
-   /* let blob: Blob;
-    this.fileService.downloadFile('Examen0', 'arborescence.png').subscribe(res => {blob = res ; console.log(res.size); });
-    this.createImageFromBlob(blob);*/
-    // tslint:disable-next-line:prefer-const
-      //  this.fileService.downloadFile('examen0', 'arborescence.png').subscribe(res => {console.log(res); });
-
+    this.examenService.createExamen(this.examen).subscribe((res) => {
+        this.fileService.uploadFile(this.selectedFile, 'examen' + res.id);
+        this.examenService.linkDemande(res.id, this.demande).subscribe();
+        this.examenService.linkDMP(res.id, this.dmp).subscribe();
+        this.examenService.linkResponsable(res.id, this.responsable).subscribe();
+    } );
 
     }
 
 
 }
-
-
-
-
-
