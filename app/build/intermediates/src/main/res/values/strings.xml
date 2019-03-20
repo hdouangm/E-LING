@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">E-Ling</string>
+    <string name="nomHeader">nom</string>
+    <string name="prenomHeader">nom</string>
+
+    <string-array name="pays_array">
+        <item>France</item>
+        <item>Belgique</item>
+        <item>Angleterre</item>
+
+    </string-array>
+</resources>
