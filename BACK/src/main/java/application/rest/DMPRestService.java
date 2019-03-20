@@ -73,7 +73,7 @@ public class DMPRestService {
         repository.setProfession(dmp);
 
 
-        return Response.status(Response.Status.NOT_FOUND).build();
+        return Response.ok().build();
 
 
     }

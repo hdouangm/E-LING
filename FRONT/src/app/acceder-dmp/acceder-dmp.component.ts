@@ -12,6 +12,7 @@ import { Location } from '@angular/common';
 export class AccederDmpComponent implements OnInit {
   patient: any;
   dmp: any;
+
   private location: Location;
 
   Profession: string;
@@ -30,6 +31,7 @@ export class AccederDmpComponent implements OnInit {
     });
     this.apiService.getDMPP(`${id}`).subscribe((responses: object) => {
       this.dmp = responses;
+      this.Profession = this.dmp.profession;
     });
 
   }
@@ -51,20 +53,24 @@ export class AccederDmpComponent implements OnInit {
   }
 
   prof() {
+    console.log(this.dmp.profession);
 
-    console.log(this.dmp.ss);
-    if (this.dmp.Profession === null) {
-      return true;
+    if (this.dmp.profession === null) {
+      return false;
     }
-    return false;
+    return true;
 
   }
   modif(profession) {
 
     console.log(profession);
     this.dmp.profession = profession;
-    this.apiService.setProf(this.dmp);
-    this.getDmp();
+    this.apiService.setProf(this.dmp).subscribe( (response: any) => {
+
+
+
+    });
+    console.log('fini');
   }
 
 }
