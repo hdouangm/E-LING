@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { environment } from './../../environments/environment';
 
 @Component({
   selector: 'app-list-patient',
@@ -10,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class ListPatientComponent implements OnInit {
   searchText: string;
   restItems: any;
-  restItemsUrl = 'http://localhost:8080/Patient-1.0-SNAPSHOT/rs/secretairemedicale/patients';
+  restItemsUrl =  environment.apiUrl + '/secretairemedicale/patients';
 
   constructor(private http: HttpClient) {}
 
