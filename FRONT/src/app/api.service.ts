@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {environment} from './../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  API_URL = 'http://localhost:8080/Patient-1.0-SNAPSHOT/rs';
+  API_URL = environment.apiUrl;
 
   httpOptions = {
     headers: new HttpHeaders({
