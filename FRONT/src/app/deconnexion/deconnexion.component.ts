@@ -14,6 +14,10 @@ export class DeconnexionComponent implements OnInit {
   ngOnInit() {
     this.apiService.deconnexion();
     this.router.navigate(['connexion']);
+    localStorage.removeItem('niveau');
+    localStorage.removeItem('nom');
+    localStorage.removeItem('prenom');
+
   }
 
 }
