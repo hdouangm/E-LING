@@ -19,6 +19,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import application.repository.DMPRepository;
+import application.repository.PatientRepository;
+
 import javax.ws.rs.*;
 import java.net.URI;
 import javax.ejb.NoSuchEntityException;
@@ -33,6 +35,8 @@ public class DMPRestService {
     @EJB
     private DMPRepository repository;
 
+    @EJB
+    private PatientRepository patientrep;
     @Context
     private UriInfo uriInfo;
 
@@ -58,10 +62,10 @@ public class DMPRestService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response getDMPP(@PathParam("id") Integer id) {
-        Patient p = repository.findByIDPatient(id).get(0);
+        DMP p = patientrep.find(id).getDmp();
         if (p == null)
             return Response.status(Response.Status.NOT_FOUND).build();
-        return Response.ok(p.getDmp()).build();
+        return Response.ok(p).build();
     }
     @POST
     @Path("profession")
