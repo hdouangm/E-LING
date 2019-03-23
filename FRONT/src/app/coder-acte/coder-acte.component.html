@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-body">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Identifiant</th>
+      <th scope="col">Description</th>
+      <th scope="col">Prix</th>
+    </tr>
+  </thead>
+  <tbody id="actes">
+      <tr *ngFor="let item of actes">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.description}}</td>
+        <td>{{item.prix}}</td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+<input type="text" id="Input" (keyup)="actefilter()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="Ul">
+  <li *ngFor="let item of list">
+    <a id = {{item.id}} (click)="click(item.id,typef,idtype)"> id : {{item.id}}  {{ item.description }} prix : {{item.prix}} €</a>
+  </li>
+</ul>
+</div>
+</div>

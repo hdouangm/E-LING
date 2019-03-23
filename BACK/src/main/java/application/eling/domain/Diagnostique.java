@@ -33,14 +33,14 @@ public class Diagnostique implements Serializable {
 
     }
 
-    public Diagnostique(DMP dmp, String diagnostic, Employe responsable, Boolean publication, String date, Set<Acte> codesActes, Integer prix, Boolean payer) {
+    public Diagnostique(DMP dmp, String diagnostic, Employe responsable, Boolean publication, String date, Set<Acte> codesActes, Boolean payer) {
         this.dmp = dmp;
         this.diagnostic = diagnostic;
         this.responsable = responsable;
         this.publication = publication;
         this.date = date;
         this.codesActes = codesActes;
-        this.prix = prix;
+        this.prix = 0;
         this.payer = payer;
     }
 

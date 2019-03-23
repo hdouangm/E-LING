@@ -36,7 +36,7 @@ public class Intervention implements Serializable {
 
     }
 
-    public Intervention(DMP dmp, String type, String lieu, String date, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer, String urlResultats) {
+    public Intervention(DMP dmp, String type, String lieu, String date, Employe responsable, Boolean publication, Set<Acte> codesActes, Boolean payer, String urlResultats) {
         this.dmp = dmp;
         this.type = type;
         this.lieu = lieu;
@@ -44,7 +44,7 @@ public class Intervention implements Serializable {
         this.responsable = responsable;
         this.publication = publication;
         this.codesActes = codesActes;
-        this.prix = prix;
+        this.prix = 0;
         this.payer = payer;
         this.urlResultats = urlResultats;
     }

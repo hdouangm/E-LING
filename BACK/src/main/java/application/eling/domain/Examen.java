@@ -35,14 +35,14 @@ public class Examen implements Serializable {
 
     }
 
-    public Examen(DMP dmp, String date, String urlResultats, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
+    public Examen(DMP dmp, String date, String urlResultats, Employe responsable, Boolean publication, Set<Acte> codesActes, Boolean payer) {
         this.dmp = dmp;
         this.date = date;
         this.urlResultats = urlResultats;
         this.responsable = responsable;
         this.publication = publication;
         this.codesActes = codesActes;
-        this.prix = prix;
+        this.prix = 0;
         this.payer = payer;
     }
 

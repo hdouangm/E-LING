@@ -98,6 +98,7 @@ public class MedecinRestService {
             if (i != null){
                 Set<Acte> l = i.getCodesActes();
                 if (l.add(a)) {
+                    i.setPrix(i.getPrix()+a.getPrix());
                     interventionrepository.update(i);
                     return Response.ok(true).build();
                 }
@@ -110,6 +111,7 @@ public class MedecinRestService {
                 Set<Acte> l = i.getCodesActes();
                 if (l.add(a)) {
                     //i.setCodesActes(l);
+                    i.setPrix(i.getPrix()+a.getPrix());
                     posologierepository.update(i);
                     return Response.ok(true).build();
                 }
@@ -122,6 +124,7 @@ public class MedecinRestService {
                 Set<Acte> l = i.getCodesActes();
                 if (l.add(a)) {
                     //i.setCodesActes(l);
+                    i.setPrix(i.getPrix()+a.getPrix());
                     diagnostiquerepository.update(i);
                     return Response.ok(true).build();
                 }
@@ -134,6 +137,7 @@ public class MedecinRestService {
                 Set<Acte> l = i.getCodesActes();
                 if (l.add(a)) {
                     //i.setCodesActes(l);
+                    i.setPrix(i.getPrix()+a.getPrix());
                     examenrepository.update(i);
                     return Response.ok(true).build();
                 }
@@ -156,6 +160,7 @@ public class MedecinRestService {
             if (i != null){
                 Set<Acte> l = i.getCodesActes();
                 if (l.remove(a)) {
+                    i.setPrix(i.getPrix()-a.getPrix());
                     interventionrepository.update(i);
                     return Response.ok(true).build();
                 }
@@ -168,6 +173,7 @@ public class MedecinRestService {
                 Set<Acte> l = i.getCodesActes();
                 if (l.remove(a)) {
                     //i.setCodesActes(l);
+                    i.setPrix(i.getPrix()-a.getPrix());
                     posologierepository.update(i);
                     return Response.ok(true).build();
                 }
@@ -180,6 +186,7 @@ public class MedecinRestService {
                 Set<Acte> l = i.getCodesActes();
                 if (l.remove(a)) {
                     //i.setCodesActes(l);
+                    i.setPrix(i.getPrix()-a.getPrix());
                     diagnostiquerepository.update(i);
                     return Response.ok(true).build();
                 }
@@ -192,6 +199,7 @@ public class MedecinRestService {
                 Set<Acte> l = i.getCodesActes();
                 if (l.remove(a)) {
                     //i.setCodesActes(l);
+                    i.setPrix(i.getPrix()-a.getPrix());
                     examenrepository.update(i);
                     return Response.ok(true).build();
                 }
