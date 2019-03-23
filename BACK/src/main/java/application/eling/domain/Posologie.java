@@ -35,7 +35,7 @@ public class Posologie implements Serializable {
 
     }
 
-    public Posologie(DMP dmp, String dateDebut, String dateFin, String posologie, Set<SuiviTraitement> suiviTraitement, Employe responsable, Boolean publication, Set<Acte> codesActes, Integer prix, Boolean payer) {
+    public Posologie(DMP dmp, String dateDebut, String dateFin, String posologie, Set<SuiviTraitement> suiviTraitement, Employe responsable, Boolean publication, Set<Acte> codesActes, Boolean payer) {
         this.dmp = dmp;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
@@ -44,7 +44,7 @@ public class Posologie implements Serializable {
         this.responsable = responsable;
         this.publication = publication;
         this.codesActes = codesActes;
-        this.prix = prix;
+        this.prix = 0;
         this.payer = payer;
     }
 

@@ -15,6 +15,7 @@ import { DemandeInterventionAddingComponent } from './demandeInterventionAdding/
 import { DemandeExamenAddingComponent } from './demandeExamenAdding/demandeExamenAdding.component';
 import { DetailPatientComponent } from './detail-patient/detail-patient.component';
 import { ListPatientComponent } from './list-patient/list-patient.component';
+import { CoderActeComponent } from './coder-acte/coder-acte.component';
 import { ModifierProfilComponent} from './modifier-profil/modifier-profil.component';
 import { AccederDmpComponent} from './acceder-dmp/acceder-dmp.component';
 import { DeconnexionComponent } from './deconnexion/deconnexion.component';
@@ -39,6 +40,7 @@ const routelist: Route[] = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
 
   {path: 'connexion', component: ConnexionComponent},
+  {path: 'coder-acte', component: CoderActeComponent},
   {path: 'deconnexion', component: DeconnexionComponent},
   {path:  'addingCompteAphp', component:  CompteAphpAddingComponent },
   {path:  'searchCompteAphp', component:  CompteAphpSearchingComponent },
@@ -65,6 +67,7 @@ const routelist: Route[] = [
     DemandeInterventionAddingComponent,
     DemandeExamenAddingComponent,
     ScrollSpyDirective,
+    CoderActeComponent,
     ListPatientComponent,
     DetailPatientComponent,
     AccederDmpComponent,

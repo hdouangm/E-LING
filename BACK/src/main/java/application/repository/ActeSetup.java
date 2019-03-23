@@ -25,16 +25,13 @@ public class ActeSetup {
 
   @PostConstruct
   private void createData() {
-    Acte a = new Acte("lol",15);
+    Acte a = new Acte("lol",10);
     Acte b = new Acte("lol",15);
     Set<Acte> l = new HashSet<Acte>(0);
-    l.add(a);
-    l.add(b);
     acterepository.save(a);
     acterepository.save(b);
-    a.setPrix(10);
     acterepository.update(a);
 
-    interventionrepository.save(new Intervention(null, null,"lol",null,null,false,l,17,true, null));
+    interventionrepository.save(new Intervention(null, null,"lol",null,null,false,l,true, null));
   }
 }
