@@ -22,6 +22,8 @@ export class AccederDmpComponent implements OnInit {
   IC: any;
   AutreA: any;
   Accidents: any;
+  Maladie: string;
+  Allergie: string;
   constructor(private  apiService: ApiService, private router: Router, private activateRoute: ActivatedRoute ) {
   }
 
@@ -54,7 +56,7 @@ export class AccederDmpComponent implements OnInit {
   getBD(){
     return this.patient.donneesSociales.age;
   }
-  getCP(){
+  getCP() {
     return this.patient.donneesSociales.codePostal;
   }
 
@@ -80,18 +82,55 @@ export class AccederDmpComponent implements OnInit {
   }
 
   motif() {
-    return false;
+    if (this.dmp.motif === null) {
+      return false;
+    }
+    return true;
   }
 
   mi() {
-    return false;
-  }
+    if (this.dmp.maladieInfectieuse === null) {
+      return false;
+    }
+    return true;  }
 
   ic() {
-    return false;
-  }
+    if (this.dmp.interventionsChir === null) {
+      return false;
+    }
+    return true;  }
 
   accidents() {
-    return false;
+    if (this.dmp.accidents === null) {
+      return false;
+    }
+    return true;
+  }
+
+  autrea() {
+    if (this.dmp.autreAffections === null) {
+      return false;
+    }
+    return true;
+  }
+
+  maladie() {
+    if (this.dmp.maladies === null) {
+      return false;
+    }
+    return true;
+  }
+
+  Allergies() {
+    if (this.dmp.allergies === null) {
+      return false;
+    }
+    return true;  }
+
+  ac() {
+    if (this.dmp.affectionCongenitales === null) {
+      return false;
+    }
+    return true;
   }
 }

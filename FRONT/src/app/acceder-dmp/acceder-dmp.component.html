@@ -35,10 +35,10 @@
 
      <div class="medic">
        <label>Affection congénitales: </label><input type="text" [placeholder]="ac() ? AC:''" [disabled]="ac() ? true : false" name="AC" style="display: inline" class="form-control col-3" disabled>
-       <label style="padding-left: 10%">Maladies: </label><input type="text" [placeholder]="motif() ? Motif:''" [disabled]="motif() ? true : false" name="Maladies" style="display: inline" class="form-control col-3" disabled><br>
+       <label style="padding-left: 10%">Maladies: </label><input type="text" [placeholder]="maladies() ? Maladie:''" [disabled]="maladie() ? true : false" name="Maladies" style="display: inline" class="form-control col-3" disabled><br>
        <label >Maladies infectieuse: </label><input type="text" [(ngModel)]="MaladieI" [placeholder]="mi() ? MI:''" [disabled]="mi() ? true : false" name="MI" style="display: inline" class="form-control col-3" disabled>
-       <label style="padding-left: 11.5%">Allergies: </label><input type="text" name="Allergies" style="display: inline" class="form-control col-3" disabled><br>
-       <label>Autres Affections: </label><input [(ngModel)]="AutreA" [placeholder]="motif() ? Motif:''" [disabled]="motif() ? true : false" type="text" name="Autres" style="display: inline" class="form-control col-3" disabled><br>
+       <label style="padding-left: 11.5%">Allergies: </label><input type="text"  [(ngModel)]="Allergie" [placeholder]="Allergies() ? Allergie:''" [disabled]="Allergies() ? true : false" name="Allergies" style="display: inline" class="form-control col-3" disabled><br>
+       <label>Autres Affections: </label><input [(ngModel)]="AutreA" [placeholder]="autreA() ? Motif:''" [disabled]="autrea() ? true : false" type="text" name="Autres" style="display: inline" class="form-control col-3" disabled><br>
        <label >Interventions chirurgicales: </label><input [(ngModel)]="IC" [placeholder]="ic() ? IC:''" [disabled]="ic() ? true : false" type="text" name="IC" style="display: inline" class="form-control col-3" disabled><br>
        <label>Accidents: </label><input type="text" [(ngModel)]="Accidents" [placeholder]="accidents() ? Accidents:''" [disabled]="accidents() ? true : false" name="Accidents" style="display: inline" class="form-control col-3" disabled><br>
        <hr style="border: 2px solid#5b9aa0;" />
