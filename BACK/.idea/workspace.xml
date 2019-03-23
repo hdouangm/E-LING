@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="13319c5d-96f7-4d17-a862-e61c9b86264c" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/application/rest/MedecinRestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/Patient-1.0-SNAPSHOT/WEB-INF/classes/application/rest/MedecinRestService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application/rest/MedecinRestService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/application/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/application/ApplicationConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Patient-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Patient-1.0-SNAPSHOT.war" afterDir="false" />
@@ -98,6 +100,7 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/PatientTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/PatientTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-PatientTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-PatientTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/PatientTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PatientTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FRONT/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FRONT/package-lock.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
