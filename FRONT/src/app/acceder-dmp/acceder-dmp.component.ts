@@ -34,11 +34,11 @@ export class AccederDmpComponent implements OnInit {
   getDmp(): void {
 
     const id = this.activateRoute.snapshot.paramMap.get('id');
+
     this.apiService.getPatient(`${id}`).subscribe((response: object) => {
       this.patient = response;
     });
     this.apiService.getDMPP(`${id}`).subscribe((responses: object) => {
-      console.log('ddsqdsql' + id);
       this.dmp = responses;
       this.Profession = this.dmp.profession;
       this.Motif = this.dmp.motif;

@@ -62,10 +62,10 @@ public class DMPRestService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response getDMPP(@PathParam("id") Integer id) {
-        DMP p = patientrep.find(id).getDmp();
+        Patient p = patientrep.find(id);
         if (p == null)
             return Response.status(Response.Status.NOT_FOUND).build();
-        return Response.ok(p).build();
+        return Response.ok(p.getDmp()).build();
     }
     @POST
     @Path("profession")
