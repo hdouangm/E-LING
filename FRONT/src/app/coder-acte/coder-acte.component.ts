@@ -14,7 +14,7 @@ export class CoderActeComponent implements OnInit{
   list: any;
   actes: any;
   typef = 'intervention';
-  idtype = 13;
+  idtype = 9;
   restItemsUrl = environment.apiUrl+'/medecin/';
 
   constructor(private http: HttpClient) { }
@@ -69,6 +69,14 @@ export class CoderActeComponent implements OnInit{
     return this.http
       .get<any[]>(this.restItemsUrl+"listacte")
       .pipe(map(data => data));
+  }
+
+  getprix(){
+    var sum  = 0;
+    for (var item in this.actes){
+      sum = sum + this.actes[item].prix;
+    }
+    return sum;
   }
 
   getactes(type, id) {
