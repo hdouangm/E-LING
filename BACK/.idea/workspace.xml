@@ -55,6 +55,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FUSProjectUsageTrigger">
     <session id="-636935701">
       <usages-collector id="statistics.lifecycle.project">
@@ -97,24 +98,50 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1263">
               <caret line="101" column="24" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="24" />
+=======
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/DMPRestService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/TypeExamen.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-717">
               <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Patient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="27" column="86" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="86" />
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/ActeSetup.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
               <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DMPRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
               <folding>
                 <element signature="e#675#681#0" expanded="true" />
               </folding>
@@ -123,6 +150,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/DMPRestService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1008">
@@ -130,20 +158,37 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/DeconnexionRestService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Patient.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-18">
               <caret line="27" column="86" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="86" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/CompteAphpSetup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DMPRepository.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
@@ -151,15 +196,29 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DiagnostiqueDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/SecretaireMedicaleRestService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="939">
               <caret line="114" column="25" lean-forward="true" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DMPSetup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -167,10 +226,17 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/DMP.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1401">
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/DMP.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1084">
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
               <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
               <folding>
                 <element signature="e#2902#2903#0" expanded="true" />
@@ -213,15 +279,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Diagnostique.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-414">
               <caret line="35" column="127" selection-start-line="35" selection-start-column="127" selection-end-line="35" selection-end-column="127" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/TypeExamenRestService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/MedecinRestService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1767">
@@ -229,6 +306,12 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/TypeInterventionRestService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
             </state>
           </provider>
         </entry>
@@ -454,6 +537,7 @@
       <module name="Patient" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PatientTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -564,10 +648,14 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1922" height="1053" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="734" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2604726" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30210015" />
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -582,7 +670,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.20424107" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.31619936" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32901135" />
@@ -623,9 +711,6 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout-to-restore>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -758,9 +843,29 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Patient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="27" column="86" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DMPRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
     <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/CompteAphpSetup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state relative-caret-position="90">
           <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -770,21 +875,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DiagnostiqueDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="75">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DMPSetup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
     <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/TypeExamenRestService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="165">
           <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/TypeInterventionRestService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="165">
           <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
         </state>
       </provider>
@@ -855,6 +973,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/ConnexionRestService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="666">
@@ -886,6 +1005,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -898,8 +1019,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Intervention.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="306">
           <caret line="38" column="134" selection-start-line="38" selection-start-column="134" selection-end-line="38" selection-end-column="134" />
+=======
+        <state relative-caret-position="150">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+>>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
         </state>
       </provider>
     </entry>
@@ -1048,6 +1174,49 @@
           <caret line="114" column="25" lean-forward="true" selection-start-line="114" selection-start-column="25" selection-end-line="114" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/DMP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1084">
+          <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+          <folding>
+            <element signature="e#2902#2903#0" expanded="true" />
+            <element signature="e#2935#2936#0" expanded="true" />
+            <element signature="e#2987#2988#0" expanded="true" />
+            <element signature="e#3031#3032#0" expanded="true" />
+            <element signature="e#3063#3064#0" expanded="true" />
+            <element signature="e#3091#3092#0" expanded="true" />
+            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="e#3167#3168#0" expanded="true" />
+            <element signature="e#3215#3216#0" expanded="true" />
+            <element signature="e#3259#3260#0" expanded="true" />
+            <element signature="e#3444#3445#0" expanded="true" />
+            <element signature="e#3485#3486#0" expanded="true" />
+            <element signature="e#3553#3554#0" expanded="true" />
+            <element signature="e#3613#3614#0" expanded="true" />
+            <element signature="e#3655#3656#0" expanded="true" />
+            <element signature="e#3693#3694#0" expanded="true" />
+            <element signature="e#3755#3756#0" expanded="true" />
+            <element signature="e#3809#3810#0" expanded="true" />
+            <element signature="e#3853#3854#0" expanded="true" />
+            <element signature="e#3893#3894#0" expanded="true" />
+            <element signature="e#3959#3960#0" expanded="true" />
+            <element signature="e#4017#4018#0" expanded="true" />
+            <element signature="e#4053#4054#0" expanded="true" />
+            <element signature="e#4085#4086#0" expanded="true" />
+            <element signature="e#4135#4136#0" expanded="true" />
+            <element signature="e#4177#4178#0" expanded="true" />
+            <element signature="e#4212#4213#0" expanded="true" />
+            <element signature="e#4243#4244#0" expanded="true" />
+            <element signature="e#4291#4292#0" expanded="true" />
+            <element signature="e#4331#4332#0" expanded="true" />
+            <element signature="e#4367#4368#0" expanded="true" />
+            <element signature="e#4399#4400#0" expanded="true" />
+            <element signature="e#4449#4450#0" expanded="true" />
+            <element signature="e#4491#4492#0" expanded="true" />
           </folding>
         </state>
       </provider>
