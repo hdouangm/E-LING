@@ -38,20 +38,19 @@ export class AccederDmpComponent implements OnInit {
     this.apiService.getPatient(`${id}`).subscribe((response: object) => {
       this.patient = response;
     });
-    this.apiService.getDMPP(`${id}`).subscribe((responses: object) => {
-      this.dmp = responses;
-      this.Profession = this.dmp.profession;
-      this.Motif = this.dmp.motif;
-      this.AC = this.dmp.affectionCongenitales;
-      this.MaladieI = this.dmp.maladieInfectieuse;
-      this.AutreA = this.dmp.autreAffections;
-      this.IC = this.dmp.interventionsChir;
-      this.Accidents = this.dmp.accidents;
-      this.Maladie = this.dmp.maladies;
-      this.Allergie = this.dmp.allergies;
-    });
-
+    this.dmp = this.patient.dmp;
+    this.Profession = this.dmp.profession;
+    this.Motif = this.dmp.motif;
+    this.AC = this.dmp.affectionCongenitales;
+    this.MaladieI = this.dmp.maladieInfectieuse;
+    this.AutreA = this.dmp.autreAffections;
+    this.IC = this.dmp.interventionsChir;
+    this.Accidents = this.dmp.accidents;
+    this.Maladie = this.dmp.maladies;
+    this.Allergie = this.dmp.allergies;
   }
+
+
 
   goBack(): void {
     this.location.back();
