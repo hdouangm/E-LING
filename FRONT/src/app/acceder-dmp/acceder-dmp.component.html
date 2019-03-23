@@ -23,24 +23,24 @@
        <p style="padding-left: 25%">Née le: {{getBD()}} </p>
        <p style="padding-left: 1%">à : Melun </p><br><br>
        <p >Code postal du domicile: {{getCP()}} </p><br>
-       <label>Profession: </label><input type="text" [(ngModel)]="Profession" id="Profession" ngstyle="display: inline" class="form-control col-3" [placeholder]="prof() ? Profession:''" [disabled]="prof() ? true : false"><br>
+       <label>Profession: </label><input type="text" [(ngModel)]="Profession" id="Profession" ngstyle="display: inline" class="form-control col-3" [placeholder]="prof() ? Profession:''" [disabled]="prof()"><br>
          <p style="padding-left: 40%;font-weight:bold">Groupe Sanguin:</p>
        <p style="padding-left: 15%;font-weight:bold">Groupe Rhésus:</p><br><br>
        <p>Date d'entrée: 29/03/2019</p>
-       <label style="padding-left: 10%">Motif: </label><input type="text" [(ngModel)]="Motif" [placeholder]="motif() ? Motif:''" [disabled]="motif() ? true : false" name="Motif" style="display: inline" class="form-control col-3" disabled><br>
+       <label style="padding-left: 10%">Motif: </label><input type="text" [(ngModel)]="Motif" [placeholder]="motif() ? Motif:''" [disabled]="motif()" name="Motif" style="display: inline" class="form-control col-3"><br>
 
 
      </div>
      <hr style="border: 2px solid#5b9aa0;" />
 
      <div class="medic">
-       <label>Affection congénitales: </label><input type="text" [placeholder]="ac() ? AC:''" [disabled]="ac() ? true : false" name="AC" style="display: inline" class="form-control col-3" disabled>
-       <label style="padding-left: 10%">Maladies: </label><input type="text" [placeholder]="maladies() ? Maladie:''" [disabled]="maladie() ? true : false" name="Maladies" style="display: inline" class="form-control col-3" disabled><br>
-       <label >Maladies infectieuse: </label><input type="text" [(ngModel)]="MaladieI" [placeholder]="mi() ? MI:''" [disabled]="mi() ? true : false" name="MI" style="display: inline" class="form-control col-3" disabled>
-       <label style="padding-left: 11.5%">Allergies: </label><input type="text"  [(ngModel)]="Allergie" [placeholder]="Allergies() ? Allergie:''" [disabled]="Allergies() ? true : false" name="Allergies" style="display: inline" class="form-control col-3" disabled><br>
-       <label>Autres Affections: </label><input [(ngModel)]="AutreA" [placeholder]="autreA() ? Motif:''" [disabled]="autrea() ? true : false" type="text" name="Autres" style="display: inline" class="form-control col-3" disabled><br>
-       <label >Interventions chirurgicales: </label><input [(ngModel)]="IC" [placeholder]="ic() ? IC:''" [disabled]="ic() ? true : false" type="text" name="IC" style="display: inline" class="form-control col-3" disabled><br>
-       <label>Accidents: </label><input type="text" [(ngModel)]="Accidents" [placeholder]="accidents() ? Accidents:''" [disabled]="accidents() ? true : false" name="Accidents" style="display: inline" class="form-control col-3" disabled><br>
+       <label>Affection congénitales: </label><input type="text" [(ngModel)]="AC" [placeholder]="ac() ? AC:''" [disabled]="ac()" name="AC" style="display: inline" class="form-control col-3">
+       <label style="padding-left: 10%">Maladies: </label><input type="text" [(ngModel)]="Maladie" [placeholder]="maladie() ? Maladie:''" [disabled]="maladie()" name="Maladies" style="display: inline" class="form-control col-3"><br>
+       <label >Maladies infectieuse: </label><input type="text" [(ngModel)]="MaladieI" [placeholder]="mi() ? MaladieI:''" [disabled]="mi()" name="MI" style="display: inline" class="form-control col-3">
+       <label style="padding-left: 11.5%">Allergies: </label><input type="text"  [(ngModel)]="Allergie" [placeholder]="Allergies() ? Allergie:''" [disabled]="Allergies()" name="Allergies" style="display: inline" class="form-control col-3"><br>
+       <label>Autres Affections: </label><input [(ngModel)]="AutreA" [placeholder]="autrea() ? AutreA:''" [disabled]="autrea()" type="text" name="Autres" style="display: inline" class="form-control col-3" ><br>
+       <label >Interventions chirurgicales: </label><input [(ngModel)]="IC" [placeholder]="ic() ? IC:''" [disabled]="ic()" type="text" name="IC" style="display: inline" class="form-control col-3" ><br>
+       <label>Accidents: </label><input type="text" [(ngModel)]="Accidents" [placeholder]="accidents() ? Accidents:''" [disabled]="accidents()" name="Accidents" style="display: inline" class="form-control col-3" ><br>
        <hr style="border: 2px solid#5b9aa0;" />
 
 

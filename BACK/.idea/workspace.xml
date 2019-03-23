@@ -102,19 +102,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/DMPRestService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Patient.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="319">
               <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
 >>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
+=======
+            <state relative-caret-position="247">
+              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+>>>>>>> ac4a55779b1a3267dd342c69cf98780e2ae29791
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/TypeExamen.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -126,11 +132,18 @@
             <state relative-caret-position="345">
               <caret line="27" column="86" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="86" />
 >>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DiagnostiqueRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="53">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+>>>>>>> ac4a55779b1a3267dd342c69cf98780e2ae29791
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/ActeSetup.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -142,6 +155,12 @@
             <state relative-caret-position="330">
               <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
 >>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/SecretaireMedicaleRestService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="81" column="28" lean-forward="true" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+>>>>>>> ac4a55779b1a3267dd342c69cf98780e2ae29791
               <folding>
                 <element signature="e#675#681#0" expanded="true" />
               </folding>
@@ -149,6 +168,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
 <<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/DMPRestService.java">
@@ -164,11 +184,22 @@
             <state relative-caret-position="150">
               <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
 >>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DMPRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> ac4a55779b1a3267dd342c69cf98780e2ae29791
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
 <<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Patient.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -183,6 +214,12 @@
                 <element signature="imports" expanded="true" />
               </folding>
 >>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/DeconnexionRestService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+>>>>>>> ac4a55779b1a3267dd342c69cf98780e2ae29791
             </state>
           </provider>
         </entry>
@@ -227,6 +264,7 @@
         </entry>
       </file>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/DMP.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -238,6 +276,13 @@
             <state relative-caret-position="1084">
 >>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
               <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/DMP.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+>>>>>>> ac4a55779b1a3267dd342c69cf98780e2ae29791
               <folding>
                 <element signature="e#2902#2903#0" expanded="true" />
                 <element signature="e#2935#2936#0" expanded="true" />
@@ -395,7 +440,6 @@
         <option value="$PROJECT_DIR$/src/main/java/application/rest/FileRestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/repository/PatientSetup.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/repository/DMPSetup.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/eling/domain/DMP.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/rest/DMPRestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/ApplicationConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/eling/domain/Intervention.java" />
@@ -403,7 +447,12 @@
         <option value="$PROJECT_DIR$/src/main/java/application/eling/domain/Diagnostique.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/eling/domain/Posologie.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/rest/MedecinRestService.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/application/repository/ActeSetup.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/application/eling/domain/DMP.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/repository/DMPRepository.java" />
+>>>>>>> ac4a55779b1a3267dd342c69cf98780e2ae29791
       </list>
     </option>
   </component>
@@ -435,59 +484,6 @@
               <item name="BACK" type="b2602c69:ProjectViewProjectNode" />
               <item name="BACK" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BACK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BACK" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BACK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BACK" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BACK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BACK" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BACK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BACK" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BACK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BACK" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BACK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BACK" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BACK" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BACK" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -496,7 +492,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553370290794" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553370967117" />
+>>>>>>> ac4a55779b1a3267dd342c69cf98780e2ae29791
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -649,7 +649,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="734" extended-state="6" />
-    <editor active="true" />
     <layout>
 <<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2604726" />
@@ -798,13 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DiagnostiqueRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-74">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DonneeSocialeRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -844,6 +836,7 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Patient.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -863,6 +856,8 @@
       </provider>
     </entry>
 >>>>>>> 7cb941f8355728e22f06e76e83d124481057a358
+=======
+>>>>>>> ac4a55779b1a3267dd342c69cf98780e2ae29791
     <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/CompteAphpSetup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1088,6 +1083,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/ActeSetup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1152,6 +1148,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/DMPRestService.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/MedecinRestService.java">
+>>>>>>> ac4a55779b1a3267dd342c69cf98780e2ae29791
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1008">
           <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
@@ -1178,10 +1177,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/DMPRestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/DMP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1084">
-          <caret line="134" column="5" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+        <state relative-caret-position="112">
+          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
           <folding>
             <element signature="e#2902#2903#0" expanded="true" />
             <element signature="e#2935#2936#0" expanded="true" />
@@ -1217,6 +1226,40 @@
             <element signature="e#4399#4400#0" expanded="true" />
             <element signature="e#4449#4450#0" expanded="true" />
             <element signature="e#4491#4492#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/SecretaireMedicaleRestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="81" column="28" lean-forward="true" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/eling/domain/Patient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DiagnostiqueRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/repository/DMPRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
