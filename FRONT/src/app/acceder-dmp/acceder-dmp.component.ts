@@ -16,6 +16,12 @@ export class AccederDmpComponent implements OnInit {
   private location: Location;
 
   Profession: string;
+  Motif: any;
+  MaladieI: any;
+  MI: any;
+  IC: any;
+  AutreA: any;
+  Accidents: any;
   constructor(private  apiService: ApiService, private router: Router, private activateRoute: ActivatedRoute ) {
   }
 
@@ -61,10 +67,10 @@ export class AccederDmpComponent implements OnInit {
     return true;
 
   }
-  modif(profession) {
+  modif() {
 
-    console.log(profession);
-    this.dmp.profession = profession;
+    console.log(this.Motif);
+    this.dmp.profession = this.Profession;
     this.apiService.setProf(this.dmp).subscribe( (response: any) => {
 
 
@@ -73,4 +79,19 @@ export class AccederDmpComponent implements OnInit {
     console.log('fini');
   }
 
+  motif() {
+    return false;
+  }
+
+  mi() {
+    return false;
+  }
+
+  ic() {
+    return false;
+  }
+
+  accidents() {
+    return false;
+  }
 }

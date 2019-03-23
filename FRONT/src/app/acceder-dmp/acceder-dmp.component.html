@@ -27,20 +27,20 @@
          <p style="padding-left: 40%;font-weight:bold">Groupe Sanguin:</p>
        <p style="padding-left: 15%;font-weight:bold">Groupe Rhésus:</p><br><br>
        <p>Date d'entrée: 29/03/2019</p>
-       <label style="padding-left: 10%">Motif: </label><input type="text" name="Motif" style="display: inline" class="form-control col-3" disabled><br>
+       <label style="padding-left: 10%">Motif: </label><input type="text" [(ngModel)]="Motif" [placeholder]="motif() ? Motif:''" [disabled]="motif() ? true : false" name="Motif" style="display: inline" class="form-control col-3" disabled><br>
 
 
      </div>
      <hr style="border: 2px solid#5b9aa0;" />
 
      <div class="medic">
-       <label>Affection congénitales: </label><input type="text" name="AC" style="display: inline" class="form-control col-3" disabled>
-       <label style="padding-left: 10%">Maladies: </label><input type="text" name="Maladies" style="display: inline" class="form-control col-3" disabled><br>
-       <label >Maladies infectieuse: </label><input type="text" name="MI" style="display: inline" class="form-control col-3" disabled>
+       <label>Affection congénitales: </label><input type="text" [placeholder]="ac() ? AC:''" [disabled]="ac() ? true : false" name="AC" style="display: inline" class="form-control col-3" disabled>
+       <label style="padding-left: 10%">Maladies: </label><input type="text" [placeholder]="motif() ? Motif:''" [disabled]="motif() ? true : false" name="Maladies" style="display: inline" class="form-control col-3" disabled><br>
+       <label >Maladies infectieuse: </label><input type="text" [(ngModel)]="MaladieI" [placeholder]="mi() ? MI:''" [disabled]="mi() ? true : false" name="MI" style="display: inline" class="form-control col-3" disabled>
        <label style="padding-left: 11.5%">Allergies: </label><input type="text" name="Allergies" style="display: inline" class="form-control col-3" disabled><br>
-       <label>Autres Affections: </label><input type="text" name="Autres" style="display: inline" class="form-control col-3" disabled><br>
-       <label >Interventions chirurgicales: </label><input type="text" name="IC" style="display: inline" class="form-control col-3" disabled><br>
-       <label>Accidents: </label><input type="text" name="Accidents" style="display: inline" class="form-control col-3" disabled><br>
+       <label>Autres Affections: </label><input [(ngModel)]="AutreA" [placeholder]="motif() ? Motif:''" [disabled]="motif() ? true : false" type="text" name="Autres" style="display: inline" class="form-control col-3" disabled><br>
+       <label >Interventions chirurgicales: </label><input [(ngModel)]="IC" [placeholder]="ic() ? IC:''" [disabled]="ic() ? true : false" type="text" name="IC" style="display: inline" class="form-control col-3" disabled><br>
+       <label>Accidents: </label><input type="text" [(ngModel)]="Accidents" [placeholder]="accidents() ? Accidents:''" [disabled]="accidents() ? true : false" name="Accidents" style="display: inline" class="form-control col-3" disabled><br>
        <hr style="border: 2px solid#5b9aa0;" />
 
 
@@ -58,7 +58,7 @@
 
    </div> <!-- /Page centrale -->
 
-    <button style="margin-left: 85%;position: relative;margin-top:-95% " (click)=modif(Profession) type="button" class="btn btn-danger">Modifier</button>
+    <button style="margin-left: 85%;position: relative;margin-top:-95% " (click)=modif() type="button" class="btn btn-danger">Modifier</button>
     <button style="margin-left: 82%;position: relative;margin-top:-90% " type="button" class="btn btn-danger btn-sm">Gestion des documents</button>
 
 
