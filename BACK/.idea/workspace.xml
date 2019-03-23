@@ -325,10 +325,8 @@
         <option value="$PROJECT_DIR$/src/main/java/application/repository/ActeSetup.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/rest/FileRestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/repository/PatientSetup.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/rest/SecretaireMedicaleRestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/repository/DMPSetup.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/eling/domain/DMP.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/repository/DMPRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/rest/DMPRestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/ApplicationConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/rest/MedecinRestService.java" />
@@ -404,7 +402,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BACK" type="b2602c69:ProjectViewProjectNode" />
@@ -436,6 +434,7 @@
       </pane>
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -451,8 +450,9 @@
       <recent name="$PROJECT_DIR$/src/main/java/application/model" />
       <recent name="$PROJECT_DIR$/src/main/java/application/repository" />
       <recent name="$PROJECT_DIR$/src/main/java/application/rest" />
+      <recent name="$PROJECT_DIR$/src/main/java/application/eling" />
+      <recent name="$PROJECT_DIR$/src/main/java/application/eling/domain" />
       <recent name="$PROJECT_DIR$/src/main/java/application" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/application/rest" />
@@ -1029,7 +1029,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/DMPRestService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/rest/SecretaireMedicaleRestService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
           <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />

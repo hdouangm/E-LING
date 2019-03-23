@@ -69,7 +69,7 @@ public class SecretaireMedicaleRestService {
                                    @QueryParam("adresse") String adresse, @QueryParam("ville") String ville, @QueryParam("codePostal") String codePostal,
                                    @QueryParam("pays") String pays, @QueryParam("age") String age, @QueryParam("genre") String genre) throws Exception {
 
-        if (pays == "France"){
+        if (pays.equals("France")){
             List<DMP> tmp = dmpRepository.findByParam(ss);
             if (tmp.size() > 0){
                 return Response.status(Response.Status.CONFLICT).build();

@@ -1,15 +1,15 @@
 <div class="page-centrer">
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createExamenModal">
-    Nouvel examen
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#creatediagnostiqueModal">
+    Nouvel diagnostique
 </button>
 
-<div class="modal" id="createExamenModal">
+<div class="modal" id="creatediagnostiqueModal">
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Creer un nouvel examen</h4>
+                <h4 class="modal-title">Creer un nouvel diagnostique</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal content-->
@@ -18,10 +18,15 @@
                     <div class="col-md-6 offset-md-3">
                         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                             <div class="form-group">
-                                <input type="file" name="file" (change)="onFileSelected($event)">
+                            <label>Description :</label>
+                                  <input type="text" formControlName="diagnostique" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ss.errors }" />
+                                  <div *ngIf="submitted && f.ss.errors" class="invalid-feedback">
+                                      <div *ngIf="f.ss.errors.required" style="color:red">La description est requise</div>
+                                      <div *ngIf="f.ss.errors.mustMatch" style="color:red">La description est invalide</div>
+                                  </div>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-primary">Publier l'examen</button>
+                                <button class="btn btn-primary">Publier l'diagnostique</button>
                             </div>
                         </form>
                     </div>
@@ -41,10 +46,5 @@
 
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
   <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
-</table> 
-
-
-                            <div class="form-group">
-                                <label>Responsable : {{examen.responsable.donneesSociales.nom}} {{examen.responsable.donneesSociales.prenom}}</label>
-                            </div>-->
+</table> -->
 </div>

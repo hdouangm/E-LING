@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Examen } from 'src/app/datamodel/examen';
 import { FormGroup} from '@angular/forms';
 import { FileService } from '../../file/file.service';
 import { ExamenService } from '../examen.service';
+import { Examen } from '../../datamodel/data';
 
 @Component({
   selector: 'app-examen-detail',
@@ -11,10 +11,14 @@ import { ExamenService } from '../examen.service';
 })
 export class ExamenDetailComponent implements OnInit {
 
-    @Input() examen: Examen;
+    @Input() examenid: number;
+
+    public examen: Examen;
 
     public imgURL: string;
     registerForm: FormGroup;
+
+    @Input() id: number;
   constructor(public fileService: FileService, examenService: ExamenService) {
       // this.imgURL = environment.apiUrl + '/upload/examen' + this.examen.id + '/' + this.examen.URLresultats ;
       this.examen = new Examen();
@@ -23,6 +27,8 @@ export class ExamenDetailComponent implements OnInit {
           this.examen = res[res.length - 1];
           // examenService.linkDMP(this.examen.id, 69).subscribe(() => console.log('ok') );
       });
+
+      // examenService.getExamenByID(this.id).subscribe(res => this.examen = res );
   }
 
   ngOnInit() {
