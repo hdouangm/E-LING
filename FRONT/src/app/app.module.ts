@@ -41,21 +41,21 @@ const routelist: Route[] = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
 
   {path: 'connexion', component: ConnexionComponent},
-  {path: 'coder-acte', component: CoderActeComponent},
-  {path: 'deconnexion', component: DeconnexionComponent},
-  {path:  'addingCompteAphp', component:  CompteAphpAddingComponent },
-  {path:  'searchCompteAphp', component:  CompteAphpSearchingComponent },
-  {path:  'addDemandeExamen', component:  DemandeExamenAddingComponent},
-  {path:  'addDemandeIntervention', component:  DemandeInterventionAddingComponent },
-  {path:  'demandeExamen', component:  DemandeExamenListMedComponent },
-  {path : 'listePatient', component : ListPatientComponent, canActivate: [AuthGuard] },
-  {path : 'modifierProfil/:id', component: ModifierProfilComponent},
-  {path : 'accederDMP/:id', component: AccederDmpComponent},
-  {path : 'deconnexion', component: DeconnexionComponent},
-  {path : 'InterventionListMed', component: DemandeInterventionListMedComponent},
-  {path: 'newPatient2', component: NewPatientDeuxComponent},
-  {path: 'examen', component: ExamenComponent},
-  {path: 'afficherExam', component: ExamenDetailComponent}
+  {path: 'coder-acte', component: CoderActeComponent, canActivate: [AuthGuard] },
+  {path: 'deconnexion', component: DeconnexionComponent, canActivate: [AuthGuard] },
+  {path:  'addingCompteAphp', component:  CompteAphpAddingComponent, canActivate: [AuthGuard] },
+  {path:  'searchCompteAphp', component:  CompteAphpSearchingComponent, canActivate: [AuthGuard] },
+  {path:  'addDemandeExamen', component:  DemandeExamenAddingComponent, canActivate: [AuthGuard] },
+  {path:  'addDemandeIntervention', component:  DemandeInterventionAddingComponent, canActivate: [AuthGuard] },
+  {path:  'demandeExamen', component:  DemandeExamenListMedComponent, canActivate: [AuthGuard] },
+  {path : 'listePatient', component : ListPatientComponent, canActivate: [AuthGuard]},
+  {path : 'modifierProfil/:id', component: ModifierProfilComponent, canActivate: [AuthGuard] },
+  {path : 'accederDMP/:id', component: AccederDmpComponent, canActivate: [AuthGuard] },
+  {path : 'deconnexion', component: DeconnexionComponent, canActivate: [AuthGuard] },
+  {path : 'InterventionListMed', component: DemandeInterventionListMedComponent, canActivate: [AuthGuard] },
+  {path: 'newPatient2', component: NewPatientDeuxComponent, canActivate: [AuthGuard] },
+  {path: 'examen', component: ExamenComponent, canActivate: [AuthGuard] },
+  {path: 'afficherExam', component: ExamenDetailComponent, canActivate: [AuthGuard] }
 
 ];
 @NgModule({
