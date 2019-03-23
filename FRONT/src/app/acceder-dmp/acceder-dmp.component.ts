@@ -16,14 +16,14 @@ export class AccederDmpComponent implements OnInit {
   private location: Location;
 
   Profession: string;
-  Motif: any;
-  MaladieI: any;
-  MI: any;
-  IC: any;
-  AutreA: any;
-  Accidents: any;
+  Motif: string;
+  MaladieI: string;
+  IC: string;
+  AutreA: string;
+  Accidents: string;
   Maladie: string;
   Allergie: string;
+  AC: string;
   constructor(private  apiService: ApiService, private router: Router, private activateRoute: ActivatedRoute ) {
   }
 
@@ -40,6 +40,14 @@ export class AccederDmpComponent implements OnInit {
     this.apiService.getDMPP(`${id}`).subscribe((responses: object) => {
       this.dmp = responses;
       this.Profession = this.dmp.profession;
+      this.Motif = this.dmp.motif;
+      this.AC = this.dmp.affectionCongenitales;
+      this.MaladieI = this.dmp.maladieInfectieuse;
+      this.AutreA = this.dmp.autreAffections;
+      this.IC = this.dmp.interventionsChir;
+      this.Accidents = this.dmp.accidents;
+      this.Maladie = this.dmp.maladies;
+      this.Allergie = this.dmp.allergies;
     });
 
   }
@@ -53,7 +61,7 @@ export class AccederDmpComponent implements OnInit {
   getPrenom() {
     return this.patient.donneesSociales.prenom;
   }
-  getBD(){
+  getBD() {
     return this.patient.donneesSociales.age;
   }
   getCP() {
@@ -61,7 +69,6 @@ export class AccederDmpComponent implements OnInit {
   }
 
   prof() {
-    console.log(this.dmp.profession);
 
     if (this.dmp.profession === null) {
       return false;
@@ -71,14 +78,40 @@ export class AccederDmpComponent implements OnInit {
   }
   modif() {
 
-    console.log(this.Motif);
-    this.dmp.profession = this.Profession;
+    if (this.Profession !== 'undefined') {
+      this.dmp.profession = this.Profession;
+    }
+    if (this.Motif) {
+      this.dmp.motif = this.Motif;
+
+    }
+    if (this.MaladieI) {
+      this.dmp.maladieInfectieuse = this.MaladieI;
+
+    }
+    if (this.IC) {
+    this.dmp.interventionsChir = this.IC;
+    }
+    if (this.Accidents) {
+    this.dmp.accidents = this.Accidents;
+    }
+    if (this.AutreA) {
+    this.dmp.autreAffections = this.AutreA;
+    }
+    if (this.Maladie) {
+    this.dmp.maladies = this.Maladie;
+    }
+    if (this.Allergie) {
+    this.dmp.allergies = this.Allergie;
+    }
+    if (this.AC) {
+    this.dmp.affectionCongenitales = this.AC;
+    }
     this.apiService.setProf(this.dmp).subscribe( (response: any) => {
 
 
 
     });
-    console.log('fini');
   }
 
   motif() {
@@ -89,7 +122,7 @@ export class AccederDmpComponent implements OnInit {
   }
 
   mi() {
-    if (this.dmp.maladieInfectieuse === null) {
+    if ( this.dmp.maladieInfectieuse === null) {
       return false;
     }
     return true;  }
