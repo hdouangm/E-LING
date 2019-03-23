@@ -22,11 +22,11 @@ export function MustMatch(numSS: string, genre: string, dateNaissance: string, p
           return;
         }
         if (pays_.value === 'France') {
-          if ((ssGenre === 1 && genre_.value !== 'M')) {
+          if ((ssGenre == 1 && genre_.value !== 'M')) {
             ss.setErrors({mustMatch: true});
             return;
           }
-          if ((ssGenre === 2 && genre_.value !== 'F')) {
+          if ((ssGenre == 2 && genre_.value !== 'F')) {
             ss.setErrors({mustMatch: true});
             return;
           }
