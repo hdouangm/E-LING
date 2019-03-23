@@ -72,8 +72,8 @@ export class NewPatientDeuxComponent implements OnInit {
             res => {
               console.log(res);
               alert('Le patient a été créé');
-              location.reload();
-              this.router.navigate(['listePatient']);
+              location.replace("http://e-ling.fr/listePatient");
+
 
 
 
