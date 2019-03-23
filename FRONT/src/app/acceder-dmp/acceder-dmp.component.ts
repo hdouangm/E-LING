@@ -38,6 +38,7 @@ export class AccederDmpComponent implements OnInit {
       this.patient = response;
     });
     this.apiService.getDMPP(`${id}`).subscribe((responses: object) => {
+      console.log('ddsqdsql' + id);
       this.dmp = responses;
       this.Profession = this.dmp.profession;
       this.Motif = this.dmp.motif;

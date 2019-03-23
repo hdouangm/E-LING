@@ -1,5 +1,6 @@
 package application.repository;
 import application.eling.domain.DMP;
+import application.eling.domain.Patient;
 
 import javax.ejb.NoSuchEntityException;
 import javax.ejb.Stateless;
@@ -23,8 +24,8 @@ public class DMPRepository {
         return em.find(DMP.class, id);
     }
 
-    public List<DMP> findByIDPatient(Integer id){
-        return em.createQuery("SELECT d.dmp from Patient d WHERE  d.patient.id = " + id).getResultList();
+    public List<Patient> findByIDPatient(Integer id){
+        return em.createQuery("SELECT d from Patient d WHERE  d.id = " + id).getResultList();
 
     }
     public Integer save(DMP p) {
