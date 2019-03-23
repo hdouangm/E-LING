@@ -1,21 +1,56 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Interventiointerventionce } from './interinterventionn.service';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { InterventionService } from './intervention.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FileService } from 'src/app/file/file.service';
 import { Intervention } from '../datamodel/data';
+
 
 @Component({
   selector: 'app-intervention',
-  templateUrl: './intervention.componeinterventionl',
+  templateUrl: './intervention.component.html',
   styleUrls: ['./intervention.component.css']
 })
-export cinterventionnterventionComponent interventionents OnInit {
+export class InterventionComponent implements OnInit {
+    selectedFile: File;
+    public intervention: Intervention;
+    registerForm: FormGroup;
+    submitted = false;
 
-    intervention: Ininterventiontion;
+    @Input() dmp: number;
+    @Input() demande: number;
 
-    @Input() interventionIinterventionber;
-  constructor(public interventionService: InterventionServicintervention
+    @Input() responsable: number;
+  constructor( private formBuilder: FormBuilder, public interventionService: InterventionService, public fileService: FileService) {
+   }
 
-interventionInit() {
-     // this.interventionService.getIntervention(this.interventionID).subscribe(intervention => this.intervention = intervention);
+  ngOnInit() {
+      this.registerForm = this.formBuilder.group({
+        file: ['', Validators.required]});
   }
+
+  onFileSelected(event) {
+     this.selectedFile = event.target.files[0] as File;
+  }
+
+  onSubmit() {
+    this.intervention = new Intervention();
+    this.submitted = true;
+    this.intervention.urlResultats = this.selectedFile.name;
+    this.intervention.publication = true ;
+    const today: Date = new Date();
+    const date: string = today.getDate() + '/' + (1 + today.getMonth()) + '/' + today.getFullYear();
+    this.intervention.date = date;
+    // this.intervention.demandeIntervention = this.demande;
+    // this.intervention.responsable = this.user;
+    // tslint:disable-next-line:max-line-length
+    this.interventionService.createIntervention(this.intervention).subscribe((res) => {
+        this.fileService.uploadFile(this.selectedFile, 'intervention' + res.id);
+        this.interventionService.linkDemande(res.id, this.demande).subscribe();
+        this.interventionService.linkDMP(res.id, this.dmp).subscribe();
+        this.interventionService.linkResponsable(res.id, this.responsable).subscribe();
+    } );
+
+    }
+
 
 }
