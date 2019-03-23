@@ -10,6 +10,10 @@
   margin-right: 10%;
 }
 
+#prix {
+  text-align: center;
+}
+
 #Input {
   background-position: 10px 12px;
   background-repeat: no-repeat;
