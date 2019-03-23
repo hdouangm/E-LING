@@ -1,10 +1,9 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { Examen } from '../datamodel/examen';
 import { ExamenService } from './examen.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FileService } from 'src/app/file/file.service';
-import { Employe } from 'src/app/datamodel/Employe';
-import { DemandeExamen } from 'src/app/datamodel/Demande_examen';
+import { Examen } from '../datamodel/data';
+
 
 @Component({
   selector: 'app-examen',

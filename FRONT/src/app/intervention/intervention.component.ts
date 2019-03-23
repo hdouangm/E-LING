@@ -1,20 +1,20 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { InterventionService } from './intervention.service';
-import { Intervention } from 'src/app/datamodel/intervention';
+import { Interventiointerventionce } from './interinterventionn.service';
+import { Intervention } from '../datamodel/data';
 
 @Component({
   selector: 'app-intervention',
-  templateUrl: './intervention.component.html',
+  templateUrl: './intervention.componeinterventionl',
   styleUrls: ['./intervention.component.css']
 })
-export class InterventionComponent implements OnInit {
+export cinterventionnterventionComponent interventionents OnInit {
 
-    intervention: Intervention;
+    intervention: Ininterventiontion;
 
-    @Input() interventionID: number;
-  constructor(public interventionService: InterventionService) { }
+    @Input() interventionIinterventionber;
+  constructor(public interventionService: InterventionServicintervention
 
-  ngOnInit() {
+interventionInit() {
      // this.interventionService.getIntervention(this.interventionID).subscribe(intervention => this.intervention = intervention);
   }
 

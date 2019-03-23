@@ -1,0 +1,66 @@
+<div class="page-centrer">
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createposologieModal">
+    Nouvel posologie
+</button>
+
+<div class="modal" id="createposologieModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Creer un nouvel posologie</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal content-->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                            <label>Description :</label>
+                                  <input type="text" formControlName="posologie" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ss.errors }" />
+                                  <div *ngIf="submitted && f.ss.errors" class="invalid-feedback">
+                                      <div *ngIf="f.ss.errors.required" style="color:red">La description est requise</div>
+                                      <div *ngIf="f.ss.errors.mustMatch" style="color:red">La description est invalide</div>
+                                  </div>
+                            </div>
+                            <div class="form-group">
+                            <label>Date de d�but :</label>
+                                  <input type="text" formControlName="datedebut" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ss.errors }" />
+                                  <div *ngIf="submitted && f.ss.errors" class="invalid-feedback">
+                                      <div *ngIf="f.ss.errors.required" style="color:red">La date de début est requise</div>
+                                      <div *ngIf="f.ss.errors.mustMatch" style="color:red">La date de début est invalide</div>
+                                  </div>
+                            </div>
+                            <div class="form-group">
+                            <label>Date de fin :</label>
+                                  <input type="text" formControlName="datedebut" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ss.errors }" />
+                                  <div *ngIf="submitted && f.ss.errors" class="invalid-feedback">
+                                      <div *ngIf="f.ss.errors.required" style="color:red">La date de fin est requis</div>
+                                      <div *ngIf="f.ss.errors.mustMatch" style="color:red">La date de fin est invalide</div>
+                                  </div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary">Publier l'posologie</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <button type="button" (click)="addFile()">Ajouter</button>
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+  <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+    <td mat-cell *matCellDef="let element"> {{element}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+</table> -->
+</div>
