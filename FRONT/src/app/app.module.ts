@@ -36,6 +36,7 @@ import { PosologieComponent } from './posologie/posologie.component';
 import { PosologieDetailComponent } from './posologie/posologie-detail/posologie-detail.component';
 import { DiagnostiqueComponent } from './diagnostique/diagnostique.component';
 import { DiagnostiqueDetailComponent } from './diagnostique/diagnostique-detail/diagnostique-detail.component';
+import { AgendaComponent } from './agenda/agenda.component';
 const routelist: Route[] = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
 
@@ -88,7 +89,8 @@ const routelist: Route[] = [
     PosologieComponent,
     PosologieDetailComponent,
     DiagnostiqueComponent,
-    DiagnostiqueDetailComponent
+    DiagnostiqueDetailComponent,
+    AgendaComponent
 
   ],
   imports: [
