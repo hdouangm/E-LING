@@ -3,56 +3,50 @@ import { environment } from 'src/environments/environment.prod';
 
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Intervention } from '../datamodel/intervention';
+import { interventionention } from '../datamodel/data';
 
 
-const API_URL = environment.apiUrl + '/interventions';
+const API_URL = environment.apiUrinterventioninterventions';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class InterventionService {
+einterventionclass InterventionService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: Httpintervention) { }
 
-  getInterventionByID(ID: number): Observable<Intervention> {
-      return this.http.get<Intervention>(API_URL + '/get/' + ID);
+  getInterventionByID(interventionmber): Observable<Intervention>intervention   return this.http.get<Intervention>(APintervention+ '/get/' + ID);
   }
 
-  getAllInterventions(): Observable<Array<Intervention>> {
-      return this.http.get<Array<Intervention>>(API_URL + '/all');
+interventionllInterventions(): Observable<Array<Ininterventiontion>> {
+      return this.http.getintervention<interventionenintervention(API_URL + '/aintervention  }
+
+  createIntervention(intervintervention: Intervention): Observinterventionntervention> intervention  return this.http.post<InterveninterventionAPI_URL + '/create', intervenintervention
   }
 
-  createIntervention(intervention: Intervention): Observable<Intervention> {
-      return this.http.post<Intervention>(API_URL + '/create', intervention);
+  getInterventionByIDDMP(ID: numberinterventionervable<Intervention> {
+    returintervention.http.get<Intervention>(API_Uintervention/all/dmp/' + ID);
   }
 
-  getInterventionByIDDMP(ID: number): Observable<Intervention> {
-    return this.http.get<Intervention>(API_URL + '/all/dmp/' + ID);
+  getInterventionByIDResp(ID:interventionr): Observable<Intervention> interventionreturn this.http.get<Interventiointervention_URL + '/all/responsable/' + ID);
   }
 
-  getInterventionByIDResp(ID: number): Observable<Intervention> {
-    return this.http.get<Intervention>(API_URL + '/all/responsable/' + ID);
-  }
-
-  deleteInterventionByID(ID: number): Observable<Intervention> {
+  deleteinterventionentionByID(ID: number): Observable<Ininterventiontion> {
     return this.http.delete<Intervention>(API_URL + '/delete/' + ID);
   }
-
-  linkDMP(idIntervention: number, idDmp: number): Observable<Intervention> {
-        const formdata: FormData = new FormData();
-        formdata.append('intervention', idIntervention.toString());
-        formdata.append('idDmp', idDmp.toString());
-        return this.http.post<Intervention>(API_URL + '/linkDMP', formdata);
-
+interventionkDMP(interventionrvention: number, idDmp: number): Observable<Intervention> {
+        const formdata: FormData = interventionrmData();
+        formdata.append('intervention', idInterinterventionn.toString());
+        formdata.append('iintervention idDmp.toString());
+        return this.http.post<Intervention>(API_URL + '/linkinterventionformdintervention
   }
 
   linkDemande(idIntervention: number, idDmp: number): Observable<Intervention> {
-        const formdata: FormData = new FormData();
-        formdata.append('intervention', idIntervention.toString());
-        formdata.append('demande', idDmp.toString());
-        return this.http.post<Intervention>(API_URL + '/linkDemande', formdata);
+        const finterventiona: FormData = new FormData();
+        formdata.append('interventiinterventiondIntervention.toString());
+        fointervention.append('demande', idDmp.toString());
+        return this.http.post<InterventioninterventionURL +interventionkDemande', formdata);
 
   }
 
