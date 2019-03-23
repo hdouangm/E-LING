@@ -4,10 +4,10 @@ export class Acte {
         public id: number = 0,
         public description: string = '',
         public prix: number = 0,
-        public examen: Examen,
-        public intervention: Intervention,
-        public diagnostique: Diagnostique,
-        public posologie: Posologie
+        public examen: Examen = null,
+        public intervention: Intervention = null,
+        public diagnostique: Diagnostique = null,
+        public posologie: Posologie = null
 
     ) {}
 }
@@ -18,7 +18,7 @@ export class Competence {
     constructor(
         public id: number = 0,
         public description: string = '',
-        public employe: Employe
+        public employe: Employe = null
 
     ) {}
 }
@@ -30,7 +30,7 @@ export class CompteAphp {
         public login: string = '',
         public motDePasse: string = '',
         public langue: string = '',
-        public employe: Employe
+        public employe: Employe = null
 
     ) {}
 }
@@ -40,10 +40,10 @@ export class ConstanteVitale {
 
     constructor(
         public id: number = 0,
-        public dmp: DMP,
+        public dmp: DMP = null,
         public date: string = '',
         public constante: string = '',
-        public infirmierEnCharge: Employe
+        public infirmierEnCharge: Employe = null
 
     ) {}
 }
@@ -53,12 +53,12 @@ export class DemandeExamen {
 
     constructor(
         public id: number = 0,
-        public dmp: DMP,
+        public dmp: DMP = null,
         public type: string = '',
         public date: string = '',
         public publierDemande: boolean = false,
         public demandeRemplie: boolean = false,
-        public examen: Employe
+        public examen: Employe = null
 
     ) {}
 }
@@ -68,7 +68,7 @@ export class DemandeIntervention {
 
     constructor(
         public id: number = 0,
-        public dmp: DMP,
+        public dmp: DMP = null,
         public date: string = '',
         public publierDemande: boolean = false,
         public demandeRemplie: boolean = false,
@@ -83,9 +83,9 @@ export class Diagnostique {
 
     constructor(
         public id: number = 0,
-        public dmp: DMP,
+        public dmp: DMP = null,
         public diagnostic: string = '',
-        public responsable: Employe,
+        public responsable: Employe = null,
         public publication: boolean = false,
         public date: string = '',
         public codesActes: Array<Acte> = new Array<Acte>(),
@@ -101,10 +101,22 @@ export class DMP {
     constructor(
         public id: number = 0,
         public ss: string = '',
-        public intervention: Intervention,
-        public demandeIntervention: DemandeIntervention,
-        public examen: Examen,
-        public demandeExamen: DemandeExamen
+        public intervention: Intervention = null,
+        public demandeIntervention: DemandeIntervention = null,
+        public examen: Examen = null,
+        public demandeExamen: DemandeExamen = null,
+        public patient: Patient = null,
+        public posologie: Posologie = null,
+        public diagnostique: Diagnostique = null,
+        public profession: string = '',
+        public motif: string = '',
+        public affectionCongenitales: string = '',
+        public maladieInfectieuse: string = '',
+        public autreAffections: string = '',
+        public interventionsChir: string = '',
+        public accidents: string = '',
+        public maladies: string = '',
+        public allergies: string = ''
 
     ) {}
 }
@@ -122,8 +134,8 @@ export class DonneesSociales {
         public pays: string = '',
         public genre: string = '',
         public age: string = '',
-        public employe: Employe,
-        public patient: Patient
+        public employe: Employe = null,
+        public patient: Patient = null
 
     ) {}
 }
@@ -133,9 +145,10 @@ export class Employe {
 
     constructor(
         public id: number = 0,
-        public noeudHopital: NoeudHopital,
-        public compteAphp: CompteAphp,
-        public donneesSociales: DonneesSociales,
+        public noeudHopital: NoeudHopital = null,
+        public compteAphp: CompteAphp = null,
+        public donneesSociales: DonneesSociales = null,
+        public examen: Examen = null,
         public niveau: number = 0,
         public competences: Array<Competence> = new Array<Competence>()
 
@@ -147,15 +160,15 @@ export class Examen {
 
     constructor(
         public id: number = 0,
-        public dmp: DMP,
+        public dmp: DMP = null,
         public date: string = '',
         public urlResultats: string = '',
-        public responsable: Employe,
+        public responsable: Employe = null,
         public publication: boolean = false,
         public codesActes: Array<Acte> = new Array<Acte>(),
         public prix: number = 0,
         public payer: boolean = false,
-        public demandeExamen: DemandeExamen
+        public demandeExamen: DemandeExamen = null
         
     ) {}
 }
@@ -165,16 +178,17 @@ export class Intervention {
 
     constructor(
         public id: number = 0,
-        public dmp: DMP,
-        public type: number = 0,
-        public lieu: string = '',
         public date: string = '',
-        public responsable: Employe,
-        public publication: boolean = false,
-        public codesActes: Array<Acte> = new Array<Acte>(),
-        public prix: number = 0,
+        public lieu: string = '',
         public payer: boolean = false,
-        public demandeIntervention: DemandeIntervention
+        public prix: number = 0,
+        public publication: boolean = false,
+        public dmp: DMP = null,
+        public type: string = '',
+        public responsable: Employe = null,
+        public codesActes: Array<Acte> = new Array<Acte>(),
+        public demandeIntervention: DemandeIntervention = null,
+        public urlResultats: string = ''
 
     ) {}
 }
@@ -186,8 +200,9 @@ export class NoeudHopital {
         public id: number = 0,
         public niveau: number = 0,
         public noeudsInferieurs: Array<NoeudHopital> = new Array<NoeudHopital>(),
-        public chef: Employe,
-        public noeudSuperieur: NoeudHopital
+        public chef: Employe = null,
+        public patient: Patient,
+        public noeudSuperieur: NoeudHopital = null
 
     ) {}
 }
@@ -197,9 +212,9 @@ export class Patient {
 
     constructor(
         public id: number = 0,
-        public noeudHopital: NoeudHopital,
-        public dmp: DMP,
-        public donneesSociales: DonneesSociales
+        public noeudHopital: NoeudHopital = null,
+        public dmp: DMP = null,
+        public donneesSociales: DonneesSociales = null
 
     ) {}
 }
@@ -209,12 +224,12 @@ export class Posologie {
 
     constructor(
         public id: number = 0,
-        public dmp: DMP,
+        public dmp: DMP = null,
         public dateDebut: string = '',
         public dateFin: string = '',
         public posologie: string = '',
         public suiviTraitement: Array<SuiviTraitement> = new Array<SuiviTraitement>(),
-        public responsable: Employe,
+        public responsable: Employe = null,
         public publication: boolean = false,
         public codesActes: Array<Acte> = new Array<Acte>(),
         public prix: number = 0,
@@ -230,8 +245,8 @@ export class SuiviTraitement {
         public id: number = 0,
         public date: string = '',
         public priseTraitement: boolean = false,
-        public infirmiere: Employe,
-        public posologie: Posologie
+        public infirmiere: Employe = null,
+        public posologie: Posologie = null
 
     ) {}
 }
