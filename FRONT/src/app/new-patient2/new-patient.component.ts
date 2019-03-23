@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MustMatch} from './must-match.validator';
+import { environment } from './../../environments/environment';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { MustMatch} from './must-match.validator';
 export class NewPatientDeuxComponent implements OnInit {
   @ViewChild('myModall') openModal: ElementRef;
 
-  createPatientURL = 'http://localhost:8080/Patient-1.0-SNAPSHOT/rs/secretairemedicale/creerpatient';
+  createPatientURL = environment.apiUrl + '/secretairemedicale/creerpatient';
     registerForm: FormGroup;
     submitted = false;
 
@@ -71,8 +72,8 @@ export class NewPatientDeuxComponent implements OnInit {
             res => {
               console.log(res);
               alert('Le patient a été créé');
-              location.reload();
-              this.router.navigate(['listePatient']);
+              location.replace("http://e-ling.fr/listePatient");
+
 
 
 

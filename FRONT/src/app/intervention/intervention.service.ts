@@ -3,7 +3,7 @@ import { environment } from 'src/environments/environment.prod';
 
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Intervention } from '../datamodel/intervention';
+import { Intervention } from '../datamodel/data';
 
 
 const API_URL = environment.apiUrl + '/interventions';
@@ -42,16 +42,24 @@ export class InterventionService {
 
   linkDMP(idIntervention: number, idDmp: number): Observable<Intervention> {
         const formdata: FormData = new FormData();
-        formdata.append('intervention', idIntervention.toString());
+        formdata.append('idIntervention', idIntervention.toString());
         formdata.append('idDmp', idDmp.toString());
         return this.http.post<Intervention>(API_URL + '/linkDMP', formdata);
 
   }
 
-  linkDemande(idIntervention: number, idDmp: number): Observable<Intervention> {
+  linkDemande(idIntervention: number, idDemande: number): Observable<Intervention> {
         const formdata: FormData = new FormData();
         formdata.append('intervention', idIntervention.toString());
-        formdata.append('demande', idDmp.toString());
+        formdata.append('demande', idDemande.toString());
+        return this.http.post<Intervention>(API_URL + '/linkDemande', formdata);
+
+  }
+
+  linkResponsable(idIntervention: number, idRes: number): Observable<Intervention> {
+        const formdata: FormData = new FormData();
+        formdata.append('intervention', idIntervention.toString());
+        formdata.append('res', idRes.toString());
         return this.http.post<Intervention>(API_URL + '/linkDemande', formdata);
 
   }

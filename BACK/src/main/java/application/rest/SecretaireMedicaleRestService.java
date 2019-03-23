@@ -68,18 +68,16 @@ public class SecretaireMedicaleRestService {
     public Response createPatient (@QueryParam("ss") String ss, @QueryParam("nom") String nom, @QueryParam("prenom") String prenom,
                                    @QueryParam("adresse") String adresse, @QueryParam("ville") String ville, @QueryParam("codePostal") String codePostal,
                                    @QueryParam("pays") String pays, @QueryParam("age") String age, @QueryParam("genre") String genre) throws Exception {
-        DMP dmp = new DMP(ss);
-        NoeudHopital noeudHopital = new NoeudHopital();
-        DonneesSociales donneesSociales = new DonneesSociales(nom, prenom, adresse, ville, codePostal, pays, age, genre);
 
-        if (pays == "France"){
+        if (pays.equals("France")){
             List<DMP> tmp = dmpRepository.findByParam(ss);
             if (tmp.size() > 0){
                 return Response.status(Response.Status.CONFLICT).build();
             }
         }
-
-
+        DMP dmp = new DMP(ss);
+        NoeudHopital noeudHopital = new NoeudHopital();
+        DonneesSociales donneesSociales = new DonneesSociales(nom, prenom, adresse, ville, codePostal, pays, age, genre);
 
         Patient patient = new Patient(noeudHopital, dmp, donneesSociales);
 

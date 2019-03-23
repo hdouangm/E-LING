@@ -26,6 +26,7 @@ public class ApplicationConfig extends Application {
         c.add(application.rest.TypeExamenRestService.class);
         c.add(application.rest.ExamenRestService.class);
         c.add(application.rest.FileRestService.class);
+        c.add(application.rest.MedecinRestService.class);
         c.add(MultiPartFeature.class);
         c.add(ImageService.class);
         c.add(CORSFilter.class);
