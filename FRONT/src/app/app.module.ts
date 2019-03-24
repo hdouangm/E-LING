@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ScrollSpyDirective } from './scroll-spy.directive';
-
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -37,6 +38,10 @@ import { PosologieDetailComponent } from './posologie/posologie-detail/posologie
 import { DiagnostiqueComponent } from './diagnostique/diagnostique.component';
 import { DiagnostiqueDetailComponent } from './diagnostique/diagnostique-detail/diagnostique-detail.component';
 import { AgendaComponent } from './agenda/agenda.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DxSchedulerModule} from 'devextreme-angular';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+
 const routelist: Route[] = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
 
@@ -55,7 +60,8 @@ const routelist: Route[] = [
   {path : 'InterventionListMed', component: DemandeInterventionListMedComponent},
   {path: 'newPatient2', component: NewPatientDeuxComponent},
   {path: 'examen', component: ExamenComponent},
-  {path: 'afficherExam', component: ExamenDetailComponent}
+  {path: 'afficherExam', component: ExamenDetailComponent},
+  {path: 'agenda', component: AgendaComponent}
 
 ];
 @NgModule({
@@ -92,6 +98,7 @@ const routelist: Route[] = [
     DiagnostiqueDetailComponent,
     AgendaComponent
 
+
   ],
   imports: [
     BrowserModule,
@@ -101,9 +108,17 @@ const routelist: Route[] = [
     BrowserModule,
     RouterModule.forRoot(routelist),
     FormsModule,
+    BrowserAnimationsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
+    DxSchedulerModule
+
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule);

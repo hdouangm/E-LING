@@ -25,7 +25,7 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul *ngIf="getNiveau() == 0" class="nav navbar-nav navbar-expand-lg">
-        <li class="active"><a routerLink="connexion" class="smoothscroll">Emploi du temps</a></li>
+        <li class="active"><a routerLink="agenda" class="smoothscroll">Emploi du temps</a></li>
         <li><a routerLink="listePatient" class="smoothscroll">Liste des patients actuels</a></li>
         <li><a routerLink="demandeExamen" class="smoothscroll">Historique des patients</a></li>
         <li><a routerLink="deconnexion" class="smoothscroll"><i class="fas fa-power-off"></i><!-- Fixed navbar -->
@@ -34,7 +34,7 @@
         <li><a href="#contact" class="smoothscroll">Contact</a></li>-->
       </ul>
       <ul *ngIf="getNiveau() == 1" class="nav navbar-nav navbar-expand-lg">
-        <li class="active"><a routerLink="connexion" class="smoothscroll">Emploi du temps</a></li>
+        <li class="active"><a routerLink="agenda" class="smoothscroll">Emploi du temps</a></li>
         <li><a routerLink="listePatient" class="smoothscroll">Liste des patients actuels</a></li>
         <li><a routerLink="newPatient2" class="smoothscroll">Créer un dossier</a></li>
         <li><a routerLink="examen" class="smoothscroll">Creer Examen</a></li>

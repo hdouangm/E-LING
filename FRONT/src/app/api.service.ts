@@ -115,6 +115,11 @@ export class ApiService {
       {  responseType: 'text' as 'json' }
     );
   }
+  public calendar(user: string)  {
+    return this.httpClient.post(`${this.API_URL}/Connexion/calender`,
+      user, this.httpOptions
+    );
+  }
 
 
 

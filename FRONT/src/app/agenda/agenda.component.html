@@ -1,3 +1,20 @@
-<p>
-  agenda works!
-</p>
+<div class="page-centrer">
+
+<div class="long-title">
+  <h3>Votre emplois du temps</h3>
+</div>
+<dx-scheduler
+  [dataSource]="dataSource"
+  [editing]="true"
+  startDateExpr="start.dateTime"
+  endDateExpr="end.dateTime"
+  textExpr="summary"
+  [startDayHour]="7"
+  timeZone="France/Paris"
+  [showAllDayPanel]="true"
+  [views]='["day", "workWeek", "month"]'
+  currentView="workWeek"
+  [currentDate]="currentDate"
+  [height]="500">
+</dx-scheduler>
+</div>

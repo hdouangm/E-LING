@@ -1,0 +1,19 @@
+.page-centrer {
+  margin-top: 35px;
+  padding-bottom: 40px;
+  margin-left: 20%;
+  margin-right: 30%;
+  border: 0.5px black solid;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  position: relative;
+
+  width: 60%;
+}
+::ng-deep .long-title h3 {
+  font-family: 'Segoe UI Light', 'Helvetica Neue Light', 'Segoe UI', 'Helvetica Neue', 'Trebuchet MS', Verdana, serif;
+  font-weight: 200;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+}
