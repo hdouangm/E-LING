@@ -25,6 +25,7 @@ export class AgendaComponent implements OnInit {
         load: (options) => this.getData(options, { showDeleted: false })
       })
     });
+    console.log('ouaila' + localStorage.getItem('user'));
     this.apiService.calendar(localStorage.getItem('user')).subscribe(response => {
 
       this.compte = response;

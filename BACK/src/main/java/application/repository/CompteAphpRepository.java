@@ -46,11 +46,8 @@ public class CompteAphpRepository {
         Query query = em.createQuery(qr);
         return query.getResultList();
     }
-    public List<CompteAphp> find(String usr) {
-        String qr = "SELECT c FROM CompteAphp c WHERE c.login = '"+ usr
-                +"'";
-        Query query = em.createQuery(qr);
-        return query.getResultList();
+    public CompteAphp find(String usr) {
+        return em.find(CompteAphp.class,usr);
     }
 
     public DonneesSociales findByLogin(String login){

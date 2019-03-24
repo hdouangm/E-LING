@@ -78,13 +78,13 @@ public class ConnexionRestService {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("calendar")
     public Response getCalendar(@PathParam("login") String login) {
-        List<CompteAphp> comptes = repository.find(login);
-        if(!comptes.isEmpty()){
-            return  Response.ok(comptes.get(0)).build();
+        CompteAphp comptes = repository.find(login);
+        if(comptes != null){
+            return  Response.ok(comptes).build();
 
 
         }
-        return Response.status(Response.Status.NOT_FOUND).build();
+        return Response.status(Response.Status.BAD_REQUEST).build();
     }
     
     //ok

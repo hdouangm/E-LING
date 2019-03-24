@@ -109,14 +109,14 @@ export class ApiService {
     return  this.httpClient.get(`${this.API_URL}/DemandeExamen/Lab`);
   }
 
-  public connexion(user: any)  {
+  public connexion(login: any)  {
     return this.httpClient.post(`${this.API_URL}/Connexion/`,
-      user,
+      login,
       {  responseType: 'text' as 'json' }
     );
   }
   public calendar(user: string)  {
-    return this.httpClient.post(`${this.API_URL}/Connexion/calender`,
+    return this.httpClient.post(`${this.API_URL}/Connexion/calendar`,
       user, this.httpOptions
     );
   }

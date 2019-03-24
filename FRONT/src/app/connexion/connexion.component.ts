@@ -58,7 +58,7 @@ export class ConnexionComponent implements OnInit {
           }
           localStorage.setItem('nom', response.nom);
           localStorage.setItem('prenom', response.prenom);
-          this.router.navigate(['']);
+          location.replace('agenda');
 
 
         });
