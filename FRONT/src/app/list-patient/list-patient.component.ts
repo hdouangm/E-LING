@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { environment } from './../../environments/environment';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-list-patient',
@@ -17,8 +18,8 @@ export class ListPatientComponent implements OnInit {
   searchGenre: string;
   restItems: any;
   restItemsUrl =  environment.apiUrl + '/secretairemedicale/patients';
-
-  constructor(private http: HttpClient) {}
+  waiting:string;
+  constructor(private  apiService: ApiService, private http: HttpClient) {}
 
   ngOnInit() {
     this.getRestItems();

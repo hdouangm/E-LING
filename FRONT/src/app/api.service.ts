@@ -128,9 +128,8 @@ export class ApiService {
 
   public getEmployeConnecte() {
     const login = localStorage.getItem('user');
-    return this.httpClient.get(`${this.API_URL}/Employe/getByLogin/${login}`);
+    return this.httpClient.post(`${this.API_URL}/Profil/getNiveau/`, login, this.httpOptions);
   }
-
 
 
 

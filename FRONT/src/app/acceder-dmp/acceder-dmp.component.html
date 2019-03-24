@@ -92,7 +92,13 @@
    <button *ngIf="niveau == 0" style="margin-left: 82%;position: absolute;margin-top: -30% " type="button" class="btn btn-danger btn-sm">Demande d'intervention</button>
    <button *ngIf="niveau == 0" style="margin-left: 83%;position: absolute;margin-top: -25% " type="button" class="btn btn-danger btn-sm">Demande d'examen</button>
    <button *ngIf="niveau == 0" style="margin-left: 83%;position: absolute;margin-top: -20% " type="button" class="btn btn-danger btn-sm">Gestion de posologie</button>
+   <button *ngIf="niveau == 0" (click)=valPos() style="margin-left: 3%;position: absolute;margin-top: -30% " type="button" class="btn btn-danger btn-sm">Validation posologie</button>
+   <button *ngIf="niveau == 0" style="margin-left: 2%;position: absolute;margin-top: -25% " type="button" class="btn btn-danger btn-sm">Validation du diagnostique</button>
 
+
+
+   <button *ngIf="niveau == 1" (click)=diagnostique() style="margin-left: 82%;position: absolute;margin-top: -30% " type="button" class="btn btn-danger btn-sm">Inserer un diagnostique</button>
+   <button *ngIf="niveau == 1" style="margin-left: 83%;position: absolute;margin-top: -25% " type="button" class="btn btn-danger btn-sm">Inserer une posologie</button>
 
  </div>
 

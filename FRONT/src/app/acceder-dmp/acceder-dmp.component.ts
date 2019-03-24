@@ -27,6 +27,7 @@ export class AccederDmpComponent implements OnInit {
   GS: string;
   GR: string;
   niveau: any;
+  employe:any;
   constructor(private  apiService: ApiService, private router: Router, private activateRoute: ActivatedRoute ) {
   }
 
@@ -52,7 +53,9 @@ export class AccederDmpComponent implements OnInit {
       this.GS = this.dmp.groupeSanguin;
       this.GR = this.dmp.groupeRhesus;
     });
-
+    this.apiService.getEmployeConnecte().subscribe((response: object) => {
+      this.employe = response;
+    });
   }
 
 
@@ -111,10 +114,10 @@ export class AccederDmpComponent implements OnInit {
     if (this.AC) {
     this.dmp.affectionCongenitales = this.AC;
     }
-    if(this.GS){
+    if(this.GS) {
       this.dmp.groupeSanguin = this.GS;
     }
-    if(this.GR){
+    if (this.GR) {
       this.dmp.groupeRhesus = this.GR;
     }
     this.apiService.setProf(this.dmp).subscribe( (response: any) => {
@@ -191,5 +194,21 @@ export class AccederDmpComponent implements OnInit {
     }
     return true;
 
+  }
+
+  diagnostique() {
+    this.dmp.waiting = 'waiting';
+    this.apiService.setProf(this.dmp).subscribe((response: object) => {
+
+
+    });
+  }
+
+  valPos() {
+    this.dmp.waiting = 'check';
+    this.apiService.setProf(this.dmp).subscribe((response: object) => {
+
+
+    });
   }
 }
