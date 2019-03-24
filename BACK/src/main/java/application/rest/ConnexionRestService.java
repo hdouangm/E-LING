@@ -1,6 +1,7 @@
 package application.rest;
 
 import application.eling.domain.CompteAphp;
+import application.eling.domain.Credential;
 import application.eling.domain.Employe;
 import application.repository.CompteAphpRepository;
 import application.repository.EmployeRepository;
