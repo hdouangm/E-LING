@@ -18,7 +18,6 @@ export class ListPatientComponent implements OnInit {
   searchGenre: string;
   restItems: any;
   restItemsUrl =  environment.apiUrl + '/secretairemedicale/patients';
-  waiting:string;
   constructor(private  apiService: ApiService, private http: HttpClient) {}
 
   ngOnInit() {

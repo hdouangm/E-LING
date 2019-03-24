@@ -311,8 +311,8 @@
           <td> {{ item.donneesSociales.genre }} </td>
           <td><a routerLink="../accederDMP/{{item.id}}"> DMP </a>
           </td>
-          <img *ngIf="item.dmp.waiting == 'check'" style="margin-top: 8%" src='../../assets/check.png' >
-          <img *ngIf="item.dmp.waiting == 'waiting'" style="margin-top: 13%;margin-left: 10%" src='../../assets/waiting.png' >
+          <img *ngIf="item.dmp.waitingDiag == 'check' && item.dmp.waitingPos == 'check'" style="margin-top: 8%" src='../../assets/check.png' >
+          <img *ngIf="item.dmp.waitingDiag == 'waiting' || item.dmp.waitingDiag == 'waiting'" style="margin-top: 13%;margin-left: 10%" src='../../assets/waiting.png' >
           <img *ngIf="item.dmp.waiting == 'new'" style="margin-top: 1%" src='../../assets/new.png' >
 
         </tr>

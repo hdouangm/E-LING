@@ -47,6 +47,24 @@ public class DMP implements Serializable {
     private String groupeSanguin;
     private String groupeRhesus;
     private String waiting;
+    private String waitingPos;
+    private String waitingDiag;
+
+    public String getWaitingDiag() {
+        return waitingDiag;
+    }
+
+    public void setWaitingDiag(String waitingDiag) {
+        this.waitingDiag = waitingDiag;
+    }
+
+    public String getWaitingPos() {
+        return waitingPos;
+    }
+
+    public void setWaitingPos(String waitingPos) {
+        this.waitingPos = waitingPos;
+    }
 
     public String getWaiting() {
         return waiting;

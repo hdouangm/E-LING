@@ -11,7 +11,7 @@ import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.7.4.v20190115-rNA", date="2019-03-24T16:58:48")
+@Generated(value="EclipseLink-2.7.4.v20190115-rNA", date="2019-03-24T18:05:06")
 @StaticMetamodel(DMP.class)
 public class DMP_ { 
 
@@ -24,12 +24,14 @@ public class DMP_ {
     public static volatile SingularAttribute<DMP, Examen> examen;
     public static volatile SingularAttribute<DMP, Posologie> posologie;
     public static volatile SingularAttribute<DMP, String> accidents;
+    public static volatile SingularAttribute<DMP, String> waitingPos;
     public static volatile SingularAttribute<DMP, String> maladieInfectieuse;
     public static volatile SingularAttribute<DMP, String> interventionsChir;
     public static volatile SingularAttribute<DMP, DemandeExamen> demandeExamen;
     public static volatile SingularAttribute<DMP, Diagnostique> diagnostique;
     public static volatile SingularAttribute<DMP, String> maladies;
     public static volatile SingularAttribute<DMP, String> groupeSanguin;
+    public static volatile SingularAttribute<DMP, String> waitingDiag;
     public static volatile SingularAttribute<DMP, Patient> patient;
     public static volatile SingularAttribute<DMP, String> groupeRhesus;
     public static volatile SingularAttribute<DMP, DemandeIntervention> demandeIntervention;
