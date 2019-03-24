@@ -1,11 +1,23 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package application.repository;
+
 import application.eling.domain.DemandeIntervention;
 
-import javax.ejb.NoSuchEntityException;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.List;
+
+import static application.eling.domain.DemandeIntervention.FIND_ALL;
+
+/**
+ *
+ * @author ophedinho
+ */
 
 @Stateless
 public class DemandeInterventionRepository {
@@ -14,27 +26,32 @@ public class DemandeInterventionRepository {
     private EntityManager em;
 
     public List<DemandeIntervention> list() {
-        return em.createNamedQuery(DemandeIntervention.FIND_ALL, DemandeIntervention.class).getResultList();
+        return em.createNamedQuery(FIND_ALL, DemandeIntervention.class).getResultList();
     }
 
-    public DemandeIntervention find(Integer id) {
+    public List<DemandeIntervention> listMed() {
+        return em.createNamedQuery(DemandeIntervention.FIND_ALL_MED, DemandeIntervention.class).getResultList();
+    }
+
+    public List<DemandeIntervention> listLab() {
+        return em.createNamedQuery(DemandeIntervention.FIND_ALL_LAB, DemandeIntervention.class).getResultList();
+    }
+
+    public DemandeIntervention find(int id) {
         return em.find(DemandeIntervention.class, id);
     }
 
-    public Integer save(DemandeIntervention p) {
-        em.persist(p);
-        return p.getId();
+    public int save(DemandeIntervention d_intervention) {
+        em.persist(d_intervention);
+        return d_intervention.getId();
     }
 
-    public void update(DemandeIntervention p) {
-        em.merge(p);
+    public int update(DemandeIntervention d_intervention){
+        em.merge(d_intervention);
+        return d_intervention.getId();
     }
 
-    public void delete(Integer id) {
-        DemandeIntervention p = find(id);
-        if (p == null) {
-            throw new NoSuchEntityException("No entity with the id: " + id);
-        }
-        em.remove(p);
+    public void delete(int d_examen){
+        em.remove(d_examen);
     }
 }

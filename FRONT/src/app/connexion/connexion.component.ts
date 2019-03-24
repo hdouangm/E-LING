@@ -42,7 +42,7 @@ export class ConnexionComponent implements OnInit {
        motDePasse : this.getValue('password')
      };
 
-    this.apiService.connexion(data)
+     this.apiService.connexion(data)
       .subscribe(
         (reponse: any) => {
         console.log('reponse: ' + reponse);

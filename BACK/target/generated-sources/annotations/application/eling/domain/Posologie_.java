@@ -9,7 +9,7 @@ import javax.persistence.metamodel.SetAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.7.4.v20190115-rNA", date="2019-03-24T18:05:06")
+@Generated(value="EclipseLink-2.7.4.v20190115-rNA", date="2019-03-24T23:21:37")
 @StaticMetamodel(Posologie.class)
 public class Posologie_ { 
 

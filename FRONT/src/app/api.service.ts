@@ -35,8 +35,8 @@ export class ApiService {
     return this.httpClient.get(`${this.API_URL}/CompteAphp/Search/` + val1 + `/` + val2);
   }
 
-  createDemandeExamen(dExamen) {
-    return this.httpClient.post(`${this.API_URL}/DemandeExamen/`, dExamen);
+  createDemandeExamen(dExamen:any) {
+    return this.httpClient.post(`${this.API_URL}/DemandeExamen/create/`, dExamen);
   }
 
   getNiveau(login) {

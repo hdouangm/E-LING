@@ -1,11 +1,23 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package application.repository;
-import application.eling.domain.DemandeExamen;
 
-import javax.ejb.NoSuchEntityException;
+import application.eling.domain.DemandeExamen;
+import static application.eling.domain.DemandeExamen.FIND_ALL;
+import static application.eling.domain.DemandeExamen.FIND_ALL_LAB;
+import static application.eling.domain.DemandeExamen.FIND_ALL_MED;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.List;
+
+/**
+ *
+ * @author ophedinho
+ */
 
 @Stateless
 public class DemandeExamenRepository {
@@ -14,27 +26,32 @@ public class DemandeExamenRepository {
     private EntityManager em;
 
     public List<DemandeExamen> list() {
-        return em.createNamedQuery(DemandeExamen.FIND_ALL, DemandeExamen.class).getResultList();
+        return em.createNamedQuery(FIND_ALL, DemandeExamen.class).getResultList();
     }
 
-    public DemandeExamen find(Integer id) {
+    public List<DemandeExamen> listMed() {
+        return em.createNamedQuery(DemandeExamen.FIND_ALL_MED, DemandeExamen.class).getResultList();
+    }
+
+    public List<DemandeExamen> listLab() {
+        return em.createNamedQuery(DemandeExamen.FIND_ALL_LAB, DemandeExamen.class).getResultList();
+    }
+
+    public DemandeExamen find(int id) {
         return em.find(DemandeExamen.class, id);
     }
 
-    public Integer save(DemandeExamen p) {
-        em.persist(p);
-        return p.getId();
+    public int save(DemandeExamen d_examen) {
+        em.persist(d_examen);
+        return d_examen.getId();
     }
 
-    public void update(DemandeExamen p) {
-        em.merge(p);
+    public int update(DemandeExamen dExamen){
+        em.merge(dExamen);
+        return dExamen.getId();
     }
 
-    public void delete(Integer id) {
-        DemandeExamen p = find(id);
-        if (p == null) {
-            throw new NoSuchEntityException("No entity with the id: " + id);
-        }
-        em.remove(p);
+    public void delete(int d_examen){
+        em.remove(d_examen);
     }
 }

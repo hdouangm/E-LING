@@ -31,7 +31,7 @@ export class DemandeExamenAddingComponent implements OnInit {
 public createDemandeExamen() {
         this.apiService.createDemandeExamen(this.examenData).subscribe((response) => {
             console.log(response);
-            this.router.navigate(['/demandeExamenMed']);
+            location.replace('/demandeExamenMed');
         });
     }
 

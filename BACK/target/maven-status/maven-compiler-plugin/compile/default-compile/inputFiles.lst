@@ -6,11 +6,14 @@
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/eling/domain/DemandeExamen.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/repository/InterventionDAO.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/rest/InterventionRestService.java
+/Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/security/utils/Role.java
+/Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/security/RoleNeededFilter.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/repository/PatientRepository.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/rest/PatientRestService.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/rest/ConnexionRestService.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/resources/ImageService.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/eling/domain/ConstanteVitale.java
+/Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/eling/domain/Credential.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/eling/domain/Patient.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/repository/GenericDAO.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/eling/domain/Diagnostique.java
@@ -21,6 +24,7 @@
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/repository/CompteAphpSetup.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/repository/CompteAphpRepository.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/security/JWTTokenNeeded.java
+/Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/rest/DemandeExamenRestService.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/repository/EmployeRepository.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/eling/domain/Infirmier.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/eling/domain/Competence.java
@@ -30,6 +34,7 @@
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/repository/ActeSetup.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/repository/ActeRepository.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/eling/domain/DemandeIntervention.java
+/Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/security/RoleNeeded.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/eling/domain/TypeExamen.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/eling/domain/Persistence.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/eling/domain/ConstantesVitales.java
@@ -59,6 +64,7 @@
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/rest/PosologieRestService.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/repository/NoeudHopitalRepository.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/repository/DonneeSocialeRepository.java
+/Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/rest/DemandeInterventionRestService.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/rest/ExamenRestService.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/security/utils/LoggerProducer.java
 /Users/jetski/Desktop/E-LING/E-LING/E-LING/BACK/src/main/java/application/eling/domain/Acte.java
