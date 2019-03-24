@@ -19,7 +19,6 @@ public class CompteAphp implements Serializable {
     private String calendarLink;
     @OneToOne(cascade = CascadeType.ALL)
     private Employe employe;
-
     public CompteAphp() {
 
     }

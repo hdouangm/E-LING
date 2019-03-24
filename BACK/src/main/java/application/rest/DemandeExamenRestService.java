@@ -81,7 +81,7 @@ public class DemandeExamenRestService {
     public Response createDemandeExamen(DemandeExamen d_examen) {
         repository.save(d_examen);
         URI compteUri = uriInfo.getBaseUriBuilder().path(DemandeExamenRestService.class).path(Integer.toString(d_examen.getId())).build();
-        return Response.created(compteUri).build();
+        return Response.ok().build();
     }
     
     
