@@ -14,6 +14,7 @@ export class ListPatientComponent implements OnInit {
   searchPrenom: string;
   searchAge: string;
   searchPays: string;
+  searchGenre: string;
   restItems: any;
   restItemsUrl =  environment.apiUrl + '/secretairemedicale/patients';
 
