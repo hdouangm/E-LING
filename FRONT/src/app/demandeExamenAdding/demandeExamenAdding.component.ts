@@ -9,10 +9,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./demandeExamenAdding.component.css']
 })
 export class DemandeExamenAddingComponent implements OnInit {
-  publication: any;
   constructor( private  apiService: ApiService, private route: ActivatedRoute, private router: Router ) { }
 
-  @Input() examenData = { id_dmp: '', type_examen: '', publicationMed: false, publicationLab: false };
+  @Input() examenData = { id_dmp: '', type_examen: '', publicationMed: false, publicationLab: false , publication: any};
 
   public  dmps: Array<object> = [];
   public  types: Array<object> = [];
