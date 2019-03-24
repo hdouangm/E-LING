@@ -63,7 +63,7 @@ public class ConnexionRestService {
          // Issue a token for the user
          String token = issueToken(compte.getLogin());
          DonneesSociales ds = repository.findByLogin(compte.getLogin());
-         Credential user = new Credential(ds.getNom(), ds.getPrenom(), token);
+         Credential user = new Credential(ds.getNom(), ds.getPrenom(), token,compte.getEmploye().getNiveau());
          return Response.ok(user).header(AUTHORIZATION, "Bearer " + token).build();
        
     }

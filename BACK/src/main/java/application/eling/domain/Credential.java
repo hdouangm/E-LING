@@ -11,11 +11,22 @@ package application.eling.domain;
  */
 public class Credential {
     private String nom, prenom, token;
+    private int niveau;
 
-    public Credential(String nom, String prenom, String token) {
+
+    public Credential(String nom, String prenom, String token, int niveau) {
         this.nom = nom;
         this.prenom = prenom;
         this.token = token;
+        this.niveau = niveau;
+    }
+
+    public int getNiveau() {
+        return niveau;
+    }
+
+    public void setNiveau(int niveau) {
+        this.niveau = niveau;
     }
 
     public String getNom() {
