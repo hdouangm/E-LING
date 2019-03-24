@@ -208,6 +208,7 @@ export class AccederDmpComponent implements OnInit {
 
 
     });
+
   }
 
   valPos() {
@@ -236,5 +237,16 @@ export class AccederDmpComponent implements OnInit {
 
 
     });
+  }
+
+  demandeExamen() {
+    localStorage.setItem('id_dmp', this.dmp.id);
+    location.replace('addDemandeExamen');
+
+  }
+
+  demandeIntervention() {
+    localStorage.setItem('id_dmp', this.dmp.id);
+    location.replace('addDemandeIntervention');
   }
 }

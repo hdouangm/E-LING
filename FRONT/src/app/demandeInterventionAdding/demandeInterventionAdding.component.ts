@@ -12,7 +12,7 @@ export class DemandeInterventionAddingComponent implements OnInit {
 
   constructor( private  apiService: ApiService, private route: ActivatedRoute, private router: Router ) { }
 
-  @Input() interventionData = { id_dmp: '', type_intervention: '', publicationMed: false, publicationLab: false };
+  @Input() interventionData = { id_dmp: localStorage.getItem('id_dmp'), type_intervention: '', publicationMed: false, publicationLab: false };
 
   public  dmps: Array<object> = [];
   public  types: Array<object> = [];

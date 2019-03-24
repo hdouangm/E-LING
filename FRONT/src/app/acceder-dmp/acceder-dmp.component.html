@@ -89,9 +89,9 @@
  <div>
    <button id="modif" (click)=modif() type="button" class="btn btn-danger">Modifier</button>
    <button id ="gestion"  type="button" class="btn btn-danger btn-sm">Gestion des documents</button>
-   <button id="demandei" *ngIf="niveau == 0"  type="button" class="btn btn-danger btn-sm">Demande d'intervention</button>
-   <button id ="demandee"*ngIf="niveau == 0" style="margin-left: 83%;position: absolute;margin-top: -25% " type="button" class="btn btn-danger btn-sm">Demande d'examen</button>
-   <button id="gp" *ngIf="niveau == 0"  type="button" class="btn btn-danger btn-sm">Gestion de posologie</button>
+   <button id="demandei" (click)=demandeIntervention() *ngIf="niveau == 0"  type="button" class="btn btn-danger btn-sm">Demande d'intervention</button>
+   <button id ="demandee" (click)=demandeExamen() *ngIf="niveau == 0" style="margin-left: 83%;position: absolute;margin-top: -25% " type="button" class="btn btn-danger btn-sm">Demande d'examen</button>
+   <!--<button id="gp" *ngIf="niveau == 0"  type="button" class="btn btn-danger btn-sm">Gestion de posologie</button>-->
    <button id ="vp" *ngIf="niveau == 0 && waitingPos == 'waiting'" (click)=valPos() type="button" class="btn btn-danger btn-sm">Validation posologie</button>
    <button  id="vd" *ngIf="niveau == 0 && waitingDiag == 'waiting'" (click)=valDiag() type="button" class="btn btn-danger btn-sm">Validation du diagnostique</button>
 

@@ -8,15 +8,7 @@
    <div class="page-centrer">
        <br>
        <div class="titre">Demande Intervention</div>
-       <br>
-        <label>Numéro DMP : 
-            <select name="dmpId" [(ngModel)]="interventionData.id_dmp" > <!--onchange="inserer('nomdmp',this.dmpId.label)"--> 
-                <option value="">Sélectionnez un dmp</option>
-                <option *ngFor="let dmp of dmps" [value]="dmp.id" >{{dmp.username}}</option>
-            </select>
-        </label>
-            <br> 
-            <br>
+
             <label>Type Examen : 
                 <select [(ngModel)]="interventionData.type_intervention"> 
                 <option value="">Sélectionnez un type</option>

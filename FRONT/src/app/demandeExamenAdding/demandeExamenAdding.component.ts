@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DemandeExamenAddingComponent implements OnInit {
   constructor( private  apiService: ApiService, private route: ActivatedRoute, private router: Router ) { }
 
-  @Input() examenData = { id_dmp: '', type_examen: '', publicationMed: false, publicationLab: false , publication: ''};
+  @Input() examenData = { id_dmp: localStorage.getItem('id_dmp'), type_examen: '', publicationMed: false, publicationLab: false , publication: ''};
 
   public  dmps: Array<object> = [];
   public  types: Array<object> = [];
