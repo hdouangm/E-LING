@@ -70,6 +70,14 @@ and (min-width : 1224px) {
   #vd{
     margin-left: 2%;position: absolute;margin-top: -25%;
   }
+  #ind{
+    margin-left: 82%;position: absolute;margin-top: -30%;
+
+  }
+  #ip{
+    margin-left: 83%;position: absolute;margin-top: -25%;
+
+  }
 }
 
 /* Large screens ----------- */
@@ -78,28 +86,36 @@ and (min-width : 1824px) {
   /* Styles */
   #modif{
 
-    margin-left: 85%;position: absolute;margin-top: -20%;
+    margin-left: 85%;position: absolute;margin-top: -60%;
   }
   #gestion{
-    margin-left: 82%;position: absolute;margin-top: -110%;
+    margin-left: 82%;position: absolute;margin-top: -50%;
   }
   #demandei{
-    margin-left: 82%;position: absolute;margin-top: -120%;
+    margin-left: 82%;position: absolute;margin-top: -40%;
 
   }
   #demandee{
-    margin-left: 83%;position: absolute;margin-top: -130%;
+    margin-left: 83%;position: absolute;margin-top: -30%;
   }
   #gp{
-    margin-left: 3%;position: absolute;margin-top: -140%;
+    margin-left: 3%;position: absolute;margin-top: -20%;
 
   }
   #vp{
-    margin-left: 2%;position: absolute;margin-top: -150%;
+    margin-left: 2%;position: absolute;margin-top: -10%;
 
   }
   #vd{
-    margin-left: 2%;position: absolute;margin-top: -160%;
+    margin-left: 2%;position: absolute;
+  }
+  #ind{
+    margin-left: 82%;position: absolute;margin-top: -30%;
+
+  }
+  #ip{
+    margin-left: 83%;position: absolute;margin-top: -25%;
+
   }
 
 }

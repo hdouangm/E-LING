@@ -41,7 +41,8 @@ import { AgendaComponent } from './agenda/agenda.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DxSchedulerModule} from 'devextreme-angular';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-
+import { InViewportModule } from '@thisissoon/angular-inviewport';
+import { ScrollSpyModule } from '@thisissoon/angular-scrollspy';
 const routelist: Route[] = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
 
@@ -113,7 +114,8 @@ const routelist: Route[] = [
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
-    DxSchedulerModule
+    DxSchedulerModule,
+    InViewportModule, ScrollSpyModule.forRoot()
 
 
   ],
