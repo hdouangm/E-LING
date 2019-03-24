@@ -85,6 +85,10 @@ export class ApiService {
 
   }
 
+  getPatientDMP(id:string){
+    return this.httpClient.post(`${this.API_URL}/DMP/getPatient/`, id, this.httpOptions);
+
+  }
   // ok
   getProfil(id: string) {
     return this.httpClient.get(`${this.API_URL}/Profil/${id}`);
