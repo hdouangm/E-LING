@@ -21,7 +21,7 @@ export function MustMatch(numSS: string, genre: string, dateNaissance: string, p
           ss.setErrors({ mustMatch: true });
           return;
         }
-        if (pays_.value !== 'France' && ss.value.length != 15) {
+        if (pays_.value == 'France' && ss.value.length != 15) {
           ss.setErrors({ mustMatch: true });
           return;
         }
