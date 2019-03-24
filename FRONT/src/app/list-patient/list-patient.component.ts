@@ -10,6 +10,10 @@ import { environment } from './../../environments/environment';
 })
 export class ListPatientComponent implements OnInit {
   searchText: string;
+  searchNom: string;
+  searchPrenom: string;
+  searchAge: string;
+  searchPays: string;
   restItems: any;
   restItemsUrl =  environment.apiUrl + '/secretairemedicale/patients';
 
