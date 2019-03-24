@@ -46,7 +46,9 @@ export class NewPatientDeuxComponent implements OnInit {
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
 
-
+    cancel(){
+      location.replace("http://e-ling.fr/listePatient");
+    }
 
     onSubmit() {
         this.submitted = true;
