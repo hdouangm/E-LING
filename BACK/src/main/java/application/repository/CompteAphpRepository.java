@@ -46,7 +46,7 @@ public class CompteAphpRepository {
         Query query = em.createQuery(qr);
         return query.getResultList();
     }
-    public CompteAphp find(String login) {
+    public CompteAphp findLogin(String login) {
         return em.find(CompteAphp.class,login);
     }
 

@@ -75,10 +75,10 @@ public class ConnexionRestService {
     }
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("calendar")
     public Response getCalendar(String login) {
-        CompteAphp comptes = repository.find(login);
+        CompteAphp comptes = repository.findLogin(login);
         if(comptes != null){
             return  Response.ok(comptes).build();
 

@@ -116,7 +116,7 @@ export class ApiService {
       {  responseType: 'text' as 'json' }
     );
   }
-  public calendar(login: string)  {
+  calendar(login: string)  {
     console.log('CO' + login)
     return this.httpClient.post(`${this.API_URL}/Connexion/calendar/`,
       login, this.httpOptions

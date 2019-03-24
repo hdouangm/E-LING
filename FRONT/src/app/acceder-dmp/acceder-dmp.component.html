@@ -24,11 +24,17 @@
        <p style="padding-left: 1%">à : Melun </p><br><br>
        <p >Code postal du domicile: {{getCP()}} </p><br>
        <label>Profession: </label><input type="text" [(ngModel)]="Profession" id="Profession" ngstyle="display: inline" class="form-control col-3" [placeholder]="prof() ? Profession:''" [disabled]="prof()"><br>
-       <div class="form-group">
+       <div class="form-group" >
          <label>Groupe Sanguin :</label>
-         <select formControlName="pays" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pays.errors }">
+         <select formControlName="GS" [ngClass]="{ 'is-invalid': submitted && f.pays.errors }">
            <option value="O">O</option>
            <option value="O+">O+</option>
+           <option value="O+">A</option>
+           <option value="O+">A+</option>
+           <option value="O+">B</option>
+           <option value="O+">B+</option>
+
+
          </select>
 
        </div>
