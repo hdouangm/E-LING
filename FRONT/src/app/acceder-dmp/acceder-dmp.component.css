@@ -78,7 +78,7 @@ and (min-width : 1824px) {
   /* Styles */
   #modif{
 
-    margin-left: 85%;position: absolute;margin-top: -100%;
+    margin-left: 85%;position: absolute;margin-top: -20%;
   }
   #gestion{
     margin-left: 82%;position: absolute;margin-top: -110%;
