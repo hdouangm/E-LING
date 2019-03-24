@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-dmp.component.css']
 })
 export class ListDmpComponent implements OnInit {
-  private  dmps: Array<object> = [];
+  dmps: Array<object> = [];
   searchForm: FormGroup;
   submitted = false;
 
