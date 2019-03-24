@@ -86,13 +86,13 @@ and (min-width : 1824px) {
   /* Styles */
   #modif{
 
-    margin-left: 85%;position: absolute;margin-top: -60%;
+    margin-left: 85%;position: absolute;margin-top: -10%;
   }
   #gestion{
-    margin-left: 82%;position: absolute;margin-top: -50%;
+    margin-left: 82%;position: absolute;margin-top: -15%;
   }
   #demandei{
-    margin-left: 82%;position: absolute;margin-top: -40%;
+    margin-left: 82%;position: absolute;margin-top: -35%;
 
   }
   #demandee{
@@ -103,14 +103,14 @@ and (min-width : 1824px) {
 
   }
   #vp{
-    margin-left: 2%;position: absolute;margin-top: -10%;
+    margin-left: 2%;position: absolute;margin-top: -20%;
 
   }
   #vd{
     margin-left: 2%;position: absolute;
   }
   #ind{
-    margin-left: 82%;position: absolute;margin-top: -30%;
+    margin-left: 82%;position: absolute;margin-top: -20%;
 
   }
   #ip{
