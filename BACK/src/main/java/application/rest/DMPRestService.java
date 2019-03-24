@@ -81,6 +81,18 @@ public class DMPRestService {
 
 
     }
+    @POST
+    @Path("update")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response update( DMP dmp ) {
+        repository.update(dmp);
+
+
+        return Response.ok().build();
+
+
+    }
     
    /* @GET
     @Path("accederDMP/{patient}")

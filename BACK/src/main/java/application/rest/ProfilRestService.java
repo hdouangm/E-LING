@@ -72,7 +72,16 @@ public class ProfilRestService {
 
         return Response.ok(ds).build();
     }
-    
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("update")
+    public Response getEmploye(Employe employe) {
+        caphp.update(employe);
+        return Response.ok(employe).build();
+
+    }
    /* @GET
     @Path("numeroSS/{numero}")
     @Produces(MediaType.APPLICATION_JSON)

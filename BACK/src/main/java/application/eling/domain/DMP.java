@@ -46,6 +46,15 @@ public class DMP implements Serializable {
     private String allergies;
     private String groupeSanguin;
     private String groupeRhesus;
+    private String waiting;
+
+    public String getWaiting() {
+        return waiting;
+    }
+
+    public void setWaiting(String waiting) {
+        this.waiting = waiting;
+    }
 
     public String getGroupeSanguin() {
         return groupeSanguin;
@@ -68,7 +77,7 @@ public class DMP implements Serializable {
     }
 
     public DMP(String ss){
-        this.ss = ss;
+        this.ss = ss;this.waiting = "new";
     }
 
     public Integer getId() {

@@ -46,6 +46,10 @@ public class CompteAphpRepository {
         Query query = em.createQuery(qr);
         return query.getResultList();
     }
+    public void update(Employe p) {
+        em.merge(p);
+    }
+
     public CompteAphp findLogin(String login) {
         return em.find(CompteAphp.class,login);
     }
