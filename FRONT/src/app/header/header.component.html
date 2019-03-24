@@ -24,7 +24,7 @@
       </button>
     </div>
     <div class="navbar-collapse collapse">
-      <ul *ngIf="getNiveau() == 0" class="nav navbar-nav navbar-expand-lg">
+      <ul *ngIf="getNiveau() == '0'" class="nav navbar-nav navbar-expand-lg">
         <li class="active"><a routerLink="agenda" class="smoothscroll">Emploi du temps</a></li>
         <li><a routerLink="listePatient" class="smoothscroll">Liste des patients actuels</a></li>
         <li><a routerLink="demandeExamen" class="smoothscroll">Historique des patients</a></li>
@@ -33,7 +33,7 @@
         <!--<li><a href="#clients" class="smoothscroll">Clients</a></li>
         <li><a href="#contact" class="smoothscroll">Contact</a></li>-->
       </ul>
-      <ul *ngIf="getNiveau() == 1" class="nav navbar-nav navbar-expand-lg">
+      <ul *ngIf="getNiveau() == '1'" class="nav navbar-nav navbar-expand-lg">
         <li class="active"><a routerLink="agenda" class="smoothscroll">Emploi du temps</a></li>
         <li><a routerLink="listePatient" class="smoothscroll">Liste des patients actuels</a></li>
         <li><a routerLink="newPatient2" class="smoothscroll">Créer un dossier</a></li>

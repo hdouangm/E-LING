@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
   }
   getNiveau() {
-    return Number(localStorage.getItem('niveau'));
+    return localStorage.getItem('niveau');
 
   }
 
