@@ -52,27 +52,20 @@ public class ConnexionRestService {
     // ======================================
 
     
-    @POST
+      @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response connexion(CompteAphp compte) {
         List<CompteAphp> comptes = repository.find(compte.getLogin(),compte.getMotDePasse());
-	if(comptes.isEmpty()) return null;;
+	if(comptes.isEmpty()) return null;
          // Issue a token for the user
          String token = issueToken(compte.getLogin());
-         //return Response.ok(token).header(AUTHORIZATION, "Bearer " + token).build();
-          //return Response.ok().entity(token).build();
-         // return Response.ok(token).build();
-        try{
-            JsonObjectBuilder o =Json.createObjectBuilder();
-            o.add("token", token);
-           return Response.ok(token).build();
-          //r
-        }catch(Exception e)  {
-            return null;
-        }
+         DonneesSociales ds = repository.findByLogin(compte.getLogin());
+         Credential user = new Credential(ds.getNom(), ds.getPrenom(), token);
+         return Response.ok(user).header(AUTHORIZATION, "Bearer " + token).build();
        
     }
+	
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

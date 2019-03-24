@@ -42,31 +42,25 @@ export class ConnexionComponent implements OnInit {
        motDePasse : this.getValue('password')
      };
 
-     this.apiService.connexion(data)
-      .subscribe((reponse: any) => {
-        console.log('reponse: ' + JSON.stringify(reponse));
+    this.apiService.connexion(data)
+      .subscribe(
+        (reponse: any) => {
+        console.log('reponse: ' + reponse);
         if (reponse == null) {
           this.messageErreur = `Erreur d'authentification`;
           return;
         }
-        localStorage.setItem('ACCESS_TOKEN', reponse);
+        localStorage.setItem('ACCESS_TOKEN', reponse.token);
         localStorage.setItem('user', data.login);
-        this.apiService.getNiveau(data.login).subscribe((responses: any) => {
-          localStorage.setItem('niveau', responses.niveau);
-        });
-        this.apiService.getDonneesSociales(data.login).subscribe((response: any) => {
-          if (response == null) {
-            this.messageErreur = `Erreur d'authentification`;
-            return;
-          }
-          localStorage.setItem('nom', response.nom);
-          localStorage.setItem('prenom', response.prenom);
-          location.replace('agenda');
+        localStorage.setItem('nom', reponse.nom);
+       localStorage.setItem('prenom', reponse.prenom);
+        location.replace('agenda');
 
-
-        });
-
-    });
+      },
+      error => {
+        alert(`Oups une erreur s'est produite.`);
+        this.router.navigate(['connexion']);
+      });
 }
 
 getValue(id: string) {
