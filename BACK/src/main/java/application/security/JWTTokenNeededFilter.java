@@ -1,6 +1,14 @@
 package application.security;
 
+import application.eling.domain.DonneesSociales;
+import application.eling.domain.Employe;
+import application.repository.CompteAphpRepository;
+import application.repository.EmployeRepository;
 import application.security.utils.KeyGenerator;
+import application.security.utils.SimpleKeyGenerator;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
 
 
@@ -17,6 +25,7 @@ import java.io.IOException;
 import java.security.Key;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.EJB;
 
 /**
  * @author Antonio Goncalves
@@ -33,10 +42,13 @@ public class JWTTokenNeededFilter implements ContainerRequestFilter {
     // ======================================
 
    // @Inject
-    private Logger logger;
+    private Logger logger = Logger.getAnonymousLogger();
 
    // @Inject
     private KeyGenerator keyGenerator;
+    
+    @EJB
+    private CompteAphpRepository repository;
 
     // ======================================
     // =          Business methods          =
@@ -63,14 +75,19 @@ public class JWTTokenNeededFilter implements ContainerRequestFilter {
         try {
 
             // Validate the token
-            Key key = keyGenerator.generateKey();
-            Jwts.parser().setSigningKey(key).parseClaimsJws(token);
-            //logger.info("#### valid token : " + token);
-            logger.log(Level.INFO, "#### valid token : {0}", token);
-
+           // Validate the token
+            Key key = new SimpleKeyGenerator().generateKey();
+            //JwtParser parser = Jwts.parser().setSigningKey(key).parseClaimsJws(token);
+            JwtParser parser = Jwts.parser().setSigningKey(key);
+            Jws<Claims> claims = parser.parseClaimsJws(token);
+            String login = claims.getBody().getSubject();
+            Employe currentUser = (Employe) repository.getEmploye(login);
+            if(currentUser != null) logger.info("#### valid token : " + token);
+            else requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).build());
         } catch (Exception e) {
             //logger.severe("#### invalid token : " + token);
             logger.log(Level.SEVERE, "#### invalid token : {0}", token);
+            logger.log(Level.SEVERE, "#### invalid token1 : {0}", e.getMessage());
             requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).build());
         }
     }
