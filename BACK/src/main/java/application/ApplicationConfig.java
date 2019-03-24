@@ -30,6 +30,8 @@ public class ApplicationConfig extends Application {
         c.add(MultiPartFeature.class);
         c.add(ImageService.class);
         c.add(CORSFilter.class);
+        c.add(application.rest.DemandeExamenRestService.class);
+        c.add(application.rest.DemandeInterventionRestService.class);
         classes = Collections.unmodifiableSet(c);
     }
 

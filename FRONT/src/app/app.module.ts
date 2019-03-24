@@ -53,7 +53,7 @@ const routelist: Route[] = [
   {path:  'searchCompteAphp', component:  CompteAphpSearchingComponent },
   {path:  'addDemandeExamen', component:  DemandeExamenAddingComponent},
   {path:  'addDemandeIntervention', component:  DemandeInterventionAddingComponent },
-  {path:  'demandeExamen', component:  DemandeExamenListMedComponent },
+  {path:  'demandeExamen', component:  DemandeExamenListLabComponent },
   {path : 'listePatient', component : ListPatientComponent, canActivate: [AuthGuard] },
   {path : 'modifierProfil/:id', component: ModifierProfilComponent},
   {path : 'accederDMP/:id', component: AccederDmpComponent},
