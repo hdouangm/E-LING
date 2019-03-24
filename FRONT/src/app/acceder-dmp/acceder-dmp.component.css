@@ -39,9 +39,12 @@ hr.ligne{
 .ds,p{
 
 }
+.formfield * {
+  vertical-align: middle;
+}
 .page-centrer {
     margin-top: 35px;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     margin-left: 20%;
     margin-right: 30%;
     border: 0.5px black solid;

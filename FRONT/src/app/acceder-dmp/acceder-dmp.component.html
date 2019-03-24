@@ -22,52 +22,66 @@
        <p>Prenom: {{getPrenom()}}</p>
        <p style="padding-left: 25%">Née le: {{getBD()}} </p>
        <p style="padding-left: 1%">à : Melun </p><br><br>
-       <p >Code postal du domicile: {{getCP()}} </p><br>
-       <label>Profession: </label><input type="text" [(ngModel)]="Profession" id="Profession" ngstyle="display: inline" class="form-control col-3" [placeholder]="prof() ? Profession:''" [disabled]="prof()"><br>
-       <div class="form-group" >
+       <p >Code postal du domicile: {{getCP()}} </p>
+       <p class="formfield">
+         <label style="padding-left: 10%" >Profession: </label><textarea class="form-control" rows="1" style="display: inline" [(ngModel)]="Profession" id="Profession"  class="form-control col-3" [placeholder]="prof() ? Profession:''" [disabled]="prof()"></textarea><br><br>
+       </p>
+       <div style="display: inline" class="form-group" *ngIf="!gs()">
          <label>Groupe Sanguin :</label>
-         <select formControlName="GS" [ngClass]="{ 'is-invalid': submitted && f.pays.errors }">
+         <select [(ngModel)]="GS" >
            <option value="O">O</option>
            <option value="O+">O+</option>
-           <option value="O+">A</option>
-           <option value="O+">A+</option>
-           <option value="O+">B</option>
-           <option value="O+">B+</option>
+           <option value="A">A</option>
+           <option value="A+">A+</option>
+           <option value="B">B</option>
+           <option value="B+">B+</option>
 
 
          </select>
 
        </div>
-       <p style="padding-left: 15%;font-weight:bold">Groupe Rhésus:</p><br><br>
-       <p>Date d'entrée: 29/03/2019</p>
-       <label style="padding-left: 10%">Motif: </label><input type="text" [(ngModel)]="Motif" [placeholder]="motif() ? Motif:''" [disabled]="motif()" name="Motif" style="display: inline" class="form-control col-3"><br>
+       <label *ngIf="gs()">Groupe Sanguin: {{GS}}</label>
+
+       <div style="display: inline;" class="form-group" *ngIf="!gr()">
+         <label>Groupe Rhesus :</label>
+         <select [(ngModel)]="GR" >
+           <option value="RH+">RH+</option>
+           <option value="RH-">RH-</option>
+
+         </select>
+
+       </div>
+       <label style="padding-left: 10%;" *ngIf="gr()">Groupe Rhésus: {{GR}}</label>
+       <p style="padding-left: 10%;">Date d'entrée: 29/03/2019</p><br>
+       <label style="padding-left: 40%">Motif: </label><textarea class="form-control" rows="2" [(ngModel)]="Motif" [placeholder]="motif() ? Motif:''" [disabled]="motif()" name="Motif" style="display: inline" ><br>
 
 
-     </div>
+     </textarea></div>
      <hr style="border: 2px solid#5b9aa0;" />
 
      <div class="medic">
-       <label>Affection congénitales: </label><input type="text" [(ngModel)]="AC" [placeholder]="ac() ? AC:''" [disabled]="ac()" name="AC" style="display: inline" class="form-control col-3">
-       <label style="padding-left: 10%">Maladies: </label><input type="text" [(ngModel)]="Maladie" [placeholder]="maladie() ? Maladie:''" [disabled]="maladie()" name="Maladies" style="display: inline" class="form-control col-3"><br>
-       <label >Maladies infectieuse: </label><input type="text" [(ngModel)]="MaladieI" [placeholder]="mi() ? MaladieI:''" [disabled]="mi()" name="MI" style="display: inline" class="form-control col-3">
-       <label style="padding-left: 11.5%">Allergies: </label><input type="text"  [(ngModel)]="Allergie" [placeholder]="Allergies() ? Allergie:''" [disabled]="Allergies()" name="Allergies" style="display: inline" class="form-control col-3"><br>
-       <label>Autres Affections: </label><input [(ngModel)]="AutreA" [placeholder]="autrea() ? AutreA:''" [disabled]="autrea()" type="text" name="Autres" style="display: inline" class="form-control col-3" ><br>
-       <label >Interventions chirurgicales: </label><input [(ngModel)]="IC" [placeholder]="ic() ? IC:''" [disabled]="ic()" type="text" name="IC" style="display: inline" class="form-control col-3" ><br>
-       <label>Accidents: </label><input type="text" [(ngModel)]="Accidents" [placeholder]="accidents() ? Accidents:''" [disabled]="accidents()" name="Accidents" style="display: inline" class="form-control col-3" ><br>
+       <p class="formfield">
+       <label >Maladies: </label><textarea class="form-control" rows="1" [(ngModel)]="Maladie" [placeholder]="maladie() ? Maladie:''" [disabled]="maladie()" name="Maladies" style="display: inline" class="form-control col-3"></textarea>
+       <label style="padding-left: 10%" >Maladies infectieuse: </label><textarea class="form-control" rows="1" [(ngModel)]="MaladieI" [placeholder]="mi() ? MaladieI:''" [disabled]="mi()" name="MI" style="display: inline" class="form-control col-3"></textarea> <br>
+       <label >Allergies: </label><textarea class="form-control" rows="1"  [(ngModel)]="Allergie" [placeholder]="Allergies() ? Allergie:''" [disabled]="Allergies()" name="Allergies" style="display: inline" class="form-control col-3"></textarea>
+       <label style="padding-left: 10%">Interventions chirurgicales: </label><textarea class="form-control" rows="1" [(ngModel)]="IC" [placeholder]="ic() ? IC:''" [disabled]="ic()" type="text" name="IC" style="display: inline" class="form-control col-3" ></textarea><br>
+         <label >Autres Affections: </label><textarea class="form-control" rows="1" [(ngModel)]="AutreA" [placeholder]="autrea() ? AutreA:''" [disabled]="autrea()" type="text" name="Autres" style="display: inline" class="form-control col-3" ></textarea>
+         <label style="padding-left: 2%">Affection congénitales: </label><textarea class="form-control" rows="1" [(ngModel)]="AC" [placeholder]="ac() ? AC:''" [disabled]="ac()" name="AC" style="display: inline" class="form-control col-3"></textarea>
+
+       </p>
+         <!--
+
        <hr style="border: 2px solid#5b9aa0;" />
 
+       <label>Accidents: </label><input type="text" [(ngModel)]="Accidents" [placeholder]="accidents() ? Accidents:''" [disabled]="accidents()" name="Accidents" style="display: inline" class="form-control col-3" ><br>-->
 
 
 
 
 
-     </div>
-     <div style="display: block" class="AutreHospi">
-       <p class="eta" style="font-weight:bold">Date</p>
-       <p class="ser" style="font-weight:bold">Etablissement</p>
-       <p class="mc" style="font-weight:bold">Cause</p>
 
      </div>
+
 
    </div> <!-- /Page centrale -->
 

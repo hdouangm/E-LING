@@ -44,7 +44,24 @@ public class DMP implements Serializable {
     private String accidents;
     private String maladies;
     private String allergies;
+    private String groupeSanguin;
+    private String groupeRhesus;
 
+    public String getGroupeSanguin() {
+        return groupeSanguin;
+    }
+
+    public void setGroupeSanguin(String groupeSanguin) {
+        this.groupeSanguin = groupeSanguin;
+    }
+
+    public String getGroupeRhesus() {
+        return groupeRhesus;
+    }
+
+    public void setGroupeRhesus(String groupeRhesus) {
+        this.groupeRhesus = groupeRhesus;
+    }
 
     public DMP(){
 

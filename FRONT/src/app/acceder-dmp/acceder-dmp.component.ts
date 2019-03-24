@@ -24,6 +24,8 @@ export class AccederDmpComponent implements OnInit {
   Maladie: string;
   Allergie: string;
   AC: string;
+  GS: string;
+  GR: string;
   constructor(private  apiService: ApiService, private router: Router, private activateRoute: ActivatedRoute ) {
   }
 
@@ -47,6 +49,8 @@ export class AccederDmpComponent implements OnInit {
       this.Accidents = this.dmp.accidents;
       this.Maladie = this.dmp.maladies;
       this.Allergie = this.dmp.allergies;
+      this.GS = this.dmp.groupeSanguin;
+      this.GR = this.dmp.groupeRhesus;
     });
 
   }
@@ -78,8 +82,7 @@ export class AccederDmpComponent implements OnInit {
 
   }
   modif() {
-
-    if (this.Profession !== 'undefined') {
+    if (this.Profession) {
       this.dmp.profession = this.Profession;
     }
     if (this.Motif) {
@@ -107,6 +110,12 @@ export class AccederDmpComponent implements OnInit {
     }
     if (this.AC) {
     this.dmp.affectionCongenitales = this.AC;
+    }
+    if(this.GS){
+      this.dmp.groupeSanguin = this.GS;
+    }
+    if(this.GR){
+      this.dmp.groupeRhesus = this.GR;
     }
     this.apiService.setProf(this.dmp).subscribe( (response: any) => {
 
@@ -166,5 +175,21 @@ export class AccederDmpComponent implements OnInit {
       return false;
     }
     return true;
+  }
+
+  gs() {
+    if (this.dmp.groupeSanguin === null) {
+      return false;
+    }
+    console.log(this.dmp.groupeSanguin);
+    return true;
+  }
+
+  gr() {
+    if (this.dmp.groupeRhesus === null) {
+      return false;
+    }
+    return true;
+
   }
 }

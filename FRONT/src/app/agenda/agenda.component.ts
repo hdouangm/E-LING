@@ -20,23 +20,27 @@ export class AgendaComponent implements OnInit {
   currentDate: Date = new Date();
   url: string;
   constructor(private  apiService: ApiService, private router: Router, private activateRoute: ActivatedRoute, private http: HttpClient) {
-    this.dataSource = new DataSource({
-      store: new CustomStore({
-        load: (options) => this.getData(options, { showDeleted: false })
-      })
-    });
-    console.log('ouaila' + localStorage.getItem('user'));
-    this.apiService.calendar(localStorage.getItem('user')).subscribe(response => {
-
-      this.compte = response;
-      this.url = this.compte.calendarLink;
 
 
-    });
 
 
   }
+  getCalendar(){
+    this.apiService.calendar(localStorage.getItem('user')).subscribe((response:object) => {
+      this.compte = response;
+      this.url = this.compte.calendarLink;
+
+      this.dataSource = new DataSource({
+        store: new CustomStore({
+          load: (options) => this.getData(options, { showDeleted: false })
+        })
+      });
+    });
+
+  }
+
   ngOnInit() {
+    this.getCalendar();
   }
   private getData(options: any, requestOptions: any) {
     let PUBLIC_KEY = 'AIzaSyBS1w7nxQmZ9w83WUr1_zbdY9Ht-70IBjg';
