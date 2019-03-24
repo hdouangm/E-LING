@@ -51,6 +51,9 @@ export class ConnexionComponent implements OnInit {
         }
         localStorage.setItem('ACCESS_TOKEN', reponse);
         localStorage.setItem('user', data.login);
+        this.apiService.getNiveau(data.login).subscribe((responses: any) => {
+          localStorage.setItem('niveau', responses.niveau);
+        });
         this.apiService.getDonneesSociales(data.login).subscribe((response: any) => {
           if (response == null) {
             this.messageErreur = `Erreur d'authentification`;
@@ -62,9 +65,7 @@ export class ConnexionComponent implements OnInit {
 
 
         });
-        this.apiService.getNiveau(data.login).subscribe((responses: any) => {
-          localStorage.setItem('niveau', responses.niveau);
-        });
+
     });
 }
 

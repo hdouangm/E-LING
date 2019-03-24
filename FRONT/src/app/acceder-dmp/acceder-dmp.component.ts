@@ -26,6 +26,7 @@ export class AccederDmpComponent implements OnInit {
   AC: string;
   GS: string;
   GR: string;
+  niveau: any;
   constructor(private  apiService: ApiService, private router: Router, private activateRoute: ActivatedRoute ) {
   }
 
@@ -34,9 +35,8 @@ export class AccederDmpComponent implements OnInit {
   }
 
   getDmp(): void {
-
     const id = this.activateRoute.snapshot.paramMap.get('id');
-
+    this.niveau = localStorage.getItem('niveau');
     this.apiService.getPatient(`${id}`).subscribe((response: object) => {
       this.patient = response;
       this.dmp = this.patient.dmp;

@@ -2,7 +2,7 @@
  <!--    background -->
 
    <!-- Page centrale-->
-   <div class="page-centrer">
+   <div  class="page-centrer">
      <div class="entete">
        <h6 >Etablissement</h6>
        <h6 style="padding-left:17%">Service</h6>
@@ -43,7 +43,7 @@
        <label *ngIf="gs()">Groupe Sanguin: {{GS}}</label>
 
        <div style="display: inline;" class="form-group" *ngIf="!gr()">
-         <label>Groupe Rhesus :</label>
+         <label style="padding-left: 10%;">Groupe Rhesus :</label>
          <select [(ngModel)]="GR" >
            <option value="RH+">RH+</option>
            <option value="RH-">RH-</option>
@@ -85,8 +85,15 @@
 
    </div> <!-- /Page centrale -->
 
-    <button style="margin-left: 85%;position: relative;margin-top:-55% " (click)=modif() type="button" class="btn btn-danger">Modifier</button>
-    <button style="margin-left: 82%;position: relative;margin-top:-50% " type="button" class="btn btn-danger btn-sm">Gestion des documents</button>
 
+ <div>
+   <button style="margin-left: 85%;position: absolute;margin-top: -40% " (click)=modif() type="button" class="btn btn-danger">Modifier</button>
+   <button style="margin-left: 82%;position: absolute;margin-top: -35% " type="button" class="btn btn-danger btn-sm">Gestion des documents</button>
+   <button *ngIf="niveau == 0" style="margin-left: 82%;position: absolute;margin-top: -30% " type="button" class="btn btn-danger btn-sm">Demande d'intervention</button>
+   <button *ngIf="niveau == 0" style="margin-left: 83%;position: absolute;margin-top: -25% " type="button" class="btn btn-danger btn-sm">Demande d'examen</button>
+   <button *ngIf="niveau == 0" style="margin-left: 83%;position: absolute;margin-top: -20% " type="button" class="btn btn-danger btn-sm">Gestion de posologie</button>
+
+
+ </div>
 
    
