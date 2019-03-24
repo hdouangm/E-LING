@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from './../environments/environment';
+import {log} from 'util';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class ApiService {
   constructor(private  httpClient: HttpClient) {
   }
 
-  setProf(dmp){
+  setProf(dmp) {
     return this.httpClient.post(`${this.API_URL}/DMP/profession/`, dmp, this.httpOptions);
 
   }
@@ -115,9 +116,10 @@ export class ApiService {
       {  responseType: 'text' as 'json' }
     );
   }
-  public calendar(user: string)  {
-    return this.httpClient.post(`${this.API_URL}/Connexion/calendar`,
-      user, this.httpOptions
+  public calendar(login: string)  {
+    console.log('CO' + login)
+    return this.httpClient.post(`${this.API_URL}/Connexion/calendar/`,
+      login, this.httpOptions
     );
   }
 

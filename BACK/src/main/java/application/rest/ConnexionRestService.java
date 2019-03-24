@@ -77,7 +77,7 @@ public class ConnexionRestService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     @Path("calendar")
-    public Response getCalendar(@PathParam("login") String login) {
+    public Response getCalendar(String login) {
         CompteAphp comptes = repository.find(login);
         if(comptes != null){
             return  Response.ok(comptes).build();

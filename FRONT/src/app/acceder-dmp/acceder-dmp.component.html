@@ -24,7 +24,14 @@
        <p style="padding-left: 1%">à : Melun </p><br><br>
        <p >Code postal du domicile: {{getCP()}} </p><br>
        <label>Profession: </label><input type="text" [(ngModel)]="Profession" id="Profession" ngstyle="display: inline" class="form-control col-3" [placeholder]="prof() ? Profession:''" [disabled]="prof()"><br>
-         <p style="padding-left: 40%;font-weight:bold">Groupe Sanguin:</p>
+       <div class="form-group">
+         <label>Groupe Sanguin :</label>
+         <select formControlName="pays" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pays.errors }">
+           <option value="O">O</option>
+           <option value="O+">O+</option>
+         </select>
+
+       </div>
        <p style="padding-left: 15%;font-weight:bold">Groupe Rhésus:</p><br><br>
        <p>Date d'entrée: 29/03/2019</p>
        <label style="padding-left: 10%">Motif: </label><input type="text" [(ngModel)]="Motif" [placeholder]="motif() ? Motif:''" [disabled]="motif()" name="Motif" style="display: inline" class="form-control col-3"><br>
