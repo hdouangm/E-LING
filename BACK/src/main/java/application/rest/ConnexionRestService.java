@@ -73,6 +73,19 @@ public class ConnexionRestService {
         }
        
     }
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    @Path("calendar")
+    public Response getCalendar(@PathParam("login") String login,@PathParam("password") String password) {
+        List<CompteAphp> comptes = repository.find(login, password);
+        if(!comptes.isEmpty()){
+            return  Response.ok(comptes.get(0)).build();
+
+
+        }
+        return Response.status(Response.Status.NOT_FOUND).build();
+    }
     
     //ok
     private String issueToken(String login) {

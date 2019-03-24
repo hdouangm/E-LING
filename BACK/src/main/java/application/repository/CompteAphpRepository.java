@@ -46,6 +46,7 @@ public class CompteAphpRepository {
         Query query = em.createQuery(qr);
         return query.getResultList();
     }
+
     public DonneesSociales findByLogin(String login){
         return em.find(CompteAphp.class,login).getEmploye().getDonneesSociales();
 

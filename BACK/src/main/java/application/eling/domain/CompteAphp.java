@@ -16,7 +16,7 @@ public class CompteAphp implements Serializable {
     private String login;
     private String motDePasse;
     private String langue;
-
+    private String calendarLink;
     @OneToOne(cascade = CascadeType.ALL)
     private Employe employe;
 
@@ -24,11 +24,20 @@ public class CompteAphp implements Serializable {
 
     }
 
-    public CompteAphp(String login, String motDePasse, String langue,Employe employe) {
+    public String getCalendarLink() {
+        return calendarLink;
+    }
+
+    public void setCalendarLink(String calendarLink) {
+        this.calendarLink = calendarLink;
+    }
+
+    public CompteAphp(String login, String motDePasse, String langue, Employe employe, String calendarLink) {
         this.login = login;
         this.motDePasse = motDePasse;
         this.langue = langue;
         this.employe = employe;
+        this.calendarLink = calendarLink;
     }
 
     public String getLogin() {
