@@ -30,6 +30,12 @@ public class DMPRepository {
 
 
     }
+    public List<Patient> findBySS(String ss){
+
+        return em.createQuery("SELECT d from Patient d WHERE  d.dmp.ss = " + ss).getResultList();
+
+
+    }
     public List<Patient> findByIDPatient(Integer id){
         return em.createQuery("SELECT d from Patient d WHERE  d.id = " + id).getResultList();
 
