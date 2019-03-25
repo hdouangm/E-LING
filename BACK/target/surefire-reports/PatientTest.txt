@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: PatientTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+=======
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in PatientTest
+>>>>>>> 1c1caa06de7d72513fab171e0d734f68be193887

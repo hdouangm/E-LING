@@ -46,6 +46,28 @@ public class ProfilRestService {
         return Response.ok(profils).build();
     }
 
+    @GET
+    @Path("getAphp")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAPHP() {
+        List<CompteAphp> profils = caphp.list();
+        return Response.ok(profils).build();
+    }
+
+    @GET
+    @Path("setPosition")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response setPosition(@QueryParam("latitude") Integer la, @QueryParam("longitude") Integer lo, @QueryParam("login") String login) {
+        CompteAphp c = caphp.findLogin(login);
+        if (c == null ){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        c.setLatitude(la);
+        c.setLongitude(lo);
+        caphp.updateC(c);
+        return Response.ok(true).build();
+    }
+
 
 
     @POST
