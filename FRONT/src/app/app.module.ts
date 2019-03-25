@@ -43,6 +43,7 @@ import {DxSchedulerModule} from 'devextreme-angular';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { InViewportModule } from '@thisissoon/angular-inviewport';
 import { ScrollSpyModule } from '@thisissoon/angular-scrollspy';
+
 const routelist: Route[] = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
 
@@ -62,7 +63,9 @@ const routelist: Route[] = [
   {path: 'newPatient2', component: NewPatientDeuxComponent},
   {path: 'examen', component: ExamenComponent},
   {path: 'afficherExam', component: ExamenDetailComponent},
-  {path: 'agenda', component: AgendaComponent}
+  {path: 'agenda', component: AgendaComponent},
+  {path : 'affichageExamen', component: ExamenComponent},
+  {path: 'creerIntervention', component: InterventionComponent}
 
 ];
 @NgModule({
@@ -97,7 +100,7 @@ const routelist: Route[] = [
     PosologieDetailComponent,
     DiagnostiqueComponent,
     DiagnostiqueDetailComponent,
-    AgendaComponent
+    AgendaComponent,
 
 
   ],
