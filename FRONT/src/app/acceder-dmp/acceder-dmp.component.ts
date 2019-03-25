@@ -222,7 +222,7 @@ export class AccederDmpComponent implements OnInit {
 
   posologie() {
     this.dmp.waiting = 'false';
-
+    this.waitingPos = 'check';
     this.dmp.waitingPos = 'waiting';
     this.apiService.setProf(this.dmp).subscribe((response: object) => {
 
@@ -233,6 +233,7 @@ export class AccederDmpComponent implements OnInit {
   valDiag() {
 
     this.dmp.waitingDiag = 'check';
+    this.waitingDiag = 'check';
     this.apiService.setProf(this.dmp).subscribe((response: object) => {
 
 

@@ -95,7 +95,7 @@ public class DMP implements Serializable {
     }
 
     public DMP(String ss){
-        this.ss = ss;this.waiting = "new";
+        this.ss = ss;this.waiting = "new";this.waitingDiag="check";this.waitingPos="check";
     }
 
     public Integer getId() {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { environment } from './../../environments/environment';
@@ -18,7 +18,10 @@ export class ListPatientComponent implements OnInit {
   searchGenre: string;
   restItems: any;
   restItemsUrl =  environment.apiUrl + '/secretairemedicale/patients';
-  constructor(private  apiService: ApiService, private http: HttpClient) {}
+  constructor(private elementRef: ElementRef,private  apiService: ApiService, private http: HttpClient) {
+    this.elementRef.nativeElement.style.setProperty('--mar-za', '50%');
+
+  }
 
   ngOnInit() {
     this.getRestItems();

@@ -2,6 +2,10 @@
 @import "../../../lib/font-awesome/css/font-awesome.min.css";
 @import "../../../lib/fancybox/fancybox.css";
 
+:root{
+
+  --mar-za : -2%;
+}
 body{
   margin-top: 0;
   padding: 0;
@@ -38,9 +42,17 @@ body{
   padding-right: 50px;
 }
 
+#barre{
+   border-color: #000000;
+   width: 150px;
+   border-top: 2px solid;
+   position: absolute;
+  margin-top: 0%;
+  margin-left: var(--mar-za);
+ }
 
 .navbar .active a {
-  border-top: 2px solid #000000;
+
 }
 
 .navbar-scrolled {

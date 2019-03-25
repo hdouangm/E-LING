@@ -25,20 +25,20 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul *ngIf="getNiveau() == '0'" class="nav navbar-nav navbar-expand-lg">
-        <li class="active"><a routerLink="agenda" class="smoothscroll">Emploi du temps</a></li>
-        <li><a routerLink="listePatient" class="smoothscroll">Liste des patients actuels</a></li>
-        <li><a routerLink="InterventionListMed" class="smoothscroll">Demandes d'interventions</a></li>
-        <li><a routerLink="demandeExamen" class="smoothscroll">Historique des patients</a></li>
+        <hr *ngIf="un == true" id="barre" size="30"><li class="active"><a (click)="modif('un')" routerLink="agenda" class="smoothscroll">Emploi du temps</a></li>
+        <hr *ngIf="deux == true" id="barre" size="30"><li><a (click)="modif('deux')" routerLink="listePatient" class="smoothscroll">Liste des patients actuels</a></li>
+        <hr *ngIf="trois == true" id="barre" size="30"><li><a (click)="modif('trois')" routerLink="InterventionListMed" class="smoothscroll">Demandes d'interventions</a></li>
+        <hr *ngIf="quatre == true" id="barre" size="30"><li><a (click)="modif('quatre')" routerLink="demandeExamen" class="smoothscroll">Historique des patients</a></li>
         <li><a routerLink="deconnexion" class="smoothscroll"><i class="fas fa-power-off"></i><!-- Fixed navbar -->
         </a></li>
         <!--<li><a href="#clients" class="smoothscroll">Clients</a></li>
         <li><a href="#contact" class="smoothscroll">Contact</a></li>-->
       </ul>
       <ul *ngIf="getNiveau() == '1'" class="nav navbar-nav navbar-expand-lg">
-        <li class="active"><a routerLink="agenda" class="smoothscroll">Emploi du temps</a></li>
-        <li><a routerLink="listePatient" class="smoothscroll">Liste des patients actuels</a></li>
-        <li><a routerLink="newPatient2" class="smoothscroll">Créer un dossier</a></li>
-        <li><a routerLink="examen" class="smoothscroll">Creer Examen</a></li>
+        <hr *ngIf="un == true" id="barre" size="30"><li class="active"><a (click)="modif2('un')" routerLink="agenda" class="smoothscroll">Emploi du temps</a></li>
+        <hr *ngIf="deux == true" id="barre" size="30"><li><a (click)="modif2('deux')" routerLink="listePatient" class="smoothscroll">Liste des patients actuels</a></li>
+        <hr *ngIf="trois == true" id="barre" size="30"><li><a (click)="modif2('trois')" routerLink="newPatient2" class="smoothscroll">Créer un dossier</a></li>
+        <hr *ngIf="quatre == true" id="barre" size="30"><li><a (click)="modif2('quatre')" routerLink="examen" class="smoothscroll">Creer Examen</a></li>
         <li><a routerLink="afficherExam" class="smoothscroll">Affiche Examen</a></li>
 
 
