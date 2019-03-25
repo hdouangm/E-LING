@@ -33,13 +33,6 @@ public class CompteAphpRepository {
         return em.createNamedQuery(CompteAphp.FIND_ALL, CompteAphp.class).getResultList();
     }
 
-    /*public List<CompteAphp> find(CompteAphp cp) {
-        String qr = "SELECT c FROM CompteAphp c WHERE c.username = '"+ cp.getUsername() 
-                +"' AND c.password = '"+ cp.getPassword()+"'";
-        Query query = em.createQuery(qr);
-        return query.getResultList();
-    }*/
-    
     public List<CompteAphp> find(String usr, String pwd) {
         String qr = "SELECT c FROM CompteAphp c WHERE c.login = '"+ usr
                 +"' AND c.motDePasse = '"+ pwd +"'";
@@ -47,6 +40,10 @@ public class CompteAphpRepository {
         return query.getResultList();
     }
     public void update(Employe p) {
+        em.merge(p);
+    }
+
+    public void updateC(CompteAphp p) {
         em.merge(p);
     }
 

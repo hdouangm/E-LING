@@ -19,6 +19,8 @@ public class CompteAphp implements Serializable {
     private String calendarLink;
     @OneToOne(cascade = CascadeType.ALL)
     private Employe employe;
+    private Integer latitude;
+    private Integer longitude;
     public CompteAphp() {
 
     }
@@ -37,6 +39,8 @@ public class CompteAphp implements Serializable {
         this.langue = langue;
         this.employe = employe;
         this.calendarLink = calendarLink;
+        this.latitude = -100;
+        this.longitude = -100;
     }
 
     public String getLogin() {
@@ -69,6 +73,22 @@ public class CompteAphp implements Serializable {
 
     public void setEmploye(Employe employe) {
         this.employe = employe;
+    }
+
+    public int getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(int latitude) {
+        this.latitude = latitude;
+    }
+
+    public int getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(int longitude) {
+        this.longitude = longitude;
     }
 
     @Override
