@@ -32,6 +32,7 @@ public class ApplicationConfig extends Application {
         c.add(CORSFilter.class);
         c.add(application.rest.DemandeExamenRestService.class);
         c.add(application.rest.DemandeInterventionRestService.class);
+        c.add(application.rest.TypeInterventionRestService.class);
         classes = Collections.unmodifiableSet(c);
     }
 

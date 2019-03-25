@@ -159,7 +159,7 @@ export class ApiService {
 
 
   getDemandeInterventionMed() {
-    return  this.httpClient.get(`${this.API_URL}/DemandeIntervention/Med`);
+    return  this.httpClient.get(`${this.API_URL}/DemandeIntervention/Lab`);
   }
 
   getDemandeInterventionLab() {

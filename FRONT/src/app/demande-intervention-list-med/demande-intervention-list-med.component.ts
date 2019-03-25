@@ -10,11 +10,27 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DemandeInterventionListMedComponent implements OnInit {
 
   public  demandeInterventions:  Array<object> = [];
-
+  patienttab: Array<any> = [];
+  i = 0;
   constructor(private  apiService:  ApiService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
       this.getDemandeIntervention();
+  }
+  public getPatient(){
+
+
+    this.demandeInterventions.forEach((x:any) => {
+
+      this.apiService.getPatientDMP(x.id_dmp).subscribe((response:any) => {
+
+        this.patienttab[this.i]  =  response;
+
+        this.i++;
+      });
+
+    });
+
   }
 
   public newDemande(){
@@ -40,6 +56,8 @@ export class DemandeInterventionListMedComponent implements OnInit {
       this.apiService.getDemandeInterventionMed().subscribe((data:  Array<object>) => {
           this.demandeInterventions  =  data;
             console.log(this.demandeInterventions);
+            this.getPatient();
+
       });
   }
 

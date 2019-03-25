@@ -31,7 +31,7 @@ export class DemandeInterventionAddingComponent implements OnInit {
 public createDemandeIntervention() {
         this.apiService.createDemandeIntervention(this.interventionData).subscribe((response) => {
             console.log(response);
-            this.router.navigate(['/demandeInterventionMed']);
+            this.router.navigate(['/InterventionListMed']);
         });
     }
 

@@ -11,8 +11,8 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Code</th>
-      <th scope="col">DMP</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom<th>
       <th scope="col">Type</th>
       <th scope="col">Date</th>
       <th scope="col">Publication</th>
@@ -21,15 +21,17 @@
     </tr>
   </thead>
   <tbody id="dExams">
-        <tr *ngFor="let demandeIntervention of demandeInterventions">
-          <td> {{demandeIntervention.id}} </td>
-          <td> {{demandeIntervention.id_dmp}} </td>
+        <tr *ngFor="let demandeIntervention of demandeInterventions;let i=index">
+          <td>{{patienttab[i].donneesSociales.nom}}</td>
+          <td>{{patienttab[i].donneesSociales.prenom}}</td>
           <td> {{demandeIntervention.type_examen}} </td>
           <td> {{demandeIntervention.date}} </td>
           <td> {{demandeIntervention.publicationMed}} </td>
           <!--td> {{demandeExamen.publicationLab}} </td-->
           <!--td> <a routerLink="/demandeExamenEdit/{{demandeExamen.id}}"> Edit</a> </td-->
           <td><button class="btn btn-primary btn-group-lg col-12" (click)="publierDemande(demandeIntervention.id,demandeIntervention.id_dmp,demandeIntervention.type_examen);">Publier</button></td>
+          <td><a routerLink="../accederDMP/{{patienttab[i].id}}"> DMP </a>
+
         </tr>
 
   </tbody>
