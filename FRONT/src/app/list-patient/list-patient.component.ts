@@ -17,6 +17,8 @@ export class ListPatientComponent implements OnInit {
   searchPays: string;
   searchGenre: string;
   searchSs: string;
+  searchMedecinNom: any;
+  searchMedecinPrenom : any;
   restItems: any;
   storageLogin: any;
   storageNiveau: any;
