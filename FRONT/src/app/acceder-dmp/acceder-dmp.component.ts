@@ -56,6 +56,12 @@ export class AccederDmpComponent implements OnInit {
       this.GR = this.dmp.groupeRhesus;
       this.waitingDiag = this.dmp.waitingDiag;
       this.waitingPos = this.dmp.waitingPos;
+      this.dmp.waiting = 'false';
+
+      this.apiService.setProf(this.dmp).subscribe((response: object) => {
+
+
+      });
     });
     this.apiService.getEmployeConnecte().subscribe((response: object) => {
       this.employe = response;
@@ -212,7 +218,7 @@ export class AccederDmpComponent implements OnInit {
   }
 
   valPos() {
-
+    this.waitingPos = 'check';
     this.dmp.waitingPos = 'check';
     this.apiService.setProf(this.dmp).subscribe((response: object) => {
 
@@ -221,7 +227,6 @@ export class AccederDmpComponent implements OnInit {
   }
 
   posologie() {
-    this.dmp.waiting = 'false';
     this.waitingPos = 'check';
     this.dmp.waitingPos = 'waiting';
     this.apiService.setProf(this.dmp).subscribe((response: object) => {

@@ -52,7 +52,9 @@
 
        </div>
        <label style="padding-left: 10%;" *ngIf="gr()">Groupe Rhésus: {{GR}}</label>
-       <p style="padding-left: 10%;">Date d'entrée: 29/03/2019</p><br>
+       <p style="padding-left: 10%;">Date d'entrée: 27/03/2019</p><br>
+       <p >Numéro de securité sociale : {{patient.dmp.ss}}</p><br>
+
        <label style="padding-left: 40%">Motif: </label><textarea class="form-control" rows="2" [(ngModel)]="Motif" [placeholder]="motif() ? Motif:''" [disabled]="motif()" name="Motif" style="display: inline" ><br>
 
 
