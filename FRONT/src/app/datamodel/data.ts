@@ -54,7 +54,7 @@ export class DemandeExamen {
     constructor(
         public id: number = 0,
         public dmp: DMP = null,
-        public type: string = '',
+        public type: number = 0,
         public date: string = '',
         public publierDemande: boolean = false,
         public demandeRemplie: boolean = false,

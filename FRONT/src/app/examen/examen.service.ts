@@ -28,8 +28,8 @@ export class ExamenService {
       return this.http.post<Examen>(API_URL + '/create', examen);
   }
 
-  getExamenByIDDMP(ID: number): Observable<Examen> {
-    return this.http.get<Examen>(API_URL + '/all/dmp/' + ID);
+  getExamenByIDDMP(ID: number): Observable<Array<Examen>> {
+    return this.http.get<Array<Examen>>(API_URL + '/all/dmp/' + ID);
   }
 
   getExamenByIDResp(ID: number): Observable<Examen> {
