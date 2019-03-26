@@ -76,6 +76,15 @@ public class DMPRestService {
             return Response.status(Response.Status.NOT_FOUND).build();
         return Response.ok(p).build();
     }
+    @GET
+    @Path("getPatientSS")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getPatientSS(@QueryParam("ss") String ss) {
+        Patient p = repository.findBySS(ss).get(0);
+        if (p == null)
+            return Response.status(Response.Status.NOT_FOUND).build();
+        return Response.ok(p).build();
+    }
     @POST
     @Path("profession")
     @Consumes(MediaType.APPLICATION_JSON)

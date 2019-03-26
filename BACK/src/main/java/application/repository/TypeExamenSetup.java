@@ -27,7 +27,20 @@ public class TypeExamenSetup {
 
     @PostConstruct
     private void createData() {
-        repository.save(new TypeExamen("IRM"));
+        repository.save(new TypeExamen("IRM cérébral"));
+        repository.save(new TypeExamen("IRM Abdominal "));
+        repository.save(new TypeExamen("IRM du genou"));
+        repository.save(new TypeExamen("IRM des hanches"));
+        repository.save(new TypeExamen("Echographie thyroïdienne"));
+        repository.save(new TypeExamen("Echographie abdominale"));
+        repository.save(new TypeExamen("Scanner encéphalique"));
+        repository.save(new TypeExamen("Scanner thoracique"));
+        repository.save(new TypeExamen("Scanner pelvien"));
+        repository.save(new TypeExamen("Scanner rachidien"));
+        repository.save(new TypeExamen("Scanner dentaire"));
+        repository.save(new TypeExamen("Radiographie du thorax"));
+        repository.save(new TypeExamen("Radiographie dentaire"));
+        repository.save(new TypeExamen("Radiographie du bassin"));
         repository.save(new TypeExamen("EMG"));
         repository.save(new TypeExamen());
     }

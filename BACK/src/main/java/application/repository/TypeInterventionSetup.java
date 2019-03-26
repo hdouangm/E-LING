@@ -27,8 +27,15 @@ public class TypeInterventionSetup {
 
     @PostConstruct
     private void createData() {
-        repository.save(new TypeIntervention("Chirurgie cardiaque"));
+        repository.save(new TypeIntervention("Chirurgie vasculaire"));
         repository.save(new TypeIntervention("Chirurgie dentaire"));
+        repository.save(new TypeIntervention("Chirurgie thoracique"));
+        repository.save(new TypeIntervention("Neurochirurgie"));
+        repository.save(new TypeIntervention("Chirurgie plastique"));
+        repository.save(new TypeIntervention("Chirurgie orthopédique"));
+        repository.save(new TypeIntervention("Chirurgie gynécologique"));
+        repository.save(new TypeIntervention("Chirurgie cardiovasculaire"));
+
         repository.save(new TypeIntervention());
     }
     
