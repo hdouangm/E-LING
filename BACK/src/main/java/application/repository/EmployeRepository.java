@@ -25,11 +25,15 @@ public class EmployeRepository {
     @PersistenceContext(unitName = "JPAPU")
     private EntityManager em;
     
-     public List<Employe> list() {
+    public List<Employe> list() {
         return em.createNamedQuery(Employe.FIND_ALL, Employe.class).getResultList();
     }
     
-     public Employe findByLogin(String login) {
+    public List<Employe> medecinList(){
+        return em.createQuery("SELECT e from Employe e WHERE e.niveau = 0").getResultList();
+    }
+
+    public Employe findByLogin(String login) {
         
        Query query = em.createQuery("SELECT e FROM CompteAphp c ,Employe e WHERE c.username = :login"
                + " and e.compteAphp.id = c.id ");
@@ -38,12 +42,16 @@ public class EmployeRepository {
       
         return (Employe)query.getResultList().get(0);
     }
-     
-     
-     
-     public Employe find(int id) {
+
+
+    public List<Employe> findById(Integer id) {
+        return em.createQuery("SELECT e from Employe e WHERE  e.id = " + id).getResultList();
+    }
+
+    public Employe find(Integer id) {
         return em.find(Employe.class, id);
     }
+
     
     public Integer save(Employe employe) {
         em.persist(employe);

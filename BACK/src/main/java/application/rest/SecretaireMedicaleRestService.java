@@ -7,6 +7,8 @@ import application.repository.*;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -18,7 +20,8 @@ public class SecretaireMedicaleRestService {
 
     @Context
     private UriInfo uriInfo;
-
+    @PersistenceContext(unitName = "JPAPU")
+    private EntityManager em;
     @EJB
     private DMPRepository dmpRepository;
 
@@ -47,6 +50,9 @@ public class SecretaireMedicaleRestService {
     private ExamenRepository examenRepository;
 
     @EJB
+    private EmployeRepository employeRepository;
+
+    @EJB
     private DiagnostiqueRepository diagnostiqueRepository;
 
     @EJB
@@ -67,7 +73,7 @@ public class SecretaireMedicaleRestService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response createPatient (@QueryParam("ss") String ss, @QueryParam("nom") String nom, @QueryParam("prenom") String prenom,
                                    @QueryParam("adresse") String adresse, @QueryParam("ville") String ville, @QueryParam("codePostal") String codePostal,
-                                   @QueryParam("pays") String pays, @QueryParam("age") String age, @QueryParam("genre") String genre) throws Exception {
+                                   @QueryParam("pays") String pays, @QueryParam("age") String age, @QueryParam("genre") String genre, @QueryParam("medecinEnCharge") Integer medecinEnCharge) throws Exception {
 
         if (pays.equals("France")){
             List<DMP> tmp = dmpRepository.findByParam(ss);
@@ -75,16 +81,19 @@ public class SecretaireMedicaleRestService {
                 return Response.status(Response.Status.CONFLICT).build();
             }
         }
+        Patient patient;
         DMP dmp = new DMP(ss);
         NoeudHopital noeudHopital = new NoeudHopital();
         DonneesSociales donneesSociales = new DonneesSociales(nom, prenom, adresse, ville, codePostal, pays, age, genre);
 
-        Patient patient = new Patient(noeudHopital, dmp, donneesSociales);
-
-        Integer idPatient = patientRepository.save(patient);
-        Patient p = patientRepository.find(idPatient);
-
-        return Response.ok(p).build();
+        if (medecinEnCharge == -1){
+            patient = new Patient(noeudHopital, dmp, donneesSociales, null);
+        }
+        else {
+            patient = new Patient(noeudHopital, dmp, donneesSociales, em.getReference(Employe.class,medecinEnCharge));
+        }
+        patientRepository.save(patient);
+        return Response.ok(patient).build();
     }
 
     @GET

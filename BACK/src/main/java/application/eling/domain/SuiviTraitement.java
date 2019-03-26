@@ -15,6 +15,8 @@ public class SuiviTraitement implements Serializable {
     private Integer id;
     private String date;
     private Boolean priseTraitement;
+    @OneToOne(cascade=CascadeType.ALL)
+
     private Employe infirmiere;
     @ManyToOne(cascade = CascadeType.ALL)
     private Posologie posologie;

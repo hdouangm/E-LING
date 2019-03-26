@@ -22,6 +22,7 @@ public class Intervention implements Serializable {
     private String type;
     private String lieu;
     private String date;
+    @OneToOne(cascade=CascadeType.ALL)
     private Employe responsable;
     private Boolean publication;
     @OneToMany(cascade = CascadeType.ALL)
