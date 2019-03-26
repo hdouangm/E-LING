@@ -1,9 +1,6 @@
 package application.repository;
 
-import application.eling.domain.DMP;
-import application.eling.domain.DonneesSociales;
-import application.eling.domain.Employe;
-import application.eling.domain.Patient;
+import application.eling.domain.*;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -19,6 +16,12 @@ public class PatientSetup {
 
   @EJB
   private application.repository.EmployeRepository employeRepository;
+
+  @EJB
+  private application.repository.DMPRepository dmpRepository;
+
+  @EJB
+  private application.repository.ExamenRepository examenRepository;
 
 
     @PostConstruct
