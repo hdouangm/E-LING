@@ -28,7 +28,16 @@ public class PatientSetup {
       Employe medecin = new Employe(null, null, new DonneesSociales("Piatek","Raphael",null,null,null,null,null,null), 0,null, null);
       employeRepository.save(medecin);
 
-      repository.save(new Patient(null, new DMP("196127748267245"),  new DonneesSociales("Lennon", "John", "2 Allée Iphigénie", "Lognes", "77185", "France", "12-10-1996", "M"), medecin));
+      DMP dmp = new DMP("196127748267245");
+
+      Examen examen = new Examen(dmp, "10-10-2019", "url_image", medecin, null, null, null);
+      examenRepository.save(examen);
+
+      dmp.setExamen(examen);
+      dmpRepository.save(dmp);
+
+
+      repository.save(new Patient(null, dmp,  new DonneesSociales("Lennon", "John", "2 Allée Iphigénie", "Lognes", "77185", "France", "12-10-1996", "M"), medecin));
       repository.save(new Patient(null, new DMP("190107745879212"), new DonneesSociales("Gourcuff", "Richard", "41 Rue du Landy", "Clichy", "92110", "France", "10-15-1990", "M"), medecin));
       repository.save(new Patient(null, new DMP("193051341236704"), new DonneesSociales("Diaby", "Alexandre", "20 Rue Flegier", "Marseille", "13001", "France", "05-05-1993", "M"), medecin));
       repository.save(new Patient(null, new DMP(""), new DonneesSociales("Bale", "Nelson", "28 Bryantwood Rd", "Londres", "N7 7BE", "United Kingdom", "11-23-1985", "M"), medecin));
