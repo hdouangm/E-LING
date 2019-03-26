@@ -347,6 +347,12 @@
                                   </div>
                               </div>
                               <div class="form-group">
+                                <label for="exampleFormControlSelect1">Médecin en charge</label>
+                                <select class="form-control" formControlName="medecinEnCharge">
+                                  <option *ngFor="let item of restItems" value="{{ item.id }}">{{ item.id }} {{ item.donneesSociales.nom }} {{ item.donneesSociales.prenom }}</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
                                   <button class="btn btn-primary">Créer</button>
                               </div>
                           </form>

@@ -18,6 +18,9 @@ export class ListPatientComponent implements OnInit {
   searchGenre: string;
   searchSs: string;
   restItems: any;
+  storageLogin: any;
+  storageNiveau: any;
+  storageId:any;
   restItemsUrl =  environment.apiUrl + '/secretairemedicale/patients';
   constructor(private elementRef: ElementRef,private  apiService: ApiService, private http: HttpClient) {
     this.elementRef.nativeElement.style.setProperty('--mar-za', '50%');
@@ -30,12 +33,16 @@ export class ListPatientComponent implements OnInit {
 
   }
 
+
   // Read all REST Items
   getRestItems(): void {
     this.restItemsServiceGetRestItems()
       .subscribe(
         restItems => {
           this.restItems = restItems;
+          this.storageLogin = localStorage.getItem("login");
+          this.storageNiveau = localStorage.getItem("niveau");
+          this.storageId = localStorage.getItem("id");
           console.log(this.restItems);
         }
       );
