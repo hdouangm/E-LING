@@ -32,10 +32,6 @@ export class ExamenDetailComponent implements OnInit {
       });*/
 
       // examenService.getExamenByID(this.id).subscribe(res => this.examen = res );
-    console.log('ok');
-    console.log(this.route.snapshot.paramMap.get('id'));
-        // tslint:disable-next-line:radix
-    this.examenService.getExamenByID(Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe((res) => this.examen = res);
   }
 
   ngOnInit() {
@@ -43,7 +39,10 @@ export class ExamenDetailComponent implements OnInit {
         console.log('ok');
         console.log(this.route.snapshot.paramMap.get('id'));
         // tslint:disable-next-line:radix
-        this.examenService.getExamenByID(Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe((res) => this.examen = res);
+        this.examenService.getExamenByID(Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe((res) => {
+            this.examen = res;
+            this.imgURL = this.fileService.getExamResultURL(res);
+        });
   }
 
 
