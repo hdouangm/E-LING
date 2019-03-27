@@ -106,12 +106,12 @@ public class DiagnostiqueRestService {
 	    @Produces(MediaType.APPLICATION_JSON)
 	    public Response createDiagnostique(Diagnostique exam) {
 	    	try {
-				diagnostiqueDAO.create(exam);
+				exam = diagnostiqueDAO.create(exam);
 			} catch (Exception e) {
 				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
 			}
 	        URI bookUri = uriInfo.getBaseUriBuilder().path(DiagnostiqueRestService.class).path(String.valueOf(exam.getId())).build();
-	        return Response.created(bookUri).build();
+	        return Response.ok(exam).build();
 	    }
 	    
 	    @POST

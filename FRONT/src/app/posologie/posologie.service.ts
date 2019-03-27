@@ -28,8 +28,8 @@ export class PosologieService {
       return this.http.post<Posologie>(API_URL + '/create', posologie);
   }
 
-  getPosologieByIDDMP(ID: number): Observable<Posologie> {
-    return this.http.get<Posologie>(API_URL + '/all/dmp/' + ID);
+  getPosologieByIDDMP(ID: number): Observable<Array<Posologie>> {
+    return this.http.get<Array<Posologie>>(API_URL + '/all/dmp/' + ID);
   }
 
   getPosologieByIDResp(ID: number): Observable<Posologie> {
@@ -42,8 +42,8 @@ export class PosologieService {
 
   linkDMP(idPosologie: number, idDmp: number): Observable<Posologie> {
         const formdata: FormData = new FormData();
-        formdata.append('idPosologie', idPosologie.toString());
-        formdata.append('idDmp', idDmp.toString());
+        formdata.append('posologie', idPosologie.toString());
+        formdata.append('dmp', idDmp.toString());
         return this.http.post<Posologie>(API_URL + '/linkDMP', formdata);
 
   }

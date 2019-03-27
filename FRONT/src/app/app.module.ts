@@ -47,6 +47,8 @@ import { InViewportModule } from '@thisissoon/angular-inviewport';
 import { ScrollSpyModule } from '@thisissoon/angular-scrollspy';
 import { ListexamenComponent } from './examen/listexamen/listexamen.component';
 import { ListinterventionComponent } from './intervention/list-intervention/list-intervention.component';
+import { ListdiagnostiqueComponent } from './diagnostique/list-diagnostique/list-diagnostique.component';
+import { ListPosologieComponent } from './posologie/list-posologie/list-posologie.component';
 
 const routelist: Route[] = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
@@ -69,13 +71,17 @@ const routelist: Route[] = [
   {path: 'agenda', component: AgendaComponent},
   {path : 'creerExamen/:id', component: ExamenComponent},
   {path: 'creerIntervention/:id', component: InterventionComponent},
-<<<<<<< HEAD
   {path: 'examen/:id', component: ExamenDetailComponent},
   {path: 'intervention/:id', component: InterventionDetailComponent},
-  {path: 'listIntervention/:id', component: ListinterventionComponent}
-=======
-  {path: 'examen/:id', component: ExamenDetailComponent}
->>>>>>> branch 'master' of https://github.com/hdouangm/E-LING
+  {path: 'listIntervention/:id', component: ListinterventionComponent},
+  {path: 'creerDiagnostique/:id', component: DiagnostiqueComponent},
+  {path: 'diagnostique/:id', component: DiagnostiqueDetailComponent},
+  {path: 'listDiagnostique/:id', component: ListdiagnostiqueComponent},
+  {path: 'creerPosologie/:id', component: PosologieComponent},
+  {path: 'posologie/:id', component: PosologieDetailComponent},
+  {path: 'listPosologie/:id', component: ListPosologieComponent},
+
+
 
 ];
 @NgModule({
@@ -115,6 +121,8 @@ const routelist: Route[] = [
     AgendaComponent,
     ListexamenComponent,
     ListinterventionComponent,
+    ListdiagnostiqueComponent,
+    ListPosologieComponent,
 
 
   ],

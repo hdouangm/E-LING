@@ -28,8 +28,8 @@ export class DiagnostiqueService {
       return this.http.post<Diagnostique>(API_URL + '/create', diagnostique);
   }
 
-  getDiagnostiqueByIDDMP(ID: number): Observable<Diagnostique> {
-    return this.http.get<Diagnostique>(API_URL + '/all/dmp/' + ID);
+  getDiagnostiqueByIDDMP(ID: number): Observable<Array<Diagnostique>> {
+    return this.http.get<Array<Diagnostique>>(API_URL + '/all/dmp/' + ID);
   }
 
   getDiagnostiqueByIDResp(ID: number): Observable<Diagnostique> {
@@ -42,8 +42,8 @@ export class DiagnostiqueService {
 
   linkDMP(idDiagnostique: number, idDmp: number): Observable<Diagnostique> {
         const formdata: FormData = new FormData();
-        formdata.append('idDiagnostique', idDiagnostique.toString());
-        formdata.append('idDmp', idDmp.toString());
+        formdata.append('diagnostique', idDiagnostique.toString());
+        formdata.append('dmp', idDmp.toString());
         return this.http.post<Diagnostique>(API_URL + '/linkDMP', formdata);
 
   }

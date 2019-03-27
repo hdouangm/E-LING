@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup} from '@angular/forms';
 import { FileService } from '../../file/file.service';
 import { DiagnostiqueService } from '../diagnostique.service';
 import { Diagnostique } from '../../datamodel/data';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-diagnostique-detail',
@@ -11,24 +12,22 @@ import { Diagnostique } from '../../datamodel/data';
 })
 export class DiagnostiqueDetailComponent implements OnInit {
 
-    @Input() diagnostiqueid: number;
 
     public diagnostique: Diagnostique;
 
+    @ViewChild('myModallDiagnostique') openModal: ElementRef;
+
     registerForm: FormGroup;
 
-    @Input() id: number;
-  constructor(public fileService: FileService, diagnostiqueService: DiagnostiqueService) {
-      this.diagnostique = new Diagnostique();
-      diagnostiqueService.getAllDiagnostiques().subscribe(res => {
-          this.diagnostique = res[res.length - 1];
-          // diagnostiqueService.linkDMP(this.diagnostique.id, 69).subscribe(() => console.log('ok') );
-      });
-
-      // diagnostiqueService.getDiagnostiqueByID(this.id).subscribe(res => this.diagnostique = res );
+  constructor(public diagnostiqueService: DiagnostiqueService, public route: ActivatedRoute) {
   }
 
   ngOnInit() {
+      this.openModal.nativeElement.click();
+      this.diagnostique = new Diagnostique();
+      // tslint:disable-next-line:radix
+      this.diagnostiqueService.getDiagnostiqueByID(Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe(
+          res => this.diagnostique = res );
   }
 
 }

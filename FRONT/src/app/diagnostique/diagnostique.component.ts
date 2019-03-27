@@ -1,8 +1,9 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { DiagnostiqueService } from './diagnostique.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FileService } from 'src/app/file/file.service';
 import { Diagnostique } from '../datamodel/data';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,18 +12,18 @@ import { Diagnostique } from '../datamodel/data';
   styleUrls: ['./diagnostique.component.css']
 })
 export class DiagnostiqueComponent implements OnInit {
-    selectedFile: File;
     public diagnostique: Diagnostique;
     registerForm: FormGroup;
     submitted = false;
 
-    @Input() dmp: number;
+    @ViewChild('myModallDiagnostique') openModal: ElementRef;
 
-    @Input() responsable: number;
-  constructor( private formBuilder: FormBuilder, public diagnostiqueService: DiagnostiqueService, public fileService: FileService) {
+  // tslint:disable-next-line:max-line-length
+  constructor( private formBuilder: FormBuilder, public diagnostiqueService: DiagnostiqueService, public fileService: FileService, public route: ActivatedRoute) {
    }
 
   ngOnInit() {
+      this.openModal.nativeElement.click();
       this.registerForm = this.formBuilder.group({
         datedebut: ['', Validators.required],
         datefin: ['', Validators.required],
@@ -41,9 +42,9 @@ export class DiagnostiqueComponent implements OnInit {
     // this.diagnostique.responsable = this.user;
     // tslint:disable-next-line:max-line-length
     this.diagnostiqueService.createDiagnostique(this.diagnostique).subscribe((res) => {
-        this.fileService.uploadFile(this.selectedFile, 'diagnostique' + res.id);
-        this.diagnostiqueService.linkDMP(res.id, this.dmp).subscribe();
-        this.diagnostiqueService.linkResponsable(res.id, this.responsable).subscribe();
+        // tslint:disable-next-line:radix
+        this.diagnostiqueService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
+     //   this.diagnostiqueService.linkResponsable(res.id, this.responsable).subscribe();
     } );
 
     }

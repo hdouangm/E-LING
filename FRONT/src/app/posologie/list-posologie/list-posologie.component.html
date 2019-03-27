@@ -1,0 +1,21 @@
+<div class="page-centrer">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date de debut</th>
+      <th scope="col">Date de fin</th>
+      <th scope="col">Document</th>
+    </tr>
+  </thead>
+  <tbody id="posologies">
+        <tr *ngFor="let posologie of list" >
+            <td> {{posologie.dateDebut}} </td>
+            <td> {{posologie.dateFin}} </td>
+            <td> <a routerLink="../../posologie/{{posologie.id}}"> Consulter </a> </td>
+        </tr>
+
+  </tbody>
+</table>
+
+
+</div>
