@@ -32,10 +32,16 @@ export class ExamenDetailComponent implements OnInit {
       });*/
 
       // examenService.getExamenByID(this.id).subscribe(res => this.examen = res );
+    console.log('ok');
+    console.log(this.route.snapshot.paramMap.get('id'));
+        // tslint:disable-next-line:radix
+    this.examenService.getExamenByID(Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe((res) => this.examen = res);
   }
 
   ngOnInit() {
         this.openModal.nativeElement.click();
+        console.log('ok');
+        console.log(this.route.snapshot.paramMap.get('id'));
         // tslint:disable-next-line:radix
         this.examenService.getExamenByID(Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe((res) => this.examen = res);
   }
