@@ -52,13 +52,35 @@ and (min-width : 1224px) {
   #gestion{
     margin-left: 82%;position: absolute;margin-top: -35%;
   }
+
   #demandei{
     margin-left: 82%;position: absolute;margin-top: -30%;
-
   }
+
   #demandee{
     margin-left: 83%;position: absolute;margin-top: -20%;
   }
+
+  #examen{
+    margin-left: 84%;position: absolute;margin-top: -20%;
+  }
+
+  #cintervention{
+    margin-left: 84%;position: absolute;margin-top: -30%;
+  }
+
+  #intervention{
+    margin-left: 84%;position: absolute;margin-top: -17%;
+  }
+
+  #posologie{
+    margin-left: 84%;position: absolute;margin-top: -14%;
+  }
+
+  #diagnostique{
+    margin-left: 84%;position: absolute;margin-top: -11%;
+  }
+
   #gp{
     margin-left: 3%;position: absolute;margin-top: -30%;
 

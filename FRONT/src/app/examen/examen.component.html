@@ -1,8 +1,5 @@
 <div class="page-centrer">
-
-
-
-  <button id="myModallExamenn" #myModallExamenn [hidden]="true" data-toggle="modal" data-target="#myModalExamenn"></button>
+<button id="myModallExamenn" #myModallExamenn [hidden]="true" data-toggle="modal" data-target="#myModalExamenn"></button>
   <div class="modal" id="myModalExamenn" role="dialog" data-show="true">
   <div class="modal-dialog">
         <div class="modal-content">
@@ -25,6 +22,9 @@
                         </form>
                     </div>
                 </div>
+            </div>
+            <div *ngIf="id as value;">
+                <app-coder-acte idtype={{id}} typef="examen"></app-coder-acte>
             </div>
         </div>
     </div>

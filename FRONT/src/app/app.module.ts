@@ -67,7 +67,7 @@ const routelist: Route[] = [
   {path: 'listExamen/:id', component: ListexamenComponent},
   {path: 'agenda', component: AgendaComponent},
   {path : 'creerExamen/:id', component: ExamenComponent},
-  {path: 'creerIntervention', component: InterventionComponent},
+  {path: 'creerIntervention/:id', component: InterventionComponent},
   {path: 'examen/:id', component: ExamenDetailComponent}
 
 ];
