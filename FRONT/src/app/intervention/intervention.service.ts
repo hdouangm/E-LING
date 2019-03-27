@@ -28,8 +28,8 @@ export class InterventionService {
       return this.http.post<Intervention>(API_URL + '/create', intervention);
   }
 
-  getInterventionByIDDMP(ID: number): Observable<Intervention> {
-    return this.http.get<Intervention>(API_URL + '/all/dmp/' + ID);
+  getInterventionByIDDMP(ID: number): Observable<Array<Intervention>> {
+    return this.http.get<Array<Intervention>>(API_URL + '/all/dmp/' + ID);
   }
 
   getInterventionByIDResp(ID: number): Observable<Intervention> {
@@ -42,8 +42,8 @@ export class InterventionService {
 
   linkDMP(idIntervention: number, idDmp: number): Observable<Intervention> {
         const formdata: FormData = new FormData();
-        formdata.append('idIntervention', idIntervention.toString());
-        formdata.append('idDmp', idDmp.toString());
+        formdata.append('intervention', idIntervention.toString());
+        formdata.append('dmp', idDmp.toString());
         return this.http.post<Intervention>(API_URL + '/linkDMP', formdata);
 
   }

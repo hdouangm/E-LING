@@ -2,6 +2,9 @@ package application.eling.domain;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.List;
@@ -11,6 +14,7 @@ import static application.eling.domain.Intervention.FIND_ALL;
 
 @Entity
 @NamedQuery(name = FIND_ALL, query = "SELECT b FROM Intervention b ORDER BY b.id DESC")
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class Intervention implements Serializable {
     public static final String FIND_ALL = "Intervention.findAllInterventions";
 

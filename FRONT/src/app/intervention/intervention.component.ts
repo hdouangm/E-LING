@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { InterventionService } from './intervention.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FileService } from 'src/app/file/file.service';
@@ -17,14 +17,25 @@ export class InterventionComponent implements OnInit {
     registerForm: FormGroup;
     submitted = false;
 
+<<<<<<< HEAD
+    @ViewChild('myModallInterventionn') openModal: ElementRef;
+=======
     //@Input() dmp: number;
     //@Input() demande: number;
+>>>>>>> branch 'master' of https://github.com/hdouangm/E-LING
 
+<<<<<<< HEAD
+
+  // tslint:disable-next-line:max-line-length
+  constructor( private formBuilder: FormBuilder, public interventionService: InterventionService, public fileService: FileService, public route: ActivatedRoute) {
+=======
     //@Input() responsable: number;
   constructor( private formBuilder: FormBuilder, public interventionService: InterventionService, public fileService: FileService,public route: ActivatedRoute) {
+>>>>>>> branch 'master' of https://github.com/hdouangm/E-LING
    }
 
   ngOnInit() {
+      this.openModal.nativeElement.click();
       this.registerForm = this.formBuilder.group({
         file: ['', Validators.required]});
   }
@@ -44,14 +55,24 @@ export class InterventionComponent implements OnInit {
     // this.intervention.demandeIntervention = this.demande;
     // this.intervention.responsable = this.user;
     // tslint:disable-next-line:max-line-length
-    this.interventionService.createIntervention(this.intervention).subscribe((res:any) => {
+    console.log(this.route.snapshot.paramMap.get('id'));
+    this.interventionService.createIntervention(this.intervention).subscribe((res) => {
+        console.log(res.id);
         this.fileService.uploadFile(this.selectedFile, 'intervention' + res.id);
+<<<<<<< HEAD
+       // this.interventionService.linkDemande(res.id, this.demande).subscribe();
+        // tslint:disable-next-line:radix
+        this.interventionService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
+      //  this.interventionService.linkResponsable(res.id, this.responsable).subscribe();
+=======
         //this.interventionService.linkDemande(res.id, this.demande).subscribe();
         this.interventionService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
         //this.interventionService.linkResponsable(res.id, this.responsable).subscribe();
+>>>>>>> branch 'master' of https://github.com/hdouangm/E-LING
     } );
 
     }
 
 
 }
+

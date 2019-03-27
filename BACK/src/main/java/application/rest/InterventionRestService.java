@@ -110,12 +110,12 @@ public class InterventionRestService {
 	    public Response createIntervention(Intervention exam) {
 
 	    	try {
-				interventionDAO.create(exam);
+				exam = interventionDAO.create(exam);
 			} catch (Exception e) {
 				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
 			}
 	        URI bookUri = uriInfo.getBaseUriBuilder().path(InterventionRestService.class).path(String.valueOf(exam.getId())).build();
-	        return Response.created(bookUri).build();
+	        return Response.ok(exam).build();
 	    }
 	    
 	    @POST
