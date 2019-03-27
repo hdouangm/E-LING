@@ -97,8 +97,12 @@
 
    <button id ="cdiagnostique"  type="button" routerLink="../../listDiagnostique/{{dmp.id}}" class="btn btn-danger btn-sm">Consultation des diagnostiques</button>
 
+   <button id ="cposologie"  type="button" routerLink="../../listPosologie/{{dmp.id}}" class="btn btn-danger btn-sm">Consultation des posologies</button>
+
 
    <button id ="idiagnostique"  type="button" routerLink="../../creerDiagnostique/{{dmp.id}}" class="btn btn-danger btn-sm">Inserer un diagnostique</button>
+
+   <button id ="iposologie"  type="button" routerLink="../../creerPosologie/{{dmp.id}}" class="btn btn-danger btn-sm">Inserer une posologie</button>
    
    <button id="demandei" (click)=demandeIntervention() *ngIf="niveau == 0"  type="button" class="btn btn-danger btn-sm">Demande d'intervention</button>
 

@@ -64,13 +64,19 @@ and (min-width : 1224px) {
   #cintervention{
     margin-left: 82%;position: absolute;margin-top: -24%;
   }
-
+  
+  #cposologie{
+    margin-left: 82%;position: absolute;margin-top: -8%;
+  }
     #cdiagnostique{
     margin-left: 82%;position: absolute;margin-top: -20%;
   }
 
   #idiagnostique{
     margin-left: 82%;position: absolute;margin-top: -16%;
+  }
+  #iposologie{
+    margin-left: 82%;position: absolute;margin-top: -12%;
   }
 
   #gp{

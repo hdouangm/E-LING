@@ -77,6 +77,10 @@ const routelist: Route[] = [
   {path: 'creerDiagnostique/:id', component: DiagnostiqueComponent},
   {path: 'diagnostique/:id', component: DiagnostiqueDetailComponent},
   {path: 'listDiagnostique/:id', component: ListdiagnostiqueComponent},
+  {path: 'creerPosologie/:id', component: PosologieComponent},
+  {path: 'posologie/:id', component: PosologieDetailComponent},
+  {path: 'listPosologie/:id', component: ListPosologieComponent},
+
 
 
 ];
