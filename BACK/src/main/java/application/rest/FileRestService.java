@@ -97,7 +97,7 @@ public class FileRestService {
     	File file = new File("./upload/"+"examen"+id+"/"+examenDAO.get(id).getUrlResultats());
     	ResponseBuilder response = Response.ok(file);
         response.header("Content-Disposition",
-                "attachment; filename="+"arborescence.png");
+                "attachment; filename="+examenDAO.get(id).getUrlResultats());
         
     	try {
 			return Response.ok(new FileInputStream(file)).build();
@@ -112,10 +112,10 @@ public class FileRestService {
     @Path("download/Intervention{interventionID}")
     @Produces("image/png")
     public Response getResultByInterventionId(@PathParam("interventionID") Integer id) {
-    	File file = new File("./upload/"+"intervention"+id+"/"+interventionDAO.get(id));
+    	File file = new File("./upload/"+"intervention"+id+"/"+interventionDAO.get(id).getUrlResultats());
     	ResponseBuilder response = Response.ok(file);
         response.header("Content-Disposition",
-                "attachment; filename="+"arborescence.png");
+                "attachment; filename="+interventionDAO.get(id).getUrlResultats());
         
     	try {
 			return Response.ok(new FileInputStream(file)).build();

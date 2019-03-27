@@ -26,7 +26,7 @@ export class FileService {
     }
 
     getInterventionResultURL(intervention: Intervention): string {
-        return API_URL + '/download/Examen' + intervention.id;
+        return API_URL + '/download/Intervention' + intervention.id;
     }
 
 }

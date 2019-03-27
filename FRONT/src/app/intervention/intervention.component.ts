@@ -1,8 +1,9 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { InterventionService } from './intervention.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FileService } from 'src/app/file/file.service';
 import { Intervention } from '../datamodel/data';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -16,14 +17,15 @@ export class InterventionComponent implements OnInit {
     registerForm: FormGroup;
     submitted = false;
 
-    @Input() dmp: number;
-    @Input() demande: number;
+    @ViewChild('myModallInterventionn') openModal: ElementRef;
 
-    @Input() responsable: number;
-  constructor( private formBuilder: FormBuilder, public interventionService: InterventionService, public fileService: FileService) {
+
+  // tslint:disable-next-line:max-line-length
+  constructor( private formBuilder: FormBuilder, public interventionService: InterventionService, public fileService: FileService, public route: ActivatedRoute) {
    }
 
   ngOnInit() {
+      this.openModal.nativeElement.click();
       this.registerForm = this.formBuilder.group({
         file: ['', Validators.required]});
   }
@@ -43,14 +45,18 @@ export class InterventionComponent implements OnInit {
     // this.intervention.demandeIntervention = this.demande;
     // this.intervention.responsable = this.user;
     // tslint:disable-next-line:max-line-length
+    console.log(this.route.snapshot.paramMap.get('id'));
     this.interventionService.createIntervention(this.intervention).subscribe((res) => {
+        console.log(res.id);
         this.fileService.uploadFile(this.selectedFile, 'intervention' + res.id);
-        this.interventionService.linkDemande(res.id, this.demande).subscribe();
-        this.interventionService.linkDMP(res.id, this.dmp).subscribe();
-        this.interventionService.linkResponsable(res.id, this.responsable).subscribe();
+       // this.interventionService.linkDemande(res.id, this.demande).subscribe();
+        // tslint:disable-next-line:radix
+        this.interventionService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
+      //  this.interventionService.linkResponsable(res.id, this.responsable).subscribe();
     } );
 
     }
 
 
 }
+

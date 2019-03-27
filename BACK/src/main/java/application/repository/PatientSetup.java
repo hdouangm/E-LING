@@ -33,7 +33,7 @@ public class PatientSetup {
 
       DMP dmp = new DMP("196127748267245");
 
-      Examen examen = new Examen(dmp, "10-10-2019", "url_image", medecin, null, null, null);
+      Examen examen = new Examen(dmp, "10-10-2019", "url_image.png", medecin, null, null, null);
       examenRepository.save(examen);
 
       dmp.setExamen(examen);
