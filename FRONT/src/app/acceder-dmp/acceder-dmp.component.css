@@ -46,20 +46,23 @@ and (orientation : portrait) {
 and (min-width : 1224px) {
   /* Styles */
   #modif{
+    margin-left: 82%;position: absolute;margin-top: -40%;
+  }
 
-    margin-left: 85%;position: absolute;margin-top: -40%;
+  #gestion{
+    margin-left: 82%;position: absolute;margin-top: -36%;
   }
 
   #demandei{
-    margin-left: 82%;position: absolute;margin-top: -30%;
+    margin-left: 82%;position: absolute;margin-top: -32%;
   }
 
   #demandee{
-    margin-left: 83%;position: absolute;margin-top: -20%;
+    margin-left: 82%;position: absolute;margin-top: -28%;
   }
 
   #cintervention{
-    margin-left: 84%;position: absolute;margin-top: -30%;
+    margin-left: 82%;position: absolute;margin-top: -24%;
   }
 
   #gp{
