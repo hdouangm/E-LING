@@ -18,9 +18,7 @@ export class DemandeExamenAddingComponent implements OnInit {
 
   ngOnInit() {
 
-    this.apiService.getCompteAphp().subscribe((data: Array<object>) => {
-          this.dmps  =  data;
-      });
+
 
     this.apiService.getTypeExamen().subscribe((data: Array<object>) => {
           this.types  =  data;
@@ -31,7 +29,7 @@ export class DemandeExamenAddingComponent implements OnInit {
 public createDemandeExamen() {
         this.apiService.createDemandeExamen(this.examenData).subscribe((response) => {
             console.log(response);
-            location.replace('/demandeExamenMed');
+            location.replace('listePatient');
         });
     }
 

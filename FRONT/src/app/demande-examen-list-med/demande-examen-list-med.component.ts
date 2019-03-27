@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DemandeExamenListMedComponent implements OnInit {
 
   public  demandeExamens:  Array<object> = [];
+  patienttab: Array<any> = [];
 
   constructor(private  apiService:  ApiService, private route: ActivatedRoute, private router: Router) { }
 
