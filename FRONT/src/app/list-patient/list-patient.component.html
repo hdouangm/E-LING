@@ -331,7 +331,7 @@
           <td *ngIf="(storageNiveau == '0' && item.employe.id == storageId) || storageNiveau != '0'"><a routerLink="../accederDMP/{{item.id}}"> DMP </a></td>
           <td *ngIf="(storageNiveau == '0' && item.employe.id == storageId) || storageNiveau != '0'">
           <img *ngIf="item.dmp.waitingDiag == 'check' && item.dmp.waitingPos == 'check' && item.dmp.waiting != 'new'" style="margin-top: 8%" src='../../assets/check.png' >
-          <img *ngIf="item.dmp.waitingDiag == 'waiting' || item.dmp.waitingDiag == 'waiting'" style="margin-top: 13%;margin-left: 10%" src='../../assets/waiting.png' >
+          <img *ngIf="item.dmp.waitingDiag == 'waiting' || item.dmp.waitingPos == 'waiting'" style="margin-top: 13%;margin-left: 10%" src='../../assets/waiting.png' >
           <img *ngIf="item.dmp.waiting == 'new'" style="margin-top: 1%" src='../../assets/new.png' >
           </td>
         </tr>
