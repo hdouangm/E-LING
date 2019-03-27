@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { ExamenService } from './examen.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FileService } from 'src/app/file/file.service';
@@ -16,14 +16,14 @@ export class ExamenComponent implements OnInit {
     registerForm: FormGroup;
     submitted = false;
 
-    @Input() dmp: number;
-    @Input() demande: number;
+    @ViewChild('myModallExamenn') openModal: ElementRef;
 
-    @Input() responsable: number;
+
   constructor( private formBuilder: FormBuilder, public examenService: ExamenService, public fileService: FileService) {
    }
 
   ngOnInit() {
+      this.openModal.nativeElement.click();
       this.registerForm = this.formBuilder.group({
         file: ['', Validators.required]});
   }
@@ -45,9 +45,9 @@ export class ExamenComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     this.examenService.createExamen(this.examen).subscribe((res) => {
         this.fileService.uploadFile(this.selectedFile, 'examen' + res.id);
-        this.examenService.linkDemande(res.id, this.demande).subscribe();
-        this.examenService.linkDMP(res.id, this.dmp).subscribe();
-        this.examenService.linkResponsable(res.id, this.responsable).subscribe();
+       // this.examenService.linkDemande(res.id, this.demande).subscribe();
+      //  this.examenService.linkDMP(res.id, this.dmp).subscribe();
+      //  this.examenService.linkResponsable(res.id, this.responsable).subscribe();
     } );
 
     }

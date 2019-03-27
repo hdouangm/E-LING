@@ -1,11 +1,10 @@
 <div class="page-centrer">
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createExamenModal">
-    Nouvel examen
-</button>
 
-<div class="modal" id="createExamenModal">
-    <div class="modal-dialog">
+
+  <button id="myModallExamenn" #myModallExamenn [hidden]="true" data-toggle="modal" data-target="#myModalExamenn"></button>
+  <div class="modal" id="myModalExamenn" role="dialog" data-show="true">
+  <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
@@ -30,19 +29,4 @@
         </div>
     </div>
 </div>
-<!-- <button type="button" (click)="addFile()">Ajouter</button>
-<table mat-table [dataSource]="data" class="mat-elevation-z8">
-  <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
-    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
-    <td mat-cell *matCellDef="let element"> {{element}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
-</table> 
-
-
-                            <div class="form-group">
-                                <label>Responsable : {{examen.responsable.donneesSociales.nom}} {{examen.responsable.donneesSociales.prenom}}</label>
-                            </div>-->
 </div>
