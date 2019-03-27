@@ -16,6 +16,7 @@ export class ExamenComponent implements OnInit {
     public examen: Examen;
     registerForm: FormGroup;
     submitted = false;
+    id :any;
 
     @ViewChild('myModallExamenn') openModal: ElementRef;
 
@@ -47,6 +48,7 @@ export class ExamenComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     console.log(this.route.snapshot.paramMap.get('id'));
     this.examenService.createExamen(this.examen).subscribe((res) => {
+        this.id = res.id;
         this.fileService.uploadFile(this.selectedFile, 'examen' + res.id);
        // this.examenService.linkDemande(res.id, this.demande).subscribe();
         // tslint:disable-next-line:radix

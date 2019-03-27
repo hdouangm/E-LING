@@ -2,6 +2,8 @@ import { Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { environment } from './../../environments/environment';
+import { Injectable } from "@angular/core";
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-coder-acte',
@@ -11,11 +13,12 @@ import { environment } from './../../environments/environment';
 
 export class CoderActeComponent implements OnInit{
 
+  @Input() idtype: number;
+  @Input() typef: string;
   list: any;
   actes: any;
-  typef = 'intervention';
-  idtype = 9;
   restItemsUrl = environment.apiUrl+'/medecin/';
+
 
   constructor(private http: HttpClient) { }
 
