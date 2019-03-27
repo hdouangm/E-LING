@@ -24,9 +24,12 @@ import application.repository.InterventionDAO;
 @Path("/interventions")
 public class InterventionRestService {
 
+
+
 		@EJB
 	    private InterventionDAO interventionDAO = new InterventionDAO();
-		
+
+
 		@EJB
 		private DMPRepository dmpDAO;
 		
@@ -105,6 +108,7 @@ public class InterventionRestService {
 	    @Consumes(MediaType.APPLICATION_JSON)
 	    @Produces(MediaType.APPLICATION_JSON)
 	    public Response createIntervention(Intervention exam) {
+
 	    	try {
 				interventionDAO.create(exam);
 			} catch (Exception e) {
