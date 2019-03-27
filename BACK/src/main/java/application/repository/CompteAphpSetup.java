@@ -39,8 +39,8 @@ public class CompteAphpSetup {
         examenRepository.save(examen);
 
 
-        CompteAphp aphp = new CompteAphp("Raphael.Piatek@gmail.com", "la", "FR", medecin, "8db2c76kfedke9rjlhgnuhftgo@group.calendar.google.com");
-        CompteAphp aphp2 = new CompteAphp("Rayane.Cherifi@gmail.com", "la","FR", medecin2,"nuv6q5n0djmrd650vv08u4b0vo@group.calendar.google.com");
+        CompteAphp aphp = new CompteAphp("Raphael.Piatek@gmail.com", "azertyuiop", "FR", medecin, "8db2c76kfedke9rjlhgnuhftgo@group.calendar.google.com");
+        CompteAphp aphp2 = new CompteAphp("Rayane.Cherifi@gmail.com", "azertyuiop","FR", medecin2,"nuv6q5n0djmrd650vv08u4b0vo@group.calendar.google.com");
         compteAphpRepository.save(aphp);
         compteAphpRepository.save(aphp2);
 
@@ -71,19 +71,19 @@ public class CompteAphpSetup {
 
 
 
-        compteAphpRepository.save(new CompteAphp("Robert.Petit@gmail.com", "la","FR",new Employe(null, null, new DonneesSociales("Petit","Robert",null,null,null,null,null,null), 0,null,null),"qopic6kffqk2lgnjtti78ud1go@group.calendar.google.com"));
+        compteAphpRepository.save(new CompteAphp("Robert.Petit@gmail.com", "azertyuiop","FR",new Employe(null, null, new DonneesSociales("Petit","Robert",null,null,null,null,null,null), 0,null,null),"qopic6kffqk2lgnjtti78ud1go@group.calendar.google.com"));
 
-        compteAphpRepository.save(new CompteAphp("Hugo.Douangmala@gmail.com", "la","FR",new Employe(null, null, new DonneesSociales("Douangmala","Hugo",null,null,null,null,null,null), 1,null,null),"qopic6kffqk2lgnjtti78ud1go@group.calendar.google.com"));
-        compteAphpRepository.save(new CompteAphp("Serge.Durand@gmail.com", "la","FR",new Employe(null, null, new DonneesSociales("Durand","Serge",null,null,null,null,null,null), 1,null,null),"qopic6kffqk2lgnjtti78ud1go@group.calendar.google.com"));
+        compteAphpRepository.save(new CompteAphp("Hugo.Douangmala@gmail.com", "azertyuiop","FR",new Employe(null, null, new DonneesSociales("Douangmala","Hugo",null,null,null,null,null,null), 1,null,null),"qopic6kffqk2lgnjtti78ud1go@group.calendar.google.com"));
+        compteAphpRepository.save(new CompteAphp("Serge.Durand@gmail.com", "azertyuiop","FR",new Employe(null, null, new DonneesSociales("Durand","Serge",null,null,null,null,null,null), 1,null,null),"qopic6kffqk2lgnjtti78ud1go@group.calendar.google.com"));
 
-        compteAphpRepository.save(new CompteAphp("Cristiano.Santos@gmail.com", "la","FR",new Employe(null, null, new DonneesSociales("Santos","Cristiano",null,null,null,null,null,null), 2,null,null),"77fp461o88d3u38iulb3s4oq90@group.calendar.google.com"));
-        compteAphpRepository.save(new CompteAphp("Lionel.Rodriguez@gmail.com", "la","FR",new Employe(null, null, new DonneesSociales("Rodriguez","Lionel",null,null,null,null,null,null), 2,null,null),"qopic6kffqk2lgnjtti78ud1go@group.calendar.google.com"));
+        compteAphpRepository.save(new CompteAphp("Cristiano.Santos@gmail.com", "azertyuiop","FR",new Employe(null, null, new DonneesSociales("Santos","Cristiano",null,null,null,null,null,null), 2,null,null),"77fp461o88d3u38iulb3s4oq90@group.calendar.google.com"));
+        compteAphpRepository.save(new CompteAphp("Lionel.Rodriguez@gmail.com", "azertyuiop","FR",new Employe(null, null, new DonneesSociales("Rodriguez","Lionel",null,null,null,null,null,null), 2,null,null),"qopic6kffqk2lgnjtti78ud1go@group.calendar.google.com"));
 
-        compteAphpRepository.save(new CompteAphp("Anne.Girard@gmail.com", "la","FR",new Employe(null, null, new DonneesSociales("Girard","Anne",null,null,null,null,null,null), 3,null,null), "68hirq2m6le2adaq9tt3fpluo4@group.calendar.google.com"));
-        compteAphpRepository.save(new CompteAphp("Nabil.Mahrez@gmail.com", "la","FR",new Employe(null, null, new DonneesSociales("Mahrez","Nabil",null,null,null,null,null,null), 3,null,null),"qopic6kffqk2lgnjtti78ud1go@group.calendar.google.com"));
+        compteAphpRepository.save(new CompteAphp("Anne.Girard@gmail.com", "azertyuiop","FR",new Employe(null, null, new DonneesSociales("Girard","Anne",null,null,null,null,null,null), 3,null,null), "68hirq2m6le2adaq9tt3fpluo4@group.calendar.google.com"));
+        compteAphpRepository.save(new CompteAphp("Nabil.Mahrez@gmail.com", "azertyuiop","FR",new Employe(null, null, new DonneesSociales("Mahrez","Nabil",null,null,null,null,null,null), 3,null,null),"qopic6kffqk2lgnjtti78ud1go@group.calendar.google.com"));
 
-        compteAphpRepository.save(new CompteAphp("Stephanie.Dubois@gmail.com", "la","FR",new Employe(null, null, new DonneesSociales("Dubois","Stephanie",null,null,null,null,null,null), 4,null,null),"2hvv87b8ts3cetsvuvc24f9qi4@group.calendar.google.com"));
-        compteAphpRepository.save(new CompteAphp("Olivier.Glik@gmail.com", "la","FR",new Employe(null, null, new DonneesSociales("Glik","Olivier",null,null,null,null,null,null), 4,null, null),"qopic6kffqk2lgnjtti78ud1go@group.calendar.google.com"));
+        compteAphpRepository.save(new CompteAphp("Stephanie.Dubois@gmail.com", "azertyuiop","FR",new Employe(null, null, new DonneesSociales("Dubois","Stephanie",null,null,null,null,null,null), 4,null,null),"2hvv87b8ts3cetsvuvc24f9qi4@group.calendar.google.com"));
+        compteAphpRepository.save(new CompteAphp("Olivier.Glik@gmail.com", "azertyuiop","FR",new Employe(null, null, new DonneesSociales("Glik","Olivier",null,null,null,null,null,null), 4,null, null),"qopic6kffqk2lgnjtti78ud1go@group.calendar.google.com"));
 
 
 
