@@ -15,6 +15,7 @@ export class PosologieComponent implements OnInit {
     public posologie: Posologie;
     registerForm: FormGroup;
     submitted = false;
+    id: any;
 
     @ViewChild('myModallPosologie') openModal: ElementRef;
 
@@ -45,6 +46,7 @@ export class PosologieComponent implements OnInit {
     this.posologieService.createPosologie(this.posologie).subscribe((res) => {
         // tslint:disable-next-line:radix
         this.posologieService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
+        this.id = res.id;
      //   this.posologieService.linkResponsable(res.id, this.responsable).subscribe();
     } );
 

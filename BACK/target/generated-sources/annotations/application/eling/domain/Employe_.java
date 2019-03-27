@@ -5,17 +5,19 @@ import application.eling.domain.CompteAphp;
 import application.eling.domain.DonneesSociales;
 import application.eling.domain.Examen;
 import application.eling.domain.NoeudHopital;
+import application.eling.domain.Patient;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.SetAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.7.4.v20190115-rNA", date="2019-03-26T18:15:53")
+@Generated(value="EclipseLink-2.7.4.v20190115-rNA", date="2019-03-27T23:45:10")
 @StaticMetamodel(Employe.class)
 public class Employe_ { 
 
     public static volatile SetAttribute<Employe, Competence> competences;
     public static volatile SingularAttribute<Employe, NoeudHopital> noeudHopital;
+    public static volatile SetAttribute<Employe, Patient> patient;
     public static volatile SingularAttribute<Employe, CompteAphp> compteAphp;
     public static volatile SingularAttribute<Employe, Examen> examen;
     public static volatile SingularAttribute<Employe, Integer> id;

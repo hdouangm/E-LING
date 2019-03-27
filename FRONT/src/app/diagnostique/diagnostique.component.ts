@@ -15,6 +15,7 @@ export class DiagnostiqueComponent implements OnInit {
     public diagnostique: Diagnostique;
     registerForm: FormGroup;
     submitted = false;
+    id: any;
 
     @ViewChild('myModallDiagnostique') openModal: ElementRef;
 
@@ -44,6 +45,7 @@ export class DiagnostiqueComponent implements OnInit {
     this.diagnostiqueService.createDiagnostique(this.diagnostique).subscribe((res) => {
         // tslint:disable-next-line:radix
         this.diagnostiqueService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
+        this.id = res.id;
      //   this.diagnostiqueService.linkResponsable(res.id, this.responsable).subscribe();
     } );
 

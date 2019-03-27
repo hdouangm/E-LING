@@ -19,27 +19,15 @@
                         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                             <div class="form-group">
                             <label>Description :</label>
-                                  <input type="text" formControlName="posologie" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ss.errors }" />
-                                  <div *ngIf="submitted && f.ss.errors" class="invalid-feedback">
-                                      <div *ngIf="f.ss.errors.required" style="color:red">La description est requise</div>
-                                      <div *ngIf="f.ss.errors.mustMatch" style="color:red">La description est invalide</div>
-                                  </div>
+                                  <input type="text" formControlName="posologie" class="form-control"/>
                             </div>
                             <div class="form-group">
                             <label>Date de debut :</label>
-                                  <input type="text" formControlName="datedebut" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ss.errors }" />
-                                  <div *ngIf="submitted && f.ss.errors" class="invalid-feedback">
-                                      <div *ngIf="f.ss.errors.required" style="color:red">La date de début est requise</div>
-                                      <div *ngIf="f.ss.errors.mustMatch" style="color:red">La date de début est invalide</div>
-                                  </div>
+                                  <input type="text" formControlName="datedebut" class="form-control"/>
                             </div>
                             <div class="form-group">
                             <label>Date de fin :</label>
-                                  <input type="text" formControlName="datefin" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ss.errors }" />
-                                  <div *ngIf="submitted && f.ss.errors" class="invalid-feedback">
-                                      <div *ngIf="f.ss.errors.required" style="color:red">La date de fin est requis</div>
-                                      <div *ngIf="f.ss.errors.mustMatch" style="color:red">La date de fin est invalide</div>
-                                  </div>
+                                  <input type="text" formControlName="datefin" class="form-control"/>
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary">Publier l'posologie</button>
@@ -47,6 +35,9 @@
                         </form>
                     </div>
                 </div>
+            </div>
+            <div *ngIf="id as value;">
+                <app-coder-acte idtype="{{id}}" typef="posologie"></app-coder-acte>
             </div>
         </div>
     </div>
