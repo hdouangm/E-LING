@@ -2,6 +2,7 @@ package application.rest;
 
 import application.eling.domain.*;
 import application.repository.*;
+import application.eling.domain.Employe;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;
@@ -9,6 +10,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import java.util.List;
 import java.util.Set;
 
 @Path("/medecin")
@@ -28,10 +30,19 @@ public class MedecinRestService {
     private DemandeInterventionRepository demandeinterventionrepository;
     @EJB
     private ActeRepository acterepository;
+    @EJB
+    private EmployeRepository employeRepository;
 
     @Context
     private UriInfo uriInfo;
 
+    @GET
+    @Path("medecins")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getMedecins() {
+        List<Employe> medecins = employeRepository.medecinList();
+        return Response.ok(medecins).build();
+    }
 
     @GET
     @Path("listintervention")

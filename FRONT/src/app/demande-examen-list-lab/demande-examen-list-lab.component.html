@@ -29,7 +29,7 @@
           <!--td> {{demandeExamen.publicationMed}} </td-->
           <td> {{demandeExamen.publicationLab}} </td>
           <!--td> <a routerLink="/demandeExamenEdit/{{demandeExamen.id}}"> Edit</a> </td-->
-          <td><button class="btn btn-primary btn-group-lg col-12">Examen</button></td>
+          <td><button class="btn btn-primary btn-group-lg col-12" routerLink="../creerExamen/{{patienttab[i].dmp.id}}">Examen</button></td>
           <td><a routerLink="../accederDMP/{{patienttab[i].id}}"> DMP </a>
 
         </tr>

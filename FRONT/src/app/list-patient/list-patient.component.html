@@ -280,6 +280,14 @@
               <option value="Zimbabwe">Zimbabwe</option>
           </select>
         </div>
+        <div class="form-group col-xs-6">
+          <label>Nom du médecin</label>
+          <input [(ngModel)]="searchMedecinNom" placeholder="Medecin en charge" class="form-control">
+        </div>
+        <div class="form-group col-xs-6">
+          <label>Prénom du médecin</label>
+          <input [(ngModel)]="searchMedecinPrenom" placeholder="Medecin en charge" class="form-control">
+        </div>
       </div>
 
       <div class="row">
@@ -304,27 +312,28 @@
       <th scope="col">Date de naissance</th>
       <th scope="col">Pays</th>
       <th scope="col">Genre</th>
+      <th scope="col">Medecin</th>
       <th scope="col">DMP</th>
       <th scope="col">Statut</th>
 
     </tr>
   </thead>
   <tbody id="patients">
-        <tr *ngFor="let item of restItems | filterName: {nom: searchNom} | filterName: {prenom: searchPrenom} | filterName: {age: searchAge} | filterName: {pays: searchPays} | filterName: {genre: searchGenre} | filterName2: {ss: searchSs};">
-          <div *ngIf=" (this.localStorage.getItem('niveau') === 0 && this.localStorage.getItem('login') === item.employe.compteAphp.login) || this.localStorage.getItem('niveau') !== 0">
-          <td> {{ item.dmp.ss }} </td>
-          <td> {{ item.donneesSociales.nom }} </td>
-          <td> {{ item.donneesSociales.prenom }} </td>
-          <td> {{ item.donneesSociales.age | date:"dd/MM/yyyy"}} </td>
-          <td> {{ item.donneesSociales.pays }} </td>
-          <td> {{ item.donneesSociales.genre }} </td>
-          <td><a routerLink="../accederDMP/{{item.id}}"> DMP </a>
-          </td>
+        <tr *ngFor="let item of restItems | filterName: {nom: searchNom} | filterName: {prenom: searchPrenom} | filterName: {age: searchAge} | filterName: {pays: searchPays} | filterName: {genre: searchGenre} | filterName2: {ss: searchSs} | filterName3: {nom: searchMedecinNom} | filterName3: {prenom: searchMedecinPrenom};">
+
+          <td *ngIf="(storageNiveau == '0' && item.employe.id == storageId) || storageNiveau != '0'"> {{ item.dmp.ss }} </td>
+          <td *ngIf="(storageNiveau == '0' && item.employe.id == storageId) || storageNiveau != '0'"> {{ item.donneesSociales.nom }} </td>
+          <td *ngIf="(storageNiveau == '0' && item.employe.id == storageId) || storageNiveau != '0'"> {{ item.donneesSociales.prenom }} </td>
+          <td *ngIf="(storageNiveau == '0' && item.employe.id == storageId) || storageNiveau != '0'"> {{ item.donneesSociales.age | date:"dd/MM/yyyy"}} </td>
+          <td *ngIf="(storageNiveau == '0' && item.employe.id == storageId) || storageNiveau != '0'"> {{ item.donneesSociales.pays }} </td>
+          <td *ngIf="(storageNiveau == '0' && item.employe.id == storageId) || storageNiveau != '0'"> {{ item.donneesSociales.genre }} </td>
+          <td *ngIf="(storageNiveau == '0' && item.employe.id == storageId) || storageNiveau != '0'"> {{ item.employe.donneesSociales.nom }} {{ item.employe.donneesSociales.prenom }}</td>
+          <td *ngIf="(storageNiveau == '0' && item.employe.id == storageId) || storageNiveau != '0'"><a routerLink="../accederDMP/{{item.id}}"> DMP </a></td>
+          <td *ngIf="(storageNiveau == '0' && item.employe.id == storageId) || storageNiveau != '0'">
           <img *ngIf="item.dmp.waitingDiag == 'check' && item.dmp.waitingPos == 'check' && item.dmp.waiting != 'new'" style="margin-top: 8%" src='../../assets/check.png' >
           <img *ngIf="item.dmp.waitingDiag == 'waiting' || item.dmp.waitingDiag == 'waiting'" style="margin-top: 13%;margin-left: 10%" src='../../assets/waiting.png' >
           <img *ngIf="item.dmp.waiting == 'new'" style="margin-top: 1%" src='../../assets/new.png' >
-          </div>
-
+          </td>
         </tr>
 
   </tbody>

@@ -18,17 +18,20 @@ public class Patient implements Serializable {
     private NoeudHopital noeudHopital;
     @OneToOne(cascade=CascadeType.ALL)
     private DMP dmp;
-    @OneToOne(cascade=CascadeType.ALL)
+    @ManyToOne(cascade=CascadeType.ALL)
     private DonneesSociales donneesSociales;
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    private Employe employe;
 
     public Patient(){
 
     }
 
-    public Patient(NoeudHopital noeudHopital, DMP dmp, DonneesSociales donneesSociales) {
+    public Patient(NoeudHopital noeudHopital, DMP dmp, DonneesSociales donneesSociales, Employe employe) {
         this.noeudHopital = noeudHopital;
         this.dmp = dmp;
         this.donneesSociales = donneesSociales;
+        this.employe = employe;
     }
 
     public Integer getId() {
@@ -55,6 +58,14 @@ public class Patient implements Serializable {
         this.dmp = dmp;
     }
 
+    public Employe getEmploye() {
+        return employe;
+    }
+
+    public void setEmploye(Employe employe) {
+        this.employe = employe;
+    }
+
     public DonneesSociales getDonneesSociales() {
         return donneesSociales;
     }
@@ -69,6 +80,7 @@ public class Patient implements Serializable {
                 "id=" + id +
                 ", noeudHopital=" + noeudHopital +
                 ", dmp=" + dmp +
+                ", employe=" + employe +
                 ", donneesSociales=" + donneesSociales +
                 '}';
     }

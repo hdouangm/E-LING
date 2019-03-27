@@ -17,6 +17,7 @@ export class DeconnexionComponent implements OnInit {
     localStorage.removeItem('niveau');
     localStorage.removeItem('nom');
     localStorage.removeItem('prenom');
+    localStorage.removeItem('id');
 
   }
 
