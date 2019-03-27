@@ -17,7 +17,7 @@ export class ListexamenComponent implements OnInit {
   ngOnInit() {
     this.router.snapshot.paramMap.get('id');
     // tslint:disable-next-line:radix
-    this.service.getExamenByIDDMP(Number.parseInt(this.router.snapshot.paramMap.get('id'))).subscribe((res) => this.list = res);
+    this.service.getExamenByIDDMP(Number.parseInt(this.router.snapshot.paramMap.get('id'))).subscribe((res) => this.list = res.reverse());
     // this.service.getAllExamens().subscribe((res) => this.list = res);
   }
 

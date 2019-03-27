@@ -3,6 +3,7 @@ import { InterventionService } from './intervention.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FileService } from 'src/app/file/file.service';
 import { Intervention } from '../datamodel/data';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -16,11 +17,11 @@ export class InterventionComponent implements OnInit {
     registerForm: FormGroup;
     submitted = false;
 
-    @Input() dmp: number;
-    @Input() demande: number;
+    //@Input() dmp: number;
+    //@Input() demande: number;
 
-    @Input() responsable: number;
-  constructor( private formBuilder: FormBuilder, public interventionService: InterventionService, public fileService: FileService) {
+    //@Input() responsable: number;
+  constructor( private formBuilder: FormBuilder, public interventionService: InterventionService, public fileService: FileService,public route: ActivatedRoute) {
    }
 
   ngOnInit() {
@@ -45,9 +46,9 @@ export class InterventionComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     this.interventionService.createIntervention(this.intervention).subscribe((res:any) => {
         this.fileService.uploadFile(this.selectedFile, 'intervention' + res.id);
-        this.interventionService.linkDemande(res.id, this.demande).subscribe();
-        this.interventionService.linkDMP(res.id, this.dmp).subscribe();
-        this.interventionService.linkResponsable(res.id, this.responsable).subscribe();
+        //this.interventionService.linkDemande(res.id, this.demande).subscribe();
+        this.interventionService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
+        //this.interventionService.linkResponsable(res.id, this.responsable).subscribe();
     } );
 
     }
