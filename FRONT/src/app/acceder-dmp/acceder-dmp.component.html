@@ -94,6 +94,11 @@
    <button id ="gestion"  type="button" routerLink="../../listExamen/{{dmp.id}}" class="btn btn-danger btn-sm">Consultation des examens</button>
 
    <button id ="cintervention"  type="button" routerLink="../../listIntervention/{{dmp.id}}" class="btn btn-danger btn-sm">Consultation des interventions</button>
+
+   <button id ="cintervention"  type="button" routerLink="../../listDiagnostique/{{dmp.id}}" class="btn btn-danger btn-sm">Consultation des diagnostique</button>
+
+
+   <button id ="cintervention"  type="button" routerLink="../../listDiagnostique/{{dmp.id}}" class="btn btn-danger btn-sm">Ins�rer un diagnostique</button>
    
    <button id="demandei" (click)=demandeIntervention() *ngIf="niveau == 0"  type="button" class="btn btn-danger btn-sm">Demande d'intervention</button>
 

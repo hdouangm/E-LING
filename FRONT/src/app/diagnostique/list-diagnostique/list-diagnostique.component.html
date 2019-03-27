@@ -1,0 +1,19 @@
+<div class="page-centrer">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Document</th>
+    </tr>
+  </thead>
+  <tbody id="diagnostiques">
+        <tr *ngFor="let diagnostique of list" >
+            <td> {{diagnostique.date}} </td>
+            <td> <a routerLink="../../diagnostique/{{diagnostique.id}}"> Consulter </a> </td>
+        </tr>
+
+  </tbody>
+</table>
+
+
+</div>
