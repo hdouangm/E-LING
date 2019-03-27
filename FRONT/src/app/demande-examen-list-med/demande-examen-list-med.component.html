@@ -12,20 +12,24 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Code</th>
-      <th scope="col">DMP</th>
-      <th scope="col">Type</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom<th>
       <th scope="col">Date</th>
+      <th scope="col">Type</th>
+
       <!--th scope="col">Publication Laboratoire</th-->
 
     </tr>
   </thead>
   <tbody id="dExams">
-        <tr *ngFor="let demandeExamen of demandeExamens">
-          <td> {{demandeExamen.id}} </td>
-          <td> {{demandeExamen.id_dmp}} </td>
-          <td> {{demandeExamen.type_examen}} </td>
-          <td> {{demandeExamen.date}} </td>
+  <tr *ngFor="let demandeExamen of demandeExamens;let i=index">
+    <td>{{patienttab[i].donneesSociales.nom}}</td>
+    <td>{{patienttab[i].donneesSociales.prenom}}</td>
+    <td></td>
+    <td *ngIf="demandeExamen.type_examen == 2">IHM</td>
+    <td *ngIf="demandeExamen.type_examen == 1">DRP</td>
+    <td> {{demandeExamen.date}} </td>
+    <!--td> {{demandeExamen.publicationMed}} </td-->
           <!--td> {{demandeExamen.publicationLab}} </td-->
           <!--td> <a routerLink="/demandeExamenEdit/{{demandeExamen.id}}"> Edit</a> </td-->
           <td><button class="btn btn-primary btn-group-lg col-12" (click)="publierDemande(demandeExamen.id,demandeExamen.id_dmp,demandeExamen.type_examen);">Publier</button></td>

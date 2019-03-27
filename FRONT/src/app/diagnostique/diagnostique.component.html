@@ -19,7 +19,7 @@
                         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                             <div class="form-group">
                             <label>Description :</label>
-                                  <input type="text" formControlName="diagnostique" class="form-control" [ngClass]="{ 'is-invalid': submitted}" />
+                                  <input type="text" formControlName="diagnostique" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary">Publier le diagnostique</button>

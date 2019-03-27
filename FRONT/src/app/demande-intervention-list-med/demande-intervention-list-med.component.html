@@ -13,9 +13,9 @@
     <tr>
       <th scope="col">Nom</th>
       <th scope="col">Prenom<th>
-      <th scope="col">Type</th>
       <th scope="col">Date</th>
-      <th scope="col">Publication</th>
+      <th scope="col">Type</th>
+
       <!--th scope="col">Publication Laboratoire</th-->
 
     </tr>
@@ -26,7 +26,7 @@
           <td>{{patienttab[i].donneesSociales.prenom}}</td>
           <td> {{demandeIntervention.type_examen}} </td>
           <td> {{demandeIntervention.date}} </td>
-          <td> {{demandeIntervention.publicationMed}} </td>
+          <td> Chirurgie thoracique </td>
           <!--td> {{demandeExamen.publicationLab}} </td-->
           <td><button class="btn btn-primary btn-group-lg col-12" routerLink="../creerIntervention/{{patienttab[i].dmp.id}}">Intervention</button></td>
           <td><a routerLink="../accederDMP/{{patienttab[i].id}}"> DMP </a>

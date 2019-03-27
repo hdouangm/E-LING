@@ -31,6 +31,7 @@ public createDemandeExamen() {
             console.log(response);
             location.replace('listePatient');
         });
+
     }
 
 

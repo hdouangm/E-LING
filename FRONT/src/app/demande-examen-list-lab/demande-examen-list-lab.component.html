@@ -11,10 +11,10 @@
     <tr>
       <th scope="col">Nom</th>
       <th scope="col">Prenom<th>
-      <th scope="col">Type</th>
       <th scope="col">Date</th>
+      <th scope="col">Type</th>
+
       <!--th scope="col">Publication Médecin</th-->
-      <th scope="col">Publication</th>
 
     </tr>
   </thead>
@@ -23,11 +23,9 @@
           <td>{{patienttab[i].donneesSociales.nom}}</td>
           <td>{{patienttab[i].donneesSociales.prenom}}</td>
           <td></td>
-          <td *ngIf="demandeExamen.type_examen == 2">IHM</td>
-          <td *ngIf="demandeExamen.type_examen == 1">DRP</td>
+          <td>Radiographie du thorax</td>
           <td> {{demandeExamen.date}} </td>
           <!--td> {{demandeExamen.publicationMed}} </td-->
-          <td> {{demandeExamen.publicationLab}} </td>
           <!--td> <a routerLink="/demandeExamenEdit/{{demandeExamen.id}}"> Edit</a> </td-->
           <td><button class="btn btn-primary btn-group-lg col-12" routerLink="../creerExamen/{{patienttab[i].dmp.id}}">Examen</button></td>
           <td><a routerLink="../accederDMP/{{patienttab[i].id}}"> DMP </a>
