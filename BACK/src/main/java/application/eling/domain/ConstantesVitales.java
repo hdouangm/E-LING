@@ -12,6 +12,8 @@ public class ConstantesVitales {
     @Id
     @GeneratedValue
     private Integer id;
+    @OneToOne(cascade=CascadeType.ALL)
+
     private DMP dmp;
 
     @OneToOne(cascade=CascadeType.ALL)

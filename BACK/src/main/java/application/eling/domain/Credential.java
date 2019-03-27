@@ -12,13 +12,24 @@ package application.eling.domain;
 public class Credential {
     private String nom, prenom, token;
     private int niveau;
+    private int id;
 
 
-    public Credential(String nom, String prenom, String token, int niveau) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Credential(String nom, String prenom, String token, int niveau, int id) {
         this.nom = nom;
         this.prenom = prenom;
         this.token = token;
         this.niveau = niveau;
+        this.id = id;
+
     }
 
     public int getNiveau() {

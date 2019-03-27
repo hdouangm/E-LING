@@ -29,17 +29,20 @@ public class Employe implements Serializable {
     private Integer niveau;
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Competence> competences  = new HashSet<Competence>(0);
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Patient> patient = new HashSet<Patient>();
 
     public Employe() {
 
     }
 
-    public Employe(NoeudHopital noeudHopital, CompteAphp compteAphp, DonneesSociales donneesSociales, Integer niveau, Set<Competence> competences) {
+    public Employe(NoeudHopital noeudHopital, CompteAphp compteAphp, DonneesSociales donneesSociales, Integer niveau, Set<Competence> competences, Set<Patient> patient) {
         this.noeudHopital = noeudHopital;
         this.compteAphp = compteAphp;
         this.donneesSociales = donneesSociales;
         this.niveau = niveau;
         this.competences = competences;
+        this.patient = patient;
     }
 
     public Examen getExamen() {
@@ -98,6 +101,18 @@ public class Employe implements Serializable {
         this.competences = competences;
     }
 
+    public Set<Patient> getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Set<Patient> patient) {
+        this.patient = patient;
+    }
+
+    public void addPatient(Patient patient) {
+        this.patient.add(patient);
+    }
+
     @Override
     public String toString() {
         return "Employe{" +
@@ -105,8 +120,10 @@ public class Employe implements Serializable {
                 ", noeudHopital=" + noeudHopital +
                 ", compteAphp=" + compteAphp +
                 ", donneesSociales=" + donneesSociales +
+                ", examen=" + examen +
                 ", niveau=" + niveau +
                 ", competences=" + competences +
+                ", patient=" + patient +
                 '}';
     }
 }

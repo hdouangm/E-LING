@@ -33,6 +33,7 @@ import { ExamenDetailComponent } from './examen/examen-detail/examen-detail.comp
 import { ExamenComponent } from './examen/examen.component';
 import {FilterNamePipe} from './list-patient/filter-name.pipe';
 import {FilterNamePipe2} from './list-patient/filter-name2.pipe';
+import {FilterNamePipe3} from './list-patient/filter-name3.pipe';
 import { InterventionDetailComponent } from './intervention/intervention-detail/intervention-detail.component';
 import { PosologieComponent } from './posologie/posologie.component';
 import { PosologieDetailComponent } from './posologie/posologie-detail/posologie-detail.component';
@@ -44,6 +45,7 @@ import {DxSchedulerModule} from 'devextreme-angular';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { InViewportModule } from '@thisissoon/angular-inviewport';
 import { ScrollSpyModule } from '@thisissoon/angular-scrollspy';
+import { ListexamenComponent } from './examen/listexamen/listexamen.component';
 
 const routelist: Route[] = [
   { path: '', redirectTo: 'connexion', pathMatch: 'full' },
@@ -62,11 +64,11 @@ const routelist: Route[] = [
   {path : 'deconnexion', component: DeconnexionComponent},
   {path : 'InterventionListMed', component: DemandeInterventionListMedComponent},
   {path: 'newPatient2', component: NewPatientDeuxComponent},
-  {path: 'examen', component: ExamenComponent},
-  {path: 'afficherExam', component: ExamenDetailComponent},
+  {path: 'listExamen/:id', component: ListexamenComponent},
   {path: 'agenda', component: AgendaComponent},
-  {path : 'affichageExamen', component: ExamenComponent},
-  {path: 'creerIntervention', component: InterventionComponent}
+  {path : 'creerExamen/:id', component: ExamenComponent},
+  {path: 'creerIntervention', component: InterventionComponent},
+  {path: 'examen/:id', component: ExamenDetailComponent}
 
 ];
 @NgModule({
@@ -97,12 +99,14 @@ const routelist: Route[] = [
     ExamenDetailComponent,
     FilterNamePipe,
     FilterNamePipe2,
+    FilterNamePipe3,
     InterventionDetailComponent,
     PosologieComponent,
     PosologieDetailComponent,
     DiagnostiqueComponent,
     DiagnostiqueDetailComponent,
     AgendaComponent,
+    ListexamenComponent,
 
 
   ],

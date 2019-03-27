@@ -53,6 +53,7 @@ export class ConnexionComponent implements OnInit {
         localStorage.setItem('ACCESS_TOKEN', reponse.token);
         localStorage.setItem('user', data.login);
         localStorage.setItem('nom', reponse.nom);
+        localStorage.setItem('id', reponse.id);
         localStorage.setItem('prenom', reponse.prenom);
         localStorage.setItem('niveau', reponse.niveau);
         location.replace('agenda');
@@ -71,6 +72,3 @@ getValue(id: string) {
 
 
 }
-
-
-
