@@ -42,8 +42,8 @@ export class ExamenService {
 
   linkDMP(idExamen: number, idDmp: number): Observable<Examen> {
         const formdata: FormData = new FormData();
-        formdata.append('idExamen', idExamen.toString());
-        formdata.append('idDmp', idDmp.toString());
+        formdata.append('examen', idExamen.toString());
+        formdata.append('dmp', idDmp.toString());
         return this.http.post<Examen>(API_URL + '/linkDMP', formdata);
 
   }

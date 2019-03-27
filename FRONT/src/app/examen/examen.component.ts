@@ -3,6 +3,7 @@ import { ExamenService } from './examen.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FileService } from 'src/app/file/file.service';
 import { Examen } from '../datamodel/data';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class ExamenComponent implements OnInit {
     @ViewChild('myModallExamenn') openModal: ElementRef;
 
 
-  constructor( private formBuilder: FormBuilder, public examenService: ExamenService, public fileService: FileService) {
+  // tslint:disable-next-line:max-line-length
+  constructor( private formBuilder: FormBuilder, public examenService: ExamenService, public fileService: FileService, public route: ActivatedRoute) {
    }
 
   ngOnInit() {
@@ -43,10 +45,12 @@ export class ExamenComponent implements OnInit {
     // this.examen.demandeExamen = this.demande;
     // this.examen.responsable = this.user;
     // tslint:disable-next-line:max-line-length
+    console.log(this.route.snapshot.paramMap.get('id'));
     this.examenService.createExamen(this.examen).subscribe((res) => {
         this.fileService.uploadFile(this.selectedFile, 'examen' + res.id);
        // this.examenService.linkDemande(res.id, this.demande).subscribe();
-      //  this.examenService.linkDMP(res.id, this.dmp).subscribe();
+        // tslint:disable-next-line:radix
+        this.examenService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
       //  this.examenService.linkResponsable(res.id, this.responsable).subscribe();
     } );
 

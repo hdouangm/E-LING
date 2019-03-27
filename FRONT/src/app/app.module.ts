@@ -64,9 +64,9 @@ const routelist: Route[] = [
   {path : 'deconnexion', component: DeconnexionComponent},
   {path : 'InterventionListMed', component: DemandeInterventionListMedComponent},
   {path: 'newPatient2', component: NewPatientDeuxComponent},
-  {path: 'listExamen', component: ListexamenComponent},
+  {path: 'listExamen/:id', component: ListexamenComponent},
   {path: 'agenda', component: AgendaComponent},
-  {path : 'creerExamen', component: ExamenComponent},
+  {path : 'creerExamen/:id', component: ExamenComponent},
   {path: 'creerIntervention', component: InterventionComponent},
   {path: 'examen/:id', component: ExamenDetailComponent}
 

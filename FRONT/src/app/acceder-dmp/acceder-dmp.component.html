@@ -90,7 +90,7 @@
 
  <div>
    <button id="modif" (click)=modif() type="button" class="btn btn-danger">Modifier</button>
-   <button id ="gestion"  type="button" routerLink="../../listExamen" class="btn btn-danger btn-sm">Consultation des examens</button>
+   <button id ="gestion"  type="button" routerLink="../../listExamen/{{dmp.id}}" class="btn btn-danger btn-sm">Consultation des examens</button>
    <button id="demandei" (click)=demandeIntervention() *ngIf="niveau == 0"  type="button" class="btn btn-danger btn-sm">Demande d'intervention</button>
    <button id ="demandee" (click)=demandeExamen() *ngIf="niveau == 0" style="margin-left: 83%;position: absolute;margin-top: -25% " type="button" class="btn btn-danger btn-sm">Demande d'examen</button>
    <!--<button id="gp" *ngIf="niveau == 0"  type="button" class="btn btn-danger btn-sm">Gestion de posologie</button>-->
