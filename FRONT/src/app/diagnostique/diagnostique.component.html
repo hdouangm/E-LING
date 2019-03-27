@@ -32,7 +32,9 @@
                     </div>
                 </div>
             </div>
-            <app-coder-acte></app-coder-acte>
+            <div *ngIf="diagnostique.id as value;">
+                <app-coder-acte idtype="{{diagnostique.id}}" typef="diagnostique"></app-coder-acte>
+            </div>
         </div>
     </div>
 </div>

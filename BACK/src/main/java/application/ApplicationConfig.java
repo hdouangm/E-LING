@@ -34,6 +34,8 @@ public class ApplicationConfig extends Application {
         c.add(application.rest.DemandeInterventionRestService.class);
         c.add(application.rest.TypeInterventionRestService.class);
         c.add(application.rest.InterventionRestService.class);
+        c.add(application.rest.DiagnostiqueRestService.class);
+        c.add(application.rest.PosologieRestService.class);
         classes = Collections.unmodifiableSet(c);
     }
 

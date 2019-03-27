@@ -103,12 +103,12 @@ public class PosologieRestService {
 	    @Produces(MediaType.APPLICATION_JSON)
 	    public Response createPosologie(Posologie exam) {
 	    	try {
-				posologieDAO.create(exam);
+				exam = posologieDAO.create(exam);
 			} catch (Exception e) {
 				return Response.status(Response.Status.NOT_ACCEPTABLE).build();
 			}
 	        URI bookUri = uriInfo.getBaseUriBuilder().path(PosologieRestService.class).path(String.valueOf(exam.getId())).build();
-	        return Response.created(bookUri).build();
+	        return Response.ok(exam).build();
 	    }
 	    
 	    @POST
