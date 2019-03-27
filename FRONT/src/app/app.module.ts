@@ -69,13 +69,9 @@ const routelist: Route[] = [
   {path: 'agenda', component: AgendaComponent},
   {path : 'creerExamen/:id', component: ExamenComponent},
   {path: 'creerIntervention/:id', component: InterventionComponent},
-<<<<<<< HEAD
   {path: 'examen/:id', component: ExamenDetailComponent},
   {path: 'intervention/:id', component: InterventionDetailComponent},
   {path: 'listIntervention/:id', component: ListinterventionComponent}
-=======
-  {path: 'examen/:id', component: ExamenDetailComponent}
->>>>>>> branch 'master' of https://github.com/hdouangm/E-LING
 
 ];
 @NgModule({
