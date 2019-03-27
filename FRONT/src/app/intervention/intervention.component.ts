@@ -43,7 +43,7 @@ export class InterventionComponent implements OnInit {
     // this.intervention.demandeIntervention = this.demande;
     // this.intervention.responsable = this.user;
     // tslint:disable-next-line:max-line-length
-    this.interventionService.createIntervention(this.intervention).subscribe((res) => {
+    this.interventionService.createIntervention(this.intervention).subscribe((res:any) => {
         this.fileService.uploadFile(this.selectedFile, 'intervention' + res.id);
         this.interventionService.linkDemande(res.id, this.demande).subscribe();
         this.interventionService.linkDMP(res.id, this.dmp).subscribe();

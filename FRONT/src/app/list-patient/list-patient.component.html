@@ -311,6 +311,7 @@
   </thead>
   <tbody id="patients">
         <tr *ngFor="let item of restItems | filterName: {nom: searchNom} | filterName: {prenom: searchPrenom} | filterName: {age: searchAge} | filterName: {pays: searchPays} | filterName: {genre: searchGenre} | filterName2: {ss: searchSs};">
+          <div *ngIf=" (this.localStorage.getItem('niveau') === 0 && this.localStorage.getItem('login') === item.employe.compteAphp.login) || this.localStorage.getItem('niveau') !== 0">
           <td> {{ item.dmp.ss }} </td>
           <td> {{ item.donneesSociales.nom }} </td>
           <td> {{ item.donneesSociales.prenom }} </td>
@@ -322,6 +323,7 @@
           <img *ngIf="item.dmp.waitingDiag == 'check' && item.dmp.waitingPos == 'check' && item.dmp.waiting != 'new'" style="margin-top: 8%" src='../../assets/check.png' >
           <img *ngIf="item.dmp.waitingDiag == 'waiting' || item.dmp.waitingDiag == 'waiting'" style="margin-top: 13%;margin-left: 10%" src='../../assets/waiting.png' >
           <img *ngIf="item.dmp.waiting == 'new'" style="margin-top: 1%" src='../../assets/new.png' >
+          </div>
 
         </tr>
 
