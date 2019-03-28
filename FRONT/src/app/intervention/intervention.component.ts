@@ -52,7 +52,7 @@ export class InterventionComponent implements OnInit {
         //this.interventionService.linkDemande(res.id, this.demande).subscribe();
         this.id = res.id;
         // tslint:disable-next-line:radix
-        this.interventionService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe(() => this.cancel());
+        this.interventionService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
         //this.interventionService.linkResponsable(res.id, this.responsable).subscribe();
     } );
 
