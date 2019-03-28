@@ -42,7 +42,6 @@ export class ExamenDetailComponent implements OnInit {
         this.examenService.getExamenByID(Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe((res) => {
             this.examen = res;
             this.imgURL = this.fileService.getExamResultURL(res);
-            history.back();
         });
   }
 

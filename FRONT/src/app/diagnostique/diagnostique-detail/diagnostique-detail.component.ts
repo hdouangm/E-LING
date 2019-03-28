@@ -27,8 +27,7 @@ export class DiagnostiqueDetailComponent implements OnInit {
       this.diagnostique = new Diagnostique();
       // tslint:disable-next-line:radix
       this.diagnostiqueService.getDiagnostiqueByID(Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe(
-          res => {this.diagnostique = res;
-                  this.cancel(); } );
+          res => {this.diagnostique = res; } );
   }
 
     cancel() {
