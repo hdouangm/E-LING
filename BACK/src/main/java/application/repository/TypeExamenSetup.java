@@ -31,6 +31,7 @@ public class TypeExamenSetup {
         repository.save(new TypeExamen("IRM Abdominal "));
         repository.save(new TypeExamen("IRM du genou"));
         repository.save(new TypeExamen("IRM des hanches"));
+        repository.save(new TypeExamen("IRM thoracique"));
         repository.save(new TypeExamen("Echographie thyroïdienne"));
         repository.save(new TypeExamen("Echographie abdominale"));
         repository.save(new TypeExamen("Scanner encéphalique"));
@@ -41,6 +42,7 @@ public class TypeExamenSetup {
         repository.save(new TypeExamen("Radiographie du thorax"));
         repository.save(new TypeExamen("Radiographie dentaire"));
         repository.save(new TypeExamen("Radiographie du bassin"));
+        repository.save(new TypeExamen("Electrocardiographie"));
         repository.save(new TypeExamen("EMG"));
         repository.save(new TypeExamen());
     }
