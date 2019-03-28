@@ -36,6 +36,7 @@ public class ActeSetup {
     acterepository.save(new Acte("Consultation", 20));
     acterepository.save(new Acte("Radiographie du thorax", 100));
     acterepository.save(new Acte("Chirurgie cardiovasculaire", 450));
+    acterepository.save(new Acte("Electrocardiographie", 80));
 
     acterepository.save(new Acte("Nettoyage ou pansement d'une brûlure", 20));
     acterepository.save(new Acte("Prélèvement de peau suivi de suture pour examen histologique", 50));
