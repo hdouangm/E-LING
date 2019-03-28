@@ -45,13 +45,18 @@ export class PosologieComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     this.posologieService.createPosologie(this.posologie).subscribe((res) => {
         // tslint:disable-next-line:radix
-        this.posologieService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
+        this.posologieService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe(() => history.back());
         this.id = res.id;
      //   this.posologieService.linkResponsable(res.id, this.responsable).subscribe();
+        this.cancel();
     } );
 
     }
     get f() { return this.registerForm.controls; }
+
+    cancel() {
+            history.back();
+    }
 
 
 }

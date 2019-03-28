@@ -20,7 +20,8 @@ export class InterventionComponent implements OnInit {
 
     @ViewChild('myModallInterventionn') openModal: ElementRef;
 
-  constructor( private formBuilder: FormBuilder, public interventionService: InterventionService, public fileService: FileService,public route: ActivatedRoute) {
+  // tslint:disable-next-line:max-line-length
+  constructor( private formBuilder: FormBuilder, public interventionService: InterventionService, public fileService: FileService, public route: ActivatedRoute) {
    }
 
   ngOnInit() {
@@ -50,10 +51,15 @@ export class InterventionComponent implements OnInit {
         this.fileService.uploadFile(this.selectedFile, 'intervention' + res.id);
         //this.interventionService.linkDemande(res.id, this.demande).subscribe();
         this.id = res.id;
-        this.interventionService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
+        // tslint:disable-next-line:radix
+        this.interventionService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe(() => this.cancel());
         //this.interventionService.linkResponsable(res.id, this.responsable).subscribe();
     } );
 
+    }
+
+      cancel() {
+      history.back();
     }
 
 

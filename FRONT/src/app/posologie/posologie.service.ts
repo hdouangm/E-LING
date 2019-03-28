@@ -3,7 +3,7 @@ import { environment } from 'src/environments/environment.prod';
 
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Posologie } from '../datamodel/data';
+import { Posologie, DMP } from '../datamodel/data';
 
 
 const API_URL = environment.apiUrl + '/posologies';
@@ -57,4 +57,7 @@ export class PosologieService {
 
   }
 
+  getDMP(id: string) {
+    return this.http.get<DMP>(environment.apiUrl + '/DMP/' + id);
+  }
 }

@@ -40,8 +40,13 @@ export class InterventionDetailComponent implements OnInit {
         this.interventionService.getInterventionByID(Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe((res) => {
             this.intervention = res;
             this.imgURL = this.fileService.getInterventionResultURL(res);
+            this.cancel();
         });
   }
+
+  cancel() {
+      history.back();
+    }
 
 
 }

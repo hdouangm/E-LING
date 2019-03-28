@@ -44,13 +44,17 @@ export class DiagnostiqueComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     this.diagnostiqueService.createDiagnostique(this.diagnostique).subscribe((res) => {
         // tslint:disable-next-line:radix
-        this.diagnostiqueService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
+        this.diagnostiqueService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe(() => history.back());
         this.id = res.id;
      //   this.diagnostiqueService.linkResponsable(res.id, this.responsable).subscribe();
     } );
 
     }
     get f() { return this.registerForm.controls; }
+
+    cancel() {
+      history.back();
+    }
 
 
 }

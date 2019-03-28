@@ -16,7 +16,7 @@ export class ExamenComponent implements OnInit {
     public examen: Examen;
     registerForm: FormGroup;
     submitted = false;
-    id :any;
+    id: any;
 
     @ViewChild('myModallExamenn') openModal: ElementRef;
 
@@ -52,10 +52,14 @@ export class ExamenComponent implements OnInit {
         this.fileService.uploadFile(this.selectedFile, 'examen' + res.id);
        // this.examenService.linkDemande(res.id, this.demande).subscribe();
         // tslint:disable-next-line:radix
-        this.examenService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe();
+        this.examenService.linkDMP(res.id, Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe(() => history.back());
       //  this.examenService.linkResponsable(res.id, this.responsable).subscribe();
     } );
 
+    }
+
+    cancel() {
+        history.back();
     }
 
 

@@ -28,8 +28,13 @@ export class PosologieDetailComponent implements OnInit {
       this.posologie = new Posologie();
       // tslint:disable-next-line:radix
       this.posologieService.getPosologieByID(Number.parseInt(this.route.snapshot.paramMap.get('id'))).subscribe(
-          res => this.posologie = res );
+          res => {this.posologie = res;
+                  this.cancel(); } );
   }
+
+    cancel() {
+      history.back();
+    }
 
 }
 
