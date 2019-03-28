@@ -58,12 +58,10 @@ export class CoderActeComponent implements OnInit{
           		console.log(this.actes);
         		},
         		err => {
-        			alert("Une erreur est survenue lors de la recherche des actes.")
         		}
       		);
         },
         err => {
-        	alert("Une erreur est survenue lors de l'affichage des actes.")
         }
       );
   }
@@ -87,6 +85,7 @@ export class CoderActeComponent implements OnInit{
       .get<any[]>(this.restItemsUrl+"getacte?type="+type+"&id="+id)
       .pipe(map(data => data));
   }
+  
 
   click (idacte,type,id){
   	var a = document.getElementById(idacte).style.backgroundColor;
@@ -119,7 +118,6 @@ export class CoderActeComponent implements OnInit{
   	.subscribe(
   		res => {},
   		err => {
-        	alert("Une erreur est survenue lors de l'ajout de l'acte.");
   		}
   	);
   }
@@ -129,7 +127,6 @@ export class CoderActeComponent implements OnInit{
   	.subscribe(
   		res => {},
   		err => {
-        	alert("Une erreur est survenue lors de la suppression de l'acte.");
   		}
   	);
   }
