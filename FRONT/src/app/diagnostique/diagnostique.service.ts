@@ -35,9 +35,12 @@ export class DiagnostiqueService {
   getDiagnostiqueByIDResp(ID: number): Observable<Diagnostique> {
     return this.http.get<Diagnostique>(API_URL + '/all/responsable/' + ID);
   }
+  update(diagnostique: Diagnostique): Observable<Diagnostique> {
+    return this.http.post<Diagnostique>(API_URL + '/update/', diagnostique);
+  }
 
-  deleteDiagnostiqueByID(ID: number): Observable<Diagnostique> {
-    return this.http.delete<Diagnostique>(API_URL + '/delete/' + ID);
+  deleteDiagnostiqueByID(diagnostique:Diagnostique): Observable<Diagnostique> {
+    return this.http.post<Diagnostique>(API_URL + '/deletezer',diagnostique);
   }
 
   linkDMP(idDiagnostique: number, idDmp: number): Observable<Diagnostique> {

@@ -94,11 +94,35 @@ public class DiagnostiqueRestService {
 	        try {
 	            diagnostiqueDAO.delete(id);
 	        } catch (Exception e) {
-	            return Response.status(Response.Status.NOT_FOUND).build();
+	            return Response.status(Response.Status.FORBIDDEN).build();
 	        }
 	        return Response.noContent().build();
 	    
 	    }
+	    @POST
+		@Path("update")
+		@Produces(MediaType.APPLICATION_JSON)
+		public Response updateExam(Diagnostique diag) {
+			try {
+				diagnostiqueDAO.update(diag);
+			} catch (Exception e) {
+				return Response.status(Response.Status.NOT_FOUND).build();
+			}
+			return Response.noContent().build();
+
+		}
+		@POST
+		@Path("deletezer")
+		@Produces(MediaType.APPLICATION_JSON)
+		public Response deletezer(Diagnostique diag) {
+			try {
+				diagnostiqueDAO.update(diag);
+			} catch (Exception e) {
+				return Response.status(Response.Status.NOT_FOUND).build();
+			}
+			return Response.noContent().build();
+
+		}
 	    
 	    @POST
 	    @Path("create")

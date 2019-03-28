@@ -8,8 +8,11 @@
   </thead>
   <tbody id="diagnostiques">
         <tr *ngFor="let diagnostique of list" >
-            <td> {{diagnostique.date}} </td>
-            <td> <a routerLink="../../diagnostique/{{diagnostique.id}}"> Consulter </a> </td>
+            <td *ngIf="diagnostique.delested == false"> {{diagnostique.date}} </td>
+            <td *ngIf="diagnostique.delested == false"> <a routerLink="../../diagnostique/{{diagnostique.id}}"> Consulter </a> </td>
+          <button *ngIf="diagnostique.delested == false" (click)=valDiag(diagnostique.id) type="button" class="btn btn-danger btn-sm">Valider diagnostique</button>
+          <button *ngIf="diagnostique.delested == false && diagnostique.publication == true" style="position: absolute;margin-left: 2%"  (click)=suppDiag(diagnostique.id) type="button" class="btn btn-danger btn-sm">Supprimer</button>
+
         </tr>
 
   </tbody>

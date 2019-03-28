@@ -27,7 +27,7 @@ public class Diagnostique implements Serializable {
     private Employe responsable;
     private Boolean publication;
     private String date;
-
+    private Boolean delested;
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Acte> codesActes = new HashSet<Acte>(0);
     private Integer prix;
@@ -37,7 +37,15 @@ public class Diagnostique implements Serializable {
 
     }
 
-    public Diagnostique(DMP dmp, String diagnostic, Employe responsable, Boolean publication, String date, Set<Acte> codesActes, Boolean payer) {
+    public Boolean getDelested() {
+        return delested;
+    }
+
+    public void setDelested(Boolean delested) {
+        this.delested = delested;
+    }
+
+    public Diagnostique(DMP dmp, String diagnostic, Employe responsable, Boolean publication, String date, Set<Acte> codesActes, Boolean payer, Boolean delested) {
         this.dmp = dmp;
         this.diagnostic = diagnostic;
         this.responsable = responsable;
@@ -46,6 +54,7 @@ public class Diagnostique implements Serializable {
         this.codesActes = codesActes;
         this.prix = 0;
         this.payer = payer;
+        this.delested = delested;
     }
 
     public Integer getId() {

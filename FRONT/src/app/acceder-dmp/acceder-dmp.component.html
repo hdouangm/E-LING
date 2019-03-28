@@ -93,21 +93,19 @@
 
    <button id ="cintervention"  type="button" routerLink="../../listIntervention/{{dmp.id}}" class="btn btn-danger btn-sm">Consultation des interventions</button>
 
-   <button id ="cdiagnostique"  type="button" routerLink="../../listDiagnostique/{{dmp.id}}" class="btn btn-danger btn-sm">Consultation des diagnostiques</button>
+   <button id ="cdiagnostique"  (click)="valPos()" type="button" routerLink="../../listDiagnostique/{{dmp.id}}" class="btn btn-danger btn-sm">Consultation des diagnostiques</button>
 
-   <button id ="cposologie"  type="button" routerLink="../../listPosologie/{{dmp.id}}" class="btn btn-danger btn-sm">Consultation des posologies</button>
+   <button id ="cposologie" (click)="valPos()"  type="button" routerLink="../../listPosologie/{{dmp.id}}" class="btn btn-danger btn-sm">Consultation des posologies</button>
 
 
-   <button id ="idiagnostique"  type="button" routerLink="../../creerDiagnostique/{{dmp.id}}" class="btn btn-danger btn-sm">Inserer un diagnostique</button>
+   <button id ="idiagnostique" (click)="diagnostique()" type="button" routerLink="../../creerDiagnostique/{{dmp.id}}" class="btn btn-danger btn-sm">Inserer un diagnostique</button>
 
-   <button id ="iposologie"  type="button" routerLink="../../creerPosologie/{{dmp.id}}" class="btn btn-danger btn-sm">Inserer une posologie</button>
+   <button id ="iposologie" (click)="posologie()" type="button" routerLink="../../creerPosologie/{{dmp.id}}" class="btn btn-danger btn-sm">Inserer une posologie</button>
    
    <button id="demandei" (click)=demandeIntervention() *ngIf="niveau == 0"  type="button" class="btn btn-danger btn-sm">Demande d'intervention</button>
 
    <button id ="demandee" (click)=demandeExamen() *ngIf="niveau == 0"  type="button" class="btn btn-danger btn-sm">Demande d'examen</button>
    <!--<button id="gp" *ngIf="niveau == 0"  type="button" class="btn btn-danger btn-sm">Gestion de posologie</button>-->
-   <button id ="vp" *ngIf="niveau == 0 && waitingPos == 'waiting'" (click)=valPos() type="button" class="btn btn-danger btn-sm">Validation posologie</button>
-   <button  id="vd" *ngIf="niveau == 0 && waitingDiag == 'waiting'" (click)=valDiag() type="button" class="btn btn-danger btn-sm">Validation du diagnostique</button>
 
 
    <!--

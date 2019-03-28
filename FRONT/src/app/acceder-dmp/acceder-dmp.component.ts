@@ -39,6 +39,7 @@ export class AccederDmpComponent implements OnInit {
 
   getDmp(): void {
     const id = this.activateRoute.snapshot.paramMap.get('id');
+    localStorage.setItem('patient_id',id);
     this.niveau = localStorage.getItem('niveau');
     this.apiService.getPatient(`${id}`).subscribe((response: object) => {
       this.patient = response;
@@ -224,6 +225,7 @@ export class AccederDmpComponent implements OnInit {
 
 
     });
+    this.valDiag();
   }
 
   posologie() {

@@ -90,7 +90,9 @@ export class Diagnostique {
         public date: string = '',
         public codesActes: Array<Acte> = new Array<Acte>(),
         public prix: number = 0,
-        public payer: boolean = false
+        public payer: boolean = false,
+        public delested: boolean = false
+
 
     ) {}
 }
