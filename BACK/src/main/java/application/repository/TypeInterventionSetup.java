@@ -30,7 +30,7 @@ public class TypeInterventionSetup {
 //        repository.save(new TypeIntervention("Chirurgie vasculaire"));
 //        repository.save(new TypeIntervention("Chirurgie dentaire"));
         repository.save(new TypeIntervention("Chirurgie thoracique"));
-        repository.save(new TypeIntervention("Neurochirurgie"));
+//        repository.save(new TypeIntervention("Neurochirurgie"));
 //        repository.save(new TypeIntervention("Chirurgie plastique"));
 //        repository.save(new TypeIntervention("Chirurgie orthopédique"));
 //        repository.save(new TypeIntervention("Chirurgie gynécologique"));
