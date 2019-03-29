@@ -24,8 +24,8 @@
         <tr *ngFor="let demandeIntervention of demandeInterventions;let i=index">
           <td>{{patienttab[i].donneesSociales.nom}}</td>
           <td>{{patienttab[i].donneesSociales.prenom}}</td>
-          <td> {{demandeIntervention.type_examen}} </td>
-          <td> {{demandeIntervention.date}} </td>
+          <td> {{demandeIntervention.date}}</td>
+          <td> {{demandeIntervention.type_examen}}</td>
           <td> Chirurgie cardiovasculaire </td>
           <!--td> {{demandeExamen.publicationLab}} </td-->
           <td><button class="btn btn-primary btn-group-lg col-12" routerLink="../creerIntervention/{{patienttab[i].dmp.id}}">Intervention</button></td>
