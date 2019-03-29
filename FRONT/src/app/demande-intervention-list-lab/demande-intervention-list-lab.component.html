@@ -19,8 +19,8 @@
         <tr *ngFor="let demandeIntervention of demandeInterventions">
           <td> {{demandeIntervention.id}} </td>
           <td> {{demandeIntervention.id_dmp}} </td>
-          <td> {{demandeIntervention.type_intervention}} </td>
           <td> {{demandeIntervention.date}} </td>
+          <td> {{demandeIntervention.type_intervention}} </td>
           <td><button class="btn btn-primary btn-group-lg col-12">Intervention</button></td>
           <td><a routerLink="../accederDMP/{{patienttab[i].id}}"> DMP </a>
 
